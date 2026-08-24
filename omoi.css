@@ -1,0 +1,257 @@
+﻿.omoi-page {
+--project-bg:#fff;
+--project-line:#181818;
+background:var(--project-bg)
+}
+.project-page .site-header {
+border-color:var(--project-line)
+}
+.project-hero {
+width:min(calc(100% - 80px),var(--max));
+min-height:700px;
+margin:auto;
+padding:125px 0 120px;
+display:grid;
+grid-template-columns:minmax(0,1fr) minmax(300px,.8fr);
+gap:90px;
+align-items:center
+}
+.project-hero h1 {
+font-size:clamp(82px,13vw,170px);
+line-height:.9;
+font-family:"Arial Rounded MT Bold","Hiragino Maru Gothic ProN","Noto Sans JP",sans-serif;
+font-weight:400;
+letter-spacing:-.04em;
+margin:30px 0 24px
+}
+.project-tagline {
+font-size:20px;
+margin:0 0 34px
+}
+.omoi-page .project-tagline,
+.omoi-page .project-section h2,
+.omoi-page .question-card p {
+font-family:"Hiragino Maru Gothic ProN","Noto Sans JP",sans-serif;
+letter-spacing:-.02em
+}
+.project-intro {
+max-width:500px;
+color:var(--muted);
+font-size:16px;
+line-height:2;
+margin:0
+}
+.project-meta {
+display:grid;
+grid-template-columns:repeat(3,auto);
+gap:20px;
+max-width:520px;
+margin:36px 0 0;
+padding-top:18px;
+border-top:1px solid var(--project-line)
+}
+.project-meta div {
+display:flex;
+flex-direction:column;
+gap:4px
+}
+.project-meta dt {
+font-size:10px;
+color:var(--muted)
+}
+.project-meta dd {
+font-size:11px;
+margin:0
+}
+.text-link {
+display:inline-block;
+margin-top:38px;
+font-size:13px;
+text-decoration:none;
+border-bottom:1px solid currentColor;
+padding-bottom:5px
+}
+.media-placeholder {
+aspect-ratio:16/10;
+border:1px solid var(--project-line);
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+gap:14px;
+letter-spacing:.16em;
+font-size:11px
+}
+.media-placeholder small {
+font-size:9px;
+color:var(--muted)
+}
+.project-section {
+width:min(calc(100% - 80px),var(--max));
+margin:auto;
+padding:110px 0;
+border-top:1px solid var(--project-line);
+display:grid;
+grid-template-columns:240px 1fr;
+gap:80px
+}
+.project-section h2 {
+font-size:clamp(38px,5vw,68px);
+font-weight:400;
+line-height:1.22;
+letter-spacing:-.08em;
+margin:0 0 56px
+}
+.question-card {
+max-width:620px;
+background:#111;
+color:#fff;
+border-radius:18px;
+padding:28px 34px 34px;
+min-height:260px;
+display:flex;
+flex-direction:column;
+justify-content:space-between
+}
+.question-card span,.question-card small {
+font-size:10px;
+letter-spacing:.13em;
+color:#aaa
+}
+.question-card p {
+font-size:27px;
+line-height:1.55;
+margin:28px 0
+}
+.process-list {
+border-top:1px solid var(--project-line)
+}
+.process-list>div {
+display:grid;
+grid-template-columns:50px 1fr 1fr;
+gap:20px;
+align-items:baseline;
+padding:24px 0;
+border-bottom:1px solid #d5d5d5
+}
+.process-list b {
+font-size:10px;
+color:var(--muted)
+}
+.process-list h3 {
+font-size:18px;
+font-weight:500;
+margin:0
+}
+.process-list p {
+font-size:13px;
+color:var(--muted);
+margin:0
+}
+.project-page footer {
+border-color:var(--project-line)
+}
+.kizuna-page {
+--project-bg:#e9f0f1;
+--project-line:#24383c;
+background:var(--project-bg)
+}
+.kizuna-page .project-section {
+border-color:var(--project-line)
+}
+.kizuna-page .media-placeholder {
+border-color:var(--project-line);
+background:rgba(255,255,255,.25)
+}
+.kizuna-page .project-hero h1 {
+font-family:Arial,"Noto Sans JP",sans-serif;
+font-weight:400
+}
+.kizuna-page .project-tagline {
+color:#38575d
+}
+.chat-window {
+max-width:620px;
+background:#fff;
+padding:22px;
+min-height:300px;
+display:flex;
+flex-direction:column
+}
+.chat-meta {
+font-size:10px;
+letter-spacing:.13em;
+color:#849598
+}
+.chat-bubble {
+align-self:flex-start;
+margin:auto 0 24px;
+background:#e9f0f1;
+padding:18px 22px;
+font-size:19px;
+line-height:1.6
+}
+.chat-input {
+border-top:1px solid #cfd9da;
+padding-top:16px;
+color:#849598;
+font-size:12px
+}
+.chat-input span {
+float:right;
+font-size:19px;
+color:#24383c
+}
+.kizuna-page .process-list>div {
+border-color:#c5d1d2
+}
+.kizuna-page footer {
+border-color:var(--project-line)
+}
+@media(max-width:760px) {
+.project-hero,.project-section {
+width:calc(100% - 36px)
+}
+.project-hero {
+display:block;
+padding:100px 0 80px
+}
+.project-hero h1 {
+font-size:92px
+}
+.project-meta {
+grid-template-columns:1fr 1fr;
+gap:16px
+}
+.media-placeholder {
+margin-top:80px
+}
+.project-section {
+display:block;
+padding:80px 0
+}
+.project-section .section-label {
+margin-bottom:48px
+}
+.project-section h2 {
+font-size:42px
+}
+.question-card,.chat-window {
+min-height:260px
+}
+.question-card p {
+font-size:22px
+}
+.process-list>div {
+grid-template-columns:35px 1fr
+}
+.process-list p {
+grid-column:2
+}
+.process-list h3 {
+font-size:16px
+}
+
+}
+
+
