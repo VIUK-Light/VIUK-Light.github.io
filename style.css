@@ -1705,6 +1705,7 @@ body:not(.docs-body) .footer-nav a:hover { background: rgba(255,255,255,.08); co
 .for-flow-list strong { font-size: 17px; }
 .for-flow-list p { margin: 6px 0 0; color: var(--muted); font-size: 15px; line-height: 1.7; }
 .for-flow-section > .text-link { color: var(--orange-dark); }
+.site-nav-mobile-toggle { display: none; }
 
 @media (max-width: 900px) {
   .for-series-grid { grid-template-columns: 1fr; }
@@ -1719,4 +1720,98 @@ body:not(.docs-body) .footer-nav a:hover { background: rgba(255,255,255,.08); co
   .for-series-section, .for-flow-section { padding: 48px 0; }
   .for-series-card { padding: 20px; }
   .for-flow-list li { grid-template-columns: 36px 1fr; gap: 12px; }
+}
+
+/* Omoi for series media: keep the three real screens legible without letting their empty lower area dominate the row. */
+.home-product-row--omoi-for .home-product-media { padding: 24px 28px 19px; }
+.home-product-media-gallery--omoi-for { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.home-product-media-gallery--omoi-for img { height: 300px; object-fit: cover; object-position: center top; border-radius: 4px; }
+
+@media (max-width: 900px) {
+  .home-product-media-gallery--omoi-for img { height: 260px; }
+}
+
+@media (max-width: 600px) {
+  .home-product-row--omoi-for .home-product-media { padding: 20px 18px 16px; }
+  .home-product-media-gallery--omoi-for { display: flex; grid-template-columns: none; gap: 12px; overflow-x: auto; padding-bottom: 7px; scroll-snap-type: x mandatory; scrollbar-width: thin; overscroll-behavior-x: contain; }
+  .home-product-media-gallery--omoi-for a { flex: 0 0 73%; min-width: 0; scroll-snap-align: start; }
+  .home-product-media-gallery--omoi-for img { height: 340px; object-fit: cover; object-position: center top; }
+}
+
+/* Mobile restraint: keep the official header calm and let the Omoi for screenshots be browsed one at a time. */
+@media (max-width: 600px) {
+  body:not(.docs-body) .site-header {
+    min-height: 74px;
+    align-items: center;
+    flex-direction: row;
+    gap: 12px;
+    padding: 12px 0;
+  }
+  .site-nav-mobile-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 9px;
+    min-height: 38px;
+    margin-left: auto;
+    padding: 7px 10px;
+    border: 1px solid rgba(255,255,255,.24);
+    border-radius: 5px;
+    background: transparent;
+    color: rgba(255,255,255,.88);
+    cursor: pointer;
+    font-size: 12px;
+  }
+  .site-nav-mobile-toggle:hover, .site-nav-mobile-toggle:focus-visible { background: rgba(255,255,255,.08); }
+  .site-nav-mobile-icon { color: var(--orange-pale); font-size: 18px; line-height: 1; }
+  .site-nav {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    z-index: 60;
+    width: auto;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+    overflow: visible;
+    padding: 8px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    box-shadow: 0 16px 32px rgba(45,31,24,.16);
+  }
+  .site-nav.is-mobile-open { display: flex; }
+  .site-nav-menu { width: 100%; }
+  .site-nav-menu.is-open { flex-basis: auto; }
+  .site-nav > a, .site-nav-trigger { width: 100%; justify-content: space-between; padding: 10px 12px; font-size: 14px; }
+  .site-nav-panel, .site-nav-menu.is-open .site-nav-panel {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 100%;
+    margin: 0;
+    padding: 4px;
+    border: 0;
+    box-shadow: none;
+    background: var(--surface-soft);
+    transform: none;
+  }
+  .site-nav-panel[hidden] { display: none; }
+  .home-product-media-gallery--omoi-for {
+    display: flex;
+    grid-template-columns: none;
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 7px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    overscroll-behavior-x: contain;
+  }
+  .home-product-media-gallery--omoi-for a {
+    flex: 0 0 73%;
+    min-width: 0;
+    scroll-snap-align: start;
+  }
+  .home-product-media-gallery--omoi-for img { height: 360px; }
 }
