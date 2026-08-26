@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>技術仕様 — Omoi for series Documentation</title>
+  <meta name="description" content="Omoi for seriesの静的サイト構成、質問データ、選択ロジック、正本リポジトリを説明します。">
+  <link rel="canonical" href="https://viuk-light.org/omoi-for-technical.html">
+  <link rel="icon" href="assets/viuk-light-logo.png?v=20260825" type="image/png">
+  <link rel="stylesheet" href="style.css?v=20260826-row8">
+  <script src="docs.js" defer></script>
+</head>
+<body class="docs-body">
+  <a class="skip-link" href="#docs-content">本文へ移動</a>
+  <header class="docs-topbar"><a class="docs-brand" href="omoi-for-docs.html"><img class="brand-logo" src="assets/viuk-light-logo.png?v=20260825" alt="VIUK-Light公式ロゴ"><span>Omoi for series Documentation</span></a><nav class="docs-top-actions" aria-label="ドキュメントから戻る"><a href="omoi-for.html">Omoi for series</a><a href="index.html">VIUK-Light</a></nav></header>
+  <div class="docs-layout">
+    <aside class="docs-sidebar" aria-label="Omoi for seriesドキュメントナビゲーション"><details class="docs-mobile-nav" data-doc-mobile-nav open><summary>Documentation menu</summary><div class="docs-sidebar-content"><a class="docs-back" href="omoi-for.html">← Omoi for series概要</a><div class="docs-group" data-doc-group><p class="docs-group-label">Essentials</p><a data-doc-link href="omoi-for-docs.html">Overview</a><a data-doc-link href="omoi-for-details.html">Omoi for seriesについて</a><a data-doc-link href="omoi-for-getting-started.html">はじめる</a></div><div class="docs-group" data-doc-group><p class="docs-group-label">Using the series</p><a data-doc-link href="omoi-for-series.html">3つのシリーズ</a><a data-doc-link href="omoi-for-levels.html">Levelと問題数</a><a data-doc-link href="omoi-for-question.html">質問画面</a></div><div class="docs-group" data-doc-group><p class="docs-group-label">Reference</p><a data-doc-link href="omoi-for-safety.html">安全な使い方</a><a data-doc-link aria-current="page" href="omoi-for-technical.html">技術仕様</a></div><div class="docs-group" data-doc-group><p class="docs-group-label">Help</p><a data-doc-link href="omoi-for-help.html">ヘルプ</a></div><div class="docs-search"><label for="omoi-for-technical-filter">ドキュメントを検索</label><input id="omoi-for-technical-filter" data-doc-filter type="search" placeholder="Filter / キーワード"></div></div></details></aside>
+    <main id="docs-content" class="docs-main">
+      <p class="docs-breadcrumb"><a href="omoi-for-docs.html">Omoi for series Documentation</a> / 技術仕様</p>
+      <header class="docs-hero"><p class="eyebrow">REFERENCE / TECHNICAL</p><h1>技術仕様</h1><p class="docs-lead">Omoi for seriesは、ビルド工程を持たない静的Webアプリです。</p></header>
+      <section class="docs-page-content">
+        <h2>構成</h2>
+        <table class="spec-table"><tbody><tr><th scope="row">フロントエンド</th><td>HTML / CSS / JavaScript</td></tr><tr><th scope="row">質問データ</th><td>シリーズごとのJSON（Couples / Family / Friends）</td></tr><tr><th scope="row">バックエンド</th><td>なし。静的ファイルをブラウザへ配信</td></tr><tr><th scope="row">ビルドツール</th><td>不要</td></tr><tr><th scope="row">アカウント</th><td>不要</td></tr><tr><th scope="row">セッション状態</th><td>JavaScriptのメモリ上のみ。永続ストレージは使用しない</td></tr></tbody></table>
+
+        <h2>ファイルとURL</h2>
+        <table class="spec-table"><tbody><tr><th scope="row"><code>index.html</code></th><td>Omoi for全体のハブ。3シリーズへのリンクと全体の使い方</td></tr><tr><th scope="row"><code>couples/index.html</code></th><td>Omoi for Couples単体の入口</td></tr><tr><th scope="row"><code>family/index.html</code></th><td>Omoi for Family単体の入口</td></tr><tr><th scope="row"><code>friends/index.html</code></th><td>Omoi for Friends単体の入口</td></tr><tr><th scope="row"><code>shared/app.js</code></th><td>シリーズ共通のLevel選択・質問表示・セッション進行</td></tr><tr><th scope="row"><code>shared/questions/*.json</code></th><td>シリーズごとの質問データ</td></tr></tbody></table>
+
+        <h2>質問の選択ロジック</h2>
+        <div class="rule-list"><div class="rule-item"><span class="number">01</span><div><h3>シリーズを判定する</h3><p>ページの<code>data-audience</code>から、Couples・Family・FriendsのどのJSONを読むかを決めます。</p></div></div><div class="rule-item"><span class="number">02</span><div><h3>JSONを読み込む</h3><p>ブラウザが<code>shared/questions/{audience}.json</code>を読み込み、ID・質問文・Levelが正しいデータだけを利用します。</p></div></div><div class="rule-item"><span class="number">03</span><div><h3>Levelで絞る</h3><p>選択されたLevelと一致する質問のプールをつくります。</p></div></div><div class="rule-item"><span class="number">04</span><div><h3>ランダムに選ぶ</h3><p>プールをシャッフルし、3 / 5 / 10 / 15問のセッション数に合わせて質問を選びます。</p></div></div><div class="rule-item"><span class="number">05</span><div><h3>メモリ上で進める</h3><p>選択した質問と現在位置はJavaScriptのメモリ上で保持します。再読み込みやLevel変更でリセットされます。</p></div></div></div>
+
+        <h2>質問データ</h2>
+        <table class="spec-table"><tbody><tr><th scope="row">Couples</th><td>701問（Loves由来698問 + editorial 3問）</td></tr><tr><th scope="row">Family</th><td>200問（Level 1〜4を各50問）</td></tr><tr><th scope="row">Friends</th><td>200問（Level 1〜4を各50問）</td></tr><tr><th scope="row">質問オブジェクト</th><td><code>id</code>、<code>level</code>、<code>text</code>、<code>category</code>など</td></tr></tbody></table>
+        <pre class="code-block"><code>shared/questions/couples.json
+shared/questions/family.json
+shared/questions/friends.json
+
+// 共通ロジック
+fetch(`../shared/questions/${audience}.json`)</code></pre>
+        <p>Couplesの由来、編集質問、コミット・Blob・SHA-256の情報は、Take-forリポジトリの<code>tools/PROVENANCE.md</code>とREADMEで確認できます。</p>
+
+        <h2>正本とライセンス</h2>
+        <p>実装と質問データの最新状態は、公式サイトの説明文ではなく、Take-forリポジトリのmainブランチを正本とします。仕様やデータが変わった場合は、このページも更新します。</p>
+        <div class="link-list"><a class="external" href="https://github.com/VIUK-Light/Take-for">Take-forのソースコードを見る ↗</a><a class="external" href="https://github.com/VIUK-Light/Take-for/blob/main/README.md">READMEを読む ↗</a><a class="external" href="https://github.com/VIUK-Light/Take-for/blob/main/tools/PROVENANCE.md">データの出典と再現性を見る ↗</a></div>
+        <div class="next-page"><a href="omoi-for-safety.html">← 安全な使い方</a><a href="omoi-for-help.html">ヘルプ →</a></div>
+      </section>
+    </main>
+  </div>
+  <footer class="docs-footer"><span>Omoi for series Documentation / VIUK-Light</span><span><a href="index.html">VIUK-Light</a></span></footer>
+</body>
+</html>

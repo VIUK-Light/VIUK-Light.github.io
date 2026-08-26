@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Kizuna Documentation — VIUK-Light</title>
-  <meta name="description" content="Kizunaの考え方、安全設計、技術仕様、ヘルプをまとめたDocumentationです。">
+  <meta name="description" content="Kizunaの位置づけ、関係性、安全設計、技術仕様、プライバシー、ヘルプをまとめたDocumentationです。">
   <link rel="canonical" href="https://viuk-light.org/kizuna-docs.html">
   <link rel="icon" href="assets/viuk-light-logo.png?v=20260825" type="image/png">
   <link rel="stylesheet" href="style.css?v=20260826-row8">
@@ -12,61 +12,36 @@
 </head>
 <body class="docs-body">
   <a class="skip-link" href="#docs-content">本文へ移動</a>
-  <header class="docs-topbar">
-    <a class="docs-brand" href="kizuna-docs.html"><img class="brand-logo" src="assets/viuk-light-logo.png?v=20260825" alt="VIUK-Light公式ロゴ"><span>Kizuna Documentation</span></a>
-    <nav class="docs-top-actions" aria-label="ドキュメントから戻る"><a href="kizuna.html">Kizuna</a><a href="index.html">VIUK-Light</a></nav>
-  </header>
+  <header class="docs-topbar"><a class="docs-brand" href="kizuna-docs.html"><img class="brand-logo" src="assets/viuk-light-logo.png?v=20260825" alt="VIUK-Light公式ロゴ"><span>Kizuna Documentation</span></a><nav class="docs-top-actions" aria-label="ドキュメントから戻る"><a href="kizuna.html">Kizuna</a><a href="index.html">VIUK-Light</a></nav></header>
   <div class="docs-layout">
-    <aside class="docs-sidebar" aria-label="Kizunaドキュメントナビゲーション">
-      <details class="docs-mobile-nav" data-doc-mobile-nav open>
-        <summary>Documentation menu</summary>
-        <div class="docs-sidebar-content">
-          <a class="docs-back" href="kizuna.html">← Kizuna概要</a>
-          <div class="docs-group" data-doc-group>
-            <p class="docs-group-label">Essentials</p>
-            <a data-doc-link aria-current="page" href="kizuna-docs.html#overview">Overview</a>
-            <a data-doc-link href="kizuna-docs.html#principles">考え方</a>
-          </div>
-          <div class="docs-group" data-doc-group>
-            <p class="docs-group-label">Reference</p>
-            <a data-doc-link href="kizuna-details.html">安全設計と背景</a>
-            <a data-doc-link href="kizuna-technical.html">技術仕様</a>
-          </div>
-          <div class="docs-group" data-doc-group>
-            <p class="docs-group-label">Help</p>
-            <a data-doc-link href="kizuna-help.html">ヘルプ</a>
-          </div>
-          <div class="docs-search"><label for="kizuna-doc-filter">ドキュメントを検索</label><input id="kizuna-doc-filter" data-doc-filter type="search" placeholder="Filter / キーワード"></div>
-        </div>
-      </details>
-    </aside>
+    <aside class="docs-sidebar" aria-label="Kizunaドキュメントナビゲーション"><details class="docs-mobile-nav" data-doc-mobile-nav open><summary>Documentation menu</summary><div class="docs-sidebar-content"><a class="docs-back" href="kizuna.html">← Kizuna概要</a><div class="docs-group" data-doc-group><p class="docs-group-label">Essentials</p><a data-doc-link aria-current="page" href="kizuna-docs.html">Overview</a><a data-doc-link href="kizuna-docs.html#position">位置づけ</a><a data-doc-link href="kizuna-docs.html#reading-order">読む順番</a></div><div class="docs-group" data-doc-group><p class="docs-group-label">Safety</p><a data-doc-link href="kizuna-details.html">安全設計と背景</a><a data-doc-link href="kizuna-details.html#limits">できること・できないこと</a></div><div class="docs-group" data-doc-group><p class="docs-group-label">Reference</p><a data-doc-link href="kizuna-technical.html">技術仕様</a><a data-doc-link href="kizuna-docs.html#privacy">データと秘密情報</a></div><div class="docs-group" data-doc-group><p class="docs-group-label">Help</p><a data-doc-link href="kizuna-help.html">ヘルプ</a></div><div class="docs-search"><label for="kizuna-doc-filter">ドキュメントを検索</label><input id="kizuna-doc-filter" data-doc-filter type="search" placeholder="Filter / キーワード"></div></div></details></aside>
     <main id="docs-content" class="docs-main">
       <p class="docs-breadcrumb"><a href="kizuna.html">Kizuna</a> / Documentation</p>
-      <header class="docs-hero">
-        <h1>Kizuna Documentation</h1>
-        <p class="docs-lead">Kizunaの考え方、安全設計、技術仕様、ヘルプへの入口です。</p>
-      </header>
+      <header class="docs-hero"><p class="eyebrow">KIZUNA / DOCUMENTATION</p><h1>Kizuna Documentation</h1><p class="docs-lead">Kizunaの考え方、安全設計、技術仕様、データの確認、ヘルプへの入口です。</p></header>
       <section class="docs-page-content">
-        <h2 id="overview">Overview</h2>
-        <p>Kizunaは、AIキャラクターとの会話・関係・物語を扱うアプリです。関係が続くことと、利用者を囲い込むことを分け、利用者が自分のペースで使えることを重視します。</p>
-        <div class="docs-index">
-          <a href="#principles"><strong>考え方</strong><span>関係を育てることと安全性</span></a>
-          <a href="kizuna-details.html"><strong>安全設計と背景</strong><span>文脈・危険な場面・限界</span></a>
-          <a href="kizuna-technical.html"><strong>技術仕様</strong><span>構成とビルド方法</span></a>
-          <a href="kizuna-help.html"><strong>ヘルプ</strong><span>FAQと問題報告</span></a>
-          <a class="external" href="https://github.com/VIUK-Light/Kizuna"><strong>GitHubリポジトリ ↗</strong><span>ソースコードとIssue</span></a>
-        </div>
+        <h2>Overview</h2>
+        <p>Kizunaは、AIキャラクターとの会話・関係・物語を扱うアプリです。単発のチャットだけでなく、キャラクター性、世界観、記憶、関係性が続くことを前提にしています。</p>
+        <p>継続的な関係を扱うからこそ、利用者が何を使っているかを理解し、必要なときに距離を取れることが重要です。このDocumentationでは、考え方と実装上の確認先を分けて説明します。</p>
+        <figure class="docs-screenshot is-phone"><img src="assets/kizuna/conversation.webp" alt="Kizunaの会話画面。AIキャラクターとの会話と物語の場面が表示されている。"><figcaption>Kizuna / 会話と物語の画面</figcaption></figure>
+        <div class="docs-index"><a href="#position"><strong>Kizunaの位置づけ</strong><span>何を扱い、何の代わりではないか</span></a><a href="kizuna-details.html"><strong>安全設計と背景</strong><span>関係性・文脈・危険な場面</span></a><a href="kizuna-details.html#limits"><strong>できること・できないこと</strong><span>限界と支援につなぐ判断</span></a><a href="#reading-order"><strong>読む順番</strong><span>概要から技術・ヘルプへ</span></a><a href="kizuna-technical.html"><strong>技術仕様</strong><span>対応環境・構成・ビルド</span></a><a href="#privacy"><strong>データと秘密情報</strong><span>利用者が確認すべき経路</span></a><a href="kizuna-help.html"><strong>ヘルプ</strong><span>開発中の利用・FAQ・報告</span></a><a class="external" href="https://github.com/VIUK-Light/Kizuna"><strong>GitHubリポジトリ ↗</strong><span>README・ソース・Issue</span></a></div>
 
-        <h2 id="principles">考え方</h2>
-        <p>関係を育てることと、依存を促すことは同じではありません。Kizunaは、会話の継続率や利用時間だけを目的にせず、利用者が会話・記憶・モデル・接続先を理解し、必要なときに距離を取れることを設計の前提にします。</p>
-        <p>AIであることや回答に誤りがあり得ることも隠しません。現実の人間関係、医療、緊急対応の代わりにはならないため、深刻な状況では適切な支援先につながってください。</p>
+        <h2 id="position">Kizunaの位置づけ</h2>
+        <p>Kizunaは、AIキャラクターを使った創作や会話のためのオープンソースアプリです。キャラクターとの関係を続けること自体を最大化するのではなく、利用者が自分のペースで会話し、会話の外の生活や人間関係も維持できることを重視します。</p>
+        <table class="spec-table"><tbody><tr><th scope="row">扱うもの</th><td>キャラクター、世界観、記憶、会話、関係性、物語</td></tr><tr><th scope="row">目指す体験</th><td>創作と会話を、自分で理解しながら続ける</td></tr><tr><th scope="row">設計しないもの</th><td>利用時間・継続率の最大化、独占的な誘導、現実の関係の置き換え</td></tr><tr><th scope="row">現在の状態</th><td>開発中。対応環境と機能はGitHubの最新情報を確認</td></tr></tbody></table>
 
-        <h2>次に読む</h2>
-        <div class="link-list">
-          <a href="kizuna-details.html">Kizunaの安全設計と背景 →</a>
-          <a href="kizuna-technical.html">技術仕様とビルド方法 →</a>
-          <a href="kizuna-help.html">ヘルプと問題報告 →</a>
-        </div>
+        <h2 id="reading-order">読む順番</h2>
+        <div class="rule-list"><div class="rule-item"><span class="number">01</span><div><h3>安全設計と背景を読む</h3><p>関係性を扱う理由、通常の創作と危険な場面の区別、AIの限界を確認します。</p></div></div><div class="rule-item"><span class="number">02</span><div><h3>技術仕様を読む</h3><p>SwiftUI、対応環境、XcodeGen、ローカル／リモートモデル、秘密情報の扱いを確認します。</p></div></div><div class="rule-item"><span class="number">03</span><div><h3>ヘルプを読む</h3><p>開発中の利用前に確認すること、モデルや接続先、問題報告の情報を確認します。</p></div></div><div class="rule-item"><span class="number">04</span><div><h3>READMEとソースを確認する</h3><p>このサイトは概要の整理です。最新の仕様・依存関係・変更はGitHubを正本として確認します。</p></div></div></div>
+
+        <h2 id="principles">設計の要点</h2>
+        <div class="rule-list"><div class="rule-item"><span class="number">01</span><div><h3>関係が続くことと、囲い込むことを分ける</h3><p>継続する物語や記憶を扱いながら、利用者をアプリ内に留め続けることを目的にしません。</p></div></div><div class="rule-item"><span class="number">02</span><div><h3>文脈を失わせない</h3><p>創作・ロールプレイ・現実の相談を区別し、通常の会話を必要以上に一律拒否へ置き換えないことを目指します。</p></div></div><div class="rule-item"><span class="number">03</span><div><h3>危険な場面では支援へつなぐ</h3><p>現実の危険や深刻な悩みを、アプリだけで解決しようとしません。適切な支援先へつながることを優先します。</p></div></div><div class="rule-item"><span class="number">04</span><div><h3>AIであることを隠さない</h3><p>回答には誤りがあり得ること、会話が人間同士の関係そのものではないことを明確にします。</p></div></div></div>
+
+        <h2 id="privacy">データと秘密情報</h2>
+        <p>Kizunaは、会話・記憶・モデル・接続先・秘密情報を扱う構成を目指しています。どのデータがどこに保存・送信されるかは、選択するモデル経路と実装の更新によって変わり得るため、利用前に最新のREADMEと設定を確認してください。</p>
+        <table class="spec-table"><tbody><tr><th scope="row">会話・記憶</th><td>保存場所、削除方法、バックアップの有無を確認する</td></tr><tr><th scope="row">モデル経路</th><td>ローカルモデルかリモートモデルか、送信先と利用規約を確認する</td></tr><tr><th scope="row">秘密情報</th><td>APIキーやアクセストークンをIssue・ログ・スクリーンショットへ出さない</td></tr><tr><th scope="row">最新の正本</th><td>公式README、ソースコード、Issue、変更履歴</td></tr></tbody></table>
+        <div class="notice"><p>Kizunaは医療、緊急対応、人間関係の代替ではありません。差し迫った危険や深刻な悩みがある場合は、アプリだけで判断せず、地域の緊急窓口、医療機関、信頼できる人へつながってください。</p></div>
+
+        <h2>既存ドキュメント</h2>
+        <div class="link-list"><a href="kizuna-details.html">Kizunaの安全設計と背景 →</a><a href="kizuna-technical.html">技術仕様とビルド方法 →</a><a href="kizuna-help.html">ヘルプと問題報告 →</a><a class="external" href="https://github.com/VIUK-Light/Kizuna">READMEとソースコードを開く ↗</a></div>
       </section>
     </main>
   </div>
