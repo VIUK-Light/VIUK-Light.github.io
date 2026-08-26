@@ -1654,6 +1654,11 @@ body:not(.docs-body) .footer-nav a:hover { background: rgba(255,255,255,.08); co
 /* Omoi for: a separate conversation series, distinct from Omoi's deeper themes. */
 .home-product-row--omoi-for .home-product-media { background: #fff7f2; }
 .home-product-row--omoi-for .home-product-meta { color: var(--orange-dark); }
+.home-product-row--omoi-for .home-product-catch { margin-top: 19px; color: var(--orange-dark); font-size: clamp(24px, 2.4vw, 34px); font-weight: 750; line-height: 1.25; }
+.home-product-row--omoi-for .home-product-catch + p { margin-top: 15px; }
+.home-product-media-gallery--omoi-for { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.home-product-media-gallery--omoi-for img { height: min(440px, 35vw); object-fit: contain; background: #fff; border: 1px solid rgba(45,30,24,.12); box-shadow: 0 12px 24px rgba(70,38,28,.1); }
+.project-catch { margin: 0 0 12px; color: var(--orange-dark); font-size: clamp(24px, 2.4vw, 34px); font-weight: 750; line-height: 1.25; }
 .for-series-preview { display: grid; gap: 10px; }
 .for-series-preview-item { position: relative; display: grid; grid-template-columns: 1fr 22px; gap: 4px 16px; padding: 18px 20px; border: 1px solid rgba(45,30,24,.16); background: #fff; color: var(--ink); text-decoration: none; transition: transform .18s ease, box-shadow .18s ease; }
 .for-series-preview-item:hover, .for-series-preview-item:focus-visible { transform: translateX(5px); box-shadow: 0 8px 18px rgba(70,38,28,.1); }
@@ -1707,6 +1712,9 @@ body:not(.docs-body) .footer-nav a:hover { background: rgba(255,255,255,.08); co
 }
 @media (max-width: 600px) {
   .home-product-row--omoi-for .home-product-media { padding: 20px 18px 16px; }
+  .home-product-media-gallery--omoi-for { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .home-product-media-gallery--omoi-for img { height: 300px; }
+  .home-product-row--omoi-for .home-product-catch, .project-catch { font-size: 26px; }
   .project-hero-media--omoi-for { padding: 18px; }
   .for-series-section, .for-flow-section { padding: 48px 0; }
   .for-series-card { padding: 20px; }
