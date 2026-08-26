@@ -7,7 +7,7 @@
       href: 'about.html',
       items: [
         ['About', 'about.html', 'VIUK-Lightについて'],
-        ['Projects', 'projects.html', 'OmoiとKizunaの一覧'],
+        ['Projects', 'projects.html', 'Omoi、Omoi for series、Kizunaの一覧'],
         ['Principles', 'principles.html', '開発時の判断基準']
       ]
     },
@@ -17,7 +17,10 @@
         ['Projects一覧', 'projects.html', '公開・開発中のプロジェクト'],
         ['Omoi', 'omoi.html', '質問カード / Web'],
         ['Omoi Documentation', 'omoi-docs.html', '使い方・技術仕様・ヘルプ'],
-        ['Kizuna', 'kizuna.html', 'AIキャラクター / iOS・macOS']
+        ['Omoi for series', 'omoi-for.html', '想いを伝え合うWebシリーズ'],
+        ['Omoi for Documentation', 'omoi-for-docs.html', '使い方・シリーズ・仕様'],
+        ['Kizuna', 'kizuna.html', 'AIキャラクター / iOS・macOS'],
+        ['Kizuna Documentation', 'kizuna-docs.html', '詳細・技術仕様・ヘルプ']
       ]
     },
     Principles: {

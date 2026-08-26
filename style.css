@@ -389,6 +389,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 .docs-topbar { min-height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 10px 26px; background: #242321; color: #fff; }
 .docs-brand { display: inline-flex; align-items: center; gap: 11px; color: #fff; font-size: 19px; font-weight: 700; }
 .docs-brand .brand-logo { width: auto; height: 34px; max-width: 48px; mix-blend-mode: normal; }
+.docs-top-actions { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 16px; }
 .docs-top-actions a { color: rgba(255,255,255,.72); font-size: 14px; text-decoration: none; }
 .docs-top-actions a:hover { color: #fff; }
 .docs-layout { display: grid; grid-template-columns: 270px minmax(0,1fr); min-height: calc(100vh - 64px); background: #fff; }
@@ -548,6 +549,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   .docs-topbar { min-height: 62px; padding: 10px 14px; }
   .docs-brand { font-size: 16px; }
   .docs-brand .brand-logo { height: 30px; max-width: 42px; }
+  .docs-top-actions { gap: 10px; text-align: right; }
   .docs-main { padding: 36px 18px 58px; }
   .docs-main h1 { font-size: 42px; }
   .docs-lead, .docs-main p { font-size: 16px; }
