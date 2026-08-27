@@ -1817,3 +1817,49 @@ body:not(.docs-body) .footer-nav a:hover { background: rgba(255,255,255,.08); co
   }
   .home-product-media-gallery--omoi-for img { height: 360px; }
 }
+
+/* Mobile reading pass: keep product copy first, then evidence, then a compact action row. */
+@media (max-width: 600px) {
+  .home-product-row .home-product-copy { order: 1; }
+  .home-product-row .home-product-media { order: 2; }
+  .home-product-row { gap: 22px; padding-block: 28px; }
+  .home-product-row--omoi .home-product-media img,
+  .home-product-row--kizuna .home-product-media img { height: 280px; }
+  .home-product-row--omoi-for .home-product-media-gallery--omoi-for img { height: 300px; }
+
+  .project-directory-row {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+    padding-block: 28px 30px;
+  }
+  .project-directory-copy { order: 1; padding-top: 0; }
+  .project-directory-media { order: 2; padding: 18px 14px 12px; }
+  .project-directory-row .project-directory-media img { height: 210px; }
+  .project-directory-actions {
+    order: 3;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px 18px;
+    margin-top: 2px;
+  }
+  .project-directory-actions .button,
+  .project-directory-actions .button.primary,
+  .project-directory-actions .button.secondary {
+    width: auto;
+    min-height: 0;
+    padding: 0 0 3px;
+    border: 0 !important;
+    border-bottom: 1px solid currentColor !important;
+    border-radius: 0;
+    background: transparent !important;
+    color: var(--orange-dark) !important;
+    font-size: 14px;
+  }
+  .project-directory-actions .button:hover { transform: none; color: var(--ink) !important; }
+
+  .docs-top-actions a:first-child { display: none; }
+  .docs-hero--overview { display: block; }
+  .docs-hero--overview img { margin: 19px auto 0; }
+}
