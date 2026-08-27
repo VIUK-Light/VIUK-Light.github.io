@@ -1860,6 +1860,7 @@ body:not(.docs-body) .footer-nav a:hover { background: rgba(255,255,255,.08); co
   .project-directory-actions .button:hover { transform: none; color: var(--ink) !important; }
 
   .docs-top-actions a:first-child { display: none; }
+  .docs-top-actions a { white-space: nowrap; }
   .docs-hero--overview { display: block; }
   .docs-hero--overview img { margin: 19px auto 0; }
 }
