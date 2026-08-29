@@ -1,4 +1,4 @@
-const DATA_VERSION = '20260827-main-e2c0d73';
+const DATA_VERSION = '20260829-beta-5c87e79';
 const DATA_FILES = [1, 2, 3, 4].map((level) => `assets/omoi/data/level${level}.json?v=${DATA_VERSION}`);
 const PAGE_SIZE = 36;
 
@@ -134,7 +134,8 @@ async function loadQuestions() {
   updateFilterOptions();
 }
 
-[search, levelFilter, categoryFilter, sensitivityFilter].forEach((control) => control.addEventListener("input", updateFilterOptions));
+search.addEventListener("input", updateFilterOptions);
+[levelFilter, categoryFilter, sensitivityFilter].forEach((control) => control.addEventListener("change", updateFilterOptions));
 loadMore.addEventListener("click", () => {
   state.visible += PAGE_SIZE;
   renderCatalog();
