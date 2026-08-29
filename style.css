@@ -1864,3 +1864,92 @@ body:not(.docs-body) .footer-nav a:hover { background: rgba(255,255,255,.08); co
   .docs-hero--overview { display: block; }
   .docs-hero--overview img { margin: 19px auto 0; }
 }
+
+/* Privacy policy: a quiet reading page, separate from product documentation. */
+.legal-page {
+  width: min(calc(100% - 72px), 760px);
+  margin-inline: auto;
+  padding: 68px 0 104px;
+}
+.legal-page-header {
+  padding-bottom: 38px;
+  border-bottom: 1px solid var(--line);
+}
+.legal-page-header .breadcrumb { margin-bottom: 18px; }
+.legal-page h1 {
+  max-width: 680px;
+  margin: 0;
+  font-size: clamp(40px, 5vw, 56px);
+  line-height: 1.16;
+}
+.legal-page-lead {
+  max-width: 620px;
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.8;
+}
+.legal-page-date {
+  margin: 26px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+.legal-page-content {
+  max-width: 680px;
+  padding-top: 44px;
+}
+.legal-page-content section {
+  margin: 0;
+  padding: 0 0 38px;
+}
+.legal-page-content section + section {
+  padding-top: 38px;
+  border-top: 1px solid var(--line);
+}
+.legal-page-content h2 {
+  margin: 0 0 14px;
+  font-size: 26px;
+  line-height: 1.35;
+}
+.legal-page-content p {
+  margin: 0 0 16px;
+  font-size: 16px;
+  line-height: 1.9;
+}
+.legal-page-content p:last-child { margin-bottom: 0; }
+.legal-page-content code {
+  padding: 1px 5px;
+  border-radius: 3px;
+  background: var(--surface-soft);
+  font-size: .9em;
+}
+.legal-warning {
+  margin-top: 22px;
+  padding: 16px 18px;
+  border-left: 2px solid var(--ink);
+  background: transparent;
+}
+.legal-warning p { color: var(--muted); font-size: 15px; }
+.legal-link-list {
+  display: grid;
+  gap: 8px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.legal-link-list a {
+  color: var(--orange-dark);
+  font-size: 15px;
+  text-underline-offset: 4px;
+}
+@media (max-width: 600px) {
+  .legal-page { width: calc(100% - 40px); padding: 40px 0 72px; }
+  .legal-page-header { padding-bottom: 30px; }
+  .legal-page h1 { font-size: 36px; letter-spacing: -.04em; }
+  .legal-page-lead { font-size: 16px; }
+  .legal-page-content { padding-top: 34px; }
+  .legal-page-content section { padding-bottom: 30px; }
+  .legal-page-content section + section { padding-top: 30px; }
+  .legal-page-content h2 { font-size: 24px; }
+  .legal-page-content p { font-size: 15px; line-height: 1.85; }
+}
