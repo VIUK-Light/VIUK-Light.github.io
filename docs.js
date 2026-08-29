@@ -23,6 +23,16 @@
     media.addEventListener('change', sync);
   });
 
+  document.querySelectorAll('.docs-footer').forEach((footer) => {
+    if (footer.querySelector('a[href="privacy.html"]')) return;
+    const item = document.createElement('span');
+    const link = document.createElement('a');
+    link.href = 'privacy.html';
+    link.textContent = 'Privacy';
+    item.append(link);
+    footer.append(item);
+  });
+
   const filters = document.querySelectorAll('[data-doc-filter]');
 
   filters.forEach((input) => {

@@ -174,5 +174,14 @@
     });
     header.insertBefore(mobileToggle, nav);
   }
+
+  document.querySelectorAll('.footer-nav').forEach((footerNav) => {
+    if (footerNav.querySelector('a[href="privacy.html"]')) return;
+    const link = document.createElement('a');
+    link.href = 'privacy.html';
+    link.textContent = 'Privacy';
+    footerNav.append(link);
+  });
+
   nav.dataset.enhanced = 'true';
 })();
