@@ -2,7 +2,7 @@
 
 VIUK-Lightは、人が自分で考え、選び、前へ進むためのオープンソースのアプリとWeb体験を開発する独立したプロジェクトです。
 
-[公式サイトを見る](https://viuk-light.org/) · [Projects](https://viuk-light.org/projects.html) · [Principles](https://viuk-light.org/principles.html) · [GitHub Organization](https://github.com/VIUK-Light)
+[公式サイトを見る](https://viuk-light.org/) · [Projects](https://viuk-light.org/projects.html) · [Principles](https://viuk-light.org/principles.html) · [Contributing](CONTRIBUTING.md) · [GitHub Organization](https://github.com/VIUK-Light)
 
 ## Projects
 
@@ -27,6 +27,20 @@ VIUK-Lightは、人が自分で考え、選び、前へ進むためのオープ�
 ## Development
 
 このリポジトリはVIUK-Light公式サイトの静的ソースです。HTML / CSS / JavaScriptで構成し、GitHub Pagesから公開しています。
+
+主な入口は、`index.html`（Home）、`projects.html`（公開プロジェクト）、`style.css`（共通表示）、`site-nav.js`（公式ナビゲーション）、`docs.js`（Documentationの補助機能）です。
+
+ローカル確認は、リポジトリ直下で次を実行します。
+
+```sh
+python3 -m http.server 8000
+```
+
+その後、`http://127.0.0.1:8000/` を開きます。
+
+## Contributing
+
+文章、リンク、表示、アクセシビリティ、ドキュメントの改善を歓迎します。詳細は [CONTRIBUTING.md](CONTRIBUTING.md) を参照してください。
 
 ## License
 
