@@ -2154,3 +2154,74 @@ body:not(.docs-body) .site-nav-trigger[aria-current="page"] {
 @media (max-width: 700px) {
   .docs-scope-list { grid-template-columns: 1fr; gap: 0; }
 }
+
+/* Documentation simplification: one reading column, quiet navigation, no promotional hero. */
+.docs-body { overflow-x: clip; }
+.docs-topbar { max-width: 100%; }
+.docs-brand { min-width: 0; }
+.docs-brand span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.docs-layout { grid-template-columns: 218px minmax(0, 1fr); }
+.docs-sidebar {
+  padding: 24px 18px;
+  border-right-color: var(--line);
+  background: #fff;
+}
+.docs-back { margin-bottom: 20px; font-size: 13px; font-weight: 600; }
+.docs-group { margin-top: 20px; }
+.docs-group-label { margin-bottom: 3px; font-size: 11px; font-weight: 650; }
+.docs-sidebar a[data-doc-link] { min-height: 36px; padding: 6px 9px; font-size: 14px; }
+.docs-search { margin-top: 22px; padding-top: 15px; }
+.docs-search input { min-height: 38px; font-size: 13px; }
+
+.docs-main { padding: 42px clamp(26px, 6vw, 82px) 76px; }
+.docs-main > *, .docs-page-content { max-width: 800px; }
+.docs-breadcrumb { margin-bottom: 20px; font-size: 13px; }
+.docs-hero { padding: 0 0 24px; border-bottom: 1px solid var(--line); }
+.docs-hero--overview {
+  display: block;
+  min-height: 0;
+  margin-bottom: 0;
+  padding: 0 0 24px;
+  border-top: 0;
+  border-bottom: 1px solid var(--line);
+  overflow: visible;
+}
+.docs-hero--overview img { display: none; }
+.docs-main h1, .docs-hero--overview h1 { margin-bottom: 9px; font-size: clamp(34px, 3.5vw, 44px); line-height: 1.14; }
+.docs-lead { max-width: 680px; font-size: 16px; line-height: 1.7; }
+.docs-page-content { padding-top: 22px; }
+.docs-page-content > h2, .docs-main h2 { margin: 38px 0 12px; font-size: clamp(25px, 2.5vw, 32px); }
+.docs-main h3 { margin-top: 26px; font-size: 19px; }
+.docs-main p { max-width: 720px; line-height: 1.78; }
+
+.docs-index { display: block; margin-top: 20px; border-top-color: var(--ink); }
+.docs-index a, .docs-index a:hover { display: grid; grid-template-columns: minmax(180px, .65fr) minmax(0, 1.35fr); gap: 24px; padding: 14px 0; }
+.docs-index a:hover { padding-left: 7px; }
+.docs-index strong { margin: 0; font-size: 15px; }
+.docs-index span { align-self: center; font-size: 13px; }
+
+.docs-scope-list { display: block; margin: 18px 0 30px; }
+.docs-scope-list section { display: grid; grid-template-columns: minmax(160px, .6fr) minmax(0, 1.4fr); gap: 24px; padding: 15px 0; }
+.docs-scope-list h3 { margin: 0; font-size: 16px; }
+.docs-scope-list p { align-self: center; }
+
+.info-grid { display: block; margin: 22px 0; border-top: 1px solid var(--ink); }
+.info-card { padding: 15px 0; border: 0; border-bottom: 1px solid var(--line); background: transparent; }
+.info-card h3 { font-size: 17px; }
+.docs-question-card, .notice { border-radius: 0; box-shadow: none; }
+.docs-screenshot img, .project-preview img { border-radius: 2px; }
+.docs-footer { background: #fff; border-top: 1px solid var(--line); color: var(--muted); }
+.docs-footer a { color: var(--ink); }
+
+@media (max-width: 860px) {
+  .docs-layout { display: block; }
+  .docs-sidebar { padding: 8px 18px; background: #fff; }
+  .docs-main { padding: 34px 20px 60px; }
+}
+
+@media (max-width: 560px) {
+  .docs-main h1, .docs-hero--overview h1 { font-size: 34px; }
+  .docs-index a, .docs-index a:hover,
+  .docs-scope-list section { display: block; padding: 14px 0; }
+  .docs-index span, .docs-scope-list p { display: block; margin-top: 5px; }
+}
