@@ -1970,10 +1970,11 @@ body { line-height: 1.7; }
 h1, h2, h3 { font-weight: 650; letter-spacing: -.035em; }
 
 body:not(.docs-body) .site-header {
-  min-height: 68px;
+  min-height: 62px;
   background: #20201f;
 }
-.brand-logo { height: 36px; max-width: 52px; }
+.brand { font-size: 16px; font-weight: 650; letter-spacing: -.02em; }
+.brand-logo { height: 30px; max-width: 44px; }
 .site-nav { gap: 16px; }
 .site-nav > a, .site-nav-trigger {
   min-height: 50px;
@@ -2031,9 +2032,9 @@ body:not(.docs-body) .site-nav-trigger[aria-current="page"] {
 .home-product-media img { border-radius: 2px; box-shadow: none; }
 
 /* Documentation stays structured, but loses the large promotional orange block. */
-.docs-topbar { min-height: 58px; padding-block: 8px; }
-.docs-brand { font-size: 17px; font-weight: 700; }
-.docs-brand .brand-logo { height: 30px; max-width: 42px; }
+.docs-topbar { min-height: 54px; padding-block: 7px; }
+.docs-brand { font-size: 16px; font-weight: 650; }
+.docs-brand .brand-logo { height: 28px; max-width: 40px; }
 .docs-main { padding-top: 46px; }
 .docs-main h1 { font-size: clamp(38px, 4vw, 52px); letter-spacing: -.045em; }
 .docs-main h2 { font-size: clamp(27px, 2.8vw, 38px); }
@@ -2057,7 +2058,9 @@ body:not(.docs-body) .site-nav-trigger[aria-current="page"] {
 .docs-sidebar a[data-doc-link] { border-radius: 0; }
 
 @media (max-width: 600px) {
-  body:not(.docs-body) .site-header { min-height: 64px; }
+  body:not(.docs-body) .site-header { min-height: 60px; }
+  .brand { font-size: 15px; }
+  .brand-logo { height: 28px; max-width: 40px; }
   .site-nav-mobile-toggle { border-radius: 2px; }
   .page-intro { padding: 40px 0 30px; }
   .page-intro h1, .inner-hero h1 { font-size: 38px; }
