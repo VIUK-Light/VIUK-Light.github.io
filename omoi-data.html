@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>データ構造 — Omoi Documentation</title>
+  <meta name="description" content="Omoiの643件の質問データ、JSONスキーマ、カテゴリ、視点、content_warning、ライセンスを説明します。">
+  <link rel="canonical" href="https://viuk-light.org/omoi-data.html"><link rel="icon" href="assets/viuk-light-logo.png?v=20260825" type="image/png"><link rel="stylesheet" href="style.css?v=20260830-expanded"><script src="docs.js?v=20260830-expanded" defer></script>
+</head>
+<body class="docs-body">
+  <a class="skip-link" href="#docs-content">本文へ移動</a>
+  <header class="docs-topbar"><a class="docs-brand" href="omoi-docs.html"><img class="brand-logo" src="assets/viuk-light-logo.png?v=20260825" alt="VIUK-Light公式ロゴ"><span>Omoi Documentation</span></a><nav class="docs-top-actions" aria-label="ドキュメントから戻る"><a href="index.html">VIUK-Light</a></nav></header>
+  <div class="docs-layout">
+    <aside class="docs-sidebar" aria-label="Omoiドキュメントナビゲーション"><details class="docs-mobile-nav" data-doc-mobile-nav open><summary>Documentation menu</summary><div class="docs-sidebar-content"><a class="docs-back" href="omoi.html">← Omoi概要</a><div class="docs-group" data-doc-group><p class="docs-group-label">Essentials</p><a data-doc-link href="omoi-docs.html">Overview</a><a data-doc-link href="omoi-details.html">Omoiについて</a><a data-doc-link href="omoi-getting-started.html">はじめる</a></div><div class="docs-group" data-doc-group><p class="docs-group-label">Using Omoi</p><a data-doc-link href="omoi-levels.html">話の深さと問題数</a><a data-doc-link href="omoi-question.html">質問画面</a></div><div class="docs-group" data-doc-group><p class="docs-group-label">Data & Quality</p><a data-doc-link href="omoi-question-catalog.html">質問カタログ</a><a data-doc-link aria-current="page" href="omoi-data.html">データ構造</a><a data-doc-link href="omoi-editorial.html">編集方針</a><a data-doc-link href="omoi-accessibility.html">アクセシビリティ</a><a data-doc-link href="omoi-validation.html">検証と公開</a><a data-doc-link href="omoi-technical.html">技術仕様</a><a data-doc-link href="omoi-safety.html">安全設計</a></div><div class="docs-group" data-doc-group><p class="docs-group-label">Help</p><a data-doc-link href="omoi-help.html">ヘルプ</a></div><div class="docs-search"><label for="omoi-data-filter">ドキュメントを検索</label><input id="omoi-data-filter" data-doc-filter type="search" placeholder="Filter / キーワード"></div></div></details></aside>
+    <main id="docs-content" class="docs-main">
+      <p class="docs-breadcrumb"><a href="omoi-docs.html">Omoi Documentation</a> / データ構造</p>
+      <header class="docs-hero"><h1>データ構造</h1><p class="docs-lead">643件の質問を、Levelだけでなく論点・視点・配慮度まで検査できるJSONとして管理します。</p></header>
+      <section class="docs-page-content">
+        <h2>現在のデータセット</h2>
+        <table class="spec-table"><tbody><tr><th scope="row">Level 1</th><td>163件 — 身近な経験から始める短い入口</td></tr><tr><th scope="row">Level 2</th><td>80件 — 日常・集団・境界線から意見の違いへ進む橋渡し</td></tr><tr><th scope="row">Level 3</th><td>168件 — 制度・社会・役割の判断。全件にdetail.text</td></tr><tr><th scope="row">Level 4</th><td>232件 — 個人的利害・倫理的トレードオフ。全件にdetail.text</td></tr><tr><th scope="row">合計</th><td>643件</td></tr></tbody></table>
+
+        <h2>共通フィールド</h2>
+        <table class="spec-table"><tbody><tr><th scope="row"><code>id</code></th><td>全Levelで重複しない固定ID</td></tr><tr><th scope="row"><code>level</code></th><td>配置ファイルと一致する1〜4の整数</td></tr><tr><th scope="row"><code>sensitivity</code></th><td>難しさではなく、話す前に配慮が必要な度合い</td></tr><tr><th scope="row"><code>category</code></th><td>12の上位分類</td></tr><tr><th scope="row"><code>topic</code></th><td>具体的な論点。検索・編集・近重複確認の軸</td></tr><tr><th scope="row"><code>question</code></th><td>画面に表示する問題文</td></tr></tbody></table>
+
+        <h2>Level 3・4の追加フィールド</h2>
+        <table class="spec-table"><tbody><tr><th scope="row"><code>perspective</code></th><td><code>affected</code> / <code>actor</code> / <code>decision_maker</code> / <code>observer</code></td></tr><tr><th scope="row"><code>role</code></th><td>任意。parent、teacher、friendなど具体的な立場</td></tr><tr><th scope="row"><code>detail.text</code></th><td>結論を決めず、対立・背景・条件を説明する文章</td></tr><tr><th scope="row"><code>detail.sources</code></th><td>任意。出典タイトルとHTTP(S) URL</td></tr><tr><th scope="row"><code>content_warning</code></th><td>任意。高リスク内容の管理値配列</td></tr></tbody></table>
+        <pre class="code-block"><code>{
+  "id": "example-001",
+  "level": 4,
+  "sensitivity": 4,
+  "category": "ethics_and_decision_making",
+  "topic": "example_tradeoff",
+  "perspective": "decision_maker",
+  "question": "...",
+  "content_warning": ["crime_and_punishment"],
+  "detail": { "text": "...", "sources": [] }
+}</code></pre>
+
+        <h2>12の上位カテゴリ</h2>
+        <table class="spec-table"><tbody><tr><th scope="row">self_and_values</th><td>55件</td></tr><tr><th scope="row">relationships_and_communication</th><td>224件</td></tr><tr><th scope="row">family_and_care</th><td>39件</td></tr><tr><th scope="row">school_and_youth</th><td>134件</td></tr><tr><th scope="row">work_and_economy</th><td>24件</td></tr><tr><th scope="row">gender_sexuality_and_identity</th><td>60件</td></tr><tr><th scope="row">health_and_disability</th><td>19件</td></tr><tr><th scope="row">technology_media_and_privacy</th><td>21件</td></tr><tr><th scope="row">justice_safety_and_crime</th><td>28件</td></tr><tr><th scope="row">society_public_policy_and_environment</th><td>21件</td></tr><tr><th scope="row">culture_religion_and_history</th><td>1件</td></tr><tr><th scope="row">ethics_and_decision_making</th><td>17件</td></tr></tbody></table>
+
+        <h2>Level 4の主視点</h2>
+        <table class="spec-table"><tbody><tr><th scope="row">affected</th><td>110件 / 47.4%</td></tr><tr><th scope="row">actor</th><td>47件 / 20.3%</td></tr><tr><th scope="row">decision_maker</th><td>47件 / 20.3%</td></tr><tr><th scope="row">observer</th><td>28件 / 12.1%</td></tr></tbody></table>
+
+        <h2>content_warning</h2>
+        <p>表示前に答えを誘導するためではなく、編集・監査・将来の運用判断で高リスク内容を特定するための管理値です。個別カード前の確認画面は追加せず、Level警告とスキップ操作を維持します。</p>
+        <table class="spec-table"><tbody><tr><th scope="row">pregnancy_and_reproduction</th><td>68件</td></tr><tr><th scope="row">family_conflict</th><td>38件</td></tr><tr><th scope="row">crime_and_punishment</th><td>31件</td></tr><tr><th scope="row">sexual_violence</th><td>20件</td></tr><tr><th scope="row">privacy_and_surveillance</th><td>13件</td></tr><tr><th scope="row">medical_and_end_of_life</th><td>12件</td></tr><tr><th scope="row">abuse_and_coercion</th><td>11件</td></tr><tr><th scope="row">discrimination_and_hate</th><td>11件</td></tr><tr><th scope="row">infidelity</th><td>7件</td></tr><tr><th scope="row">self_harm</th><td>0件</td></tr></tbody></table>
+
+        <h2>正本とライセンス</h2>
+        <p>質問JSONと編集ルールはOmoiリポジトリを正本とし、公式カタログへ同一データを同期します。ソースコードはMIT License、質問・解説などのコンテンツはCC BY-SA 4.0です。</p>
+        <div class="link-list"><a class="external" href="https://github.com/VIUK-Light/Omoi/blob/Beta/QUESTION_DATA_SCHEMA.md">QUESTION_DATA_SCHEMA.mdを読む</a><a class="external" href="https://github.com/VIUK-Light/Omoi">質問JSONとソースを見る</a></div>
+      </section>
+    </main>
+  </div>
+  <footer class="docs-footer"><span>Omoi Documentation / VIUK-Light</span><span><a href="index.html">VIUK-Light</a></span></footer>
+</body>
+</html>

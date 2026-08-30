@@ -2170,6 +2170,7 @@ body:not(.docs-body) .site-nav-trigger[aria-current="page"] {
 .docs-group { margin-top: 20px; }
 .docs-group-label { margin-bottom: 3px; font-size: 11px; font-weight: 650; }
 .docs-sidebar a[data-doc-link] { min-height: 36px; padding: 6px 9px; font-size: 14px; }
+.docs-sidebar a[data-doc-link][hidden], .docs-sidebar [data-doc-group][hidden] { display: none !important; }
 .docs-search { margin-top: 22px; padding-top: 15px; }
 .docs-search input { min-height: 38px; font-size: 13px; }
 
