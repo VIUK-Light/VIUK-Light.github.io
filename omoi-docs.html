@@ -7,8 +7,8 @@
   <meta name="description" content="Omoiの使い方、公開情報、ヘルプをまとめたドキュメントです。">
   <link rel="canonical" href="https://viuk-light.org/omoi-docs.html">
   <link rel="icon" href="assets/viuk-light-logo.png?v=20260825" type="image/png">
-  <link rel="stylesheet" href="style.css?v=20260830-clarity-2">
-  <script src="docs.js" defer></script>
+  <link rel="stylesheet" href="style.css?v=20260830-depth">
+  <script src="docs.js?v=20260830-depth-motion" defer></script>
 </head>
 <body class="docs-body">
   <a class="skip-link" href="#docs-content">本文へ移動</a>
@@ -24,7 +24,13 @@
       <section class="docs-page-content">
         <h2>Overview</h2>
         <p>Omoiは、質問を選び、自分の言葉で考えるためのWeb体験です。</p>
+        <p>会話の答えや内容を保存せず、Levelを選び、話したくない問いは飛ばせます。質問そのもの、背景の解説、データの構造、問題報告の入口を分けて公開しています。</p>
+        <h2>このDocumentationで確認できること</h2>
+        <div class="docs-scope-list"><section><h3>使う前に</h3><p>Levelの意味、質問数、スキップ、安全設計を確認します。</p></section><section><h3>質問データ</h3><p>643件の質問、Level、topic、sensitivity、背景解説を質問カタログで確認します。</p></section><section><h3>実装と公開</h3><p>静的Webアプリとしての構成、JSON、ライセンス、GitHub上の正本を確認します。</p></section></div>
+        <h2>正本と更新</h2>
+        <table class="spec-table"><tbody><tr><th scope="row">質問データ</th><td>level1.json〜level4.json。公開カタログは現在643件を読み込みます。</td></tr><tr><th scope="row">編集ルール</th><td>Level、sensitivity、topic、perspective、content_warningの意味は公式リポジトリのスキーマ文書を確認します。</td></tr><tr><th scope="row">最新の実装</th><td>質問文・解説・表示ロジックの更新はGitHubリポジトリを正本として確認します。</td></tr></tbody></table>
         <div class="docs-index"><a href="omoi-details.html"><strong>Omoiについて</strong><span>背景と使い方</span></a><a href="omoi-getting-started.html"><strong>はじめる</strong><span>開始から最初の質問まで</span></a><a href="omoi-levels.html"><strong>話の深さと問題数</strong><span>Level 1〜4と3〜15問</span></a><a href="omoi-question.html"><strong>質問画面</strong><span>次へ・スキップ・解説</span></a><a href="omoi-question-catalog.html"><strong>質問カタログ</strong><span>643問の質問・Level・詳細文</span></a><a href="omoi-safety.html"><strong>安全設計</strong><span>止める・離れる・知る</span></a><a href="omoi-technical.html"><strong>技術仕様</strong><span>コードとデータ構造</span></a><a href="omoi-help.html"><strong>ヘルプ</strong><span>FAQと問題報告</span></a></div>
+        <div class="link-list"><a class="external" href="https://github.com/VIUK-Light/Omoi">OmoiのREADME・JSON・Issueを開く ↗</a></div>
       </section>
     </main>
   </div>

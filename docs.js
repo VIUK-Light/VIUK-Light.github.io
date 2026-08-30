@@ -57,4 +57,26 @@
       }
     });
   });
+
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (!reducedMotion.matches && 'IntersectionObserver' in window) {
+    const revealTargets = document.querySelectorAll('.docs-hero, .docs-page-content > h2, .docs-page-content > p, .docs-scope-list, .docs-index, .docs-page-content > .spec-table, .docs-page-content > .rule-list, .docs-page-content > .link-list, .docs-page-content > .notice');
+    if (revealTargets.length > 0) {
+      document.documentElement.classList.add('motion-ready');
+      revealTargets.forEach((target, index) => {
+        target.dataset.reveal = '';
+        if (index > 0 && index < 3) target.dataset.revealDelay = String(index);
+      });
+
+      const observer = new IntersectionObserver((entries, currentObserver) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-visible');
+          currentObserver.unobserve(entry.target);
+        });
+      }, { threshold: 0.08 });
+
+      revealTargets.forEach((target) => observer.observe(target));
+    }
+  }
 })();

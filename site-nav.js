@@ -54,5 +54,27 @@
     footerNav.append(link);
   });
 
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (!reducedMotion.matches && 'IntersectionObserver' in window) {
+    const revealTargets = document.querySelectorAll('.home-intro, .home-system-map, .home-product-row, .page-intro, .inner-hero, .project-directory-row, .content-layout, .project-content, .legal-page');
+    if (revealTargets.length > 0) {
+      document.documentElement.classList.add('motion-ready');
+      revealTargets.forEach((target, index) => {
+        target.dataset.reveal = '';
+        if (index > 0 && index < 3) target.dataset.revealDelay = String(index);
+      });
+
+      const observer = new IntersectionObserver((entries, currentObserver) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-visible');
+          currentObserver.unobserve(entry.target);
+        });
+      }, { threshold: 0.08 });
+
+      revealTargets.forEach((target) => observer.observe(target));
+    }
+  }
+
   nav.dataset.enhanced = 'true';
 })();
