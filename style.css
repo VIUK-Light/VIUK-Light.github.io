@@ -2068,23 +2068,6 @@ body:not(.docs-body) .site-nav-trigger[aria-current="page"] {
   .docs-hero--overview { padding: 24px 0; }
 }
 
-/* Public project map: actual platforms and sources, without decorative metrics. */
-.home-system-map {
-  display: grid;
-  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
-  gap: clamp(36px, 8vw, 112px);
-  padding: 36px 0 38px;
-  border-bottom: 1px solid var(--line);
-}
-.home-system-map h2 { margin: 0 0 10px; font-size: 22px; line-height: 1.25; }
-.home-system-map p { max-width: 430px; margin: 0; color: var(--muted); font-size: 15px; line-height: 1.75; }
-.home-system-map dl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 28px; margin: 0; border-top: 1px solid var(--ink); }
-.home-system-map dl > div { padding: 15px 0; border-bottom: 1px solid var(--line); }
-.home-system-map dt { margin-bottom: 4px; color: var(--orange-dark); font: 650 12px/1.3 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .02em; }
-.home-system-map dd { margin: 0; color: var(--ink); font-size: 15px; line-height: 1.5; }
-.home-system-map dd a { color: inherit; text-decoration-color: var(--orange); text-underline-offset: 4px; }
-.home-system-map dd a:hover { color: var(--orange-dark); }
-
 /* Documentation depth uses reading lists rather than promotional cards. */
 .docs-scope-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 24px; margin: 20px 0 34px; border-top: 1px solid var(--ink); }
 .docs-scope-list section { padding: 18px 0; border-bottom: 1px solid var(--line); }
@@ -2100,7 +2083,5 @@ body:not(.docs-body) .site-nav-trigger[aria-current="page"] {
 }
 
 @media (max-width: 700px) {
-  .home-system-map { display: block; padding: 28px 0 30px; }
-  .home-system-map dl { margin-top: 22px; }
   .docs-scope-list { grid-template-columns: 1fr; gap: 0; }
 }

@@ -56,7 +56,7 @@
 
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   if (!reducedMotion.matches && 'IntersectionObserver' in window) {
-    const revealTargets = document.querySelectorAll('.home-intro, .home-system-map, .home-product-row, .page-intro, .inner-hero, .project-directory-row, .content-layout, .project-content, .legal-page');
+    const revealTargets = document.querySelectorAll('.home-intro, .home-product-row, .page-intro, .inner-hero, .project-directory-row, .content-layout, .project-content, .legal-page');
     if (revealTargets.length > 0) {
       document.documentElement.classList.add('motion-ready');
       revealTargets.forEach((target, index) => {
