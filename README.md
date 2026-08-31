@@ -1,16 +1,17 @@
 # VIUK-Light
 
-VIUK-Lightは、人が自分で考え、選び、前へ進むためのオープンソースのアプリとWeb体験を開発する独立したプロジェクトです。
+VIUK-Lightは、GitHub Organizationとして活動する、**法人ではない独立したオープンソース開発組織**です。
+現在は、社会や価値観、身近な関係について対話するための**Omoiシリーズ**を中心に開発しています。
 
 [公式サイトを見る](https://viuk-light.org/) · [Projects](https://viuk-light.org/projects.html) · [Principles](https://viuk-light.org/principles.html) · [Contributing](CONTRIBUTING.md) · [GitHub Organization](https://github.com/VIUK-Light)
 
 ## Projects
 
-| Project | What it is | Links |
-| --- | --- | --- |
-| Omoi | 社会・倫理・価値観・人生について話すための質問カード | [公式ページ](https://viuk-light.org/omoi.html) · [Repository](https://github.com/VIUK-Light/Omoi) |
-| Omoi for series | Couples・Family・Friendsに合わせて会話の入口を選ぶWebシリーズ | [公式ページ](https://viuk-light.org/omoi-for.html) · [Open](https://omoi-for.viuk-light.org/) |
-| Kizuna | AIキャラクターとの会話・関係・物語を、利用者のペースで育てるiOS / macOSアプリ | [公式ページ](https://viuk-light.org/kizuna.html) · [Repository](https://github.com/VIUK-Light/Kizuna) |
+| Project | Status | What it is | Links |
+| --- | --- | --- | --- |
+| Omoi | **Active development** | 社会・倫理・価値観・人生について話すための質問カード | [公式ページ](https://viuk-light.org/omoi.html) · [Repository](https://github.com/VIUK-Light/Omoi) |
+| Omoi for series | **Active development** | Couples・Family・Friendsに合わせて会話の入口を選ぶWebシリーズ | [公式ページ](https://viuk-light.org/omoi-for.html) · [Open](https://omoi-for.viuk-light.org/) |
+| Kizuna | **Maintenance** | AIキャラクターとの会話・関係・物語を、利用者のペースで育てるiOS / macOSアプリ。新機能開発は最小限とし、主に重大な不具合やセキュリティ上の問題に対応します。 | [公式ページ](https://viuk-light.org/kizuna.html) · [Repository](https://github.com/VIUK-Light/Kizuna) |
 
 ## Principles
 
