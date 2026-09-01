@@ -3,7 +3,7 @@
   if (essentialsGroup) {
     const essentialsDocs = [
       ['omoi-docs.html', 'Overview'],
-      ['omoi-concept.html', 'Omoi（想い）'],
+      ['omoi-concept.html', 'Omoi（重い・想い・思い）'],
       ['omoi-details.html', 'Omoiについて'],
       ['omoi-getting-started.html', 'はじめる']
     ];
@@ -54,7 +54,7 @@
     const overviewIndex = document.querySelector('.docs-index');
     if (overviewIndex) {
       const overviewDocs = [
-        ['omoi-concept.html', 'Omoi（想い）', '名前・思想・重い話と想い'],
+        ['omoi-concept.html', 'Omoi（重い・想い・思い）', '名前に重なる3つの意味と、作った理由'],
         ['omoi-details.html', 'Omoiについて', '背景と使い方'],
         ['omoi-getting-started.html', 'はじめる', '開始から最初の質問まで'],
         ['omoi-levels.html', '話の深さと問題数', 'Level 1〜4と3〜15問'],
