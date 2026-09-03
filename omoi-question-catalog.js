@@ -16,6 +16,11 @@ const search = document.getElementById("questionSearch");
 const levelFilter = document.getElementById("questionLevelFilter");
 const categoryFilter = document.getElementById("questionCategoryFilter");
 const sensitivityFilter = document.getElementById("questionSensitivityFilter");
+const filterControls = [search, levelFilter, categoryFilter, sensitivityFilter];
+
+loadMore.hidden = true;
+list.setAttribute("aria-busy", "true");
+filterControls.forEach((control) => { control.disabled = true; });
 
 function createOption(value, label) {
   const option = document.createElement("option");
@@ -41,6 +46,14 @@ function createMeta(question) {
   if (question.perspective) fields.push(`perspective: ${question.perspective}`);
   meta.textContent = fields.join(" / ");
   return meta;
+}
+
+function createWarning(question) {
+  if (!Array.isArray(question.content_warning) || question.content_warning.length === 0) return null;
+  const warning = document.createElement("p");
+  warning.className = "question-warning";
+  warning.textContent = `content_warning: ${question.content_warning.join(", ")}`;
+  return warning;
 }
 
 function createDetails(question) {
@@ -94,6 +107,8 @@ function createQuestionEntry(question) {
   const title = document.createElement("h3");
   title.textContent = question.question;
   entry.append(header, title, createMeta(question));
+  const warning = createWarning(question);
+  if (warning) entry.appendChild(warning);
   const details = createDetails(question);
   if (details) entry.appendChild(details);
   return entry;
@@ -106,7 +121,7 @@ function updateFilterOptions() {
   const sensitivity = sensitivityFilter.value;
 
   state.filtered = state.all.filter((question) => {
-    const searchable = [question.question, question.category, question.topic, question.detail?.text].filter(Boolean).join(" ").toLocaleLowerCase("ja-JP");
+    const searchable = [question.question, question.category, question.topic, question.content_warning?.join(" "), question.detail?.text].filter(Boolean).join(" ").toLocaleLowerCase("ja-JP");
     return (!query || searchable.includes(query)) &&
       (!level || String(question.level) === level) &&
       (!category || question.category === category) &&
@@ -125,13 +140,18 @@ function renderCatalog() {
 }
 
 async function loadQuestions() {
-  const responses = await Promise.all(DATA_FILES.map((file) => fetch(file).then((response) => response.json())));
+  const responses = await Promise.all(DATA_FILES.map((file) => fetch(file).then((response) => {
+    if (!response.ok) throw new Error(`${file}: HTTP ${response.status}`);
+    return response.json();
+  })));
   state.all = responses.flatMap((questions, index) => questions.map((question) => ({
     ...question,
     sourceFileLevel: index + 1
   })));
   fillCategoryOptions();
+  filterControls.forEach((control) => { control.disabled = false; });
   updateFilterOptions();
+  list.setAttribute("aria-busy", "false");
 }
 
 search.addEventListener("input", updateFilterOptions);
@@ -141,8 +161,12 @@ loadMore.addEventListener("click", () => {
   renderCatalog();
 });
 
-loadQuestions().catch(() => {
+loadQuestions().catch((error) => {
+  console.error("Omoi question catalog could not load", error);
+  list.setAttribute("aria-busy", "false");
   resultCount.textContent = "質問データを読み込めませんでした";
   empty.hidden = false;
   empty.textContent = "質問JSONを読み込めませんでした。GitHubの公式データを確認してください。";
+  loadMore.hidden = true;
+  loadMore.disabled = true;
 });

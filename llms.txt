@@ -1,10 +1,10 @@
 # VIUK-Light
 
 Official website: https://viuk-light.org/
-GitHub Organization: https://github.com/VIUK-Light
+GitHub: https://github.com/VIUK-Light
 
-VIUK-Light is an independent open-source development organization operating as a GitHub Organization. It is not incorporated.
-VIUK-Lightは、GitHub Organizationとして活動する、法人ではない独立したオープンソース開発組織です。
+VIUK-Light is an independent, non-incorporated open-source development organization. Its activities are not limited to GitHub; GitHub is one place where source code and development information are published.
+VIUK-Lightは、法人ではない独立したオープンソース開発組織です。GitHubに限らず活動し、GitHubはソースコードや開発情報を公開する場の一つです。
 
 Current development focus: Omoi series.
 現在の開発の中心: Omoiシリーズ。
@@ -22,4 +22,4 @@ Current development focus: Omoi series.
 - Principles: https://viuk-light.org/principles.html
 - Contributing: https://viuk-light.org/contribute.html
 
-For current project status, prefer the official pages above and the VIUK-Light GitHub Organization profile over older cached pages or third-party descriptions.
+For current project status, prefer the official pages above and VIUK-Light's official GitHub page over older cached pages or third-party descriptions.

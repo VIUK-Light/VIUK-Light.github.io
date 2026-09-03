@@ -1,6 +1,29 @@
 (() => {
+  const isOmoiDocumentation = window.location.pathname.split('/').pop()?.startsWith('omoi-');
+  const topbar = document.querySelector('.docs-topbar');
+
+  if (isOmoiDocumentation && topbar) {
+    const brand = topbar.querySelector('.docs-brand');
+    const actions = topbar.querySelector('.docs-top-actions');
+    if (brand && !topbar.querySelector('.docs-title-link')) {
+      const titleLink = document.createElement('a');
+      titleLink.className = 'docs-title-link';
+      titleLink.href = 'omoi-docs.html';
+      titleLink.textContent = 'Omoi Documentation';
+      brand.after(titleLink);
+    }
+    const omoiLink = actions?.querySelector('a[href="omoi.html"]');
+    if (omoiLink) {
+      omoiLink.href = 'https://omoi.viuk-light.org/';
+      omoiLink.classList.add('external');
+      omoiLink.textContent = 'Omoiを開く';
+    }
+  }
+
   const essentialsGroup = Array.from(document.querySelectorAll('[data-doc-group]')).find((group) => group.querySelector('a[href="omoi-details.html"]'));
   if (essentialsGroup) {
+    const label = essentialsGroup.querySelector('.docs-group-label');
+    if (label) label.textContent = 'はじめに';
     const essentialsDocs = [
       ['omoi-docs.html', 'Overview'],
       ['omoi-concept.html', 'Omoi（重い・想い・思い）'],
@@ -21,10 +44,16 @@
     });
   }
 
+  const usingGroup = Array.from(document.querySelectorAll('[data-doc-group]')).find((group) => group.querySelector('a[href="omoi-levels.html"]'));
+  if (usingGroup) {
+    const label = usingGroup.querySelector('.docs-group-label');
+    if (label) label.textContent = '使い方';
+  }
+
   const referenceGroup = Array.from(document.querySelectorAll('[data-doc-group]')).find((group) => group.querySelector('a[href="omoi-technical.html"]'));
   if (referenceGroup) {
     const label = referenceGroup.querySelector('.docs-group-label');
-    if (label) label.textContent = 'Data & Quality';
+    if (label) label.textContent = 'データと品質';
 
     const referenceDocs = [
       ['omoi-question-catalog.html', '質問カタログ'],
@@ -48,10 +77,36 @@
       if (window.location.pathname.endsWith(`/${href}`)) link.setAttribute('aria-current', 'page');
       referenceGroup.appendChild(link);
     });
+
+    let participationGroup = Array.from(document.querySelectorAll('[data-doc-group]')).find((group) => group.querySelector('a[href="omoi-contributing.html"]'));
+    if (!participationGroup) {
+      participationGroup = document.createElement('div');
+      participationGroup.className = 'docs-group';
+      participationGroup.dataset.docGroup = '';
+      const groupLabel = document.createElement('p');
+      groupLabel.className = 'docs-group-label';
+      groupLabel.textContent = '参加する';
+      const link = document.createElement('a');
+      link.href = 'omoi-contributing.html';
+      link.dataset.docLink = '';
+      link.textContent = '質問データに参加する';
+      participationGroup.append(groupLabel, link);
+      referenceGroup.after(participationGroup);
+    }
+    const participationLink = participationGroup.querySelector('a[href="omoi-contributing.html"]');
+    if (participationLink && window.location.pathname.endsWith('/omoi-contributing.html')) {
+      participationLink.setAttribute('aria-current', 'page');
+    }
+  }
+
+  const helpGroup = Array.from(document.querySelectorAll('[data-doc-group]')).find((group) => group.querySelector('a[href="omoi-help.html"]'));
+  if (helpGroup) {
+    const label = helpGroup.querySelector('.docs-group-label');
+    if (label) label.textContent = 'ヘルプ';
   }
 
   if (window.location.pathname.endsWith('/omoi-docs.html')) {
-    const overviewIndex = document.querySelector('.docs-index');
+    const overviewIndex = document.querySelector('[data-doc-overview-index]');
     if (overviewIndex) {
       const overviewDocs = [
         ['omoi-concept.html', 'Omoi（重い・想い・思い）', '名前に重なる3つの意味と、作った理由'],
@@ -66,6 +121,7 @@
         ['omoi-validation.html', '検証と公開', '自動検査・ブラウザ・同期・公開'],
         ['omoi-technical.html', '技術仕様', 'コードと表示ロジック'],
         ['omoi-safety.html', '安全設計', '止める・離れる・知る'],
+        ['omoi-contributing.html', '質問データに参加する', '提案・編集・検証・レビュー'],
         ['omoi-help.html', 'ヘルプ', 'FAQと問題報告']
       ];
 
@@ -121,7 +177,10 @@
     });
 
     document.addEventListener('keydown', (event) => {
-      if (event.key === '/' && document.activeElement !== input) {
+      const activeElement = document.activeElement;
+      const isEditing = activeElement instanceof HTMLElement &&
+        (activeElement.matches('input, textarea, select') || activeElement.isContentEditable);
+      if (event.key === '/' && !event.metaKey && !event.ctrlKey && !event.altKey && !isEditing) {
         event.preventDefault();
         input.focus();
       }

@@ -1,20 +1,172 @@
 <!doctype html>
 <html lang="ja">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Omoi（重い・想い・思い） — Omoi Documentation</title><meta name="description" content="Omoiという名前に重なる、話題の重い、作った理由にある想い、自分の考えとしての思いを説明します。"><link rel="canonical" href="https://viuk-light.org/omoi-concept.html"><link rel="icon" href="assets/viuk-light-logo.png?v=20260825" type="image/png"><link rel="stylesheet" href="style.css?v=20260901-board"><script src="docs.js?v=20260830-expanded-2" defer></script></head>
-<body class="docs-body"><a class="skip-link" href="#docs-content">本文へ移動</a><header class="docs-topbar"><a class="docs-brand" href="index.html" aria-label="VIUK-Light ホーム"><img class="brand-logo" src="assets/viuk-light-logo.png?v=20260825" alt="VIUK-Light公式ロゴ"><span>VIUK-Light</span></a><nav class="docs-top-actions" aria-label="ドキュメントから戻る"><a href="omoi.html">Omoi</a></nav></header><div class="docs-layout"><aside class="docs-sidebar" aria-label="Omoiドキュメントナビゲーション"><details class="docs-mobile-nav" data-doc-mobile-nav open><summary>Documentation menu</summary><div class="docs-sidebar-content"><a class="docs-back" href="omoi.html">← Omoi概要</a><div class="docs-group" data-doc-group><p class="docs-group-label">Essentials</p><a data-doc-link href="omoi-docs.html">Overview</a><a data-doc-link aria-current="page" href="omoi-concept.html">Omoi（重い・想い・思い）</a><a data-doc-link href="omoi-details.html">Omoiについて</a><a data-doc-link href="omoi-getting-started.html">はじめる</a></div><div class="docs-group" data-doc-group><p class="docs-group-label">Using Omoi</p><a data-doc-link href="omoi-levels.html">話の深さと問題数</a><a data-doc-link href="omoi-question.html">質問画面</a></div><div class="docs-group" data-doc-group><p class="docs-group-label">Data & Quality</p><a data-doc-link href="omoi-question-catalog.html">質問カタログ</a><a data-doc-link href="omoi-data.html">データ構造</a><a data-doc-link href="omoi-editorial.html">編集方針</a><a data-doc-link href="omoi-accessibility.html">アクセシビリティ</a><a data-doc-link href="omoi-validation.html">検証と公開</a><a data-doc-link href="omoi-technical.html">技術仕様</a><a data-doc-link href="omoi-safety.html">安全設計</a></div><div class="docs-group" data-doc-group><p class="docs-group-label">Help</p><a data-doc-link href="omoi-help.html">ヘルプ</a></div><div class="docs-search"><label for="omoi-concept-filter">ドキュメントを検索</label><input id="omoi-concept-filter" data-doc-filter type="search" placeholder="Filter / キーワード"></div></div></details></aside>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Omoi（重い・想い・思い） — Omoi Documentation</title><meta name="description" content="Omoiという名前に重なる、話題の重い、作った理由にある想い、自分の考えとしての思いを説明します。"><link rel="canonical" href="https://viuk-light.org/omoi-concept.html"><link rel="icon" href="assets/viuk-light-logo.png?v=20260825" type="image/png"><link rel="stylesheet" href="style.css?v=20260902-docs-type"><script src="docs.js?v=20260902-editorial" defer></script></head>
+<body class="docs-body"><a class="skip-link" href="#docs-content">本文へ移動</a><header class="docs-topbar"><a class="docs-brand" href="index.html" aria-label="VIUK-Light ホーム"><img class="brand-logo" src="assets/viuk-light-logo.png?v=20260825" width="712" height="638" alt="VIUK-Light公式ロゴ"><span>VIUK-Light</span></a><nav class="docs-top-actions" aria-label="ドキュメントから戻る"><a href="omoi.html">Omoi</a></nav></header><div class="docs-layout"><aside class="docs-sidebar" aria-label="Omoiドキュメントナビゲーション"><details class="docs-mobile-nav" data-doc-mobile-nav open><summary>Documentation menu</summary><div class="docs-sidebar-content"><a class="docs-back" href="omoi.html">← Omoi概要</a><div class="docs-group" data-doc-group><p class="docs-group-label">Essentials</p><a data-doc-link href="omoi-docs.html">Overview</a><a data-doc-link aria-current="page" href="omoi-concept.html">Omoi（重い・想い・思い）</a><a data-doc-link href="omoi-details.html">Omoiについて</a><a data-doc-link href="omoi-getting-started.html">はじめる</a></div><div class="docs-group" data-doc-group><p class="docs-group-label">Using Omoi</p><a data-doc-link href="omoi-levels.html">話の深さと問題数</a><a data-doc-link href="omoi-question.html">質問画面</a></div><div class="docs-group" data-doc-group><p class="docs-group-label">Data & Quality</p><a data-doc-link href="omoi-question-catalog.html">質問カタログ</a><a data-doc-link href="omoi-data.html">データ構造</a><a data-doc-link href="omoi-editorial.html">編集方針</a><a data-doc-link href="omoi-accessibility.html">アクセシビリティ</a><a data-doc-link href="omoi-validation.html">検証と公開</a><a data-doc-link href="omoi-technical.html">技術仕様</a><a data-doc-link href="omoi-safety.html">安全設計</a></div><div class="docs-group" data-doc-group><p class="docs-group-label">Help</p><a data-doc-link href="omoi-help.html">ヘルプ</a></div><div class="docs-search"><label for="omoi-concept-filter">ドキュメントを検索</label><input id="omoi-concept-filter" data-doc-filter type="search" placeholder="Filter / キーワード"></div></div></details></aside>
 <main id="docs-content" class="docs-main"><p class="docs-breadcrumb"><a href="omoi-docs.html">Omoi Documentation</a> / Omoi（重い・想い・思い）</p><header class="docs-hero"><h1>Omoi（重い・想い・思い）</h1><p class="docs-lead">扱う話題の「重い」、作った理由にある「想い」、自分の考えとしての「思い」が重なる名前です。</p></header><section class="docs-page-content">
-<h2>3つのOmoi</h2><p>Omoiを作った理由には、普段は言葉にしにくいことも、自分の想いとして誰かと話せる場所をつくりたいという想いがあります。その制作の理由を、扱う話題の「重い」と、考えや判断としての「思い」に掛け合わせた名前です。</p><table class="spec-table"><tbody><tr><th scope="row">重い</th><td>社会、倫理、価値観、家族、信頼、人生の選択など、日常では避けられやすい話題の重さ</td></tr><tr><th scope="row">想い</th><td>Omoiを作った理由にある気持ちと、人や社会、関係に向けて抱く想い</td></tr><tr><th scope="row">思い</th><td>問題に向き合ったときに生まれる、自分自身の考え、判断、言葉</td></tr></tbody></table><p>同じ問題でも、自分が影響を受ける側、行動した側、決める側、そばで見る側では思いが変わります。Omoiは、その違いを問題文として置き、相手の答えを変えるより先に「なぜそう思うか」を知る入口をつくります。</p>
+<h2>名前に3つが重なっている</h2>
+<p>ローマ字のOmoiは、漢字を一つに固定しません。読む位置によって、重い、想い、思いのどれが前面に出るかが変わります。</p>
+<table class="spec-table"><tbody><tr><th scope="row">重い</th><td>社会、倫理、価値観、家族、信頼、人生の選択など、日常では避けられやすい話題の重さ</td></tr><tr><th scope="row">想い</th><td>Omoiを作った理由にある気持ちと、人や社会、関係に向けて抱く想い</td></tr><tr><th scope="row">思い</th><td>問題に向き合ったときに生まれる、自分自身の考え、判断、言葉</td></tr></tbody></table>
+<p>表の三つは別の漢字です。同じ音のうえに載っているため、名前としては同時に持てます。</p>
+<h3>固定しない</h3>
+<ul>
+<li>ローマ字はOmoiのまま</li>
+<li>漢字は読む位置で前面が変わる</li>
+<li>同じ音のうえに、話題・理由・その場の考えが載る</li>
+</ul>
 
-<blockquote class="quote-block"><p>同じ考えになるためのものではない。違う考えを知るために。</p></blockquote>
+<h2>重い</h2>
+<h3>話題の重さ</h3>
+<p>社会、倫理、価値観、家族、信頼、人生の選択など、雑談の軽さとは層が違います。</p>
+<h3>日常では避ける</h3>
+<p>意見が分かれそうなテーマは、「今話すことではない」と判断されやすいです。関係が近くても、切り出さないままになることがあります。</p>
+<h3>曖昧にすると何の話か分からない</h3>
+<p>単語を弱めすぎると、問いの対象が消えます。何について話しているかが分からなければ、思いを置く場所もなくなります。</p>
+<h3>重いと日常</h3>
+<ul>
+<li>重い — 社会、倫理、価値観、家族、信頼、人生の選択。意見が割れ、関係が近くても切り出さないままになりやすい</li>
+<li>日常 — 予定、天気、近況、作業の話。雑談の軽さで足り、対象を弱めても会話は続く</li>
+</ul>
 
-<h2>想いと思いをサービスへ預けない</h2><p>Omoiは、利用者の答えを入力させ、保存し、評価する仕組みを持ちません。質問はブラウザへ表示しますが、会話は目の前の人との間に残ります。</p><table class="spec-table"><tbody><tr><th scope="row">アカウント</th><td>不要</td></tr><tr><th scope="row">回答入力</th><td>なし</td></tr><tr><th scope="row">回答保存</th><td>なし</td></tr><tr><th scope="row">回答評価</th><td>なし</td></tr><tr><th scope="row">広告・課金</th><td>なし</td></tr></tbody></table><p>答えをデータとして集めないことで、誰かに見せるための意見ではなく、その場で生まれた想いと思いを自分の言葉で話せます。</p>
+<h2>想い</h2>
+<h3>作った理由</h3>
+<p>想いのほうは、話題そのものではありません。人と、普段は話さないことを話せる場が欲しい、という気持ちです。</p>
+<h3>人と話せる場所が欲しい</h3>
+<p>関係が近くても、切り出す言葉がないことはあります。問いがあれば、その場にいる人と話を始められます。</p>
+<ul>
+<li>場を残す側の気持ち</li>
+<li>話題そのものではない</li>
+<li>問いがあれば切り出せる</li>
+</ul>
+<h3>Lightと同じく、少しでも明るくしたい</h3>
+<p>VIUK-Lightは、暗闇を照らすことを向きにしています。大きな問題を一度に終わらせることより、少しの明るさを積むことを選びます。Omoiを残した理由も、その向きです。</p>
 
-<h2>重さを選べる</h2><p>重い話を扱うことと、いつでも重い話を強制することは別です。Level 1〜4は、話す深さと判断の重さを選ぶための段階です。どのLevelでも、話したくない問いは「今回は話さない」で飛ばせます。</p><div class="rule-list"><div class="rule-item"><span class="number">01</span><div><h3>身近な経験から始める</h3><p>自分の好みや日常から、言葉にしやすい入口をつくります。</p></div></div><div class="rule-item"><span class="number">02</span><div><h3>意見の違いへ進む</h3><p>友人、集団、境界線など、身近な衝突を扱います。</p></div></div><div class="rule-item"><span class="number">03</span><div><h3>社会や制度を考える</h3><p>自分から離れた制度の問いでも、理由や影響を話します。</p></div></div><div class="rule-item"><span class="number">04</span><div><h3>自分に置き換える</h3><p>家族、信頼、責任、人生の選択を、当事者として考えます。</p></div></div></div>
+<h2>思い</h2>
+<h3>その場で生まれる自分の考え</h3>
+<p>診断の結果や、あとから整えた投稿ではありません。問いを読んだ直後に、自分の口から出る考え、判断、言葉です。</p>
+<ul>
+<li>診断結果ではない</li>
+<li>整えた投稿ではない</li>
+<li>直後の口頭の考え、判断、言葉</li>
+</ul>
+<h3>画面が代わりに答えない</h3>
+<p>表示するのは問いです。採点も、推奨する結論も、代理の回答もありません。答えるのは、その場にいる人です。</p>
+<ul>
+<li>問いだけを出す</li>
+<li>採点しない</li>
+<li>推奨結論を出さない</li>
+<li>代理回答を出さない</li>
+</ul>
 
-<h2>強い言葉を消さない</h2><p>重いテーマを扱うとき、言葉を曖昧にしすぎると何を話しているか分からなくなります。死刑、安楽死、不倫、性犯罪など、その問いに必要な語は避けません。</p><p>一方で、強い単語を置くだけで誰かを悪者にしたり、答えを決めたりしないよう、問題文とdetailで視点や条件を分けます。直接的であることと、一方的であることは同じではありません。</p>
+<h2>3つは別物だが同時に起きる</h2>
+<p>「重い話を扱うサービス」「想いを込めたサービス」「思いを話すサービス」のどれか一つだけにすると、他の二つが飾りになります。</p>
+<h3>層が違う</h3>
+<p>重いのは話題、想いは理由、思いはその場の考えです。どれか一つに畳むと、名前の厚みが消えます。</p>
+<h3>想いと思い</h3>
+<ul>
+<li>想い — 抱え続けている理由。場を残す側</li>
+<li>思い — 今、口に出る考え。問いを読んだ直後の話し言葉</li>
+</ul>
+<h3>同じ会話で動く</h3>
+<p>問いを開くと、重い話題が先にあり、想いから残した場で、思いが口に出ます。順番に選ぶものではなく、同じ会話の中で動きます。</p>
+<ul>
+<li>重い — 先にある話題</li>
+<li>想い — 場を残した理由</li>
+<li>思い — 口に出る考え</li>
+</ul>
 
-<h2>考えが変わらなくてもいい</h2><p>会話の結果として合意する必要はありません。相手の理由を聞いても、自分の考えが変わらないことがあります。それでも、相手が何を守ろうとしているか、どの経験から答えているかを知ることはできます。</p><p>Omoiにとっての成功は、一つの正解へ集まることではなく、話す前より相手の考えを具体的に理解できることです。</p>
+<h2>同じ問題でも立場で思いが変わる</h2>
+<p>影響を受ける側、行動した側、決める側、そばで見る側では、出てくる言葉が変わります。Omoiは、その違いを問題文として置きます。</p>
+<h3>4つの主視点</h3>
+<table class="spec-table"><tbody><tr><th scope="row">affected</th><td>影響を受ける側</td></tr><tr><th scope="row">actor</th><td>行動した側</td></tr><tr><th scope="row">decision_maker</th><td>決める側</td></tr><tr><th scope="row">observer</th><td>そばで見る側</td></tr></tbody></table>
+<p>定義と件数は、<a href="omoi-data.html">データ構造</a>に書いています。「なぜそう思うか」を先に聞けるように、視点を混ぜません。</p>
+<ul>
+<li>視点は混ぜない</li>
+<li>立場の違いは問題文として置く</li>
+<li>「なぜそう思うか」を先に聞けるようにする</li>
+</ul>
 
-<h2>名前を支える実装</h2><table class="spec-table"><tbody><tr><th scope="row">質問</th><td>643件のJSONとして公開</td></tr><tr><th scope="row">視点</th><td>affected / actor / decision_maker / observerを分ける</td></tr><tr><th scope="row">背景</th><td>Level 3・4は全件にdetail.text</td></tr><tr><th scope="row">拒否</th><td>全質問をスキップ可能</td></tr><tr><th scope="row">透明性</th><td>質問ID、データ、検証、Issue報告を公開</td></tr></tbody></table>
-<div class="link-list"><a href="omoi-details.html">Omoiについて読む →</a><a href="omoi-editorial.html">問題文の編集方針を見る →</a><a href="omoi-data.html">質問データを見る →</a></div>
+<h2>同じ考えに揃える名前ではない</h2>
+<p>違う考えを、その人の言葉で知ることです。多数派へ寄せることや、最後に一つへまとめることを、成功条件にしません。</p>
+<h3>その人の言葉で知る</h3>
+<p>同じ結論でも、理由は一人ひとり違います。違いを消すことより、その人の言葉のまま聞くことが、名前の使い方です。</p>
+<ul>
+<li>多数派へ寄せない</li>
+<li>一つにまとめない</li>
+<li>成功条件は合意ではない</li>
+</ul>
+
+<h2>答えをサービスに預けない理由</h2>
+<p>利用者の答えを入力させ、保存し、評価する仕組みはありません。</p>
+<table class="spec-table"><tbody><tr><th scope="row">アカウント</th><td>不要</td></tr><tr><th scope="row">回答入力</th><td>なし</td></tr><tr><th scope="row">回答保存</th><td>なし</td></tr><tr><th scope="row">回答評価</th><td>なし</td></tr><tr><th scope="row">広告・課金</th><td>なし</td></tr></tbody></table>
+<h3>見せるための意見にしない</h3>
+<p>思いは、その場にいる人のものです。答えをデータにすると、想いは採取になります。入力欄を置かないのは、その場の話し言葉のままにするためです。</p>
+<h3>預けると名前が壊れる</h3>
+<ul>
+<li>思いが保存データになり、その場の言葉ではなくなる</li>
+<li>想いが採取と評価の理由に読み替わる</li>
+<li>重い話題が採点対象になる</li>
+<li>入力欄が会話を置き換え、見せるための意見になる</li>
+</ul>
+
+<h2>会話は目の前に残る</h2>
+<p>質問はブラウザへ表示します。打ち込んだ答えをサーバーが持つ設計ではありません。残るのは、その場で話した言葉です。</p>
+<h3>サービスへは残さない</h3>
+<p>画面は問いを出して終わります。会話の内容を預かり、あとから返す仕組みはありません。</p>
+<ul>
+<li>表示先はブラウザ</li>
+<li>答えのサーバー保存はない</li>
+<li>残るのはその場の言葉</li>
+</ul>
+
+<h2>重さは選べる</h2>
+<p>名前に重いが入っていることと、今すぐ最も重い話をさせることは違います。</p>
+<h3>強制しない</h3>
+<p>出口のない重さは、想いと矛盾します。どのLevelでも、話したくない問いは「今回は話さない」で飛ばせます。深さを途中で変えることもできます。</p>
+<ul>
+<li>全問スキップ可能</li>
+<li>深さは途中で変えられる</li>
+<li>最も重い話の強制はない</li>
+</ul>
+<p>Level 1〜4は、話す深さと判断の重さの段階です。各Levelの内容は、<a href="omoi-levels.html">話の深さと問題数</a>に書いています。</p>
+
+<h2>強い言葉を消さない</h2>
+<p>問いに必要な語まで弱めると、思いを置く対象が消えます。死刑、安楽死、不倫、性犯罪など、その問いに必要な語は避けません。</p>
+<h3>言葉の重さも会話の対象</h3>
+<p>強い語を残すのは、刺激のためではありません。何の話かを保ったまま、その場の思いを置けるようにするためです。</p>
+<ul>
+<li>必要な語は弱めない</li>
+<li>対象が消える言い換えはしない</li>
+<li>刺激が目的ではない</li>
+</ul>
+
+<h2>直接的と一方的は違う</h2>
+<p>強い単語を置くだけで、誰かを悪者にしたり、答えを決めたりはしません。問題文とdetailで、視点や条件を分けます。</p>
+<h3>答えを決めない</h3>
+<p>一方の立場だけが善良に見える前提は置きません。直接聞くことと、片方へ誘導することは別です。</p>
+<ul>
+<li>直接聞くことと、片方へ誘導することは別</li>
+<li>悪者固定の前提は置かない</li>
+<li>視点と条件は問題文とdetailで分ける</li>
+</ul>
+
+<h2>考えが変わらなくても、名前としては成立する</h2>
+<p>相手の理由を聞いても、自分の考えが同じままであることがあります。合意は、名前の条件ではありません。</p>
+<h3>三つの層が揃えば足りる</h3>
+<p>重い話を、想いのある場で、思いとして話せば、考えが動かなくても名前の三つは揃います。相手が何を守ろうとしているか、どの経験から答えているかを知ることはできます。</p>
+<ul>
+<li>合意は条件ではない</li>
+<li>考えが動かなくても三つは揃う</li>
+<li>知る対象は、守っているものと経験</li>
+</ul>
+
+<h2>実装が名前を支える</h2>
+<p>三つの層は、説明文だけで終わりません。質問データ、視点、スキップ、公開の仕方として残しています。</p>
+<table class="spec-table"><tbody><tr><th scope="row">質問</th><td>643件のJSONとして公開</td></tr><tr><th scope="row">視点</th><td>affected / actor / decision_maker / observerを分ける</td></tr><tr><th scope="row">背景</th><td>Level 3・4は全件にdetail.text</td></tr><tr><th scope="row">拒否</th><td>全質問をスキップ可能</td></tr><tr><th scope="row">透明性</th><td>質問ID、データ、検証、Issue報告を公開</td></tr></tbody></table>
+<h3>層と実装</h3>
+<ul>
+<li>重い — skip。話したくない問いは飛ばせる</li>
+<li>想い — detail。条件と背景を置いて場を残す</li>
+<li>思い — no-input。答えを入力させない</li>
+</ul>
+<div class="link-list"><a href="omoi-details.html">Omoiについて</a><a href="omoi-editorial.html">編集方針</a><a href="omoi-data.html">質問データ</a></div>
 </section></main></div><footer class="docs-footer"><span>Omoi Documentation / VIUK-Light</span><span><a href="index.html">VIUK-Light</a></span></footer></body></html>

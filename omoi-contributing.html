@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>質問データに参加する — Omoi Documentation</title>
+  <meta name="description" content="Omoiの質問報告、質問JSONの編集、metadata、検証、レビューの流れを説明します。">
+  <link rel="canonical" href="https://viuk-light.org/omoi-contributing.html">
+  <link rel="icon" href="assets/viuk-light-logo.png?v=20260825" type="image/png">
+  <link rel="stylesheet" href="style.css?v=20260902-docs-type">
+  <script src="docs.js?v=20260902-editorial" defer></script>
+</head>
+<body class="docs-body">
+  <a class="skip-link" href="#docs-content">本文へ移動</a>
+  <header class="docs-topbar"><a class="docs-brand" href="index.html" aria-label="VIUK-Light ホーム"><img class="brand-logo" src="assets/viuk-light-logo.png?v=20260825" width="712" height="638" alt="VIUK-Light公式ロゴ"><span>VIUK-Light</span></a><nav class="docs-top-actions" aria-label="ドキュメントから戻る"><a href="omoi.html">Omoi</a></nav></header>
+  <div class="docs-layout">
+    <aside class="docs-sidebar" aria-label="Omoiドキュメントナビゲーション">
+      <details class="docs-mobile-nav" data-doc-mobile-nav open>
+        <summary>Documentation menu</summary>
+        <div class="docs-sidebar-content">
+          <a class="docs-back" href="omoi.html">← Omoi概要</a>
+          <div class="docs-group" data-doc-group><p class="docs-group-label">はじめに</p><a data-doc-link href="omoi-docs.html">Overview</a><a data-doc-link href="omoi-concept.html">Omoi（重い・想い・思い）</a><a data-doc-link href="omoi-details.html">Omoiについて</a><a data-doc-link href="omoi-getting-started.html">はじめる</a></div>
+          <div class="docs-group" data-doc-group><p class="docs-group-label">使い方</p><a data-doc-link href="omoi-levels.html">話の深さと問題数</a><a data-doc-link href="omoi-question.html">質問画面</a></div>
+          <div class="docs-group" data-doc-group><p class="docs-group-label">データと品質</p><a data-doc-link href="omoi-question-catalog.html">質問カタログ</a><a data-doc-link href="omoi-data.html">データ構造</a><a data-doc-link href="omoi-editorial.html">編集方針</a><a data-doc-link href="omoi-accessibility.html">アクセシビリティ</a><a data-doc-link href="omoi-validation.html">検証と公開</a><a data-doc-link href="omoi-technical.html">技術仕様</a><a data-doc-link href="omoi-safety.html">安全設計</a></div>
+          <div class="docs-group" data-doc-group><p class="docs-group-label">参加する</p><a data-doc-link aria-current="page" href="omoi-contributing.html">質問データに参加する</a></div>
+          <div class="docs-group" data-doc-group><p class="docs-group-label">ヘルプ</p><a data-doc-link href="omoi-help.html">ヘルプ</a></div>
+          <div class="docs-search"><label for="omoi-contributing-filter">Documentationを検索</label><input id="omoi-contributing-filter" data-doc-filter type="search" placeholder="ページ名で絞り込む"></div>
+        </div>
+      </details>
+    </aside>
+    <main id="docs-content" class="docs-main">
+      <p class="docs-breadcrumb"><a href="omoi-docs.html">Omoi Documentation</a> / 質問データに参加する</p>
+      <header class="docs-hero"><h1>質問データに参加する</h1><p class="docs-lead">質問固有の問題を報告する方法と、JSONを編集して検証するまでの流れをまとめます。</p></header>
+      <section class="docs-page-content">
+        <div class="notice"><p>GitHubのIssueとPull Requestは公開されます。会話中の回答、氏名、連絡先、非公開URLなどの個人情報は書かないでください。</p></div>
+
+        <h2>参加方法を選ぶ</h2>
+        <div class="docs-scope-list">
+          <section><h3>質問を報告する</h3><p>誤字、分かりにくい表現、偏り、事実関係、解説・出典、重複など、質問固有の問題をIssueで伝えます。</p></section>
+          <section><h3>質問JSONを編集する</h3><p>対象レコードとmetadataを確認し、小さな変更としてPull Requestを作ります。</p></section>
+          <section><h3>UIや動作を改善する</h3><p>表示・操作・アクセシビリティの問題は、再現手順と確認環境を添えて通常のIssueまたはPull Requestで扱います。</p></section>
+        </div>
+
+        <h2>質問を報告する</h2>
+        <p>Omoiの質問画面にある「この質問をGitHubで報告」から、その質問専用のIssue Formを開けます。質問ID、Level、質問文、データファイル、表示元URLは自動入力されます。</p>
+        <p>送信前に、自動入力された質問が報告対象と一致しているかを確認し、問題の種類、起きていること、期待する改善を記入してください。</p>
+        <div class="link-list"><a class="external" href="https://omoi.viuk-light.org/">Omoiを開いて質問を確認する</a><a class="external" href="https://github.com/VIUK-Light/Omoi/issues">OmoiのIssue一覧を見る</a></div>
+
+        <h2>JSONを編集する流れ</h2>
+        <div class="rule-list">
+          <div class="rule-item"><span class="number">01</span><div><h3>対象を特定する</h3><p><code>id</code>、Level、収録ファイルを質問カタログで確認します。固定IDは別の質問へ使い回しません。</p></div></div>
+          <div class="rule-item"><span class="number">02</span><div><h3>最小の変更に分ける</h3><p>質問文、解説、出典、metadata、Level変更を一度に混ぜず、レビューできる単位にします。</p></div></div>
+          <div class="rule-item"><span class="number">03</span><div><h3>スキーマを満たす</h3><p>共通フィールドを確認し、Level 3・4では<code>perspective</code>と<code>detail.text</code>を用意します。高リスク内容には定義済みの<code>content_warning</code>だけを使います。</p></div></div>
+          <div class="rule-item"><span class="number">04</span><div><h3>データ検証を実行する</h3><p>JSON構文、ID一意性、重複、Level、metadata、カテゴリ、警告値、品質目標を公式スクリプトで確認します。</p></div></div>
+          <div class="rule-item"><span class="number">05</span><div><h3>表示と文脈を確認する</h3><p>質問画面と公開カタログで、長文、スキップ、解説、出典、モバイル表示を確認してからレビューへ出します。</p></div></div>
+        </div>
+
+        <h2>必須の検証</h2>
+        <pre class="code-block"><code>node tools/verify-question-dataset.mjs --enforce-quality-targets</code></pre>
+        <p>この検証は、JSON構文、IDの一意性、重複質問、配置ファイルとLevelの一致、必須metadata、カテゴリと警告値、Level 2の件数目標、Level 4の主視点比率を確認します。</p>
+
+        <h2>質問をレビューするときの基準</h2>
+        <ul>
+          <li>片方の答えだけが明らかに正しく見える書き方になっていないか</li>
+          <li>Levelが対象者の属性ではなく、話の深さと判断の重さを表しているか</li>
+          <li><code>sensitivity</code>を難易度や年齢制限として扱っていないか</li>
+          <li>法律・制度・統計・医学に触れる解説を、時点や対象範囲なしに断定していないか</li>
+          <li>当事者を一つの意見で代表させず、複数の立場から話せるか</li>
+          <li>話したくない問いを飛ばせる設計と矛盾していないか</li>
+        </ul>
+
+        <h2>正本とライセンス</h2>
+        <p>質問JSON、スキーマ、検証スクリプトはOmoiリポジトリを正本として確認します。ソースコードはMIT License、質問・解説などのコンテンツデータはCC BY-SA 4.0です。</p>
+        <div class="link-list"><a class="external" href="https://github.com/VIUK-Light/Omoi/blob/Beta/QUESTION_DATA_SCHEMA.md">QUESTION_DATA_SCHEMA.md</a><a class="external" href="https://github.com/VIUK-Light/Omoi/blob/Beta/tools/verify-question-dataset.mjs">検証スクリプト</a><a href="omoi-editorial.html">編集方針を見る</a><a href="omoi-validation.html">検証と公開を見る</a></div>
+        <nav class="next-page" aria-label="前後のページ"><a href="omoi-safety.html">← 安全設計</a><a href="omoi-help.html">ヘルプ →</a></nav>
+      </section>
+    </main>
+  </div>
+  <footer class="docs-footer"><span>Omoi Documentation / VIUK-Light</span><span><a href="privacy.html">Privacy</a></span></footer>
+</body>
+</html>

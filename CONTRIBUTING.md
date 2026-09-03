@@ -39,11 +39,13 @@ JavaScriptを変更した場合は、次も実行します。
 ```sh
 node --check site-nav.js
 node --check docs.js
+node --check omoi-question-catalog.js
 ```
 
 ## 内容の扱い
 
 - Omoiの質問文・detail・質問データは、対応するOmoiリポジトリを正本として扱います。
+- Omoi質問データの提案・編集・検証手順は、[`omoi-contributing.html`](omoi-contributing.html)にもまとめています。
 - Omoi for seriesの質問・実装・出典情報は、Take-forリポジトリを正本として扱います。
 - Kizunaの対応環境・依存関係・実装状態は、Kizunaリポジトリを正本として扱います。
 - 法律、医療、統計、対応環境など更新され得る情報は、公開前に一次情報または正本リポジトリで確認してください。
