@@ -17,7 +17,8 @@ Issueでは、会話内容、APIキー、アクセストークン、個人情報
 | 目的 | 主なファイル |
 | --- | --- |
 | Home・組織ページ | `index.html`、`about.html`、`projects.html`、`principles.html`、`contribute.html` |
-| 共通表示 | `style.css` |
+| Homeの表示 | `style.css` |
+| 組織・製品紹介・Documentationの表示 | `interior.css` |
 | 公式ナビゲーション | `site-nav.js` |
 | Documentationの検索・モバイルメニュー・補助表示 | `docs.js` |
 | Omoi Documentation | `omoi-*.html` |
@@ -33,6 +34,8 @@ python3 -m http.server 8000
 ```
 
 `http://127.0.0.1:8000/` を開き、少なくともHome、Projects、変更したDocumentation、モバイル幅を確認してください。
+
+リンク・アンカー・見出し・製品別ナビゲーションは `python3 tools/check-site.py` で確認できます。
 
 JavaScriptを変更した場合は、次も実行します。
 

@@ -1,93 +1,101 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Projects — VIUK-Light</title>
-  <meta name="description" content="VIUK-Lightの公開プロジェクト一覧。OmoiとOmoi for seriesはActive development、KizunaはMaintenanceです。">
-  <link rel="canonical" href="https://viuk-light.org/projects.html">
-  <link rel="icon" href="assets/viuk-light-logo.png?v=20260825" type="image/png">
-  <link rel="stylesheet" href="style.css?v=20260902-docs-type">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Projects — VIUK-Light</title>
+<meta content="VIUK-Lightが公開するOmoi、Omoi for series、Kizunaの概要と関連資料。" name="description"/>
+<link href="https://viuk-light.org/projects.html" rel="canonical"/>
+<link href="assets/viuk-light-logo.png?v=20260825" rel="icon" type="image/png"/>
+<link href="interior.css?v=20260914-refine" rel="stylesheet"/>
 </head>
-<body>
-  <a class="skip-link" href="#main-content">本文へ移動</a>
-  <header class="site-header">
-    <a class="brand" href="index.html" aria-label="VIUK-Light ホーム">
-      <img class="brand-logo" src="assets/viuk-light-logo.png?v=20260825" width="712" height="638" alt="VIUK-Light公式ロゴ">
-      <span>VIUK-Light</span>
-    </a>
-    <nav class="site-nav" aria-label="メインナビゲーション">
-      <a href="about.html">About</a>
-      <a aria-current="page" href="projects.html">Projects</a>
-      <a href="principles.html">Principles</a>
-      <a href="contribute.html">Contribute</a>
-      <a class="external" href="https://github.com/VIUK-Light">GitHub</a>
-    </nav>
-  </header>
-
-  <main id="main-content" class="site-main">
-    <section class="page-intro projects-intro">
-      <div class="page-intro-copy">
-        <p class="breadcrumb"><a href="index.html">VIUK-Light</a> / Projects</p>
-        <h1>Projects</h1>
-        <p class="hero-lead">公開しているプロジェクトです。</p>
+<body class="interior-body">
+<a class="skip-link" href="#main-content">本文へ移動</a>
+<header class="site-header">
+<a aria-label="VIUK-Light ホーム" class="brand" href="index.html">
+<img alt="VIUK-Light公式ロゴ" class="brand-logo" height="638" src="assets/viuk-light-logo.png?v=20260825" width="712"/>
+<span>VIUK-Light</span>
+</a>
+<nav aria-label="メインナビゲーション" class="site-nav">
+<a href="about.html">About</a>
+<a aria-current="page" href="projects.html">Projects</a>
+<a href="principles.html">Principles</a>
+<a href="contribute.html">Contribute</a>
+<a class="external" href="https://github.com/VIUK-Light">GitHub</a>
+</nav>
+</header>
+<main class="site-main" id="main-content">
+<section class="page-intro projects-intro">
+<div class="page-intro-copy">
+<p class="breadcrumb"><a href="index.html">VIUK-Light</a> / Projects</p>
+<h1>プロジェクト</h1>
+<p class="hero-lead">人と話すための質問カードと、AIとの会話や物語を育てるアプリを開発しています。</p>
+</div>
+</section>
+<nav class="project-directory-index" aria-label="プロジェクトの目次">
+  <a href="#omoi">Omoi</a><a href="#omoi-for">Omoi for series</a><a href="#kizuna">Kizuna</a>
+</nav>
+<section class="projects-section" aria-label="公開プロジェクト">
+  <div class="project-directory">
+    <article class="project-directory-row" id="omoi">
+      <figure class="project-directory-media">
+        <div class="project-directory-gallery project-directory-gallery--pair">
+          <a href="omoi.html"><img src="assets/omoi/01-start.webp" width="1179" height="2257" alt="Omoiの開始画面" decoding="async"></a>
+          <a href="omoi-question.html"><img src="assets/omoi/05-level-3-question.webp" width="1179" height="2267" alt="Omoiの質問画面" decoding="async"></a>
+        </div>
+        <figcaption>Omoiの開始画面と質問画面</figcaption>
+      </figure>
+      <div class="project-directory-copy">
+        <h2><a href="omoi.html">Omoi</a></h2>
+        <p class="project-directory-summary">社会や価値観について、身近な人と話す。</p>
+        <p>友達、恋人、家族と、普段は話しにくい社会・倫理・価値観・人生について考える質問カードです。話す深さを選び、答えたくない問いは飛ばせます。</p>
+        <dl class="project-directory-facts"><div><dt>利用環境</dt><dd>Webブラウザー・アカウント不要</dd></div><div><dt>使い方</dt><dd>Level 1〜4と、3・5・10・15問から選択</dd></div></dl>
+        <div class="project-directory-actions"><a class="button primary external" href="https://omoi.viuk-light.org/">Omoiを使う</a><a href="omoi.html">製品紹介</a><a href="omoi-docs.html">使い方・資料</a></div>
       </div>
-    </section>
-
-    <section class="projects-section">
-      <div class="project-directory">
-        <article class="project-directory-row project-directory-row--omoi">
-          <span class="project-directory-number">01</span>
-          <figure class="project-directory-media"><img src="assets/omoi/01-start.webp" alt="Omoiの開始画面。使い方と、はじめるボタンが表示されている。"><figcaption>開始画面</figcaption></figure>
-          <div class="project-directory-copy">
-            <div class="project-directory-title"><h2>Omoi</h2></div>
-            <p><strong>Active development</strong></p>
-            <p>普段は重い、社会・倫理・価値観・人生について考える質問カードです。</p>
-          </div>
-          <div class="project-directory-actions"><a class="button primary" href="omoi.html">概要を見る</a><a class="button secondary" href="omoi-docs.html">Documentation</a></div>
-        </article>
-
-        <article class="project-directory-row project-directory-row--omoi-for">
-          <span class="project-directory-number">02</span>
-          <figure class="project-directory-media">
-            <div class="project-directory-gallery" aria-label="Omoi for seriesの実際の画面">
-              <a href="https://omoi-for.viuk-light.org/couples/"><img src="assets/omoi-for/couples.png" width="1178" height="2204" alt="Omoi for Couples。ふたり向けの質問画面。" loading="lazy" decoding="async"></a>
-              <a href="https://omoi-for.viuk-light.org/family/"><img src="assets/omoi-for/family.png" width="1178" height="2167" alt="Omoi for Family。家族向けの質問画面。" loading="lazy" decoding="async"></a>
-              <a href="https://omoi-for.viuk-light.org/friends/"><img src="assets/omoi-for/friends.png" width="1178" height="2183" alt="Omoi for Friends。友だち向けの質問画面。" loading="lazy" decoding="async"></a>
-            </div>
-            <figcaption>Couples / Family / Friends</figcaption>
-          </figure>
-          <div class="project-directory-copy">
-            <div class="project-directory-title"><h2>Omoi for series</h2></div>
-            <p><strong>Active development</strong></p>
-            <p>Omoiとは別の質問カードです。Couples、Family、Friendsから、話す相手に合わせて始めます。</p>
-          </div>
-          <div class="project-directory-actions"><a class="button primary" href="https://omoi-for.viuk-light.org/">Omoi forを開く</a><a class="button secondary" href="omoi-for.html">概要を見る</a></div>
-        </article>
-
-        <article class="project-directory-row project-directory-row--kizuna">
-          <span class="project-directory-number">03</span>
-          <figure class="project-directory-media"><img src="assets/kizuna/conversation.webp" alt="Kizunaの会話画面。AIキャラクターとの会話と物語の場面が表示されている。"><figcaption>会話画面</figcaption></figure>
-          <div class="project-directory-copy">
-            <div class="project-directory-title"><h2>Kizuna</h2></div>
-            <p><strong>Maintenance</strong></p>
-            <p>AIキャラクターとの会話・関係・物語を、利用者のペースで育てるアプリです。新機能開発は最小限とし、主に重大な不具合やセキュリティ上の問題に対応します。</p>
-          </div>
-          <div class="project-directory-actions"><a class="button primary" href="kizuna.html">概要を見る</a><a class="button secondary" href="kizuna-docs.html">Documentation</a><a class="button secondary external" href="https://github.com/VIUK-Light/Kizuna">GitHub</a></div>
-        </article>
+    </article>
+    <article class="project-directory-row" id="omoi-for">
+      <figure class="project-directory-media">
+        <div class="project-directory-gallery">
+          <a href="https://omoi-for.viuk-light.org/couples/"><img src="assets/omoi-for/couples.png" width="1178" height="2204" alt="Omoi for Couplesの質問画面" loading="lazy" decoding="async"></a>
+          <a href="https://omoi-for.viuk-light.org/family/"><img src="assets/omoi-for/family.png" width="1178" height="2167" alt="Omoi for Familyの質問画面" loading="lazy" decoding="async"></a>
+          <a href="https://omoi-for.viuk-light.org/friends/"><img src="assets/omoi-for/friends.png" width="1178" height="2183" alt="Omoi for Friendsの質問画面" loading="lazy" decoding="async"></a>
+        </div>
+        <figcaption>Couples / Family / Friendsの質問画面</figcaption>
+      </figure>
+      <div class="project-directory-copy">
+        <h2><a href="omoi-for.html">Omoi for series</a></h2>
+        <p class="project-directory-summary">話す相手に合わせて、会話を始める。</p>
+        <p>恋人、家族、友だち。それぞれの関係に合わせた質問カードです。Omoiとは別のシリーズとして、話す相手から選んで始めます。</p>
+        <dl class="project-directory-facts"><div><dt>利用環境</dt><dd>Webブラウザー</dd></div><div><dt>シリーズ</dt><dd><a href="https://omoi-for.viuk-light.org/couples/">Couples</a> / <a href="https://omoi-for.viuk-light.org/family/">Family</a> / <a href="https://omoi-for.viuk-light.org/friends/">Friends</a></dd></div></dl>
+        <div class="project-directory-actions"><a class="button primary external" href="https://omoi-for.viuk-light.org/">Omoi forを使う</a><a href="omoi-for.html">製品紹介</a><a href="omoi-for-docs.html">使い方・資料</a></div>
       </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div>
-      <a class="footer-brand" href="index.html"><img class="brand-logo" src="assets/viuk-light-logo.png?v=20260825" width="712" height="638" alt=""><span>VIUK-Light</span></a>
-      <p class="footer-meta">© 2026 VIUK-Light</p><p class="footer-legal">VIUK-Light is an independent project and is not incorporated.<br>VIUK-Lightは独立したプロジェクトであり、法人ではありません。</p>
-    </div>
-    <nav class="footer-nav" aria-label="フッターナビゲーション">
-      <a href="about.html">About</a><a href="projects.html">Projects</a><a href="principles.html">Principles</a><a href="contribute.html">Contribute</a><a href="privacy.html">Privacy</a><a class="external" href="https://github.com/VIUK-Light">GitHub</a>
-    </nav>
-  </footer>
-<script src="site-nav.js?v=20260901-github" defer></script>
+    </article>
+    <article class="project-directory-row" id="kizuna">
+      <figure class="project-directory-media">
+        <a href="kizuna.html"><img src="assets/kizuna/conversation.webp" alt="Kizunaの会話と物語の画面" loading="lazy" decoding="async"></a>
+        <figcaption>Kizunaの会話画面</figcaption>
+      </figure>
+      <div class="project-directory-copy">
+        <h2><a href="kizuna.html">Kizuna</a></h2>
+        <p class="project-directory-summary">AIとの会話から、関係や物語を育てる。</p>
+        <p>キャラクター、世界観、記憶を扱いながら、利用者のペースで会話を続けるアプリです。</p>
+        <dl class="project-directory-facts"><div><dt>対象環境</dt><dd>iOS / macOS</dd></div><div><dt>現在の対応</dt><dd>保守対応。新機能開発は最小限とし、重大な不具合やセキュリティ上の問題に対応します。</dd></div></dl>
+        <div class="project-directory-actions"><a class="button primary" href="kizuna.html">Kizunaについて</a><a href="kizuna-docs.html">使い方・資料</a><a class="external" href="https://github.com/VIUK-Light/Kizuna">GitHub</a></div>
+      </div>
+    </article>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+<div>
+<a class="footer-brand" href="index.html"><img alt="" class="brand-logo" height="638" src="assets/viuk-light-logo.png?v=20260825" width="712"/><span>VIUK-Light</span></a>
+<p class="footer-meta">© 2026 VIUK-Light</p><p class="footer-legal">VIUK-Light is an independent project and is not incorporated.<br/>VIUK-Lightは独立したプロジェクトであり、法人ではありません。</p>
+</div>
+<nav aria-label="フッターナビゲーション" class="footer-nav">
+<a href="about.html">About</a><a href="projects.html">Projects</a><a href="principles.html">Principles</a><a href="contribute.html">Contribute</a><a href="privacy.html">Privacy</a><a class="external" href="https://github.com/VIUK-Light">GitHub</a>
+</nav>
+</footer>
+<script defer="" src="site-nav.js?v=20260901-github"></script>
 </body>
 </html>
