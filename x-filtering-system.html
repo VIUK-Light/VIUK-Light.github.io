@@ -4,15 +4,15 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>SafeSearch 4 — X-filtering system — VIUK-Light</title>
-<meta content="SafeSearch 4 — X-filtering systemは、URLとページ内テキストを端末内で確認するMicrosoft Edge向けWebフィルタリング拡張機能です。" name="description"/>
+<meta content="SafeSearch 4 — X-filtering systemは、URLとページ内テキストを確認するMicrosoft Edge向けフィルタリング拡張機能です。カテゴリとサイト別ルールを設定できます。" name="description"/>
 <link href="https://viuk-light.org/x-filtering-system.html" rel="canonical"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="VIUK-Light"/>
 <meta property="og:title" content="SafeSearch 4 — X-filtering system — VIUK-Light"/>
-<meta property="og:description" content="URLとページ内テキストを端末内で確認するMicrosoft Edge向けWebフィルタリング拡張機能。"/>
+<meta property="og:description" content="カテゴリとサイト別ルールを設定できるMicrosoft Edge向けWebフィルタリング拡張機能。"/>
 <meta property="og:url" content="https://viuk-light.org/x-filtering-system.html"/>
 <link href="assets/viuk-light-logo.png?v=20260825" rel="icon" type="image/png"/>
-<link href="interior.css?v=20261017-x-filtering" rel="stylesheet"/>
+<link href="interior.css?v=20261017-x-filtering-page" rel="stylesheet"/>
 </head>
 <body class="interior-body product-body">
 <a class="skip-link" href="#main-content">本文へ移動</a>
@@ -20,63 +20,86 @@
 <a aria-label="VIUK-Light ホーム" class="brand" href="index.html"><img alt="VIUK-Light公式ロゴ" class="brand-logo" height="638" src="assets/viuk-light-logo.png?v=20260825" width="712"/><span>VIUK-Light</span></a>
 <nav aria-label="メインナビゲーション" class="site-nav"><a href="about.html">About</a><a aria-current="page" href="projects.html">Projects</a><a href="principles.html">Principles</a><a href="contribute.html">Contribute</a><a class="external" href="https://github.com/VIUK-Light/X-filtering-system">GitHub</a></nav>
 </header>
-<main class="site-main" id="main-content">
-<section class="project-hero project-hero--split">
-<div class="project-hero-copy">
-<p class="breadcrumb"><a href="projects.html">Projects</a> / SafeSearch 4 — X-filtering system</p>
-<h1>SafeSearch 4 — X-filtering system</h1>
-<p class="project-catch">URLとページ上のテキストを、選んだカテゴリに沿って確認する。</p>
-<p class="project-intro">VIUK-Lightが開発するMicrosoft Edge向けのWebフィルタリング拡張機能です。URLルールとページから読み取れるテキストを端末内で判定し、設定したカテゴリやサイトごとのルールに応じてページを制御します。</p>
-<div class="action-row">
-<a class="button primary external" href="https://github.com/VIUK-Light/X-filtering-system">ソースコードを見る</a>
-<a class="button secondary external" href="https://github.com/VIUK-Light/X-filtering-system/blob/main/docs/privacy-policy.md">プライバシーポリシー</a>
-<a class="text-link" href="projects.html">Projects一覧</a>
-</div>
-</div>
-<figure class="project-hero-media">
-<img class="project-app-icon" alt="SafeSearch 4 — X-filtering systemの拡張機能アイコン" decoding="async" height="128" src="assets/x-filtering-system/icon128.png" width="128"/>
-<figcaption>Microsoft Edge向けブラウザー拡張機能</figcaption>
-</figure>
+<main class="site-main xfilter-page" id="main-content">
+<section class="xfilter-hero" aria-labelledby="xfilter-title">
+  <p class="breadcrumb"><a href="projects.html">Projects</a> / SafeSearch 4 — X-filtering system</p>
+  <div class="xfilter-hero-grid">
+    <div class="xfilter-hero-copy">
+      <h1 id="xfilter-title">SafeSearch 4 —<br/>X-filtering system</h1>
+      <p class="xfilter-lead">URLとページのテキストを確認し、設定を適用。</p>
+      <p class="xfilter-intro">SafeSearch 4 — X-filtering systemは、Microsoft Edge向けのWebフィルタリング拡張機能です。制限するカテゴリとサイトごとの例外を設定し、ページを開くときにURLと読み取れるメインテキストを確認します。</p>
+      <div class="xfilter-actions">
+        <a class="button primary external" href="https://github.com/VIUK-Light/X-filtering-system">GitHubリポジトリ</a>
+        <a class="text-link external" href="https://github.com/VIUK-Light/X-filtering-system/blob/main/docs/privacy-policy.md">プライバシーポリシー</a>
+      </div>
+      <p class="xfilter-published"><span>Microsoft Edge版</span><strong>公開中</strong></p>
+    </div>
+    <figure class="xfilter-mark">
+      <img alt="SafeSearch 4 — X-filtering systemの拡張機能アイコン" decoding="async" height="128" src="assets/x-filtering-system/icon128.png" width="128"/>
+      <figcaption>VIUK-Light</figcaption>
+    </figure>
+  </div>
 </section>
-<nav aria-label="SafeSearch 4 — X-filtering systemのページ内リンク" class="project-subnav"><a href="#overview">概要</a><a href="#features">できること</a><a href="#limits">判定範囲</a><a href="#status">対応環境・状況</a><a href="https://github.com/VIUK-Light/X-filtering-system/blob/main/docs/privacy-policy.md" class="external">Privacy</a></nav>
-<section class="project-overview" id="overview">
-<div class="project-overview-heading"><h2>日々のWeb閲覧に合わせて使う</h2></div>
-<div class="project-overview-copy">
-<p class="lead-copy">サイトのURLだけでなく、ページから読み取れるメインテキストも確認します。利用者はカテゴリごとの設定や、サイト単位の許可・ブロックルールを選べます。</p>
-<p>ブロック画面には対象URL、カテゴリ、判定理由を表示します。ページのテキストは拡張機能内で処理し、外部の分類APIへ送信しません。</p>
-<table class="spec-table"><tbody>
-<tr><th scope="row">URL判定</th><td>ローカルルールとサイトごとの許可・ブロック設定で判定します。</td></tr>
-<tr><th scope="row">ページ判定</th><td>読み取れるメインページのテキストを対象に、ローカルルールで判定します。</td></tr>
-<tr><th scope="row">カテゴリ</th><td>設定画面で制限対象カテゴリを選択できます。</td></tr>
-<tr><th scope="row">ブロック画面</th><td>対象URL、カテゴリ、理由を表示します。カテゴリを特定できない場合は、具体的なカテゴリを表示しません。</td></tr>
-<tr><th scope="row">ソースコード</th><td><a href="https://github.com/VIUK-Light/X-filtering-system">GitHubで公開</a>。コアと拡張機能のコードはMIT Licenseです。</td></tr>
-</tbody></table>
-</div>
+<nav aria-label="ページ内リンク" class="xfilter-subnav"><a href="#screens">実際の画面</a><a href="#flow">判定の流れ</a><a href="#settings">設定</a><a href="#limits">判定範囲</a><a href="#availability">対応環境</a></nav>
+
+<section class="xfilter-section xfilter-screens" id="screens" aria-labelledby="xfilter-screens-title">
+  <header class="xfilter-section-heading">
+    <h2 id="xfilter-screens-title">実際の画面</h2>
+    <p>ブロック時の案内と、カテゴリ・サイト別ルールの設定画面です。画像を選ぶと原寸大で開きます。</p>
+  </header>
+  <div class="xfilter-gallery">
+    <figure class="xfilter-shot xfilter-shot--block">
+      <a href="assets/x-filtering-system/blocked-page.png" target="_blank" rel="noopener" aria-label="ブロック画面の画像を原寸大で開く">
+        <img alt="SafeSearch 4のブロック画面。対象ページがブロックされたこと、カテゴリ、前のページに戻る操作を表示。" decoding="async" height="1446" loading="lazy" src="assets/x-filtering-system/blocked-page.png" width="2926"/>
+      </a>
+      <figcaption><strong>ブロック画面</strong><span>判定結果とカテゴリを表示します。</span></figcaption>
+    </figure>
+    <figure class="xfilter-shot xfilter-shot--settings">
+      <a href="assets/x-filtering-system/settings.png" target="_blank" rel="noopener" aria-label="フィルタ設定画面の画像を原寸大で開く">
+        <img alt="SafeSearch 4のフィルタ設定画面。制限するカテゴリの選択と、ホスト名またはURLごとの許可・ブロックルールを設定できます。" decoding="async" height="1446" loading="lazy" src="assets/x-filtering-system/settings.png" width="2926"/>
+      </a>
+      <figcaption><strong>カテゴリとサイト別ルール</strong><span>カテゴリの制限と、ホストごとの例外を設定します。</span></figcaption>
+    </figure>
+  </div>
 </section>
-<section class="project-journey" id="features">
-<div class="project-journey-heading"><h2>主な機能</h2></div>
-<div class="for-series-grid">
-<article class="for-series-card"><h3>カテゴリを選ぶ</h3><p>利用者が制限したいカテゴリを設定画面から選択できます。</p></article>
-<article class="for-series-card"><h3>サイトごとに調整</h3><p>サイト単位で許可またはブロックするルールを設定できます。</p></article>
-<article class="for-series-card"><h3>判定理由を確認</h3><p>ブロック時に対象URL、カテゴリ、理由を表示し、何が判定されたかを確認できます。</p></article>
-</div>
+
+<section class="xfilter-section xfilter-flow" id="flow" aria-labelledby="xfilter-flow-title">
+  <header class="xfilter-section-heading">
+    <h2 id="xfilter-flow-title">判定の流れ</h2>
+    <p>URLだけでなく、読み取れるページのテキストも確認します。</p>
+  </header>
+  <ol class="xfilter-steps">
+    <li><span class="xfilter-step-number">01</span><div><h3>URLを確認</h3><p>サイトごとに登録した許可・ブロックルールと、URLのローカルルールを確認します。</p></div></li>
+    <li><span class="xfilter-step-number">02</span><div><h3>ページのテキストを判定</h3><p>読み取れるメインページのテキストを、拡張機能内のルールで確認します。ページの内容を外部の分類APIへ送信しません。</p></div></li>
+    <li><span class="xfilter-step-number">03</span><div><h3>結果と理由を表示</h3><p>制限対象になった場合はページをブロックし、対象URL、理由、カテゴリを表示します。</p></div></li>
+  </ol>
 </section>
-<section class="project-overview" id="limits">
-<div class="project-overview-heading"><h2>判定範囲と制限</h2></div>
-<div class="project-overview-copy">
-<p>判定対象はURLと、ページから読み取れるメインテキストです。画像や動画の内容、埋め込みフレーム内の内容は判定しません。ページ構造やアクセス制限などでテキストを取得できない場合も、本文判定はできません。</p>
-<p>初期版はローカルルールによる判定です。すべての有害なページを検出できるものではなく、利用環境やページ構成によって判定できる範囲が異なります。</p>
-<p>詳しいデータ処理については<a href="https://github.com/VIUK-Light/X-filtering-system/blob/main/docs/privacy-policy.md">プライバシーポリシー</a>を確認してください。</p>
-</div>
+
+<section class="xfilter-section xfilter-settings" id="settings" aria-labelledby="xfilter-settings-title">
+  <header class="xfilter-section-heading">
+    <h2 id="xfilter-settings-title">必要なカテゴリとサイトを設定</h2>
+    <p>利用するカテゴリを選び、個別のサイトには例外ルールを登録できます。</p>
+  </header>
+  <div class="xfilter-setting-columns">
+    <article><h3>制限するカテゴリ</h3><p>成人向けコンテンツ、暴力、ギャンブルなど、制限したいカテゴリを設定画面で選びます。設定したカテゴリに該当するページをブロックします。</p></article>
+    <article><h3>ホストごとの例外ルール</h3><p>ホスト名またはURLを指定して、サイトを許可するかブロックするかを設定できます。ブロックする場合はカテゴリも選択できます。サイト別のルールはカテゴリ設定より優先されます。</p></article>
+  </div>
 </section>
-<section class="product-resources" id="status">
-<div><h2>対応環境と開発状況</h2><table class="spec-table"><tbody>
-<tr><th scope="row">ブラウザー</th><td>Microsoft Edge（Manifest V3）</td></tr>
-<tr><th scope="row">macOS</th><td>Edge上の実ブラウザー経路を確認済み</td></tr>
-<tr><th scope="row">Windows</th><td>対応対象。Windows実機での検証は未実施</td></tr>
-<tr><th scope="row">公開状況</th><td>Microsoft Edge版を公開中</td></tr>
-</tbody></table></div>
-<nav aria-label="関連資料"><h2>関連リンク</h2><a class="external" href="https://github.com/VIUK-Light/X-filtering-system">GitHubリポジトリ</a><a class="external" href="https://github.com/VIUK-Light/X-filtering-system/blob/main/docs/privacy-policy.md">プライバシーポリシー</a><a href="projects.html">Projects一覧</a></nav>
+
+<section class="xfilter-section xfilter-limits" id="limits" aria-labelledby="xfilter-limits-title">
+  <header class="xfilter-section-heading">
+    <h2 id="xfilter-limits-title">判定範囲とプライバシー</h2>
+  </header>
+  <div class="xfilter-limit-copy">
+    <p class="xfilter-limit-lead">ページ本文の判定はこの端末内で行われます。外部の分類APIへページ内容を送信しません。</p>
+    <p>本文判定の対象は、ページから読み取れるメインテキストです。画像・動画・埋め込みフレームの内容は判定しません。ページ構造やアクセス制限などによりテキストを取得できない場合も、本文の判定は行えません。</p>
+    <p>初期版はローカルルールによる判定です。すべての制限対象ページを検出できるものではありません。詳しいデータ処理は<a class="external" href="https://github.com/VIUK-Light/X-filtering-system/blob/main/docs/privacy-policy.md">プライバシーポリシー</a>をご確認ください。</p>
+  </div>
+</section>
+
+<section class="xfilter-availability" id="availability" aria-labelledby="xfilter-availability-title">
+  <div class="xfilter-availability-copy"><h2 id="xfilter-availability-title">対応環境</h2><p>Microsoft Edge向けのManifest V3拡張機能です。</p></div>
+  <dl class="xfilter-availability-facts"><div><dt>macOS</dt><dd>Edge上の実ブラウザー経路を確認済み</dd></div><div><dt>Windows</dt><dd>対応対象。Windows実機での検証は未実施</dd></div><div><dt>ソースコード</dt><dd><a class="external" href="https://github.com/VIUK-Light/X-filtering-system">MIT Licenseで公開</a></dd></div></dl>
 </section>
 </main>
 <footer class="site-footer"><div><a class="footer-brand" href="index.html"><img alt="" class="brand-logo" height="638" src="assets/viuk-light-logo.png?v=20260825" width="712"/><span>VIUK-Light</span></a><p class="footer-meta">© 2026 VIUK-Light</p><p class="footer-legal">VIUK-Light is an independent project and is not incorporated.<br/>VIUK-Lightは独立したプロジェクトであり、法人ではありません。</p></div><nav aria-label="フッターナビゲーション"><a href="about.html">About</a><a href="projects.html">Projects</a><a href="principles.html">Principles</a><a href="contribute.html">Contribute</a><a href="privacy.html">Privacy</a><a class="external" href="https://github.com/VIUK-Light/X-filtering-system">GitHub</a></nav></footer>

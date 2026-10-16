@@ -1661,3 +1661,110 @@ section[id],h2[id],h3[id] {
 .for-series-section [data-category-heading][data-category="friends"] { color:#6686a2; }
 .for-series-section [data-category-heading][data-category="adults"] { color:#805e7e; }
 .for-series-section [data-category-heading][data-category="self-care"] { color:#e5755d; }
+
+/* SafeSearch 4 — X-filtering system project page */
+.xfilter-page { padding-bottom:88px; }
+.xfilter-hero { padding:36px 0 56px; border-bottom:1px solid var(--line); }
+.xfilter-hero .breadcrumb { margin-bottom:32px; }
+.xfilter-hero-grid {
+  display:grid;
+  grid-template-columns:minmax(0,1.25fr) minmax(260px,.75fr);
+  gap:64px;
+  align-items:center;
+}
+.xfilter-hero-copy h1 {
+  max-width:780px;
+  font-size:clamp(42px,5.2vw,66px);
+  line-height:1.12;
+  letter-spacing:-.035em;
+}
+.xfilter-lead {
+  max-width:700px;
+  margin:24px 0 12px;
+  font-size:clamp(20px,2.25vw,28px);
+  line-height:1.55;
+  font-weight:600;
+}
+.xfilter-intro { max-width:700px; margin:0; color:var(--muted); font-size:17px; }
+.xfilter-actions { display:flex; flex-wrap:wrap; align-items:center; gap:12px 24px; margin-top:28px; }
+.xfilter-published {
+  display:flex;
+  align-items:baseline;
+  gap:16px;
+  width:max-content;
+  margin:28px 0 0;
+  padding-top:14px;
+  border-top:1px solid var(--line);
+  color:var(--muted);
+  font-size:13px;
+}
+.xfilter-published strong { color:var(--ink); font-size:16px; }
+.xfilter-mark { display:grid; justify-items:center; gap:16px; margin:0; padding:54px 32px 32px; background:var(--canvas); }
+.xfilter-mark img { display:block; width:176px; height:176px; object-fit:contain; }
+.xfilter-mark figcaption { color:var(--muted); font-size:13px; }
+.xfilter-subnav { display:flex; flex-wrap:wrap; gap:8px 28px; padding:14px 0; border-bottom:1px solid var(--line); }
+.xfilter-subnav a { display:inline-flex; align-items:center; min-height:36px; color:var(--muted); font-size:14px; text-decoration:none; }
+.xfilter-subnav a:hover { color:var(--ink); text-decoration:underline; text-underline-offset:6px; }
+.xfilter-section { padding:56px 0; border-bottom:1px solid var(--line); }
+.xfilter-section-heading { max-width:780px; margin-bottom:28px; }
+.xfilter-section-heading h2,.xfilter-availability h2 { font-size:clamp(27px,3vw,36px); letter-spacing:-.02em; }
+.xfilter-section-heading>p:last-child { margin:8px 0 0; color:var(--muted); font-size:16px; }
+.xfilter-gallery { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:32px; }
+.xfilter-shot { min-width:0; margin:0; }
+.xfilter-shot>a { display:block; overflow:hidden; aspect-ratio:1.65/1; border:1px solid var(--line); background:#fff; }
+.xfilter-shot img { display:block; width:100%; height:100%; object-fit:cover; object-position:35% center; transform:scale(1.4); transform-origin:35% center; }
+.xfilter-shot--settings>a { aspect-ratio:1.2/1; }
+.xfilter-shot--settings img { object-position:35% center; transform:scale(1); }
+.xfilter-shot figcaption { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:baseline; gap:4px 20px; padding:14px 2px 0; }
+.xfilter-shot figcaption strong { font-size:16px; }
+.xfilter-shot figcaption span { color:var(--muted); font-size:13px; }
+.xfilter-steps { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:0; margin:0; padding:0; list-style:none; }
+.xfilter-steps li { display:grid; grid-template-columns:52px minmax(0,1fr); gap:14px; padding:8px 24px 8px 0; }
+.xfilter-steps li+li { padding-left:24px; border-left:1px solid var(--line); }
+.xfilter-step-number { color:#1d5ca5; font-size:31px; font-weight:700; line-height:1.2; }
+.xfilter-steps h3,.xfilter-setting-columns h3 { margin-bottom:10px; font-size:18px; }
+.xfilter-steps p,.xfilter-setting-columns p { margin:0; color:var(--muted); font-size:14px; line-height:1.8; }
+.xfilter-setting-columns { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:40px; }
+.xfilter-setting-columns article { padding-top:18px; border-top:2px solid var(--accent); }
+.xfilter-limit-copy { max-width:860px; }
+.xfilter-limit-copy p { margin:0 0 16px; }
+.xfilter-limit-copy p:last-child { margin-bottom:0; }
+.xfilter-limit-copy .xfilter-limit-lead { font-size:20px; font-weight:600; }
+.xfilter-availability { display:grid; grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr); gap:48px; margin-top:48px; padding:36px; background:var(--canvas); }
+.xfilter-availability-copy>p { margin:10px 0 0; color:var(--muted); }
+.xfilter-availability-facts { margin:0; font-size:14px; }
+.xfilter-availability-facts>div { display:grid; grid-template-columns:128px minmax(0,1fr); gap:16px; padding:12px 0; border-bottom:1px solid var(--line); }
+.xfilter-availability-facts>div:first-child { border-top:1px solid var(--line); }
+.xfilter-availability-facts dt { color:var(--muted); }
+.xfilter-availability-facts dd { margin:0; }
+@media(max-width:900px) {
+  .xfilter-hero-grid { grid-template-columns:minmax(0,1.2fr) minmax(190px,.8fr); gap:36px; }
+  .xfilter-gallery { gap:20px; }
+  .xfilter-steps li { grid-template-columns:40px minmax(0,1fr); gap:10px; padding-right:16px; }
+  .xfilter-steps li+li { padding-left:16px; }
+  .xfilter-availability { gap:28px; padding:28px; }
+}
+@media(max-width:600px) {
+  .xfilter-hero { padding:24px 0 36px; }
+  .xfilter-hero .breadcrumb { margin-bottom:22px; }
+  .xfilter-hero-grid,.xfilter-gallery,.xfilter-setting-columns,.xfilter-availability { grid-template-columns:1fr; }
+  .xfilter-hero-grid { gap:28px; }
+  .xfilter-hero-copy h1 { font-size:clamp(36px,10vw,48px); letter-spacing:-.025em; overflow-wrap:anywhere; }
+  .xfilter-lead { margin-top:18px; font-size:21px; }
+  .xfilter-intro { font-size:15px; }
+  .xfilter-mark { justify-self:end; padding:20px; }
+  .xfilter-mark img { width:116px; height:116px; }
+  .xfilter-mark figcaption { display:none; }
+  .xfilter-published { margin-top:20px; }
+  .xfilter-subnav { gap:4px 18px; }
+  .xfilter-section { padding:38px 0; }
+  .xfilter-section-heading { margin-bottom:22px; }
+  .xfilter-section-heading h2,.xfilter-availability h2 { font-size:27px; }
+  .xfilter-gallery { gap:26px; }
+  .xfilter-shot figcaption { display:grid; justify-content:start; gap:2px; }
+  .xfilter-steps { grid-template-columns:1fr; gap:0; }
+  .xfilter-steps li,.xfilter-steps li+li { grid-template-columns:48px minmax(0,1fr); gap:12px; padding:18px 0; border-left:0; border-top:1px solid var(--line); }
+  .xfilter-setting-columns { gap:28px; }
+  .xfilter-availability { gap:24px; margin-top:32px; padding:24px 20px; }
+  .xfilter-availability-facts>div { grid-template-columns:92px minmax(0,1fr); gap:10px; }
+}
