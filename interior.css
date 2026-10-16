@@ -440,6 +440,7 @@ section[id],h2[id],h3[id] {
 .project-directory-facts dd { margin: 0; }
 .project-directory-media { background: var(--canvas); margin: 0; padding: 24px; }
 .project-directory-media img { display: block; height: 300px; width: 100%; object-fit: contain; }
+.project-directory-media img.project-app-icon { width: 128px; height: 128px; margin: 86px auto; }
 .project-directory-gallery { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; align-items: center; }
 .project-directory-gallery--pair { grid-template-columns: repeat(2,minmax(0,1fr)); }
 .project-directory-gallery a { display: block; min-width: 0; }
@@ -473,6 +474,12 @@ section[id],h2[id],h3[id] {
   width:100%;
   max-height:340px;
   object-fit:contain;
+}
+.project-hero-media>img.project-app-icon {
+  width:128px;
+  height:128px;
+  max-height:none;
+  margin:36px auto;
 }
 .project-hero-media figcaption {
   font-size:12px;

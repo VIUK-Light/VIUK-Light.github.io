@@ -9,6 +9,7 @@ VIUK-Lightは、**法人ではない独立したオープンソース開発組�
 
 | Project | Status | What it is | Links |
 | --- | --- | --- | --- |
+| SafeSearch 4 — X-filtering system | **Release preparation** | Microsoft Edge向けのローカルWebフィルタリング拡張機能 | [公式ページ](https://viuk-light.org/x-filtering-system.html) · [Repository](https://github.com/VIUK-Light/X-filtering-system) |
 | Omoi | **Active development** | 社会・倫理・価値観・人生について話すための質問カード | [公式ページ](https://viuk-light.org/omoi.html) · [Repository](https://github.com/VIUK-Light/Omoi) |
 | Omoi for series | **Active development** | Couples・Family・Friendsに合わせて会話の入口を選ぶWebシリーズ | [公式ページ](https://viuk-light.org/omoi-for.html) · [Open](https://omoi-for.viuk-light.org/) |
 | Kizuna | **Maintenance** | AIキャラクターとの会話・関係・物語を、利用者のペースで育てるiOS / macOSアプリ。新機能開発は最小限とし、主に重大な不具合やセキュリティ上の問題に対応します。 | [公式ページ](https://viuk-light.org/kizuna.html) · [Repository](https://github.com/VIUK-Light/Kizuna) |
