@@ -1,5 +1,7 @@
 /* Interior pages: organization, products and documentation.
    Home keeps its existing stylesheet; no late cascade overrides are needed here. */
+@import url("https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap");
+
 :root {
   color-scheme:light dark;
   --bg:#fff;
@@ -11,7 +13,7 @@
   --accent:#234b68;
   --selected:#e7eff6;
   --max:1160px;
-  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue","Hiragino Sans","Yu Gothic",sans-serif;
+  --sans:"BIZ UDPGothic",-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue","Hiragino Sans","Yu Gothic",sans-serif;
 }
 * {
   box-sizing:border-box;
@@ -1611,3 +1613,44 @@ section[id],h2[id],h3[id] {
     scroll-behavior:auto;
   }
 }
+
+/* Omoi for Series: five-column presentation in a 3 + 2 centered rhythm. */
+.for-series-card .series-age-note {
+  display:inline-block;
+  margin-left:.5em;
+  font-size:.72em;
+  font-weight:500;
+  vertical-align:middle;
+  color:var(--muted);
+}
+@media (min-width: 980px) {
+  .for-series-grid {
+    grid-template-columns:repeat(6,minmax(0,1fr));
+  }
+  .for-series-grid > .for-series-card {
+    grid-column:span 2;
+  }
+  .for-series-grid > .for-series-card:nth-child(4) {
+    grid-column:2 / span 2;
+  }
+  .for-series-grid > .for-series-card:nth-child(5) {
+    grid-column:4 / span 2;
+  }
+}
+@media (min-width: 601px) and (max-width: 979px) {
+  .for-series-grid {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+
+.project-overview-heading [data-category-name][data-category="couples"] { color:#ed702f; }
+.project-overview-heading [data-category-name][data-category="family"] { color:#78956a; }
+.project-overview-heading [data-category-name][data-category="friends"] { color:#6686a2; }
+.project-overview-heading [data-category-name][data-category="adults"] { color:#805e7e; }
+.project-overview-heading [data-category-name][data-category="self-care"] { color:#e5755d; }
+.project-overview-heading .for-series-title { font-size:clamp(30px,3vw,34px); }
+.for-series-section [data-category-heading][data-category="couples"] { color:#ed702f; }
+.for-series-section [data-category-heading][data-category="family"] { color:#78956a; }
+.for-series-section [data-category-heading][data-category="friends"] { color:#6686a2; }
+.for-series-section [data-category-heading][data-category="adults"] { color:#805e7e; }
+.for-series-section [data-category-heading][data-category="self-care"] { color:#e5755d; }
