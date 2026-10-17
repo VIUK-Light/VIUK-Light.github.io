@@ -9,8 +9,9 @@
 <link href="https://viuk-light.org/omoi.html" rel="canonical"/>
 <link href="assets/viuk-light-logo.png?v=20260825" rel="icon" type="image/png"/>
 <link href="interior.css?v=20261015-ud-font" rel="stylesheet"/>
+<link rel="stylesheet" href="site-motion.css?v=20261016-motion-2">
 </head>
-<body class="interior-body product-body">
+<body data-motion-page class="interior-body product-body">
 <a class="skip-link" href="#main-content">本文へ移動</a>
 <header class="site-header">
 <a aria-label="VIUK-Light ホーム" class="brand" href="index.html"><img alt="VIUK-Light公式ロゴ" class="brand-logo" height="638" src="assets/viuk-light-logo.png?v=20260825" width="712"/><span>VIUK-Light</span></a>
@@ -30,18 +31,19 @@
 </div>
 </div>
 <figure class="project-hero-media">
-<img alt="Omoiの開始画面。「違う考えを知るために。」と、はじめるボタンが表示されている。" decoding="async" height="1398" src="assets/omoi/omoi-start.png" width="802"/>
-<figcaption>01　はじめる</figcaption>
+<img alt="Omoiの質問画面。場面文と問い、会話のヒントや問いの背景を開くボタンが表示されている。" decoding="async" height="1420" src="assets/omoi/omoi-question-20261017.png" width="904"/>
+<figcaption>Omoiの質問画面</figcaption>
 </figure>
 </section>
 <nav aria-label="Omoiプロジェクトナビゲーション" class="project-subnav"><a aria-current="page" href="omoi.html">概要</a><a href="#how-to-use">使い方</a><a href="#features">できること</a><a href="omoi-docs.html">Documentation</a><a href="omoi-details.html">詳細</a><a href="omoi-help.html">ヘルプ</a></nav>
 <section class="project-overview">
 <div class="project-overview-heading"><h2>正解を決めず、違う考えに出会う</h2></div>
-<div class="project-overview-copy"><p class="lead-copy">Omoiは、身近な人と正解のない問いについて話すための質問カードです。相手の答えを評価したり、同じ考えにそろえたりするのではなく、「どうしてそう思う？」を通じて、お互いの考えを知ることを大切にしています。</p><p>v2では、Levelと問題数を先に選ぶ流れから、今話したいことに近い4つのカテゴリを選び、問いを読み進める流れに変わりました。場面文や会話のヒント、問いの背景を加え、前の問いに戻る・途中で終える操作も用意しています。</p><p>答えたくない問いは、話さずに次へ進めます。自分たちのペースで使えます。</p>
+<div class="project-overview-copy"><p class="lead-copy">Omoiは、身近な人と正解のない問いについて話すための質問カードです。相手の答えを評価したり、同じ考えにそろえたりするのではなく、「どうしてそう思う？」を通じて、お互いの考えを知ることを大切にしています。</p><p>今話したいことに近い4つのカテゴリから選び、問いを読み進めます。場面文や会話のヒント、問いの背景があるカードでは、それらを手がかりに考えを深められます。前の問いに戻る・途中で終える操作も用意しています。</p><p>答えたくない問いは、話さずに次へ進めます。自分たちのペースで使えます。</p>
 <table class="spec-table"><tbody>
 <tr><th scope="row">話題を選ぶ</th><td>「日常や自分のこと」「意見が分かれる身近な話」「社会や価値観について」「人生に関わる難しい選択」から選びます。</td></tr>
-<tr><th scope="row">問いを読む</th><td>場面を想像する文章と問いを読み、相手と話します。</td></tr>
+<tr><th scope="row">問いを読む</th><td>問いを読み、相手と話します。場面文があるカードでは、状況も手がかりにします。</td></tr>
 <tr><th scope="row">ヒントと背景</th><td>用意されている問いでは、「会話のヒント」や「問いの背景」を開けます。</td></tr>
+<tr><th scope="row">質問</th><td>906問を収録。<a href="omoi-question-catalog.html">質問カタログ</a>で内容と背景を確認できます。</td></tr>
 <tr><th scope="row">利用</th><td>無料で、アカウント登録は不要です。</td></tr>
 <tr><th scope="row">回答</th><td>会話の答えを入力・保存する機能はありません。</td></tr>
 <tr><th scope="row">関連</th><td><a href="omoi-for.html">Omoi for series</a>は、相手や場面に合わせて会話のきっかけを選ぶ別シリーズです。</td></tr>
@@ -52,24 +54,40 @@
 <div class="project-journey-heading">
 <h2 id="omoi-journey-title">質問を読む順に使い方</h2>
 </div>
-<div class="project-journey-grid">
-<figure class="project-journey-item">
+<nav class="motion-story-nav" aria-label="使い方のステップ">
+<a href="#omoi-story-theme" data-story-link><span>01</span>テーマを選ぶ</a>
+<a href="#omoi-story-question" data-story-link><span>02</span>問いを読む</a>
+<a href="#omoi-story-hints" data-story-link><span>03</span>ヒントを使う</a>
+</nav>
+<div class="project-journey-grid motion-story" data-motion-story>
+<div class="motion-story-stage" aria-hidden="true">
+<div class="motion-screen-stack">
+<img src="assets/omoi/omoi-categories.png" alt="" width="802" height="1398" loading="lazy" decoding="async" data-story-screen class="is-active">
+<img src="assets/omoi/omoi-question-20261017.png" alt="" loading="lazy" decoding="async" data-story-screen width="904" height="1420">
+<img src="assets/omoi/omoi-hints.png" alt="" width="802" height="1398" loading="lazy" decoding="async" data-story-screen>
+</div>
+<div class="motion-story-track"><span></span></div>
+</div>
+<div class="motion-story-steps">
+<figure class="project-journey-item" id="omoi-story-theme" data-story-step>
 <img alt="Omoiで4つの話題カテゴリから選ぶ画面。" decoding="async" height="1398" loading="lazy" src="assets/omoi/omoi-categories.png" width="802"/>
-<figcaption><strong>02　話したいテーマを選ぶ</strong><span>4つのカテゴリから今話したい話題を選択</span></figcaption>
+<figcaption><strong>01　話したいテーマを選ぶ</strong><span>4つのカテゴリから今話したい話題を選択</span></figcaption>
 </figure>
-<figure class="project-journey-item">
-<img alt="場面を想像する文章と質問、会話のヒントや問いの背景を開くボタンがあるOmoiの画面。" decoding="async" height="1398" loading="lazy" src="assets/omoi/omoi-question.png" width="802"/>
-<figcaption><strong>03　場面と問いを読む</strong><span>問いを読んで、自分や相手の考えを話す</span></figcaption>
+<figure class="project-journey-item" id="omoi-story-question" data-story-step>
+<img alt="場面を想像する文章と質問、会話のヒントや問いの背景を開くボタンがあるOmoiの画面。" decoding="async" loading="lazy" src="assets/omoi/omoi-question-20261017.png" width="904" height="1420"/>
+<figcaption><strong>02　場面と問いを読む</strong><span>問いを読んで、自分や相手の考えを話す</span></figcaption>
 </figure>
-<figure class="project-journey-item">
+<figure class="project-journey-item" id="omoi-story-hints" data-story-step>
 <img alt="会話のヒントを開き、問いを考えるための視点が表示されたOmoiの画面。" decoding="async" height="1398" loading="lazy" src="assets/omoi/omoi-hints.png" width="802"/>
-<figcaption><strong>04　会話のヒントを使う</strong><span>問いの背景も必要に応じて確認</span></figcaption>
+<figcaption><strong>03　会話のヒントを使う</strong><span>問いの背景も必要に応じて確認</span></figcaption>
 </figure>
 </div>
-<p>答えずに次の問いへ進むことも、前の問いに戻ることも、途中で終えることもできます。</p>
+</div>
+<p class="motion-story-note">答えずに次の問いへ進むことも、前の問いに戻ることも、途中で終えることもできます。</p>
 </section>
 <section class="product-resources" id="features"><div><h2>Omoiについて</h2><p>診断や採点をするサービスではありません。答えを強制せず、質問をきっかけに人と人が話すための道具です。無料で利用でき、アカウント登録は不要です。</p></div><nav aria-label="関連資料"><h2>関連資料</h2><a href="omoi-docs.html">資料の一覧</a><a href="omoi-technical.html">技術仕様</a><a href="omoi-help.html">ヘルプ</a></nav></section></main>
 <footer class="site-footer"><div><a class="footer-brand" href="index.html"><img alt="" class="brand-logo" height="638" src="assets/viuk-light-logo.png?v=20260825" width="712"/><span>VIUK-Light</span></a><p class="footer-meta">© 2026 VIUK-Light</p><p class="footer-legal">VIUK-Light is an independent project and is not incorporated.<br/>VIUK-Lightは独立したプロジェクトであり、法人ではありません。</p></div><nav aria-label="フッターナビゲーション" class="footer-nav"><a href="about.html">About</a><a href="projects.html">Projects</a><a href="principles.html">Principles</a><a href="contribute.html">Contribute</a><a href="privacy.html">Privacy</a><a class="external" href="https://github.com/VIUK-Light/Omoi">GitHub</a></nav></footer>
 <script defer="" src="site-nav.js?v=20260901-github"></script>
+<script defer src="site-motion.js?v=20261016-motion-2"></script>
 </body>
 </html>

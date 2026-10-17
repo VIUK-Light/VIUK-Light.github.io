@@ -1,4 +1,4 @@
-const DATA_VERSION = '20260829-beta-817c115';
+const DATA_VERSION = '20261016-main-fe24acc';
 const DATA_FILES = [1, 2, 3, 4].map((level) => `assets/omoi/data/level${level}.json?v=${DATA_VERSION}`);
 const PAGE_SIZE = 36;
 
@@ -44,6 +44,7 @@ function createMeta(question) {
   ];
   if (question.topic) fields.push(`topic: ${question.topic}`);
   if (question.perspective) fields.push(`perspective: ${question.perspective}`);
+  if (question.role) fields.push(`role: ${question.role}`);
   meta.textContent = fields.join(" / ");
   return meta;
 }
@@ -56,21 +57,60 @@ function createWarning(question) {
   return warning;
 }
 
+function createScenario(question) {
+  if (!question.scenario?.trim()) return null;
+  const scenario = document.createElement("p");
+  scenario.className = "question-scenario";
+  scenario.textContent = `場面：${question.scenario}`;
+  return scenario;
+}
+
+function createHints(question) {
+  if (!question.hints?.length) return null;
+  const details = document.createElement("details");
+  const summary = document.createElement("summary");
+  summary.textContent = "会話のヒント";
+  const hints = document.createElement("ul");
+  question.hints.forEach((hint) => {
+    const item = document.createElement("li");
+    item.textContent = hint;
+    hints.appendChild(item);
+  });
+  details.append(summary, hints);
+  return details;
+}
+
 function createDetails(question) {
-  if (!question.detail?.text) return null;
+  const detailText = question.detail?.text || "";
+  const sources = question.detail?.sources || [];
+  const terms = question.terms || [];
+  if (!detailText && !sources.length && !terms.length) return null;
 
   const details = document.createElement("details");
   const summary = document.createElement("summary");
-  summary.textContent = "この問いを知る";
+  summary.textContent = "問いの背景";
   details.appendChild(summary);
 
-  question.detail.text.split(/\n\s*\n/).forEach((paragraph) => {
+  detailText.split(/\n\s*\n/).filter((paragraph) => paragraph.trim()).forEach((paragraph) => {
     const text = document.createElement("p");
     text.textContent = paragraph;
     details.appendChild(text);
   });
 
-  const sources = question.detail.sources || [];
+  if (terms.length > 0) {
+    const heading = document.createElement("h4");
+    heading.textContent = "用語";
+    const termList = document.createElement("dl");
+    terms.forEach((term) => {
+      const name = document.createElement("dt");
+      name.textContent = term.term;
+      const definition = document.createElement("dd");
+      definition.textContent = term.definition;
+      termList.append(name, definition);
+    });
+    details.append(heading, termList);
+  }
+
   if (sources.length > 0) {
     const heading = document.createElement("h4");
     heading.textContent = "出典";
@@ -106,9 +146,14 @@ function createQuestionEntry(question) {
 
   const title = document.createElement("h3");
   title.textContent = question.question;
-  entry.append(header, title, createMeta(question));
+  entry.appendChild(header);
+  const scenario = createScenario(question);
+  if (scenario) entry.appendChild(scenario);
+  entry.append(title, createMeta(question));
   const warning = createWarning(question);
   if (warning) entry.appendChild(warning);
+  const hints = createHints(question);
+  if (hints) entry.appendChild(hints);
   const details = createDetails(question);
   if (details) entry.appendChild(details);
   return entry;
@@ -121,7 +166,18 @@ function updateFilterOptions() {
   const sensitivity = sensitivityFilter.value;
 
   state.filtered = state.all.filter((question) => {
-    const searchable = [question.question, question.category, question.topic, question.content_warning?.join(" "), question.detail?.text].filter(Boolean).join(" ").toLocaleLowerCase("ja-JP");
+    const searchable = [
+      question.id,
+      question.question,
+      question.scenario,
+      question.hints?.join(" "),
+      question.terms?.map((term) => `${term.term} ${term.definition}`).join(" "),
+      question.category,
+      question.topic,
+      question.role,
+      question.content_warning?.join(" "),
+      question.detail?.text
+    ].filter(Boolean).join(" ").toLocaleLowerCase("ja-JP");
     return (!query || searchable.includes(query)) &&
       (!level || String(question.level) === level) &&
       (!category || question.category === category) &&

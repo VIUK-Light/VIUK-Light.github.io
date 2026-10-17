@@ -1,0 +1,86 @@
+/* The supplied screenshots are preserved as original files.
+   Show the card area (x55 y300 w650 h890) inside the product presentation. */
+.for-screenshot-card {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 650 / 890;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #fff;
+}
+.for-screenshot-card img {
+  position: absolute;
+  left: -8.461538%;
+  top: -33.707865%;
+  width: 116.615385%;
+  max-width: none;
+  height: auto;
+  display: block;
+}
+.for-cover--screenshot {
+  aspect-ratio: 650 / 890;
+  border: 0;
+  background: #fff;
+  border-radius: 16px;
+}
+.for-cover--screenshot::before { display: none; }
+.for-panel-art--screens { min-height: 460px; }
+.for-shot-gallery {
+  width: 100%;
+  max-width: 560px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  padding: 18px 8px 40px;
+}
+.for-shot { min-width: 0; margin: 0; transform: rotate(-3deg); }
+.for-shot:nth-child(2) { transform: translateY(32px) rotate(3deg); }
+.for-shot .for-screenshot-card { box-shadow: 0 20px 30px -20px #20334448; }
+.for-shot figcaption { margin-top: 16px; text-align: center; font-size: 12px; color: var(--muted); }
+.for-shot a:focus-visible { outline: 3px solid var(--for-deep); outline-offset: 5px; }
+
+/* The directory screenshot is shown above the capture thumbnail and footer. */
+.for-directory-screen {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 758 / 1265;
+  width: min(100%, 260px);
+  margin-inline: auto;
+  background: #fff;
+}
+.project-directory-media .for-directory-screen img {
+  position: absolute;
+  left: 0;
+  top: -1.185771%;
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: none;
+}
+
+@media (max-width: 1100px) and (min-width: 601px) {
+  .for-panel-art--screens { min-height: 360px; }
+  .for-shot-gallery { gap: 12px; }
+}
+@media (max-width: 600px) {
+  .for-panel-art--screens { display: block; min-height: 0; margin-top: 14px; }
+  .for-shot-gallery {
+    max-width: 100%;
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: min(76%, 260px);
+    align-items: start;
+    justify-content: start;
+    gap: 14px;
+    padding: 12px 10px 24px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 10px;
+    overscroll-behavior-x: contain;
+    scrollbar-color: var(--for-deep) transparent;
+  }
+  .for-shot, .for-shot:nth-child(2) { transform: none; scroll-snap-align: start; }
+  .for-shot figcaption { margin-top: 12px; }
+}
