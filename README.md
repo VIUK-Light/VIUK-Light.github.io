@@ -3,7 +3,7 @@
 VIUK-Lightは、**法人ではない独立したオープンソース開発組織**です。GitHubに限らず活動し、GitHubはソースコードや開発情報を公開する場の一つです。
 現在は、社会や価値観、身近な関係について対話するための**Omoiシリーズ**を中心に開発しています。
 
-[公式サイトを見る](https://viuk-light.org/) · [Projects](https://viuk-light.org/projects.html) · [Principles](https://viuk-light.org/principles.html) · [Contributing](CONTRIBUTING.md) · [GitHub](https://github.com/VIUK-Light)
+[公式サイトを見る](https://viuk-light.org/) · [News](https://viuk-light.org/news.html) · [Projects](https://viuk-light.org/projects.html) · [Principles](https://viuk-light.org/principles.html) · [Contributing](CONTRIBUTING.md) · [GitHub](https://github.com/VIUK-Light)
 
 ## Projects
 
@@ -11,7 +11,7 @@ VIUK-Lightは、**法人ではない独立したオープンソース開発組�
 | --- | --- | --- | --- |
 | SafeSearch 4 — X-filtering system | **Published** | Microsoft Edge向けのローカルWebフィルタリング拡張機能 | [公式ページ](https://viuk-light.org/x-filtering-system.html) · [Repository](https://github.com/VIUK-Light/X-filtering-system) |
 | Omoi | **Active development** | 社会・倫理・価値観・人生について話すための質問カード | [公式ページ](https://viuk-light.org/omoi.html) · [Repository](https://github.com/VIUK-Light/Omoi) |
-| Omoi for series | **Active development** | Couples・Family・Friendsに合わせて会話の入口を選ぶWebシリーズ | [公式ページ](https://viuk-light.org/omoi-for.html) · [Open](https://omoi-for.viuk-light.org/) |
+| Omoi for series | **Active development** | Couples・Family・Friends・Adults・Self-Careから、対話や振り返りの入口を選ぶWebシリーズ | [公式ページ](https://viuk-light.org/omoi-for.html) · [Open](https://omoi-for.viuk-light.org/) |
 | Kizuna | **Maintenance** | AIキャラクターとの会話・関係・物語を、利用者のペースで育てるiOS / macOSアプリ。新機能開発は最小限とし、主に重大な不具合やセキュリティ上の問題に対応します。 | [公式ページ](https://viuk-light.org/kizuna.html) · [Repository](https://github.com/VIUK-Light/Kizuna) |
 
 ## Principles
@@ -30,7 +30,7 @@ VIUK-Lightは、**法人ではない独立したオープンソース開発組�
 
 このリポジトリはVIUK-Light公式サイトの静的ソースです。HTML / CSS / JavaScriptで構成し、GitHub Pagesから公開しています。
 
-主な入口は、`index.html`（Home）、`projects.html`（公開プロジェクト）、`style.css`（Homeの表示）、`interior.css`（組織・製品紹介・Documentationの表示）、`site-nav.js`（公式ナビゲーション）、`docs.js`（Documentationの補助機能）です。
+主な入口は、`index.html`（Home・直近のお知らせ）、`news.html`（News一覧）、`projects.html`（公開プロジェクト）、`style.css`（Homeの表示）、`interior.css`（組織・製品紹介・Documentationの表示）、`site-nav.js`（公式ナビゲーション）、`docs.js`（Documentationの補助機能）です。
 
 ローカル確認は、リポジトリ直下で次を実行します。
 
