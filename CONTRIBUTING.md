@@ -20,7 +20,7 @@ Issueでは、会話内容、APIキー、アクセストークン、個人情報
 | News・お知らせ | `index.html`（直近8件）、`news.html`（一覧）。日付・見出し・リンク先を両方そろえて更新 |
 | Homeの表示 | `style.css` |
 | 組織・製品紹介・Documentationの表示 | `interior.css` |
-| 公式ナビゲーション | `site-nav.js` |
+| 公式ナビゲーション | `site-nav.js`、`site-nav.css`（日本語メニューとモバイル表示） |
 | Omoi forの実画面 | `assets/omoi-for/screenshots/`（2026-10-17提供の12枚）、`omoi-for-screens.css`（画面内の表示範囲）。画像本体は加工せず、撮影時のサムネイルが入らない範囲をCSSで表示 |
 | Omoi forの紹介 | `omoi-for.html`、`omoi-for.css`、`omoi-for.js`。カードカバー・シリーズ選択・体験デモ |
 | 製品紹介・Homeの動き | `site-motion.css`、`site-motion.js`。`data-motion-page`のあるページへ適用 |
