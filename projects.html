@@ -11,6 +11,7 @@
 <link href="interior.css?v=20261017-x-filtering" rel="stylesheet"/>
 <link rel="stylesheet" href="site-motion.css?v=20261016-motion-2">
 <link rel="stylesheet" href="omoi-for-screens.css?v=20261017-screens">
+<link rel="stylesheet" href="x-filtering-system.css?v=20261017-dark-1">
 </head>
 <body data-motion-page class="interior-body">
 <a class="skip-link" href="#main-content">本文へ移動</a>
@@ -32,7 +33,6 @@
 <div class="page-intro-copy">
 <p class="breadcrumb"><a href="index.html">VIUK-Light</a> / Projects</p>
 <h1>プロジェクト</h1>
-<p class="hero-lead">人と話すためのプロダクトや、Web閲覧を支えるフィルタリングツールを開発しています。</p>
 </div>
 </section>
 <nav class="project-directory-index" aria-label="プロジェクトの目次">
@@ -40,16 +40,16 @@
 </nav>
 <section class="projects-section" aria-label="公開プロジェクト">
   <div class="project-directory">
-    <article class="project-directory-row" id="x-filtering-system">
+    <article class="project-directory-row xf-directory" id="x-filtering-system">
       <figure class="project-directory-media">
-        <a href="x-filtering-system.html"><img class="project-app-icon" src="assets/x-filtering-system/icon128.png" width="128" height="128" alt="SafeSearch 4 — X-filtering systemの拡張機能アイコン" decoding="async"></a>
-        <figcaption>Microsoft Edge向けブラウザー拡張機能</figcaption>
+        <a href="x-filtering-system.html"><img class="project-app-icon" src="assets/x-filtering-system/icon128.png" width="128" height="128" alt="SafeSearch 4の拡張機能アイコン" decoding="async"></a>
+        <figcaption>判定は、このデバイスで。</figcaption>
       </figure>
       <div class="project-directory-copy">
         <h2><a href="x-filtering-system.html">SafeSearch 4 — X-filtering system</a></h2>
-        <p class="project-directory-summary">URLとページのテキストを確認する、Webフィルタリング拡張機能。</p>
-        <p>カテゴリ選択とサイトごとのルールに対応。ページのテキストは端末内で判定し、ブロック時は理由とカテゴリを表示します。</p>
-        <dl class="project-directory-facts"><div><dt>対象</dt><dd>Microsoft Edge（macOS / Windows）</dd></div><div><dt>状況</dt><dd>Microsoft Edge版を公開中。macOS版Edgeで実ブラウザー経路を確認済み。Windows実機での検証は未実施です。</dd></div></dl>
+        <p class="project-directory-summary">ローカルで動く、Webフィルタリング。</p>
+        <p>URLとページ本文をブラウザー内で判定。外部の分類APIへ送らず、カテゴリ別の設定とサイトごとの許可・ブロックルールで閲覧を制御します。</p>
+        <dl class="project-directory-facts"><div><dt>確認済み</dt><dd>Microsoft Edge · macOS</dd></div><div><dt>公開タグ</dt><dd><a href="https://github.com/VIUK-Light/X-filtering-system/releases/tag/v1.0.0">v1.0.0</a> · 2026.10.17</dd></div></dl>
         <div class="project-directory-actions"><a class="button primary" href="x-filtering-system.html">プロジェクト紹介</a><a class="external" href="https://github.com/VIUK-Light/X-filtering-system">ソースコード（MIT）</a></div>
       </div>
     </article>
