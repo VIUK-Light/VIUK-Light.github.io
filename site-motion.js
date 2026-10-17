@@ -111,6 +111,15 @@
   wideStory.addEventListener('change', queueFrame);
   root.classList.add('motion-ready');
   updatePreference();
+  const seriesGallery = page.querySelector('.home-product-media-gallery--omoi-for');
+  seriesGallery?.addEventListener('focusin', event => {
+    const link = event.target.closest('a');
+    if (!link || !seriesGallery.contains(link) || seriesGallery.scrollWidth <= seriesGallery.clientWidth) return;
+    const track = seriesGallery.getBoundingClientRect();
+    const target = link.getBoundingClientRect();
+    if (target.left < track.left + 8) seriesGallery.scrollLeft -= track.left + 8 - target.left;
+    else if (target.right > track.right - 8) seriesGallery.scrollLeft += target.right - track.right + 8;
+  });
   const hero = page.querySelector('.project-hero, .home-intro, .projects-intro');
   if (hero) {
     const introItems = [...hero.querySelectorAll('h1, .project-catch, .project-intro, .action-row, .home-intro-tagline, .hero-lead')];
