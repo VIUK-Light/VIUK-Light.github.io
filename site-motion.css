@@ -75,7 +75,7 @@
   box-shadow: 0 12px 24px -20px #20334455;
 }
 [data-motion-page] section[id] { scroll-margin-top: calc(var(--motion-nav-height) + 28px); }
-[data-motion-page] .site-footer { padding-bottom: 90px; }
+[data-motion-page] .site-footer { padding-bottom: var(--footer-bottom-space, 90px); }
 
 /* Static story: the original three screens stay available without JavaScript. */
 .motion-story-stage { display: none; }
