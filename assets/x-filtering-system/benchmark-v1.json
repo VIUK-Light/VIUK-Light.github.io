@@ -1,0 +1,169 @@
+{
+  "benchmark": "内部独自ベンチマーク v1",
+  "metric": {
+    "id": "category_attributed_block_recall",
+    "label": "カテゴリ一致を伴う拒否率",
+    "definition": "対応していて観測できた拒否期待ケースのうち、期待された理由カテゴリと一致してブロックした割合。"
+  },
+  "scope": {
+    "target": "SafeSearch 4 macOS開発版",
+    "components": [
+      "ローカルカテゴリDB",
+      "URLルール",
+      "ローカルE5"
+    ],
+    "edgeExtensionMeasurement": false
+  },
+  "source": "benchmark-v1.png",
+  "sourceAppliesTo": "percentages",
+  "countsProvenance": {
+    "kind": "verified_internal_aggregate",
+    "description": "保存済み内部集計の一致件数・観測件数と照合。個別ケースや非公開コーパスは含まない。",
+    "verifiedOn": "2026-10-17"
+  },
+  "products": [
+    {
+      "name": "SafeKids Search 1",
+      "year": 2024
+    },
+    {
+      "name": "SafeKids Search 2",
+      "year": 2024
+    },
+    {
+      "name": "SafeKids Search 3",
+      "year": 2025
+    },
+    {
+      "name": "SafeSearch 4 開発版",
+      "year": 2026
+    }
+  ],
+  "rows": [
+    {
+      "category": "成人・性的コンテンツ",
+      "percentages": [
+        2.0,
+        9.2,
+        26.3,
+        98.7
+      ],
+      "latestMatchedAndObserved": [
+        151,
+        153
+      ],
+      "nullLabel": "未対応"
+    },
+    {
+      "category": "暴力・犯罪",
+      "percentages": [
+        null,
+        0.0,
+        0.0,
+        36.7
+      ],
+      "latestMatchedAndObserved": [
+        11,
+        30
+      ],
+      "nullLabel": "未対応"
+    },
+    {
+      "category": "賭博",
+      "percentages": [
+        0.0,
+        8.6,
+        0.0,
+        74.3
+      ],
+      "latestMatchedAndObserved": [
+        26,
+        35
+      ],
+      "nullLabel": "未対応"
+    },
+    {
+      "category": "薬物・酒・たばこ",
+      "percentages": [
+        0.0,
+        17.6,
+        0.0,
+        20.6
+      ],
+      "latestMatchedAndObserved": [
+        7,
+        34
+      ],
+      "nullLabel": "未対応"
+    },
+    {
+      "category": "出会い・勧誘",
+      "percentages": [
+        0.0,
+        0.0,
+        0.0,
+        68.8
+      ],
+      "latestMatchedAndObserved": [
+        22,
+        32
+      ],
+      "nullLabel": "未対応"
+    },
+    {
+      "category": "SNS・掲示板",
+      "percentages": [
+        0.0,
+        0.0,
+        0.0,
+        28.0
+      ],
+      "latestMatchedAndObserved": [
+        14,
+        50
+      ],
+      "nullLabel": "未対応"
+    },
+    {
+      "category": "自傷・自殺",
+      "percentages": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "latestMatchedAndObserved": null,
+      "nullLabel": "未対応"
+    },
+    {
+      "category": "差別・嫌がらせ・暴言",
+      "percentages": [
+        0.0,
+        null,
+        null,
+        null
+      ],
+      "latestMatchedAndObserved": null,
+      "nullLabel": "未対応"
+    },
+    {
+      "category": "性教育・健康情報",
+      "percentages": [
+        null,
+        0.0,
+        null,
+        37.5
+      ],
+      "latestMatchedAndObserved": [
+        6,
+        16
+      ],
+      "nullLabel": "未対応"
+    }
+  ],
+  "notes": [
+    "SafeKids Search 1・2・3は非公開のVIUKプロダクト。SafeSearch 4はVIUK-Lightの開発版。",
+    "一部カテゴリには未観測ケースがある。未対応・未観測・許可期待ケースは分母に含まれない。",
+    "公開中のEdge拡張機能の実測値ではない。"
+  ]
+}
