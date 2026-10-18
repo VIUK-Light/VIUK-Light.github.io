@@ -30,7 +30,7 @@ VIUK-Lightは、**法人ではない独立したオープンソース開発組�
 
 このリポジトリはVIUK-Light公式サイトの静的ソースです。HTML / CSS / JavaScriptで構成し、GitHub Pagesから公開しています。
 
-主な入口は、`index.html`（Home・直近のお知らせ）、`news.html`（News一覧）、`projects.html`（公開プロジェクト）、`style.css`（Homeの表示）、`interior.css`（組織・製品紹介・Documentationの表示）、`site-nav.js`（公式ナビゲーション）、`docs.js`（Documentationの補助機能）です。
+主な入口は、`index.html`（Home・直近のお知らせ）、`news.html`（News一覧）、`projects.html`（公開プロジェクト）、`style.css`（Homeの表示）、`interior.css`（組織・製品紹介・Documentationの表示）、`site-nav.js` / `site-nav.css`（日本語ナビゲーションとモバイルメニュー）、`docs.js`（Documentationの補助機能）です。
 
 ローカル確認は、リポジトリ直下で次を実行します。
 
