@@ -14,7 +14,7 @@
 
     <link rel="stylesheet" href="interior.css?v=20261015-ud-font" />
     <link rel="stylesheet" href="site-motion.css?v=20261016-motion-2">
-    <link rel="stylesheet" href="omoi-for.css?v=20261024-series-colors-2">
+    <link rel="stylesheet" href="omoi-for.css?v=20261024-series-text-1">
     <link rel="stylesheet" href="omoi-for-screens.css?v=20261017-screens">
     <link rel="stylesheet" href="site-nav.css?v=20261017-ja-1">
   </head>
@@ -55,24 +55,17 @@
           <figcaption class="for-deck-caption">気になるシリーズを選ぶ</figcaption>
         </figure>
       </section>
-      <nav class="project-subnav" aria-label="Omoi for Seriesプロジェクトナビゲーション"><a aria-current="page" href="omoi-for.html">概要</a><a href="#series">シリーズ</a><a href="#experience">カードの楽しみ方</a><a href="#flow">使い方</a><a href="#difference">Omoiとの違い</a><a href="omoi-for-docs.html">ドキュメント</a></nav>
+      <nav class="project-subnav" aria-label="Omoi for Seriesプロジェクトナビゲーション"><a aria-current="page" href="omoi-for.html">概要</a><a href="#series">シリーズ</a><a href="#difference">Omoiとの違い</a><a href="omoi-for-docs.html">ドキュメント</a></nav>
 
       <section class="for-section for-showcase for-series-section" id="series" aria-labelledby="for-series-title">
         <header class="section-header">
           <h2 id="for-series-title">あなたに合ったシリーズを選ぶ</h2>
         </header>
-        <nav class="for-series-links" aria-label="各シリーズの特設ページ">
-<a data-series="couples" href="omoi-for-couples.html"><strong>Couples</strong><span>カップル・パートナー</span><span class="for-series-link-label">特設ページへ <span aria-hidden="true">→</span></span></a>
-<a data-series="family" href="omoi-for-family.html"><strong>Family</strong><span>ファミリー・家族向け</span><span class="for-series-link-label">特設ページへ <span aria-hidden="true">→</span></span></a>
-<a data-series="friends" href="omoi-for-friends.html"><strong>Friends</strong><span>友だち同士で</span><span class="for-series-link-label">特設ページへ <span aria-hidden="true">→</span></span></a>
-<a data-series="adults" href="omoi-for-adults.html"><strong>Adults</strong><span>18歳以上向け</span><span class="for-series-link-label">特設ページへ <span aria-hidden="true">→</span></span></a>
-<a data-series="self-care" href="omoi-for-self-care.html"><strong>Self-Care</strong><span>ひとりで振り返る</span><span class="for-series-link-label">特設ページへ <span aria-hidden="true">→</span></span></a>
-</nav>
-        <nav class="for-series-picker" data-for-picker aria-label="シリーズを選ぶ"><a href="#for-series-couples" id="for-tab-couples" data-for-tab data-series="couples" class="is-selected"><span class="for-series-mini" aria-hidden="true"><i></i><b>Omoi</b></span><span>Couples</span><small></small></a>
-<a href="#for-series-family" id="for-tab-family" data-for-tab data-series="family" class=""><span class="for-series-mini" aria-hidden="true"><i></i><b>Omoi</b></span><span>Family</span><small></small></a>
-<a href="#for-series-friends" id="for-tab-friends" data-for-tab data-series="friends" class=""><span class="for-series-mini" aria-hidden="true"><i></i><b>Omoi</b></span><span>Friends</span><small></small></a>
-<a href="#for-series-adults" id="for-tab-adults" data-for-tab data-series="adults" class=""><span class="for-series-mini" aria-hidden="true"><i></i><b>Omoi</b></span><span>Adults</span><small>18歳以上向け</small></a>
-<a href="#for-series-self-care" id="for-tab-self-care" data-for-tab data-series="self-care" class=""><span class="for-series-mini" aria-hidden="true"><i></i><b>Omoi</b></span><span>Self-Care</span><small></small></a></nav>
+        <nav class="for-series-picker" data-for-picker aria-label="シリーズを選ぶ"><a href="#for-series-couples" id="for-tab-couples" data-for-tab data-series="couples" class="is-selected"><span>Couples</span><small></small></a>
+<a href="#for-series-family" id="for-tab-family" data-for-tab data-series="family" class=""><span>Family</span><small></small></a>
+<a href="#for-series-friends" id="for-tab-friends" data-for-tab data-series="friends" class=""><span>Friends</span><small></small></a>
+<a href="#for-series-adults" id="for-tab-adults" data-for-tab data-series="adults" class=""><span>Adults</span><small>18歳以上向け</small></a>
+<a href="#for-series-self-care" id="for-tab-self-care" data-for-tab data-series="self-care" class=""><span>Self-Care</span><small></small></a></nav>
         <div class="for-series-panels" data-for-reveal>
           <article id="for-series-couples" class="for-series-panel" data-for-panel data-series="couples" tabindex="0">
             <div class="for-panel-content">
@@ -165,7 +158,6 @@
             </div>
           </article>
         </div>
-        <p class="for-dataset-note">主質問は5シリーズで706問。2026年10月17日に公開版を確認しています。裏面の追加の問いは、この件数に含めていません。</p>
       </section>
 
       <section class="project-overview for-difference" id="difference">
@@ -175,55 +167,9 @@
         <div class="project-overview-copy">
           <p class="lead-copy">Omoi for Seriesは、相手との会話やひとりでの振り返りを、質問カードから始めるWebシリーズです。</p>
           <p>既存のOmoiとは、実装・質問データ・内部のLevel定義が異なります。画面ではLite / Deepと通常 / 深掘りを選びます。</p><a class="text-link" href="omoi-for-details.html">設計を詳しく見る<span class="for-arrow" aria-hidden="true">→</span></a></div>
-      </section>
+        </section>
 
-      <section class="for-experience" id="experience" aria-labelledby="for-experience-title">
-        <div class="for-experience-copy">
-          <h2 id="for-experience-title">質問の内容と、<br>進め方を選ぶ。</h2>
-          <div class="for-mode-controls">
-            <fieldset class="for-mode-group">
-              <legend>質問の踏み込み度</legend>
-              <div class="for-segment"><button type="button" data-for-intensity="lite" aria-pressed="true">Lite</button><button type="button" data-for-intensity="deep" aria-pressed="false">Deep</button></div>
-            </fieldset>
-            <fieldset class="for-mode-group">
-              <legend>会話のスタイル</legend>
-              <div class="for-segment"><button type="button" data-for-style="normal" aria-pressed="false">通常</button><button type="button" data-for-style="deep" aria-pressed="true">深掘り</button></div>
-            </fieldset>
-          </div>
-          <p class="for-static-note">Lite / Deepは質問の踏み込み度、通常 / 深掘りは追加の問いの表示方法です。ふたつを別々に選べます。</p>
-          <p class="for-demo-help" data-for-demo-help>気軽な問いにも、もう一つの視点を。</p>
-        </div>
-        <div class="for-demo-visual" data-for-reveal>
-          <div class="for-demo-scene" aria-hidden="true">
-            <div class="for-demo-preview-back"><span>＋</span><small>追加の問い</small></div>
-            <div class="for-demo-card" data-for-demo-card>
-              <div class="for-demo-face for-demo-front for-cover"><span class="for-cover-brand">Omoi for</span><span class="for-cover-name" data-for-current-name>Couples</span><svg class="for-cover-rings" viewBox="0 0 130 170" aria-hidden="true"><circle cx="47" cy="48" r="40"/><circle cx="82" cy="73" r="40"/><path d="M65 124v46"/></svg><span class="for-cover-age" data-for-demo-intensity-label>Lite</span></div>
-              <div class="for-demo-face for-demo-back"><span class="for-plus">＋</span><p>追加の問い</p>
-              </div>
-            </div>
-          </div>
-<button type="button" class="for-demo-flip" data-for-flip aria-pressed="false" aria-describedby="for-demo-status"><span data-for-flip-label>カードをめくる</span><span aria-hidden="true">↗</span></button>
-<p class="for-demo-note">カードの動きのイメージ</p>
-          <p class="for-demo-status" id="for-demo-status" data-for-demo-status role="status">Lite・深掘り / 表面</p>
-        </div>
-      </section>
 
-      <section class="for-flow-section" id="flow" aria-labelledby="for-flow-title">
-        <div class="section-header">
-          <h2 id="for-flow-title">3ステップで始める</h2>
-        </div>
-        <ol class="for-flow-list">
-          <li><span>01</span><div><strong>シリーズを選ぶ</strong><p>話す相手や、ひとりで振り返る目的に合ったシリーズを選びます。</p>
-            </div>
-          </li>
-          <li><span>02</span><div><strong>内容と進め方を選ぶ</strong><p>Lite / Deepで質問の踏み込み度を、通常 / 深掘りで追加の問いの表示を選びます。</p>
-            </div>
-          </li>
-          <li><span>03</span><div><strong>カードを一枚ずつ進める</strong><p>「次へ」で進みます。答えずに進むことも、「今日はここまで」で終えることもできます。</p>
-            </div>
-          </li>
-        </ol><a class="text-link" href="https://omoi-for.viuk-light.org/howto.html">使い方を詳しく見る<span class="for-arrow" aria-hidden="true">→</span></a>
-</section>
 
       <section class="product-resources">
         <div>
@@ -259,7 +205,7 @@
 
     </footer>
   <script defer src="site-nav.js?v=20261017-ja-1"></script>
-  <script defer src="omoi-for.js?v=20261017-screens"></script>
+  <script defer src="omoi-for.js?v=20261024-subnav-active-1"></script>
 <script defer src="site-motion.js?v=20261016-motion-2"></script>
 </body>
 </html>

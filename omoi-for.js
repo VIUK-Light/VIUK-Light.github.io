@@ -1,6 +1,31 @@
 (() => {
   const page = document.querySelector('.omoi-for-page');
   if (!page) return;
+  const subnav = page.querySelector('.project-subnav');
+  if (subnav) {
+    const sections = [...subnav.querySelectorAll('a')].flatMap(link => {
+      const href = link.getAttribute('href');
+      const target = href === 'omoi-for.html' ? page.querySelector('.for-hero')
+        : href?.startsWith('#') ? page.querySelector(href) : null;
+      return target ? [{ link, target }] : [];
+    });
+    const updateSubnav = () => {
+      const headerHeight = document.querySelector('.site-header')?.getBoundingClientRect().height || 0;
+      const navHeight = subnav.getBoundingClientRect().height;
+      const marker = headerHeight + navHeight + 24;
+      let active = sections[0];
+      sections.forEach(section => {
+        if (section.target.getBoundingClientRect().top <= marker) active = section;
+      });
+      sections.forEach(section => {
+        if (section === active) section.link.setAttribute('aria-current', 'location');
+        else section.link.removeAttribute('aria-current');
+      });
+    };
+    window.addEventListener('scroll', updateSubnav, { passive: true });
+    window.addEventListener('resize', updateSubnav);
+    updateSubnav();
+  }
   const cards = [...page.querySelectorAll('[data-for-card]')];
   const tabs = [...page.querySelectorAll('[data-for-tab]')];
   const panels = [...page.querySelectorAll('[data-for-panel]')];
@@ -8,12 +33,11 @@
   const hero = page.querySelector('.for-hero');
   const demo = page.querySelector('[data-for-demo-card]');
   const flipButton = page.querySelector('[data-for-flip]');
-  if (!cards.length || cards.length !== tabs.length || cards.length !== panels.length ||
-      !picker || !hero || !demo || !flipButton) return;
+  if (!tabs.length || tabs.length !== panels.length || !picker) return;
 
   const root = document.documentElement;
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const series = cards.map(card => ({ key: card.dataset.series, name: card.dataset.seriesName }));
+  const series = panels.map(panel => ({ key: panel.dataset.series, name: panel.dataset.series }));
   const visualOrder = ['friends', 'family', 'couples', 'adults', 'self-care'];
   const animations = new Set();
   const state = { series: 'couples', intensity: 'lite', style: 'deep', flipped: false };
@@ -69,6 +93,7 @@
   };
 
   const renderDemo = () => {
+    if (!demo || !flipButton) return;
     const selected = series.find(item => item.key === state.series);
     const intensityName = state.intensity === 'lite' ? 'Lite' : 'Deep';
     const styleName = state.style === 'normal' ? '通常' : '深掘り';
@@ -196,7 +221,7 @@
       renderDemo();
     });
   });
-  flipButton.addEventListener('click', () => {
+  flipButton?.addEventListener('click', () => {
     if (state.style !== 'deep') return;
     markManual();
     state.flipped = !state.flipped;
@@ -220,7 +245,7 @@
     { opacity: 1, transform: poses[i] }
   ], 1200, i * 70));
 
-  if ('IntersectionObserver' in window) {
+  if (hero && 'IntersectionObserver' in window) {
     const heroObserver = new IntersectionObserver(entries => {
       const entry = entries.find(item => item.target === hero);
       if (!entry) return;
