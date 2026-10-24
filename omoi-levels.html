@@ -1,40 +1,141 @@
 <!DOCTYPE html>
 
 <html lang="ja">
-<head>
-<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>話題カテゴリとLevel — Omoi Documentation</title>
 <meta content="Omoiの4つの話題カテゴリ、内部Level、質問データの件数を説明します。" name="description"/>
-<link href="https://viuk-light.org/omoi-levels.html" rel="canonical"/><link href="assets/viuk-light-logo.png?v=20260825" rel="icon" type="image/png"/><link href="interior.css?v=20261015-ud-font" rel="stylesheet"/><script defer="" src="docs.js?v=20260913-layout-3"></script>
+    <link href="https://viuk-light.org/omoi-levels.html" rel="canonical"/>
+    <link href="assets/viuk-light-logo.png?v=20260825" rel="icon" type="image/png"/>
+    <link href="interior.css?v=20261015-ud-font" rel="stylesheet"/><script defer="" src="docs.js?v=20260913-layout-3"></script>
 </head>
-<body class="docs-body" data-product="omoi">
+  <body class="docs-body" data-product="omoi">
 <a class="skip-link" href="#docs-content">本文へ移動</a>
-<header class="docs-topbar"><a aria-label="VIUK-Light ホーム" class="docs-brand" href="index.html"><img alt="VIUK-Light公式ロゴ" class="brand-logo" height="638" src="assets/viuk-light-logo.png?v=20260825" width="712"/><span>VIUK-Light</span></a><a class="docs-title-link" href="omoi-docs.html">Omoi Documentation</a><nav aria-label="製品へのリンク" class="docs-top-actions"><a class="external" href="https://omoi.viuk-light.org/">Omoiを開く</a></nav></header>
-<div class="docs-layout">
-<aside aria-label="Omoiドキュメントナビゲーション" class="docs-sidebar"><details class="docs-mobile-nav" data-doc-mobile-nav="" open=""><summary>Omoiの目次</summary><div class="docs-sidebar-content"><a class="docs-back" href="omoi.html">Omoi<span>製品紹介へ</span></a><div class="docs-search"><label for="omoi-doc-filter">目次を検索</label><input data-doc-filter="" id="omoi-doc-filter" placeholder="キーワードを入力" type="search"/><p data-doc-search-status="" role="status"></p></div><div class="docs-group" data-doc-group=""><p class="docs-group-label">はじめに</p><a data-doc-link="" href="omoi-docs.html">概要</a><a data-doc-link="" href="omoi-concept.html">Omoi（重い・想い・思い）</a><a data-doc-link="" href="omoi-details.html">Omoiについて</a><a data-doc-link="" href="omoi-getting-started.html">Omoiをはじめる</a></div><div class="docs-group" data-doc-group=""><p class="docs-group-label">使い方</p><a aria-current="page" data-doc-link="" href="omoi-levels.html">話題カテゴリとLevel</a><a data-doc-link="" href="omoi-question.html">質問画面</a></div><div class="docs-group" data-doc-group=""><p class="docs-group-label">データと品質</p><a data-doc-link="" href="omoi-question-catalog.html">質問カタログ</a><a data-doc-link="" href="omoi-data.html">データ構造</a><a data-doc-link="" href="omoi-editorial.html">編集方針</a><a data-doc-link="" href="omoi-accessibility.html">アクセシビリティ</a><a data-doc-link="" href="omoi-validation.html">検証と公開</a><a data-doc-link="" href="omoi-technical.html">技術仕様</a><a data-doc-link="" href="omoi-safety.html">安全設計</a></div><div class="docs-group" data-doc-group=""><p class="docs-group-label">参加する</p><a data-doc-link="" href="omoi-contributing.html">質問データに参加する</a></div><div class="docs-group" data-doc-group=""><p class="docs-group-label">ヘルプ</p><a data-doc-link="" href="omoi-help.html">ヘルプ</a></div></div></details></aside>
-<main class="docs-main" id="docs-content"><div class="docs-page-heading"><p class="docs-breadcrumb"><a href="omoi-docs.html">Omoi Documentation</a> / 話題カテゴリとLevel</p><header class="docs-hero"><h1>話題カテゴリとLevel</h1><p class="docs-lead">画面で選ぶ4つの話題カテゴリと、質問データで使うLevelの関係を説明します。</p></header></div><aside class="page-toc"><details open=""><summary>このページ</summary><nav aria-label="ページ内の目次"><a href="#section-1">4つの話題カテゴリ</a><a href="#section-2">内部Levelと続け方</a><a href="#section-3">JSONファイル別の件数</a><a href="#section-4">質問画面の例</a></nav></details></aside><div class="docs-article">
-<section class="docs-page-content">
-<section><h2 id="section-1">4つの話題カテゴリ</h2>
-<figure class="docs-screenshot is-phone article-lead-media"><img alt="Omoiで4つの話題カテゴリから選ぶ画面。" src="assets/omoi/omoi-categories.png"/><figcaption>今話したいテーマから選ぶ</figcaption></figure>
-<table class="spec-table"><thead><tr><th scope="col">画面で選ぶカテゴリ</th><th scope="col">扱う内容</th><th scope="col">内部Level</th></tr></thead><tbody>
-<tr><th scope="row">日常や自分のこと</th><td>友達・恋愛・普段の考え方について</td><td>1</td></tr>
-<tr><th scope="row">意見が分かれる身近な話</th><td>学校・人間関係・日常の判断について</td><td>2</td></tr>
-<tr><th scope="row">社会や価値観について</th><td>社会制度・人権・倫理などについて</td><td>3</td></tr>
-<tr><th scope="row">人生に関わる難しい選択</th><td>自分が当事者だったらどう判断するか</td><td>4</td></tr>
-</tbody></table>
-</section><section><h2 id="section-2">内部Levelと続け方</h2>
-<p>画面では話したいカテゴリを選び、内部では対応するLevelのJSONを読み込みます。質問データの<code>category</code>は12の上位分類を表す編集用metadataで、ここにある4つの表示カテゴリとは別の項目です。</p>
-<p>「社会や価値観について」「人生に関わる難しい選択」では、開始前に内容の確認画面が表示されます。進むか、戻って選び直すかを選べます。</p>
-<p>事前の問題数選択はありません。「次の問いを見る」で読み進め、「前の問い」で戻り、終えたいときに「ここで終える」を選びます。</p>
-</section><section><h2 id="section-3">JSONファイル別の件数</h2>
-<table class="spec-table"><tbody><tr><th scope="row">level1.json</th><td>163件</td></tr><tr><th scope="row">level2.json</th><td>80件</td></tr><tr><th scope="row">level3.json</th><td>301件</td></tr><tr><th scope="row">level4.json</th><td>362件</td></tr><tr><th scope="row">合計</th><td>906件</td></tr></tbody></table>
-<p>2026-10-16確認。公開版のOmoiリポジトリmainブランチ（commit: <code>fe24acc</code>）のデータです。反映元は<a href="omoi-question-catalog.html">質問カタログ</a>でも確認できます。</p>
-</section><section><h2 id="section-4">質問画面の例</h2>
-<div class="docs-media-grid"><figure class="docs-screenshot"><img alt="場面文と問い、ヒントや背景、次へ・戻る・終了の操作があるOmoiの質問画面。" src="assets/omoi/omoi-question-20261017.png" width="904" height="1420"/><figcaption>場面と問いを読む</figcaption></figure><figure class="docs-screenshot"><img alt="Omoiで会話のヒントを開いた画面。" src="assets/omoi/omoi-hints.png"/><figcaption>用意されている問いでは会話のヒントを使える</figcaption></figure></div>
-<div class="link-list"><a href="omoi-question-catalog.html">現在の質問データを検索する</a><a href="omoi-question.html">質問画面の操作を見る</a></div>
-</section></section>
-<nav aria-label="前後の資料" class="document-pagination"><a href="omoi-getting-started.html"><span>前の資料</span><strong>Omoiをはじめる</strong></a><a href="omoi-question.html"><span>次の資料</span><strong>質問画面</strong></a></nav></div></main>
-</div>
-<footer class="docs-footer"><span>Omoi Documentation / VIUK-Light</span><nav aria-label="資料フッター"><a href="index.html">VIUK-Light</a><a href="privacy.html">プライバシー</a></nav></footer>
-</body>
+<header class="docs-topbar"><a aria-label="VIUK-Light ホーム" class="docs-brand" href="index.html"><img alt="VIUK-Light公式ロゴ" class="brand-logo" height="638" src="assets/viuk-light-logo.png?v=20260825" width="712"/><span>VIUK-Light</span></a><a class="docs-title-link" href="omoi-docs.html">Omoi Documentation</a><nav aria-label="製品へのリンク" class="docs-top-actions"><a class="external" href="https://omoi.viuk-light.org/">Omoiを開く</a></nav>
+    </header>
+    <div class="docs-layout">
+      <aside aria-label="Omoiドキュメントナビゲーション" class="docs-sidebar">
+        <details class="docs-mobile-nav" data-doc-mobile-nav="" open="">
+          <summary>Omoiの目次</summary>
+          <div class="docs-sidebar-content"><a class="docs-back" href="omoi.html">Omoi<span>製品紹介へ</span></a><div class="docs-search"><label for="omoi-doc-filter">目次を検索</label><input data-doc-filter="" id="omoi-doc-filter" placeholder="キーワードを入力" type="search"/><p data-doc-search-status="" role="status">
+              </p>
+            </div>
+            <div class="docs-group" data-doc-group="">
+              <p class="docs-group-label">はじめに</p><a data-doc-link="" href="omoi-docs.html">概要</a><a data-doc-link="" href="omoi-concept.html">Omoi（重い・想い・思い）</a><a data-doc-link="" href="omoi-details.html">Omoiについて</a><a data-doc-link="" href="omoi-getting-started.html">Omoiをはじめる</a></div>
+            <div class="docs-group" data-doc-group="">
+              <p class="docs-group-label">使い方</p><a aria-current="page" data-doc-link="" href="omoi-levels.html">話題カテゴリとLevel</a><a data-doc-link="" href="omoi-question.html">質問画面</a></div>
+            <div class="docs-group" data-doc-group="">
+              <p class="docs-group-label">データと品質</p><a data-doc-link="" href="omoi-question-catalog.html">質問カタログ</a><a data-doc-link="" href="omoi-data.html">データ構造</a><a data-doc-link="" href="omoi-editorial.html">編集方針</a><a data-doc-link="" href="omoi-accessibility.html">アクセシビリティ</a><a data-doc-link="" href="omoi-validation.html">検証と公開</a><a data-doc-link="" href="omoi-technical.html">技術仕様</a><a data-doc-link="" href="omoi-safety.html">安全設計</a></div>
+            <div class="docs-group" data-doc-group="">
+              <p class="docs-group-label">参加する</p><a data-doc-link="" href="omoi-contributing.html">質問データに参加する</a></div>
+            <div class="docs-group" data-doc-group="">
+              <p class="docs-group-label">ヘルプ</p><a data-doc-link="" href="omoi-help.html">ヘルプ</a></div>
+          </div>
+        </details>
+      </aside>
+      <main class="docs-main" id="docs-content">
+        <div class="docs-page-heading">
+          <p class="docs-breadcrumb"><a href="omoi-docs.html">Omoi Documentation</a> / 話題カテゴリとLevel</p>
+          <header class="docs-hero">
+            <h1>話題カテゴリとLevel</h1>
+            <p class="docs-lead">画面で選ぶ4つの話題カテゴリと、質問データで使うLevelの関係を説明します。</p>
+          </header>
+        </div>
+        <aside class="page-toc">
+          <details open="">
+            <summary>このページ</summary>
+            <nav aria-label="ページ内の目次"><a href="#section-1">4つの話題カテゴリ</a><a href="#section-2">内部Levelと続け方</a><a href="#section-3">JSONファイル別の件数</a><a href="#section-4">質問画面の例</a></nav>
+          </details>
+        </aside>
+        <div class="docs-article">
+          <section class="docs-page-content">
+            <section>
+              <h2 id="section-1">4つの話題カテゴリ</h2>
+              <figure class="docs-screenshot is-phone article-lead-media"><img alt="Omoiで4つの話題カテゴリから選ぶ画面。" src="assets/omoi/omoi-categories.png"/><figcaption>今話したいテーマから選ぶ</figcaption>
+              </figure>
+              <table class="spec-table">
+                <thead>
+                  <tr>
+                    <th scope="col">画面で選ぶカテゴリ</th>
+                    <th scope="col">扱う内容</th>
+                    <th scope="col">内部Level</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">日常や自分のこと</th>
+                    <td>友達・恋愛・普段の考え方について</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">意見が分かれる身近な話</th>
+                    <td>学校・人間関係・日常の判断について</td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">社会や価値観について</th>
+                    <td>社会制度・人権・倫理などについて</td>
+                    <td>3</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">人生に関わる難しい選択</th>
+                    <td>自分が当事者だったらどう判断するか</td>
+                    <td>4</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+            <section>
+              <h2 id="section-2">内部Levelと続け方</h2>
+              <p>画面では話したいカテゴリを選び、内部では対応するLevelのJSONを読み込みます。質問データの<code>category</code>は12の上位分類を表す編集用metadataで、ここにある4つの表示カテゴリとは別の項目です。</p>
+              <p>「社会や価値観について」「人生に関わる難しい選択」では、開始前に内容の確認画面が表示されます。進むか、戻って選び直すかを選べます。</p>
+              <p>事前の問題数選択はありません。「次の問いを見る」で読み進め、「前の問い」で戻り、終えたいときに「ここで終える」を選びます。</p>
+            </section>
+            <section>
+              <h2 id="section-3">JSONファイル別の件数</h2>
+              <table class="spec-table">
+                <tbody>
+                  <tr>
+                    <th scope="row">level1.json</th>
+                    <td>163件</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">level2.json</th>
+                    <td>80件</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">level3.json</th>
+                    <td>301件</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">level4.json</th>
+                    <td>362件</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">合計</th>
+                    <td>906件</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>2026-10-16確認。公開版のOmoiリポジトリmainブランチ（commit: <code>fe24acc</code>）のデータです。反映元は<a href="omoi-question-catalog.html">質問カタログ</a>でも確認できます。</p>
+            </section>
+            <section>
+              <h2 id="section-4">質問画面の例</h2>
+              <div class="docs-media-grid">
+                <figure class="docs-screenshot"><img alt="場面文と問い、ヒントや背景、次へ・戻る・終了の操作があるOmoiの質問画面。" src="assets/omoi/omoi-question-20261017.png" width="904" height="1420"/><figcaption>場面と問いを読む</figcaption>
+                </figure>
+                <figure class="docs-screenshot"><img alt="Omoiで会話のヒントを開いた画面。" src="assets/omoi/omoi-hints.png"/><figcaption>用意されている問いでは会話のヒントを使える</figcaption>
+                </figure>
+              </div>
+              <div class="link-list"><a href="omoi-question-catalog.html">現在の質問データを検索する</a><a href="omoi-question.html">質問画面の操作を見る</a></div>
+            </section>
+          </section>
+          <nav aria-label="前後の資料" class="document-pagination"><a href="omoi-getting-started.html"><span>前の資料</span><strong>Omoiをはじめる</strong></a><a href="omoi-question.html"><span>次の資料</span><strong>質問画面</strong></a></nav>
+        </div>
+      </main>
+    </div>
+    <footer class="docs-footer"><span>Omoi Documentation / VIUK-Light</span><nav aria-label="資料フッター"><a href="index.html">VIUK-Light</a><a href="privacy.html">プライバシー</a></nav>
+    </footer>
+  </body>
 </html>

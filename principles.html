@@ -1,52 +1,81 @@
 <!DOCTYPE html>
 
 <html lang="ja">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Principles — VIUK-Light</title>
 <meta content="VIUK-LightがアプリとAIを開発するときに重視する4つの判断基準です。" name="description"/>
-<link href="https://viuk-light.org/principles.html" rel="canonical"/>
-<link href="assets/viuk-light-logo.png?v=20260825" rel="icon" type="image/png"/>
-<link href="interior.css?v=20261015-ud-font" rel="stylesheet"/>
-<link rel="stylesheet" href="site-nav.css?v=20261017-ja-1">
-</head>
-<body class="interior-body">
+    <link href="https://viuk-light.org/principles.html" rel="canonical"/>
+    <link href="assets/viuk-light-logo.png?v=20260825" rel="icon" type="image/png"/>
+    <link href="interior.css?v=20261015-ud-font" rel="stylesheet"/>
+    <link rel="stylesheet" href="site-nav.css?v=20261017-ja-1">
+  </head>
+  <body class="interior-body">
 <a class="skip-link" href="#main-content">本文へ移動</a>
-<header class="site-header"><a aria-label="VIUK-Light ホーム" class="brand" href="index.html"><img alt="VIUK-Light公式ロゴ" class="brand-logo" height="638" src="assets/viuk-light-logo.png?v=20260825" width="712"/><span>VIUK-Light</span></a><nav aria-label="メインナビゲーション" class="site-nav"><a href="about.html">私たちについて</a><a href="projects.html">プロジェクト</a><a aria-current="page" href="principles.html">大切にしていること</a><a href="contribute.html">参加する</a><a class="external" href="https://github.com/VIUK-Light">GitHub</a></nav></header>
-<main class="site-main" id="main-content">
-<section class="page-intro principles-intro">
-<div class="page-intro-copy">
-<p class="breadcrumb"><a href="index.html">VIUK-Light</a> / 判断基準</p>
-<h1>判断基準</h1>
-<p class="hero-lead">安全性、透明性、プライバシー、利用者の選択。アプリとAIの開発で重視する4つの基準です。</p>
-</div>
-</section>
-<section class="principles-section" id="principles-heading">
-<div class="principles-reading-layout">
-<div class="principles-list">
-<article class="principle-card" id="safety"><h2>安全性</h2>
-<div><p>危険度と文脈に応じて安全性を考えます。一律に体験を止めるのではなく、必要な場面では停止方法や支援先につなぎます。</p></div>
-<p class="principle-check">この機能で、困ったときに止められるか。</p></article>
-<article class="principle-card" id="transparency"><h2>透明性</h2>
-<div><p>問題、限界、外部通信、データ利用、開発中の部分を分かる形で示します。分からないことを、分かったふりで埋めません。</p></div>
-<p class="principle-check">利用者に、仕組みと限界を説明できるか。</p></article>
-<article class="principle-card" id="privacy"><h2>プライバシー</h2>
-<div><p>必要以上の個人情報を集めず、端末内処理や利用者によるデータ管理を重視します。秘密情報を体験の代償にしません。</p></div>
-<p class="principle-check">集めない、保存しない、消せる設計か。</p></article>
-<article class="principle-card" id="choice"><h2>選択</h2>
-<div><p>AIやアプリが判断を奪うのではなく、利用者自身が選べる状態をつくります。使わない、止める、離れる選択も設計に含めます。</p></div>
-<p class="principle-check">同意、拒否、削除、離脱を選べるか。</p></article>
-</div>
-</div>
-</section>
-<section aria-labelledby="checklist-heading" class="principles-checklist">
-<div><h2 id="checklist-heading">実装前に確認すること</h2></div>
-<ul><li><strong>誰に影響するか</strong><span>直接の利用者だけでなく、周囲の人や将来の利用者への影響を確認する。</span></li><li><strong>何が見えなくなるか</strong><span>外部通信、保存、依存、誤り、停止方法を確認する。</span></li><li><strong>選べる状態か</strong><span>同意、拒否、削除、離脱、相談先への移動が実際にできるか確認する。</span></li><li><strong>説明できるか</strong><span>利用者に伝えられない設計は、公開する前に見直す。</span></li></ul>
-</section>
-<nav aria-label="次のページ" class="next-page"><a href="projects.html">← Projectsを見る</a><a href="contribute.html">参加方法を見る →</a></nav>
-</main>
-<footer class="site-footer"><div><a class="footer-brand" href="index.html"><img alt="" class="brand-logo" height="638" src="assets/viuk-light-logo.png?v=20260825" width="712"/><span>VIUK-Light</span></a><p class="footer-meta">© 2026 VIUK-Light</p><p class="footer-legal">VIUK-Light is an independent project and is not incorporated.<br/>VIUK-Lightは独立したプロジェクトであり、法人ではありません。</p></div><nav aria-label="フッターナビゲーション" class="footer-nav"><a href="about.html">私たちについて</a><a href="projects.html">プロジェクト</a><a href="principles.html">大切にしていること</a><a href="contribute.html">参加する</a><a href="privacy.html">プライバシー</a><a class="external" href="https://github.com/VIUK-Light">GitHub</a></nav></footer>
+<header class="site-header"><a aria-label="VIUK-Light ホーム" class="brand" href="index.html"><img alt="VIUK-Light公式ロゴ" class="brand-logo" height="638" src="assets/viuk-light-logo.png?v=20260825" width="712"/><span>VIUK-Light</span></a><nav aria-label="メインナビゲーション" class="site-nav"><a href="about.html">私たちについて</a><a href="projects.html">プロジェクト</a><a aria-current="page" href="principles.html">大切にしていること</a><a href="contribute.html">参加する</a><a class="external" href="https://github.com/VIUK-Light">GitHub</a></nav>
+    </header>
+    <main class="site-main" id="main-content">
+      <section class="page-intro principles-intro">
+        <div class="page-intro-copy">
+          <p class="breadcrumb"><a href="index.html">VIUK-Light</a> / 判断基準</p>
+          <h1>判断基準</h1>
+          <p class="hero-lead">安全性、透明性、プライバシー、利用者の選択。アプリとAIの開発で重視する4つの基準です。</p>
+        </div>
+      </section>
+      <section class="principles-section" id="principles-heading">
+        <div class="principles-reading-layout">
+          <div class="principles-list">
+            <article class="principle-card" id="safety">
+              <h2>安全性</h2>
+              <div>
+                <p>危険度と文脈に応じて安全性を考えます。一律に体験を止めるのではなく、必要な場面では停止方法や支援先につなぎます。</p>
+              </div>
+              <p class="principle-check">この機能で、困ったときに止められるか。</p>
+            </article>
+            <article class="principle-card" id="transparency">
+              <h2>透明性</h2>
+              <div>
+                <p>問題、限界、外部通信、データ利用、開発中の部分を分かる形で示します。分からないことを、分かったふりで埋めません。</p>
+              </div>
+              <p class="principle-check">利用者に、仕組みと限界を説明できるか。</p>
+            </article>
+            <article class="principle-card" id="privacy">
+              <h2>プライバシー</h2>
+              <div>
+                <p>必要以上の個人情報を集めず、端末内処理や利用者によるデータ管理を重視します。秘密情報を体験の代償にしません。</p>
+              </div>
+              <p class="principle-check">集めない、保存しない、消せる設計か。</p>
+            </article>
+            <article class="principle-card" id="choice">
+              <h2>選択</h2>
+              <div>
+                <p>AIやアプリが判断を奪うのではなく、利用者自身が選べる状態をつくります。使わない、止める、離れる選択も設計に含めます。</p>
+              </div>
+              <p class="principle-check">同意、拒否、削除、離脱を選べるか。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section aria-labelledby="checklist-heading" class="principles-checklist">
+        <div>
+          <h2 id="checklist-heading">実装前に確認すること</h2>
+        </div>
+        <ul>
+          <li><strong>誰に影響するか</strong><span>直接の利用者だけでなく、周囲の人や将来の利用者への影響を確認する。</span></li>
+          <li><strong>何が見えなくなるか</strong><span>外部通信、保存、依存、誤り、停止方法を確認する。</span></li>
+          <li><strong>選べる状態か</strong><span>同意、拒否、削除、離脱、相談先への移動が実際にできるか確認する。</span></li>
+          <li><strong>説明できるか</strong><span>利用者に伝えられない設計は、公開する前に見直す。</span></li>
+        </ul>
+      </section>
+      <nav aria-label="次のページ" class="next-page"><a href="projects.html">← Projectsを見る</a><a href="contribute.html">参加方法を見る →</a></nav>
+    </main>
+    <footer class="site-footer">
+      <div><a class="footer-brand" href="index.html"><img alt="" class="brand-logo" height="638" src="assets/viuk-light-logo.png?v=20260825" width="712"/><span>VIUK-Light</span></a><p class="footer-meta">© 2026 VIUK-Light</p>
+        <p class="footer-legal">VIUK-Light is an independent project and is not incorporated.<br/>VIUK-Lightは独立したプロジェクトであり、法人ではありません。</p>
+      </div>
+      <nav aria-label="フッターナビゲーション" class="footer-nav"><a href="about.html">私たちについて</a><a href="projects.html">プロジェクト</a><a href="principles.html">大切にしていること</a><a href="contribute.html">参加する</a><a href="privacy.html">プライバシー</a><a class="external" href="https://github.com/VIUK-Light">GitHub</a></nav>
+    </footer>
 <script defer="" src="site-nav.js?v=20261017-ja-1"></script>
 </body>
 </html>

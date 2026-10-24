@@ -1,42 +1,117 @@
 <!DOCTYPE html>
 
 <html lang="ja">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Omoi Documentation — VIUK-Light</title>
 <meta content="Omoiの名前と思想、使い方、906件の質問データ、編集方針、アクセシビリティ、検証、技術仕様をまとめたDocumentationです。" name="description"/>
-<link href="https://viuk-light.org/omoi-docs.html" rel="canonical"/>
-<link href="assets/viuk-light-logo.png?v=20260825" rel="icon" type="image/png"/>
-<link href="interior.css?v=20261015-ud-font" rel="stylesheet"/>
+    <link href="https://viuk-light.org/omoi-docs.html" rel="canonical"/>
+    <link href="assets/viuk-light-logo.png?v=20260825" rel="icon" type="image/png"/>
+    <link href="interior.css?v=20261015-ud-font" rel="stylesheet"/>
 <script defer="" src="docs.js?v=20260913-layout-3"></script>
 </head>
-<body class="docs-body" data-product="omoi">
+  <body class="docs-body" data-product="omoi">
 <a class="skip-link" href="#docs-content">本文へ移動</a>
-<header class="docs-topbar"><a aria-label="VIUK-Light ホーム" class="docs-brand" href="index.html"><img alt="VIUK-Light公式ロゴ" class="brand-logo" height="638" src="assets/viuk-light-logo.png?v=20260825" width="712"/><span>VIUK-Light</span></a><a class="docs-title-link" href="omoi-docs.html">Omoi Documentation</a><nav aria-label="製品へのリンク" class="docs-top-actions"><a class="external" href="https://omoi.viuk-light.org/">Omoiを開く</a></nav></header>
-<div class="docs-layout">
-<aside aria-label="Omoiドキュメントナビゲーション" class="docs-sidebar"><details class="docs-mobile-nav" data-doc-mobile-nav="" open=""><summary>Omoiの目次</summary><div class="docs-sidebar-content"><a class="docs-back" href="omoi.html">Omoi<span>製品紹介へ</span></a><div class="docs-search"><label for="omoi-doc-filter">目次を検索</label><input data-doc-filter="" id="omoi-doc-filter" placeholder="キーワードを入力" type="search"/><p data-doc-search-status="" role="status"></p></div><div class="docs-group" data-doc-group=""><p class="docs-group-label">はじめに</p><a aria-current="page" data-doc-link="" href="omoi-docs.html">概要</a><a data-doc-link="" href="omoi-concept.html">Omoi（重い・想い・思い）</a><a data-doc-link="" href="omoi-details.html">Omoiについて</a><a data-doc-link="" href="omoi-getting-started.html">Omoiをはじめる</a></div><div class="docs-group" data-doc-group=""><p class="docs-group-label">使い方</p><a data-doc-link="" href="omoi-levels.html">話題カテゴリとLevel</a><a data-doc-link="" href="omoi-question.html">質問画面</a></div><div class="docs-group" data-doc-group=""><p class="docs-group-label">データと品質</p><a data-doc-link="" href="omoi-question-catalog.html">質問カタログ</a><a data-doc-link="" href="omoi-data.html">データ構造</a><a data-doc-link="" href="omoi-editorial.html">編集方針</a><a data-doc-link="" href="omoi-accessibility.html">アクセシビリティ</a><a data-doc-link="" href="omoi-validation.html">検証と公開</a><a data-doc-link="" href="omoi-technical.html">技術仕様</a><a data-doc-link="" href="omoi-safety.html">安全設計</a></div><div class="docs-group" data-doc-group=""><p class="docs-group-label">参加する</p><a data-doc-link="" href="omoi-contributing.html">質問データに参加する</a></div><div class="docs-group" data-doc-group=""><p class="docs-group-label">ヘルプ</p><a data-doc-link="" href="omoi-help.html">ヘルプ</a></div></div></details></aside>
-<main class="docs-main" id="docs-content"><div class="docs-page-heading"><p class="docs-breadcrumb"><a href="omoi.html">Omoi</a> / Documentation</p><header class="docs-hero docs-hero--overview"><div><h1 class="docs-product-heading"><span>Omoi</span><span>Documentation</span></h1><p class="docs-lead">Omoiの使い方、質問データ、設計方針をまとめています。友達、恋人、家族と価値観や社会問題について話すための資料です。</p><div class="docs-hero-actions"><a class="button primary external" href="https://omoi.viuk-light.org/">Omoiをはじめる</a><a class="text-link has-arrow" href="omoi-question-catalog.html">質問カタログを見る</a></div></div></header></div><aside class="page-toc"><details open=""><summary>このページ</summary><nav aria-label="ページ内の目次"><a href="#section-1">Omoiとは</a><a href="#section-2">公開しているもの</a><a href="#section-3">正本と更新</a><a href="#section-4">すべての資料</a></nav></details></aside><div class="docs-article">
-<nav aria-label="目的から資料を選ぶ" class="docs-purpose-list"><a href="omoi-getting-started.html"><strong>使う</strong><span>開始から質問まで</span></a><a href="omoi-details.html"><strong>理解する</strong><span>背景と設計を読む</span></a><a href="omoi-contributing.html"><strong>開発する</strong><span>質問データへの参加</span></a></nav><figure class="overview-screenshot"><img alt="Omoiの質問画面。場面文と問い、会話のヒント、問いの背景、前の問いと終了の操作が表示されている。" decoding="async" src="assets/omoi/omoi-question-20261017.png" width="904" height="1420"/></figure>
-<section class="docs-page-content docs-page-content--overview">
-<section><h2 id="section-1">Omoiとは</h2>
-<p>画面に質問が表示され、その質問についてお互いに考えを話します。正しい答えを出すものではありません。採点や説得、議論で勝つためのものでもありません。「この人は、こういうふうに考えているんだ」と知るためのものです。</p>
-<p>詳しい背景は、<a href="omoi-details.html">Omoiについて</a>に書いています。</p>
-</section><section><h2 id="section-2">公開しているもの</h2>
-<dl class="docs-facts">
-<div><dt>906件の質問</dt><dd>公開カタログに質問文とmetadataがあります。</dd></div>
-<div><dt>4つの話題カテゴリ</dt><dd>今話したい内容から選べます。質問データは内部でLevel 1〜4に分かれています。</dd></div>
-<div><dt>アカウント不要</dt><dd>登録やログインなしで始められます。</dd></div>
-<div><dt>会話内容を保存しない</dt><dd>Omoiは回答の入力・保存・収集を前提にしていません。</dd></div>
-</dl>
-</section><section><h2 id="section-3">正本と更新</h2>
-<table class="spec-table"><tbody><tr><th scope="row">質問データ</th><td>level1.json〜level4.json。公開カタログは現在906件を読み込みます。場面文や会話のヒントは、用意されている問いで表示します。</td></tr><tr><th scope="row">編集ルール</th><td>Level、sensitivity、topic、perspective、content_warningの意味は公式リポジトリのスキーマ文書を確認します。</td></tr><tr><th scope="row">最新の実装</th><td>公開版の実装と質問データは、Omoiリポジトリのmainブランチを正本として確認します。</td></tr></tbody></table>
-</section><section><h2 id="section-4">すべての資料</h2>
-<div class="docs-index" data-doc-overview-index=""><a href="omoi-concept.html"><strong>Omoi（重い・想い・思い）</strong><span>名前に重なる3つの意味と、作った理由</span></a><a href="omoi-details.html"><strong>Omoiについて</strong><span>背景と使い方</span></a><a href="omoi-getting-started.html"><strong>はじめる</strong><span>開始から最初の質問まで</span></a><a href="omoi-levels.html"><strong>話題カテゴリとLevel</strong><span>画面で選ぶ話題と内部Level</span></a><a href="omoi-question.html"><strong>質問画面</strong><span>次へ・戻る・終了・ヒント・背景</span></a><a href="omoi-question-catalog.html"><strong>質問カタログ</strong><span>906問の質問・Level・詳細文</span></a><a href="omoi-safety.html"><strong>安全設計</strong><span>止める・離れる・知る</span></a><a href="omoi-technical.html"><strong>技術仕様</strong><span>コードとデータ構造</span></a><a href="omoi-contributing.html"><strong>質問データに参加する</strong><span>提案・編集・検証・レビュー</span></a><a href="omoi-help.html"><strong>ヘルプ</strong><span>FAQと問題報告</span></a></div>
-<div class="link-list"><a class="external" href="https://github.com/VIUK-Light/Omoi/tree/main">Omoiのmainブランチを開く</a></div>
-</section></section>
-<nav aria-label="前後の資料" class="document-pagination"><span></span><a href="omoi-concept.html"><span>次の資料</span><strong>Omoi（重い・想い・思い）</strong></a></nav></div></main>
-</div>
-<footer class="docs-footer"><span>Omoi Documentation / VIUK-Light</span><nav aria-label="資料フッター"><a href="index.html">VIUK-Light</a><a href="privacy.html">プライバシー</a></nav></footer>
-</body>
+<header class="docs-topbar"><a aria-label="VIUK-Light ホーム" class="docs-brand" href="index.html"><img alt="VIUK-Light公式ロゴ" class="brand-logo" height="638" src="assets/viuk-light-logo.png?v=20260825" width="712"/><span>VIUK-Light</span></a><a class="docs-title-link" href="omoi-docs.html">Omoi Documentation</a><nav aria-label="製品へのリンク" class="docs-top-actions"><a class="external" href="https://omoi.viuk-light.org/">Omoiを開く</a></nav>
+    </header>
+    <div class="docs-layout">
+      <aside aria-label="Omoiドキュメントナビゲーション" class="docs-sidebar">
+        <details class="docs-mobile-nav" data-doc-mobile-nav="" open="">
+          <summary>Omoiの目次</summary>
+          <div class="docs-sidebar-content"><a class="docs-back" href="omoi.html">Omoi<span>製品紹介へ</span></a><div class="docs-search"><label for="omoi-doc-filter">目次を検索</label><input data-doc-filter="" id="omoi-doc-filter" placeholder="キーワードを入力" type="search"/><p data-doc-search-status="" role="status">
+              </p>
+            </div>
+            <div class="docs-group" data-doc-group="">
+              <p class="docs-group-label">はじめに</p><a aria-current="page" data-doc-link="" href="omoi-docs.html">概要</a><a data-doc-link="" href="omoi-concept.html">Omoi（重い・想い・思い）</a><a data-doc-link="" href="omoi-details.html">Omoiについて</a><a data-doc-link="" href="omoi-getting-started.html">Omoiをはじめる</a></div>
+            <div class="docs-group" data-doc-group="">
+              <p class="docs-group-label">使い方</p><a data-doc-link="" href="omoi-levels.html">話題カテゴリとLevel</a><a data-doc-link="" href="omoi-question.html">質問画面</a></div>
+            <div class="docs-group" data-doc-group="">
+              <p class="docs-group-label">データと品質</p><a data-doc-link="" href="omoi-question-catalog.html">質問カタログ</a><a data-doc-link="" href="omoi-data.html">データ構造</a><a data-doc-link="" href="omoi-editorial.html">編集方針</a><a data-doc-link="" href="omoi-accessibility.html">アクセシビリティ</a><a data-doc-link="" href="omoi-validation.html">検証と公開</a><a data-doc-link="" href="omoi-technical.html">技術仕様</a><a data-doc-link="" href="omoi-safety.html">安全設計</a></div>
+            <div class="docs-group" data-doc-group="">
+              <p class="docs-group-label">参加する</p><a data-doc-link="" href="omoi-contributing.html">質問データに参加する</a></div>
+            <div class="docs-group" data-doc-group="">
+              <p class="docs-group-label">ヘルプ</p><a data-doc-link="" href="omoi-help.html">ヘルプ</a></div>
+          </div>
+        </details>
+      </aside>
+      <main class="docs-main" id="docs-content">
+        <div class="docs-page-heading">
+          <p class="docs-breadcrumb"><a href="omoi.html">Omoi</a> / Documentation</p>
+          <header class="docs-hero docs-hero--overview">
+            <div>
+              <h1 class="docs-product-heading"><span>Omoi</span><span>Documentation</span></h1>
+              <p class="docs-lead">Omoiの使い方、質問データ、設計方針をまとめています。友達、恋人、家族と価値観や社会問題について話すための資料です。</p>
+              <div class="docs-hero-actions"><a class="button primary external" href="https://omoi.viuk-light.org/">Omoiをはじめる</a><a class="text-link has-arrow" href="omoi-question-catalog.html">質問カタログを見る</a></div>
+            </div>
+          </header>
+        </div>
+        <aside class="page-toc">
+          <details open="">
+            <summary>このページ</summary>
+            <nav aria-label="ページ内の目次"><a href="#section-1">Omoiとは</a><a href="#section-2">公開しているもの</a><a href="#section-3">正本と更新</a><a href="#section-4">すべての資料</a></nav>
+          </details>
+        </aside>
+        <div class="docs-article">
+          <nav aria-label="目的から資料を選ぶ" class="docs-purpose-list"><a href="omoi-getting-started.html"><strong>使う</strong><span>開始から質問まで</span></a><a href="omoi-details.html"><strong>理解する</strong><span>背景と設計を読む</span></a><a href="omoi-contributing.html"><strong>開発する</strong><span>質問データへの参加</span></a></nav>
+          <figure class="overview-screenshot"><img alt="Omoiの質問画面。場面文と問い、会話のヒント、問いの背景、前の問いと終了の操作が表示されている。" decoding="async" src="assets/omoi/omoi-question-20261017.png" width="904" height="1420"/></figure>
+          <section class="docs-page-content docs-page-content--overview">
+            <section>
+              <h2 id="section-1">Omoiとは</h2>
+              <p>画面に質問が表示され、その質問についてお互いに考えを話します。正しい答えを出すものではありません。採点や説得、議論で勝つためのものでもありません。「この人は、こういうふうに考えているんだ」と知るためのものです。</p>
+              <p>詳しい背景は、<a href="omoi-details.html">Omoiについて</a>に書いています。</p>
+            </section>
+            <section>
+              <h2 id="section-2">公開しているもの</h2>
+              <dl class="docs-facts">
+                <div>
+                  <dt>906件の質問</dt>
+                  <dd>公開カタログに質問文とmetadataがあります。</dd>
+                </div>
+                <div>
+                  <dt>4つの話題カテゴリ</dt>
+                  <dd>今話したい内容から選べます。質問データは内部でLevel 1〜4に分かれています。</dd>
+                </div>
+                <div>
+                  <dt>アカウント不要</dt>
+                  <dd>登録やログインなしで始められます。</dd>
+                </div>
+                <div>
+                  <dt>会話内容を保存しない</dt>
+                  <dd>Omoiは回答の入力・保存・収集を前提にしていません。</dd>
+                </div>
+              </dl>
+            </section>
+            <section>
+              <h2 id="section-3">正本と更新</h2>
+              <table class="spec-table">
+                <tbody>
+                  <tr>
+                    <th scope="row">質問データ</th>
+                    <td>level1.json〜level4.json。公開カタログは現在906件を読み込みます。場面文や会話のヒントは、用意されている問いで表示します。</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">編集ルール</th>
+                    <td>Level、sensitivity、topic、perspective、content_warningの意味は公式リポジトリのスキーマ文書を確認します。</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">最新の実装</th>
+                    <td>公開版の実装と質問データは、Omoiリポジトリのmainブランチを正本として確認します。</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+            <section>
+              <h2 id="section-4">すべての資料</h2>
+              <div class="docs-index" data-doc-overview-index=""><a href="omoi-concept.html"><strong>Omoi（重い・想い・思い）</strong><span>名前に重なる3つの意味と、作った理由</span></a><a href="omoi-details.html"><strong>Omoiについて</strong><span>背景と使い方</span></a><a href="omoi-getting-started.html"><strong>はじめる</strong><span>開始から最初の質問まで</span></a><a href="omoi-levels.html"><strong>話題カテゴリとLevel</strong><span>画面で選ぶ話題と内部Level</span></a><a href="omoi-question.html"><strong>質問画面</strong><span>次へ・戻る・終了・ヒント・背景</span></a><a href="omoi-question-catalog.html"><strong>質問カタログ</strong><span>906問の質問・Level・詳細文</span></a><a href="omoi-safety.html"><strong>安全設計</strong><span>止める・離れる・知る</span></a><a href="omoi-technical.html"><strong>技術仕様</strong><span>コードとデータ構造</span></a><a href="omoi-contributing.html"><strong>質問データに参加する</strong><span>提案・編集・検証・レビュー</span></a><a href="omoi-help.html"><strong>ヘルプ</strong><span>FAQと問題報告</span></a></div>
+              <div class="link-list"><a class="external" href="https://github.com/VIUK-Light/Omoi/tree/main">Omoiのmainブランチを開く</a></div>
+            </section>
+          </section>
+          <nav aria-label="前後の資料" class="document-pagination"><span></span><a href="omoi-concept.html"><span>次の資料</span><strong>Omoi（重い・想い・思い）</strong></a></nav>
+        </div>
+      </main>
+    </div>
+    <footer class="docs-footer"><span>Omoi Documentation / VIUK-Light</span><nav aria-label="資料フッター"><a href="index.html">VIUK-Light</a><a href="privacy.html">プライバシー</a></nav>
+    </footer>
+  </body>
 </html>

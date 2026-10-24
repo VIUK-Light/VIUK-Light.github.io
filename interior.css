@@ -1730,7 +1730,14 @@ section[id],h2[id],h3[id] {
 .xfilter-limit-copy p { margin:0 0 16px; }
 .xfilter-limit-copy p:last-child { margin-bottom:0; }
 .xfilter-limit-copy .xfilter-limit-lead { font-size:20px; font-weight:600; }
-.xfilter-availability { display:grid; grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr); gap:48px; margin-top:48px; padding:36px; background:var(--canvas); }
+.xfilter-availability {
+  display:grid;
+  grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);
+  gap:48px;
+  margin-top:48px;
+  padding:36px;
+  background:var(--canvas);
+}
 .xfilter-availability-copy>p { margin:10px 0 0; color:var(--muted); }
 .xfilter-availability-facts { margin:0; font-size:14px; }
 .xfilter-availability-facts>div { display:grid; grid-template-columns:128px minmax(0,1fr); gap:16px; padding:12px 0; border-bottom:1px solid var(--line); }
@@ -1763,7 +1770,13 @@ section[id],h2[id],h3[id] {
   .xfilter-gallery { gap:26px; }
   .xfilter-shot figcaption { display:grid; justify-content:start; gap:2px; }
   .xfilter-steps { grid-template-columns:1fr; gap:0; }
-  .xfilter-steps li,.xfilter-steps li+li { grid-template-columns:48px minmax(0,1fr); gap:12px; padding:18px 0; border-left:0; border-top:1px solid var(--line); }
+  .xfilter-steps li,.xfilter-steps li+li {
+    grid-template-columns:48px minmax(0,1fr);
+    gap:12px;
+    padding:18px 0;
+    border-left:0;
+    border-top:1px solid var(--line);
+  }
   .xfilter-setting-columns { gap:28px; }
   .xfilter-availability { gap:24px; margin-top:32px; padding:24px 20px; }
   .xfilter-availability-facts>div { grid-template-columns:92px minmax(0,1fr); gap:10px; }

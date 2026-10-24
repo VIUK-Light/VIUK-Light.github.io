@@ -1,126 +1,351 @@
 <!doctype html>
 <html lang="ja">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SafeSearch 4 — X-filtering system — VIUK-Light</title>
   <meta name="description" content="ローカルで動くMicrosoft Edge向けWebフィルタリング拡張機能。URLとページ本文を端末内で判定し、カテゴリとサイト別ルールで閲覧を制御します。">
-  <meta name="theme-color" content="#080d18">
-  <link rel="canonical" href="https://viuk-light.org/x-filtering-system.html">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="VIUK-Light">
-  <meta property="og:title" content="SafeSearch 4 — X-filtering system">
-  <meta property="og:description" content="ローカルで動くMicrosoft Edge向けWebフィルタリング拡張機能。URLとページ本文を端末内で判定し、カテゴリとサイト別ルールで閲覧を制御します。">
-  <meta property="og:url" content="https://viuk-light.org/x-filtering-system.html">
-  <link rel="icon" href="assets/viuk-light-logo.png?v=20260825" type="image/png">
-  <link rel="stylesheet" href="interior.css?v=20261017-x-filtering-page">
-  <link rel="stylesheet" href="site-motion.css?v=20261017-footer-1">
-  <link rel="stylesheet" href="x-filtering-system.css?v=20261017-dark-1">
-<link rel="stylesheet" href="site-nav.css?v=20261017-ja-1">
-</head>
-<body class="interior-body xfilter-body" data-motion-page>
+
+    <meta name="theme-color" content="#080d18">
+
+    <link rel="canonical" href="https://viuk-light.org/x-filtering-system.html">
+
+    <meta property="og:type" content="website">
+
+    <meta property="og:site_name" content="VIUK-Light">
+
+    <meta property="og:title" content="SafeSearch 4 — X-filtering system">
+
+    <meta property="og:description" content="ローカルで動くMicrosoft Edge向けWebフィルタリング拡張機能。URLとページ本文を端末内で判定し、カテゴリとサイト別ルールで閲覧を制御します。">
+
+    <meta property="og:url" content="https://viuk-light.org/x-filtering-system.html">
+
+    <link rel="icon" href="assets/viuk-light-logo.png?v=20260825" type="image/png">
+
+    <link rel="stylesheet" href="interior.css?v=20261017-x-filtering-page">
+
+    <link rel="stylesheet" href="site-motion.css?v=20261017-footer-1">
+
+    <link rel="stylesheet" href="x-filtering-system.css?v=20261017-dark-1">
+    <link rel="stylesheet" href="site-nav.css?v=20261017-ja-1">
+  </head>
+  <body class="interior-body xfilter-body" data-motion-page>
 <a class="skip-link" href="#main-content">本文へ移動</a>
 <header class="site-header">
   <a class="brand" href="index.html" aria-label="VIUK-Light ホーム"><img class="brand-logo" src="assets/viuk-light-logo.png?v=20260825" width="712" height="638" alt=""><span>VIUK-Light</span></a>
   <nav class="site-nav" aria-label="メインナビゲーション"><a href="about.html">私たちについて</a><a href="projects.html" aria-current="page">プロジェクト</a><a href="principles.html">大切にしていること</a><a href="contribute.html">参加する</a><a href="https://github.com/VIUK-Light/X-filtering-system">GitHub</a></nav>
-</header>
-<main class="site-main xf-main" id="main-content">
-  <section class="xf-hero xf-wrap" aria-labelledby="xf-title">
-    <div class="xf-hero-copy" data-xf-reveal>
-      <h1 id="xf-title">SafeSearch 4<span>X-filtering system</span></h1>
-      <p class="xf-lead">ローカルで動く、Webフィルタリング。</p>
-      <p class="xf-intro">URLとページ本文を、端末内で判定。外部の分類APIへ送らず、カテゴリとサイト別ルールに沿って閲覧を制限します。</p>
-      <div class="xf-actions"><a class="xf-button xf-button--primary" href="https://github.com/VIUK-Light/X-filtering-system">公開ソースを見る</a><a class="xf-button" href="#performance">性能評価を見る</a></div>
+    </header>
+    <main class="site-main xf-main" id="main-content">
+
+      <section class="xf-hero xf-wrap" aria-labelledby="xf-title">
+
+        <div class="xf-hero-copy" data-xf-reveal>
+
+          <h1 id="xf-title">SafeSearch 4<span>X-filtering system</span></h1>
+
+          <p class="xf-lead">ローカルで動く、Webフィルタリング。</p>
+
+          <p class="xf-intro">URLとページ本文を、端末内で判定。外部の分類APIへ送らず、カテゴリとサイト別ルールに沿って閲覧を制限します。</p>
+
+          <div class="xf-actions"><a class="xf-button xf-button--primary" href="https://github.com/VIUK-Light/X-filtering-system">公開ソースを見る</a><a class="xf-button" href="#performance">性能評価を見る</a></div>
       <a class="xf-version-link" href="#release">公開タグ v1.0.0 · <time datetime="2026-10-17">2026.10.17</time></a>
     </div>
-    <section class="xf-preview" id="screens" aria-label="ブロック画面とローカル処理の説明" data-xf-preview data-xf-reveal>
-      <div class="xf-tabs" role="tablist" aria-label="プレビューの切り替え" hidden>
+
+        <section class="xf-preview" id="screens" aria-label="ブロック画面とローカル処理の説明" data-xf-preview data-xf-reveal>
+
+          <div class="xf-tabs" role="tablist" aria-label="プレビューの切り替え" hidden>
         <button id="xf-tab-local" type="button" role="tab" aria-selected="true" aria-controls="xf-panel-local" data-xf-tab><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M2 21h20M9 17v4m6-4v4"/></svg>ローカル処理</button>
         <button id="xf-tab-screen" type="button" role="tab" aria-selected="false" aria-controls="xf-panel-screen" data-xf-tab><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6zM14 3v5h4M9 12h6M9 16h6"/></svg>ブロック画面</button>
       </div>
-      <div id="xf-panel-screen" class="xf-preview-panel" data-xf-panel>
+
+          <div id="xf-panel-screen" class="xf-preview-panel" data-xf-panel>
         <a class="xf-screen-link" href="assets/x-filtering-system/blocked-page.png" target="_blank" rel="noopener" aria-label="実際のブロック画面を大きく見る"><img src="assets/x-filtering-system/blocked-page.png" width="2926" height="1446" alt="SafeSearch 4の実際のブロック画面。制限された理由とカテゴリ、前のページに戻るボタンが表示されている。" decoding="async"></a>
         <p class="xf-preview-caption">ブロック時には、理由とカテゴリを表示。<a href="assets/x-filtering-system/blocked-page.png" target="_blank" rel="noopener">画像を大きく見る <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></p>
-      </div>
-      <div id="xf-panel-local" class="xf-preview-panel xf-local-panel" data-xf-panel>
-        <h2>ブラウザー内で完結する判定</h2>
-        <div class="xf-device" data-xf-flow role="img" aria-label="端末内でURLのサイト別ルールとページ本文を確認し、結果と理由を表示する流れ。">
-  <p class="xf-device-label">このデバイス</p>
-  <div class="xf-pipeline" aria-hidden="true">
-    <div class="xf-node-wrap"><div class="xf-node"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6zM14 3v5h4M9 12h6M9 16h6"/></svg><span>URL</span></div><span class="xf-node-note">サイト別ルール</span><i class="xf-connector"></i></div>
-    <div class="xf-node-wrap"><div class="xf-node"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="8" cy="6" r="2"/><circle cx="16" cy="12" r="2"/><circle cx="10" cy="18" r="2"/></svg><span>ローカルルール</span></div><span class="xf-node-note">ページ本文を確認</span><i class="xf-connector"></i></div>
-    <div class="xf-node-wrap"><div class="xf-node"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6zM8 12l3 3 5-6"/></svg><span>判定</span></div><span class="xf-node-note">結果と理由を表示</span></div>
-  </div>
-</div>
-        <p class="xf-preview-caption">ローカル処理の流れ。外部の分類APIは使いません。</p>
-      </div>
-    </section>
-  </section>
 
-  <nav class="xf-subnav xf-wrap" aria-label="ページ内リンク"><a href="#performance">性能比較</a><a href="#flow">ローカル処理</a><a href="#settings">設定</a><a href="#release">公開状況</a><a href="#limits">判定範囲</a></nav>
+          </div>
 
-<section class="xf-section xf-performance xf-wrap" id="performance" aria-labelledby="xf-performance-title">
-    <header class="xf-performance-heading" data-xf-reveal><h2 id="xf-performance-title">開発版のフィルタリング性能</h2><p>内部独自ベンチマーク v1 · macOS開発版（ローカルDB＋E5）</p><p class="xf-performance-scope">公開中のEdge拡張機能の実測値ではありません。</p></header>
-    <p class="xf-metric-caption">カテゴリ一致を伴う拒否率</p>
-    <div class="xf-metrics" data-xf-reveal><div><p class="xf-metric-value">98.7<span>%</span></p><p class="xf-metric-label">成人・性的コンテンツ</p><div class="xf-metric-track" aria-hidden="true"><span style="--score:0.987" data-xf-bar data-score="0.987"></span></div></div><div><p class="xf-metric-value">74.3<span>%</span></p><p class="xf-metric-label">賭博</p><div class="xf-metric-track" aria-hidden="true"><span style="--score:0.743" data-xf-bar data-score="0.743"></span></div></div><div><p class="xf-metric-value">68.8<span>%</span></p><p class="xf-metric-label">出会い・勧誘</p><div class="xf-metric-track" aria-hidden="true"><span style="--score:0.688" data-xf-bar data-score="0.688"></span></div></div></div>
-    <p class="xf-table-scroll-note">比較表は横にスクロールできます。</p>
-    <div class="xf-table-scroll" role="region" aria-label="4世代のカテゴリ別比較表" tabindex="0" data-xf-reveal>
-      <table class="xf-comparison"><caption>カテゴリ一致を伴う拒否率の比較</caption><colgroup><col class="xf-category-col"><col><col><col><col></colgroup><thead><tr><th scope="col">カテゴリ</th><th scope="col">SafeKids Search 1<small>2024</small></th><th scope="col">SafeKids Search 2<small>2024</small></th><th scope="col">SafeKids Search 3<small>2025</small></th><th scope="col">SafeSearch 4 開発版<small>2026</small></th></tr></thead><tbody><tr><th scope="row">成人・性的コンテンツ</th><td><span>2.0%</span></td><td><span>9.2%</span></td><td><span>26.3%</span></td><td><span>98.7%</span><small>151 / 153件</small></td></tr><tr><th scope="row">暴力・犯罪</th><td><span class="xf-unsupported">未対応</span></td><td><span>0.0%</span></td><td><span>0.0%</span></td><td><span>36.7%</span><small>11 / 30件</small></td></tr><tr><th scope="row">賭博</th><td><span>0.0%</span></td><td><span>8.6%</span></td><td><span>0.0%</span></td><td><span>74.3%</span><small>26 / 35件</small></td></tr><tr><th scope="row">薬物・酒・たばこ</th><td><span>0.0%</span></td><td><span>17.6%</span></td><td><span>0.0%</span></td><td><span>20.6%</span><small>7 / 34件</small></td></tr><tr><th scope="row">出会い・勧誘</th><td><span>0.0%</span></td><td><span>0.0%</span></td><td><span>0.0%</span></td><td><span>68.8%</span><small>22 / 32件</small></td></tr><tr><th scope="row">SNS・掲示板</th><td><span>0.0%</span></td><td><span>0.0%</span></td><td><span>0.0%</span></td><td><span>28.0%</span><small>14 / 50件</small></td></tr><tr><th scope="row">自傷・自殺</th><td><span class="xf-unsupported">未対応</span></td><td><span class="xf-unsupported">未対応</span></td><td><span class="xf-unsupported">未対応</span></td><td><span class="xf-unsupported">未対応</span></td></tr><tr><th scope="row">差別・嫌がらせ・暴言</th><td><span>0.0%</span></td><td><span class="xf-unsupported">未対応</span></td><td><span class="xf-unsupported">未対応</span></td><td><span class="xf-unsupported">未対応</span></td></tr><tr><th scope="row">性教育・健康情報</th><td><span class="xf-unsupported">未対応</span></td><td><span>0.0%</span></td><td><span class="xf-unsupported">未対応</span></td><td><span>37.5%</span><small>6 / 16件</small></td></tr></tbody></table>
-    </div>
-    <p class="xf-benchmark-note">SafeKids Search 1・2・3は非公開のVIUKプロダクト。SafeSearch 4はVIUK-Lightの開発版です。一部カテゴリには未観測ケースがあります。</p>
-    <details class="xf-method"><summary>数値の定義と測定条件</summary><div><p>対応していて観測できた拒否期待ケースのうち、期待された理由カテゴリと一致してブロックした割合。</p><p>macOSネイティブの開発版で、ローカルカテゴリDB・URLルール・ローカルE5を使った内部評価です。未対応や未観測のケース、許可期待ケースは分母に含みません。許可すべきページを誤って拒否する割合を示す値ではありません。</p><p>SafeSearch 4列には、保存済み集計と照合した一致件数／観測件数も併記しています。原表のSafeSearch 4列は、この開発版の結果です。本ページでは測定対象に合わせて「開発版」と表記しています。</p></div></details>
-    <div class="xf-benchmark-links"><a class="xf-text-link" href="assets/x-filtering-system/benchmark-v1.png" target="_blank" rel="noopener">ベンチマークの原表を見る <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a><a class="xf-text-link" href="assets/x-filtering-system/benchmark-v1.json">数値データ（JSON） <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div>
-  </section>
+          <div id="xf-panel-local" class="xf-preview-panel xf-local-panel" data-xf-panel>
 
-  <section class="xf-section xf-local xf-wrap" id="flow" aria-labelledby="xf-local-title">
-    <div class="xf-local-copy" data-xf-reveal>
-      <h2 id="xf-local-title">ページの内容を、<br>外へ送らない。</h2>
-      <p>URLと読み取れる本文を、端末内のルールで判定。外部の分類APIは使いません。設定も、このブラウザーに保存します。</p>
+            <h2>ブラウザー内で完結する判定</h2>
+
+            <div class="xf-device" data-xf-flow role="img" aria-label="端末内でURLのサイト別ルールとページ本文を確認し、結果と理由を表示する流れ。">
+
+              <p class="xf-device-label">このデバイス</p>
+
+              <div class="xf-pipeline" aria-hidden="true">
+
+                <div class="xf-node-wrap">
+                  <div class="xf-node"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6zM14 3v5h4M9 12h6M9 16h6"/></svg><span>URL</span></div><span class="xf-node-note">サイト別ルール</span><i class="xf-connector"></i></div>
+
+                <div class="xf-node-wrap">
+                  <div class="xf-node"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="8" cy="6" r="2"/><circle cx="16" cy="12" r="2"/><circle cx="10" cy="18" r="2"/></svg><span>ローカルルール</span></div><span class="xf-node-note">ページ本文を確認</span><i class="xf-connector"></i></div>
+
+                <div class="xf-node-wrap">
+                  <div class="xf-node"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6zM8 12l3 3 5-6"/></svg><span>判定</span></div><span class="xf-node-note">結果と理由を表示</span></div>
+
+              </div>
+            </div>
+
+            <p class="xf-preview-caption">ローカル処理の流れ。外部の分類APIは使いません。</p>
+
+          </div>
+
+        </section>
+
+      </section>
+
+
+      <nav class="xf-subnav xf-wrap" aria-label="ページ内リンク"><a href="#performance">性能比較</a><a href="#flow">ローカル処理</a><a href="#settings">設定</a><a href="#release">公開状況</a><a href="#limits">判定範囲</a></nav>
+
+      <section class="xf-section xf-performance xf-wrap" id="performance" aria-labelledby="xf-performance-title">
+
+        <header class="xf-performance-heading" data-xf-reveal>
+          <h2 id="xf-performance-title">開発版のフィルタリング性能</h2>
+          <p>内部独自ベンチマーク v1 · macOS開発版（ローカルDB＋E5）</p>
+          <p class="xf-performance-scope">公開中のEdge拡張機能の実測値ではありません。</p>
+        </header>
+
+        <p class="xf-metric-caption">カテゴリ一致を伴う拒否率</p>
+
+        <div class="xf-metrics" data-xf-reveal>
+          <div>
+            <p class="xf-metric-value">98.7<span>%</span></p>
+            <p class="xf-metric-label">成人・性的コンテンツ</p>
+            <div class="xf-metric-track" aria-hidden="true"><span style="--score:0.987" data-xf-bar data-score="0.987"></span></div>
+          </div>
+          <div>
+            <p class="xf-metric-value">74.3<span>%</span></p>
+            <p class="xf-metric-label">賭博</p>
+            <div class="xf-metric-track" aria-hidden="true"><span style="--score:0.743" data-xf-bar data-score="0.743"></span></div>
+          </div>
+          <div>
+            <p class="xf-metric-value">68.8<span>%</span></p>
+            <p class="xf-metric-label">出会い・勧誘</p>
+            <div class="xf-metric-track" aria-hidden="true"><span style="--score:0.688" data-xf-bar data-score="0.688"></span></div>
+          </div>
+        </div>
+
+        <p class="xf-table-scroll-note">比較表は横にスクロールできます。</p>
+
+        <div class="xf-table-scroll" role="region" aria-label="4世代のカテゴリ別比較表" tabindex="0" data-xf-reveal>
+
+          <table class="xf-comparison"><caption>カテゴリ一致を伴う拒否率の比較</caption><colgroup><col class="xf-category-col"><col><col><col><col></colgroup><thead>
+              <tr>
+                <th scope="col">カテゴリ</th>
+                <th scope="col">SafeKids Search 1<small>2024</small></th>
+                <th scope="col">SafeKids Search 2<small>2024</small></th>
+                <th scope="col">SafeKids Search 3<small>2025</small></th>
+                <th scope="col">SafeSearch 4 開発版<small>2026</small></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">成人・性的コンテンツ</th>
+                <td><span>2.0%</span></td>
+                <td><span>9.2%</span></td>
+                <td><span>26.3%</span></td>
+                <td><span>98.7%</span><small>151 / 153件</small></td>
+              </tr>
+              <tr>
+                <th scope="row">暴力・犯罪</th>
+                <td><span class="xf-unsupported">未対応</span></td>
+                <td><span>0.0%</span></td>
+                <td><span>0.0%</span></td>
+                <td><span>36.7%</span><small>11 / 30件</small></td>
+              </tr>
+              <tr>
+                <th scope="row">賭博</th>
+                <td><span>0.0%</span></td>
+                <td><span>8.6%</span></td>
+                <td><span>0.0%</span></td>
+                <td><span>74.3%</span><small>26 / 35件</small></td>
+              </tr>
+              <tr>
+                <th scope="row">薬物・酒・たばこ</th>
+                <td><span>0.0%</span></td>
+                <td><span>17.6%</span></td>
+                <td><span>0.0%</span></td>
+                <td><span>20.6%</span><small>7 / 34件</small></td>
+              </tr>
+              <tr>
+                <th scope="row">出会い・勧誘</th>
+                <td><span>0.0%</span></td>
+                <td><span>0.0%</span></td>
+                <td><span>0.0%</span></td>
+                <td><span>68.8%</span><small>22 / 32件</small></td>
+              </tr>
+              <tr>
+                <th scope="row">SNS・掲示板</th>
+                <td><span>0.0%</span></td>
+                <td><span>0.0%</span></td>
+                <td><span>0.0%</span></td>
+                <td><span>28.0%</span><small>14 / 50件</small></td>
+              </tr>
+              <tr>
+                <th scope="row">自傷・自殺</th>
+                <td><span class="xf-unsupported">未対応</span></td>
+                <td><span class="xf-unsupported">未対応</span></td>
+                <td><span class="xf-unsupported">未対応</span></td>
+                <td><span class="xf-unsupported">未対応</span></td>
+              </tr>
+              <tr>
+                <th scope="row">差別・嫌がらせ・暴言</th>
+                <td><span>0.0%</span></td>
+                <td><span class="xf-unsupported">未対応</span></td>
+                <td><span class="xf-unsupported">未対応</span></td>
+                <td><span class="xf-unsupported">未対応</span></td>
+              </tr>
+              <tr>
+                <th scope="row">性教育・健康情報</th>
+                <td><span class="xf-unsupported">未対応</span></td>
+                <td><span>0.0%</span></td>
+                <td><span class="xf-unsupported">未対応</span></td>
+                <td><span>37.5%</span><small>6 / 16件</small></td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+
+        <p class="xf-benchmark-note">SafeKids Search 1・2・3は非公開のVIUKプロダクト。SafeSearch 4はVIUK-Lightの開発版です。一部カテゴリには未観測ケースがあります。</p>
+
+        <details class="xf-method">
+          <summary>数値の定義と測定条件</summary>
+          <div>
+            <p>対応していて観測できた拒否期待ケースのうち、期待された理由カテゴリと一致してブロックした割合。</p>
+            <p>macOSネイティブの開発版で、ローカルカテゴリDB・URLルール・ローカルE5を使った内部評価です。未対応や未観測のケース、許可期待ケースは分母に含みません。許可すべきページを誤って拒否する割合を示す値ではありません。</p>
+            <p>SafeSearch 4列には、保存済み集計と照合した一致件数／観測件数も併記しています。原表のSafeSearch 4列は、この開発版の結果です。本ページでは測定対象に合わせて「開発版」と表記しています。</p>
+          </div>
+        </details>
+
+        <div class="xf-benchmark-links"><a class="xf-text-link" href="assets/x-filtering-system/benchmark-v1.png" target="_blank" rel="noopener">ベンチマークの原表を見る <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a><a class="xf-text-link" href="assets/x-filtering-system/benchmark-v1.json">数値データ（JSON） <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div>
+
+      </section>
+
+
+      <section class="xf-section xf-local xf-wrap" id="flow" aria-labelledby="xf-local-title">
+
+        <div class="xf-local-copy" data-xf-reveal>
+
+          <h2 id="xf-local-title">ページの内容を、<br>外へ送らない。</h2>
+
+          <p>URLと読み取れる本文を、端末内のルールで判定。外部の分類APIは使いません。設定も、このブラウザーに保存します。</p>
       <a class="xf-text-link" href="https://github.com/VIUK-Light/X-filtering-system/blob/0370d3d587b011bcd56d483e0e8698b1d4024718/docs/privacy-policy.md">プライバシーについて <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
     </div>
-    <div class="xf-local-visual" data-xf-reveal><div class="xf-device" data-xf-flow role="img" aria-label="URLとページ本文の判定、設定の保存はこのブラウザー内で行われる。外部の分類APIへページ本文を送信しない。">
-  <p class="xf-device-label">このデバイス</p>
-  <div class="xf-pipeline" aria-hidden="true">
-    <div class="xf-node-wrap"><div class="xf-node"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6zM14 3v5h4M9 12h6M9 16h6"/></svg><span>URL</span></div><span class="xf-node-note">サイト別ルール</span><i class="xf-connector"></i></div>
-    <div class="xf-node-wrap"><div class="xf-node"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="8" cy="6" r="2"/><circle cx="16" cy="12" r="2"/><circle cx="10" cy="18" r="2"/></svg><span>ローカルルール</span></div><span class="xf-node-note">ページ本文を確認</span><i class="xf-connector"></i></div>
-    <div class="xf-node-wrap"><div class="xf-node"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6zM8 12l3 3 5-6"/></svg><span>判定</span></div><span class="xf-node-note">結果と理由を表示</span></div>
-  </div>
-</div></div>
-  </section>
 
-  <section class="xf-section xf-settings xf-wrap" id="settings" aria-labelledby="xf-settings-title">
-    <h2 id="xf-settings-title" data-xf-reveal>閲覧ルールを決める。</h2>
-    <div class="xf-setting-columns">
-      <div data-xf-reveal><h3>カテゴリ別に設定</h3><p>制限したいカテゴリを選択。<br>設定はいつでも変更できます。</p></div>
-      <div data-xf-reveal><h3>サイトごとに設定</h3><p>ホスト名やURLを指定して、許可・ブロックの例外を登録できます。</p></div>
-    </div>
-  </section>
+        <div class="xf-local-visual" data-xf-reveal>
+          <div class="xf-device" data-xf-flow role="img" aria-label="URLとページ本文の判定、設定の保存はこのブラウザー内で行われる。外部の分類APIへページ本文を送信しない。">
 
-  <section class="xf-section xf-release xf-wrap" id="release" aria-labelledby="xf-release-title">
-    <h2 id="xf-release-title" data-xf-reveal>現在の公開状況</h2>
-    <div class="xf-release-row" data-xf-reveal>
-      <div><p class="xf-release-version">v1.0.0</p><p class="xf-release-date">公開タグ · <time datetime="2026-10-17">2026.10.17</time></p></div>
-      <div><p class="xf-release-intro">開発状況をGitHubで公開しています。</p><div class="xf-actions"><a class="xf-button xf-button--primary" href="https://github.com/VIUK-Light/X-filtering-system/releases/tag/v1.0.0">リリースを見る</a></div></div>
-    </div>
-    <dl class="xf-facts" id="availability" aria-label="対応環境と公開内容" data-xf-reveal>
-      <div><dt>確認済み</dt><dd>Microsoft Edge · macOS</dd></div>
-      <div><dt>対応対象</dt><dd>Microsoft Edge · Windows<span>（実機確認前）</span></dd></div>
-      <div><dt>判定方式</dt><dd>ローカルルール</dd></div>
-      <div><dt>拡張機能の表記</dt><dd>0.1.0</dd></div>
-      <div><dt>ライセンス</dt><dd><a href="https://github.com/VIUK-Light/X-filtering-system/blob/0370d3d587b011bcd56d483e0e8698b1d4024718/LICENSE">MIT License</a></dd></div>
-    </dl>
-    <section class="xf-limits" id="limits" aria-labelledby="xf-limits-title" data-xf-reveal>
-      <h3 id="xf-limits-title">判定する範囲</h3>
-      <p>URLと、読み取り可能なメインページの本文が対象です。画像・動画の中身や埋め込みフレーム内の本文は判定しません。</p>
-      <p>内容を確認できない場合も、理由を示してページの表示を止めます。現行版はローカルルールによる初期版で、すべての制限対象ページを検出できるものではありません。</p>
+            <p class="xf-device-label">このデバイス</p>
+
+            <div class="xf-pipeline" aria-hidden="true">
+
+              <div class="xf-node-wrap">
+                <div class="xf-node"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6zM14 3v5h4M9 12h6M9 16h6"/></svg><span>URL</span></div><span class="xf-node-note">サイト別ルール</span><i class="xf-connector"></i></div>
+
+              <div class="xf-node-wrap">
+                <div class="xf-node"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="8" cy="6" r="2"/><circle cx="16" cy="12" r="2"/><circle cx="10" cy="18" r="2"/></svg><span>ローカルルール</span></div><span class="xf-node-note">ページ本文を確認</span><i class="xf-connector"></i></div>
+
+              <div class="xf-node-wrap">
+                <div class="xf-node"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6zM8 12l3 3 5-6"/></svg><span>判定</span></div><span class="xf-node-note">結果と理由を表示</span></div>
+
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+
+      <section class="xf-section xf-settings xf-wrap" id="settings" aria-labelledby="xf-settings-title">
+
+        <h2 id="xf-settings-title" data-xf-reveal>閲覧ルールを決める。</h2>
+
+        <div class="xf-setting-columns">
+
+          <div data-xf-reveal>
+            <h3>カテゴリ別に設定</h3>
+            <p>制限したいカテゴリを選択。<br>設定はいつでも変更できます。</p>
+          </div>
+
+          <div data-xf-reveal>
+            <h3>サイトごとに設定</h3>
+            <p>ホスト名やURLを指定して、許可・ブロックの例外を登録できます。</p>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <section class="xf-section xf-release xf-wrap" id="release" aria-labelledby="xf-release-title">
+
+        <h2 id="xf-release-title" data-xf-reveal>現在の公開状況</h2>
+
+        <div class="xf-release-row" data-xf-reveal>
+
+          <div>
+            <p class="xf-release-version">v1.0.0</p>
+            <p class="xf-release-date">公開タグ · <time datetime="2026-10-17">2026.10.17</time></p>
+          </div>
+
+          <div>
+            <p class="xf-release-intro">開発状況をGitHubで公開しています。</p>
+            <div class="xf-actions"><a class="xf-button xf-button--primary" href="https://github.com/VIUK-Light/X-filtering-system/releases/tag/v1.0.0">リリースを見る</a></div>
+          </div>
+
+        </div>
+
+        <dl class="xf-facts" id="availability" aria-label="対応環境と公開内容" data-xf-reveal>
+
+          <div>
+            <dt>確認済み</dt>
+            <dd>Microsoft Edge · macOS</dd>
+          </div>
+
+          <div>
+            <dt>対応対象</dt>
+            <dd>Microsoft Edge · Windows<span>（実機確認前）</span></dd>
+          </div>
+
+          <div>
+            <dt>判定方式</dt>
+            <dd>ローカルルール</dd>
+          </div>
+
+          <div>
+            <dt>拡張機能の表記</dt>
+            <dd>0.1.0</dd>
+          </div>
+
+          <div>
+            <dt>ライセンス</dt>
+            <dd><a href="https://github.com/VIUK-Light/X-filtering-system/blob/0370d3d587b011bcd56d483e0e8698b1d4024718/LICENSE">MIT License</a></dd>
+          </div>
+
+        </dl>
+
+        <section class="xf-limits" id="limits" aria-labelledby="xf-limits-title" data-xf-reveal>
+
+          <h3 id="xf-limits-title">判定する範囲</h3>
+
+          <p>URLと、読み取り可能なメインページの本文が対象です。画像・動画の中身や埋め込みフレーム内の本文は判定しません。</p>
+
+          <p>内容を確認できない場合も、理由を示してページの表示を止めます。現行版はローカルルールによる初期版で、すべての制限対象ページを検出できるものではありません。</p>
       <a class="xf-text-link" href="https://github.com/VIUK-Light/X-filtering-system/tree/0370d3d587b011bcd56d483e0e8698b1d4024718">公開ソースの状態を確認 <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
     </section>
-  </section>
-</main>
-<footer class="site-footer">
-  <div class="xf-footer-top"><a class="footer-brand" href="index.html"><img class="brand-logo" src="assets/viuk-light-logo.png?v=20260825" width="712" height="638" alt=""><span>VIUK-Light</span></a><nav class="footer-nav" aria-label="フッターナビゲーション"><a href="about.html">私たちについて</a><a href="projects.html">プロジェクト</a><a href="principles.html">大切にしていること</a><a href="contribute.html">参加する</a><a href="privacy.html">プライバシー</a><a href="https://github.com/VIUK-Light/X-filtering-system">GitHub</a></nav></div>
-  <p class="footer-meta">© 2026 VIUK-Light</p><p class="footer-legal">VIUK-Lightは、独立したオープンソースの開発プロジェクトです。</p>
-</footer>
+
+      </section>
+    </main>
+    <footer class="site-footer">
+
+      <div class="xf-footer-top"><a class="footer-brand" href="index.html"><img class="brand-logo" src="assets/viuk-light-logo.png?v=20260825" width="712" height="638" alt=""><span>VIUK-Light</span></a><nav class="footer-nav" aria-label="フッターナビゲーション"><a href="about.html">私たちについて</a><a href="projects.html">プロジェクト</a><a href="principles.html">大切にしていること</a><a href="contribute.html">参加する</a><a href="privacy.html">プライバシー</a><a href="https://github.com/VIUK-Light/X-filtering-system">GitHub</a></nav>
+      </div>
+
+      <p class="footer-meta">© 2026 VIUK-Light</p>
+      <p class="footer-legal">VIUK-Lightは、独立したオープンソースの開発プロジェクトです。</p>
+    </footer>
 <script src="site-nav.js?v=20261017-ja-1" defer></script>
 <script src="site-motion.js?v=20261017-scale-1" defer></script>
 <script src="x-filtering-system.js?v=20261017-dark-1" defer></script>
