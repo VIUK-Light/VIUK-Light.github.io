@@ -1,35 +1,154 @@
 <!DOCTYPE html>
 
 <html lang="ja">
-<head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><title>検証と公開 — Omoi Documentation</title><meta content="Omoiの質問データ検証、JavaScript構文確認、ブラウザ確認、公式カタログ同期、GitHub Pages公開フローを説明します。" name="description"/><link href="https://viuk-light.org/omoi-validation.html" rel="canonical"/><link href="assets/viuk-light-logo.png?v=20260825" rel="icon" type="image/png"/><link href="interior.css?v=20261015-ud-font" rel="stylesheet"/><script defer="" src="docs.js?v=20260913-layout-3"></script></head>
-<body class="docs-body" data-product="omoi"><a class="skip-link" href="#docs-content">本文へ移動</a><header class="docs-topbar"><a aria-label="VIUK-Light ホーム" class="docs-brand" href="index.html"><img alt="VIUK-Light公式ロゴ" class="brand-logo" height="638" src="assets/viuk-light-logo.png?v=20260825" width="712"/><span>VIUK-Light</span></a><a class="docs-title-link" href="omoi-docs.html">Omoi Documentation</a><nav aria-label="製品へのリンク" class="docs-top-actions"><a class="external" href="https://omoi.viuk-light.org/">Omoiを開く</a></nav></header><div class="docs-layout"><aside aria-label="Omoiドキュメントナビゲーション" class="docs-sidebar"><details class="docs-mobile-nav" data-doc-mobile-nav="" open=""><summary>Omoiの目次</summary><div class="docs-sidebar-content"><a class="docs-back" href="omoi.html">Omoi<span>製品紹介へ</span></a><div class="docs-search"><label for="omoi-validation-filter">目次を検索</label><input data-doc-filter="" id="omoi-validation-filter" placeholder="キーワードを入力" type="search"/><p data-doc-search-status="" role="status"></p></div><div class="docs-group" data-doc-group=""><p class="docs-group-label">はじめに</p><a data-doc-link="" href="omoi-docs.html">概要</a><a data-doc-link="" href="omoi-concept.html">Omoi（重い・想い・思い）</a><a data-doc-link="" href="omoi-details.html">Omoiについて</a><a data-doc-link="" href="omoi-getting-started.html">Omoiをはじめる</a></div><div class="docs-group" data-doc-group=""><p class="docs-group-label">使い方</p><a data-doc-link="" href="omoi-levels.html">話題カテゴリとLevel</a><a data-doc-link="" href="omoi-question.html">質問画面</a></div><div class="docs-group" data-doc-group=""><p class="docs-group-label">データと品質</p><a data-doc-link="" href="omoi-question-catalog.html">質問カタログ</a><a data-doc-link="" href="omoi-data.html">データ構造</a><a data-doc-link="" href="omoi-editorial.html">編集方針</a><a data-doc-link="" href="omoi-accessibility.html">アクセシビリティ</a><a aria-current="page" data-doc-link="" href="omoi-validation.html">検証と公開</a><a data-doc-link="" href="omoi-technical.html">技術仕様</a><a data-doc-link="" href="omoi-safety.html">安全設計</a></div><div class="docs-group" data-doc-group=""><p class="docs-group-label">参加する</p><a data-doc-link="" href="omoi-contributing.html">質問データに参加する</a></div><div class="docs-group" data-doc-group=""><p class="docs-group-label">ヘルプ</p><a data-doc-link="" href="omoi-help.html">ヘルプ</a></div></div></details></aside>
-<main class="docs-main" id="docs-content"><div class="docs-page-heading"><p class="docs-breadcrumb"><a href="omoi-docs.html">Omoi Documentation</a> / 検証と公開</p><header class="docs-hero"><h1>検証と公開</h1><p class="docs-lead">公開元mainの906問の検証結果と、カタログ同期・現行画面・公開反映を確認する手順を説明します。</p></header></div><aside class="page-toc"><details open=""><summary>このページ</summary><nav aria-label="ページ内の目次"><a href="#section-1">質問データの自動検証</a><a href="#section-2">今回のデータ検証結果</a><a href="#section-3">画面と静的サイトの確認</a><a href="#section-4">ブラウザで確認する流れ</a><a href="#section-5">公式カタログへの同期</a><a href="#section-6">公開前後の確認</a><a href="#section-7">検証に失敗した場合</a></nav></details></aside><div class="docs-article">
-<section class="docs-page-content">
-<section><h2 id="section-1">質問データの自動検証</h2>
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/><title>検証と公開 — Omoi Documentation</title><meta content="Omoiの質問データ検証、JavaScript構文確認、ブラウザ確認、公式カタログ同期、GitHub Pages公開フローを説明します。" name="description"/>
+    <link href="https://viuk-light.org/omoi-validation.html" rel="canonical"/>
+    <link href="assets/viuk-light-logo.png?v=20260825" rel="icon" type="image/png"/>
+    <link href="interior.css?v=20261015-ud-font" rel="stylesheet"/><script defer="" src="docs.js?v=20260913-layout-3"></script></head>
+  <body class="docs-body" data-product="omoi"><a class="skip-link" href="#docs-content">本文へ移動</a><header class="docs-topbar"><a aria-label="VIUK-Light ホーム" class="docs-brand" href="index.html"><img alt="VIUK-Light公式ロゴ" class="brand-logo" height="638" src="assets/viuk-light-logo.png?v=20260825" width="712"/><span>VIUK-Light</span></a><a class="docs-title-link" href="omoi-docs.html">Omoi Documentation</a><nav aria-label="製品へのリンク" class="docs-top-actions"><a class="external" href="https://omoi.viuk-light.org/">Omoiを開く</a></nav>
+    </header>
+    <div class="docs-layout">
+      <aside aria-label="Omoiドキュメントナビゲーション" class="docs-sidebar">
+        <details class="docs-mobile-nav" data-doc-mobile-nav="" open="">
+          <summary>Omoiの目次</summary>
+          <div class="docs-sidebar-content"><a class="docs-back" href="omoi.html">Omoi<span>製品紹介へ</span></a><div class="docs-search"><label for="omoi-validation-filter">目次を検索</label><input data-doc-filter="" id="omoi-validation-filter" placeholder="キーワードを入力" type="search"/><p data-doc-search-status="" role="status">
+              </p>
+            </div>
+            <div class="docs-group" data-doc-group="">
+              <p class="docs-group-label">はじめに</p><a data-doc-link="" href="omoi-docs.html">概要</a><a data-doc-link="" href="omoi-concept.html">Omoi（重い・想い・思い）</a><a data-doc-link="" href="omoi-details.html">Omoiについて</a><a data-doc-link="" href="omoi-getting-started.html">Omoiをはじめる</a></div>
+            <div class="docs-group" data-doc-group="">
+              <p class="docs-group-label">使い方</p><a data-doc-link="" href="omoi-levels.html">話題カテゴリとLevel</a><a data-doc-link="" href="omoi-question.html">質問画面</a></div>
+            <div class="docs-group" data-doc-group="">
+              <p class="docs-group-label">データと品質</p><a data-doc-link="" href="omoi-question-catalog.html">質問カタログ</a><a data-doc-link="" href="omoi-data.html">データ構造</a><a data-doc-link="" href="omoi-editorial.html">編集方針</a><a data-doc-link="" href="omoi-accessibility.html">アクセシビリティ</a><a aria-current="page" data-doc-link="" href="omoi-validation.html">検証と公開</a><a data-doc-link="" href="omoi-technical.html">技術仕様</a><a data-doc-link="" href="omoi-safety.html">安全設計</a></div>
+            <div class="docs-group" data-doc-group="">
+              <p class="docs-group-label">参加する</p><a data-doc-link="" href="omoi-contributing.html">質問データに参加する</a></div>
+            <div class="docs-group" data-doc-group="">
+              <p class="docs-group-label">ヘルプ</p><a data-doc-link="" href="omoi-help.html">ヘルプ</a></div>
+          </div>
+        </details>
+      </aside>
+      <main class="docs-main" id="docs-content">
+        <div class="docs-page-heading">
+          <p class="docs-breadcrumb"><a href="omoi-docs.html">Omoi Documentation</a> / 検証と公開</p>
+          <header class="docs-hero">
+            <h1>検証と公開</h1>
+            <p class="docs-lead">公開元mainの906問の検証結果と、カタログ同期・現行画面・公開反映を確認する手順を説明します。</p>
+          </header>
+        </div>
+        <aside class="page-toc">
+          <details open="">
+            <summary>このページ</summary>
+            <nav aria-label="ページ内の目次"><a href="#section-1">質問データの自動検証</a><a href="#section-2">今回のデータ検証結果</a><a href="#section-3">画面と静的サイトの確認</a><a href="#section-4">ブラウザで確認する流れ</a><a href="#section-5">公式カタログへの同期</a><a href="#section-6">公開前後の確認</a><a href="#section-7">検証に失敗した場合</a></nav>
+          </details>
+        </aside>
+        <div class="docs-article">
+          <section class="docs-page-content">
+            <section>
+              <h2 id="section-1">質問データの自動検証</h2>
 <pre class="code-block"><code>node tools/verify-question-dataset.mjs --enforce-quality-targets --summary</code></pre><p>Omoiリポジトリで実行します。4つのJSONを一つのデータセットとして読み、JSON構造、ID一意性、正規化した問いの完全重複、Levelと配置、必須metadata、12カテゴリ、視点、警告値、出典の形式を確認します。品質目標はLevel 2が80件以上、Level 4のaffected・actor・decision_makerがそれぞれ20%以上です。</p>
-</section>
-<section><h2 id="section-2">今回のデータ検証結果</h2>
-<p>2026年10月16日に、公開元の <a class="external" href="https://github.com/VIUK-Light/Omoi/tree/fe24acc726bcb5e1f590851c07f85978da7430a1">main / fe24acc</a> と公開サイトを照合しました。以下の件数は、この版の質問JSONに基づきます。</p><table class="spec-table"><tbody><tr><th scope="row">レコード</th><td>906件（163 / 80 / 301 / 362）</td></tr><tr><th scope="row">構造エラー</th><td>0件</td></tr><tr><th scope="row">警告</th><td>661件。すべてdetail_without_sources</td></tr><tr><th scope="row">背景文と出典</th><td>背景文は663件、出典があるカードは2件</td></tr><tr><th scope="row">扱い</th><td>出典未接続の警告を残し、事実主張の確認と出典追加の対象にします</td></tr></tbody></table><p>この結果は、この版のデータ検証の結果です。文章の中立性、事実の正確さ、ブラウザ操作の成功を保証するものではありません。</p>
-</section>
-<section><h2 id="section-3">画面と静的サイトの確認</h2>
-<p>Omoi本体にはビルド工程がありません。ソース変更時は該当JavaScriptの構文と画面フローを確認します。既存の確認用コマンドは次のとおりです。</p><pre class="code-block"><code>node --check select.js
+            </section>
+            <section>
+              <h2 id="section-2">今回のデータ検証結果</h2>
+              <p>2026年10月16日に、公開元の <a class="external" href="https://github.com/VIUK-Light/Omoi/tree/fe24acc726bcb5e1f590851c07f85978da7430a1">main / fe24acc</a> と公開サイトを照合しました。以下の件数は、この版の質問JSONに基づきます。</p>
+              <table class="spec-table">
+                <tbody>
+                  <tr>
+                    <th scope="row">レコード</th>
+                    <td>906件（163 / 80 / 301 / 362）</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">構造エラー</th>
+                    <td>0件</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">警告</th>
+                    <td>661件。すべてdetail_without_sources</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">背景文と出典</th>
+                    <td>背景文は663件、出典があるカードは2件</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">扱い</th>
+                    <td>出典未接続の警告を残し、事実主張の確認と出典追加の対象にします</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>この結果は、この版のデータ検証の結果です。文章の中立性、事実の正確さ、ブラウザ操作の成功を保証するものではありません。</p>
+            </section>
+            <section>
+              <h2 id="section-3">画面と静的サイトの確認</h2>
+              <p>Omoi本体にはビルド工程がありません。ソース変更時は該当JavaScriptの構文と画面フローを確認します。既存の確認用コマンドは次のとおりです。</p><pre class="code-block"><code>node --check select.js
 node --check question.js
 node --check warning.js
 node --check warning3.js
 node --test tools/question-flow.test.mjs tools/level-warning-flow.test.mjs
 node tools/verify-seo.mjs</code></pre><p>この公式サイトのリンク・アンカー・見出し・製品別ナビゲーションは、公式サイトリポジトリで<code>python3 tools/check-site.py</code>を実行して確認します。データ検証と画面検証は、それぞれ結果を記録します。</p>
-</section>
-<section><h2 id="section-4">ブラウザで確認する流れ</h2>
-<ol><li>4カテゴリから一つを選ぶまで「次へ」が無効なことを確認します。カテゴリ3・4では開始前の案内を確認します。</li><li>選択したカテゴリのJSONを読み込み、場面文・問いが表示されることを確認します。補助情報があるときだけヒント・背景のボタンを表示します。</li><li>「次の問いを見る」で進み、「前の問い」で同じ問いへ戻れることを確認します。話さず進む場合も回答入力は求めません。</li><li>ヒントと背景の開閉、用語と出典、Escape操作、長文のスクロールを確認します。</li><li>「ここで終える」の確認で「続ける」と「終了する」を試し、終了確定でホームへ戻ることを確認します。</li><li>質問カタログで検索・各フィルタ・追加表示を確認します。</li></ol>
-</section>
-<section><h2 id="section-5">公式カタログへの同期</h2>
-<p>公開元mainの特定commitを記録し、Omoiの4つのJSONを<code>assets/omoi/data</code>へそのまま同期します。未公開のBetaやローカル編集を、公開中の製品仕様として扱わないようにします。</p><table class="spec-table"><tbody><tr><th scope="row">内容</th><td>正本と同梱JSONをバイト単位で比較し、件数・ID・順序・任意フィールドを維持</td></tr><tr><th scope="row">表示</th><td>場面文・会話のヒント・背景・用語・出典のあるカードをカタログで確認</td></tr><tr><th scope="row">集計</th><td>Level別・上位カテゴリ別・視点別・警告別の集計と資料を同じ版に揃える</td></tr><tr><th scope="row">参照情報</th><td>反映日・参照ブランチ・commit・件数・ライセンスをカタログへ表示</td></tr><tr><th scope="row">キャッシュ</th><td>JSONとカタログJavaScriptのバージョンを更新</td></tr></tbody></table>
-</section>
-<section><h2 id="section-6">公開前後の確認</h2>
-<ul><li><code>git diff --check</code>と公式サイトのリンク検査が成功する</li><li>正本のデータ検証結果と、同梱JSONの一致を確認する</li><li>変更したJavaScriptの構文を確認する</li><li>デスクトップとモバイル幅で、Home・Projects・変更した資料とカタログを確認する</li><li>公開操作後はGitHub Pagesが<code>built</code>となり、対象commitを配信していることを確認する</li><li>公開URLの件数・参照commit・キャッシュ版が変更内容と一致することを確認する</li></ul><p>ローカルでの確認だけでは、公開反映の完了にはなりません。</p>
-</section>
-<section><h2 id="section-7">検証に失敗した場合</h2>
-<p>原因をデータ、表示、操作、配信に分けて確認します。失敗を通すために質問を隠したり機能を削除したりせず、既存の警告や別作業の変更も記録して修正します。</p><div class="link-list"><a href="omoi-data.html">データ構造</a><a href="omoi-accessibility.html">アクセシビリティ</a><a class="external" href="https://github.com/VIUK-Light/Omoi/blob/fe24acc726bcb5e1f590851c07f85978da7430a1/tools/verify-question-dataset.mjs">この版の検証スクリプト</a></div>
-</section>
-</section>
-<nav aria-label="前後の資料" class="document-pagination"><a href="omoi-accessibility.html"><span>前の資料</span><strong>アクセシビリティ</strong></a><a href="omoi-technical.html"><span>次の資料</span><strong>技術仕様</strong></a></nav></div></main></div><footer class="docs-footer"><span>Omoi Documentation / VIUK-Light</span><nav aria-label="資料フッター"><a href="index.html">VIUK-Light</a><a href="privacy.html">プライバシー</a></nav></footer></body></html>
+            </section>
+            <section>
+              <h2 id="section-4">ブラウザで確認する流れ</h2>
+              <ol>
+                <li>4カテゴリから一つを選ぶまで「次へ」が無効なことを確認します。カテゴリ3・4では開始前の案内を確認します。</li>
+                <li>選択したカテゴリのJSONを読み込み、場面文・問いが表示されることを確認します。補助情報があるときだけヒント・背景のボタンを表示します。</li>
+                <li>「次の問いを見る」で進み、「前の問い」で同じ問いへ戻れることを確認します。話さず進む場合も回答入力は求めません。</li>
+                <li>ヒントと背景の開閉、用語と出典、Escape操作、長文のスクロールを確認します。</li>
+                <li>「ここで終える」の確認で「続ける」と「終了する」を試し、終了確定でホームへ戻ることを確認します。</li>
+                <li>質問カタログで検索・各フィルタ・追加表示を確認します。</li>
+              </ol>
+            </section>
+            <section>
+              <h2 id="section-5">公式カタログへの同期</h2>
+              <p>公開元mainの特定commitを記録し、Omoiの4つのJSONを<code>assets/omoi/data</code>へそのまま同期します。未公開のBetaやローカル編集を、公開中の製品仕様として扱わないようにします。</p>
+              <table class="spec-table">
+                <tbody>
+                  <tr>
+                    <th scope="row">内容</th>
+                    <td>正本と同梱JSONをバイト単位で比較し、件数・ID・順序・任意フィールドを維持</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">表示</th>
+                    <td>場面文・会話のヒント・背景・用語・出典のあるカードをカタログで確認</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">集計</th>
+                    <td>Level別・上位カテゴリ別・視点別・警告別の集計と資料を同じ版に揃える</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">参照情報</th>
+                    <td>反映日・参照ブランチ・commit・件数・ライセンスをカタログへ表示</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">キャッシュ</th>
+                    <td>JSONとカタログJavaScriptのバージョンを更新</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+            <section>
+              <h2 id="section-6">公開前後の確認</h2>
+              <ul>
+                <li><code>git diff --check</code>と公式サイトのリンク検査が成功する</li>
+                <li>正本のデータ検証結果と、同梱JSONの一致を確認する</li>
+                <li>変更したJavaScriptの構文を確認する</li>
+                <li>デスクトップとモバイル幅で、Home・Projects・変更した資料とカタログを確認する</li>
+                <li>公開操作後はGitHub Pagesが<code>built</code>となり、対象commitを配信していることを確認する</li>
+                <li>公開URLの件数・参照commit・キャッシュ版が変更内容と一致することを確認する</li>
+              </ul>
+              <p>ローカルでの確認だけでは、公開反映の完了にはなりません。</p>
+            </section>
+            <section>
+              <h2 id="section-7">検証に失敗した場合</h2>
+              <p>原因をデータ、表示、操作、配信に分けて確認します。失敗を通すために質問を隠したり機能を削除したりせず、既存の警告や別作業の変更も記録して修正します。</p>
+              <div class="link-list"><a href="omoi-data.html">データ構造</a><a href="omoi-accessibility.html">アクセシビリティ</a><a class="external" href="https://github.com/VIUK-Light/Omoi/blob/fe24acc726bcb5e1f590851c07f85978da7430a1/tools/verify-question-dataset.mjs">この版の検証スクリプト</a></div>
+            </section>
+          </section>
+          <nav aria-label="前後の資料" class="document-pagination"><a href="omoi-accessibility.html"><span>前の資料</span><strong>アクセシビリティ</strong></a><a href="omoi-technical.html"><span>次の資料</span><strong>技術仕様</strong></a></nav>
+        </div>
+      </main>
+    </div>
+    <footer class="docs-footer"><span>Omoi Documentation / VIUK-Light</span><nav aria-label="資料フッター"><a href="index.html">VIUK-Light</a><a href="privacy.html">プライバシー</a></nav>
+    </footer>
+  </body>
+</html>

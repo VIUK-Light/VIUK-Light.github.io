@@ -1,155 +1,224 @@
 <!DOCTYPE html>
 
 <html lang="ja">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Omoiについて — Omoi Documentation</title>
 <meta content="Omoiは、友達・恋人・家族と、普段は話さない価値観や社会問題について話すための質問カードです。正解を出すものではありません。" name="description"/>
-<link href="https://viuk-light.org/omoi-details.html" rel="canonical"/>
-<link href="assets/viuk-light-logo.png?v=20260825" rel="icon" type="image/png"/>
-<link href="interior.css?v=20261015-ud-font" rel="stylesheet"/>
+    <link href="https://viuk-light.org/omoi-details.html" rel="canonical"/>
+    <link href="assets/viuk-light-logo.png?v=20260825" rel="icon" type="image/png"/>
+    <link href="interior.css?v=20261015-ud-font" rel="stylesheet"/>
 <script defer="" src="docs.js?v=20260913-layout-3"></script>
 </head>
-<body class="docs-body" data-product="omoi">
+  <body class="docs-body" data-product="omoi">
 <a class="skip-link" href="#docs-content">本文へ移動</a>
-<header class="docs-topbar"><a aria-label="VIUK-Light ホーム" class="docs-brand" href="index.html"><img alt="VIUK-Light公式ロゴ" class="brand-logo" height="638" src="assets/viuk-light-logo.png?v=20260825" width="712"/><span>VIUK-Light</span></a><a class="docs-title-link" href="omoi-docs.html">Omoi Documentation</a><nav aria-label="製品へのリンク" class="docs-top-actions"><a class="external" href="https://omoi.viuk-light.org/">Omoiを開く</a></nav></header>
-<div class="docs-layout">
-<aside aria-label="Omoiドキュメントナビゲーション" class="docs-sidebar"><details class="docs-mobile-nav" data-doc-mobile-nav="" open=""><summary>Omoiの目次</summary><div class="docs-sidebar-content"><a class="docs-back" href="omoi.html">Omoi<span>製品紹介へ</span></a><div class="docs-search"><label for="omoi-doc-filter">目次を検索</label><input data-doc-filter="" id="omoi-doc-filter" placeholder="キーワードを入力" type="search"/><p data-doc-search-status="" role="status"></p></div><div class="docs-group" data-doc-group=""><p class="docs-group-label">はじめに</p><a data-doc-link="" href="omoi-docs.html">概要</a><a data-doc-link="" href="omoi-concept.html">Omoi（重い・想い・思い）</a><a aria-current="page" data-doc-link="" href="omoi-details.html">Omoiについて</a><a data-doc-link="" href="omoi-getting-started.html">Omoiをはじめる</a></div><div class="docs-group" data-doc-group=""><p class="docs-group-label">使い方</p><a data-doc-link="" href="omoi-levels.html">話題カテゴリとLevel</a><a data-doc-link="" href="omoi-question.html">質問画面</a></div><div class="docs-group" data-doc-group=""><p class="docs-group-label">データと品質</p><a data-doc-link="" href="omoi-question-catalog.html">質問カタログ</a><a data-doc-link="" href="omoi-data.html">データ構造</a><a data-doc-link="" href="omoi-editorial.html">編集方針</a><a data-doc-link="" href="omoi-accessibility.html">アクセシビリティ</a><a data-doc-link="" href="omoi-validation.html">検証と公開</a><a data-doc-link="" href="omoi-technical.html">技術仕様</a><a data-doc-link="" href="omoi-safety.html">安全設計</a></div><div class="docs-group" data-doc-group=""><p class="docs-group-label">参加する</p><a data-doc-link="" href="omoi-contributing.html">質問データに参加する</a></div><div class="docs-group" data-doc-group=""><p class="docs-group-label">ヘルプ</p><a data-doc-link="" href="omoi-help.html">ヘルプ</a></div></div></details></aside>
-<main class="docs-main" id="docs-content"><div class="docs-page-heading"><p class="docs-breadcrumb"><a href="omoi-docs.html">Omoi Documentation</a> / Omoiについて</p><header class="docs-hero">
-<h1>Omoiについて</h1>
-<p class="docs-lead">友達、恋人、家族と、普段は話しにくい価値観や社会問題について話す質問カードです。ここでは、作った背景と使い方の考え方を説明します。</p>
-</header></div><aside class="page-toc"><details open=""><summary>このページ</summary><nav aria-label="ページ内の目次"><a href="#what">Omoiとは</a><a href="#screen">画面で何をするか</a><a href="#no-answer">正しい答えは出さない</a><a href="#no-persuade">説得しない、勝たない</a><a href="#questions-help">質問があると話せる</a><a href="#from-romance">恋愛の質問カードから始まった</a><a href="#hard-to-ask">身近な人とは、重い話をしない</a><a href="#not-categories">人は属性では割り切れない</a><a href="#no-agreement">話しても分かり合えるとは限らない</a><a href="#empathy">共感は賛成ではない</a><a href="#from-conflict">対立を、共感に。</a><a href="#gap">恋愛向けは多い、社会問題向けは少ない</a><a href="#depth">深さは選べる</a><a href="#skip">話したくなければ飛ばせる</a><a href="#must-open">開いてもらわなければ始まらない</a><a href="#one-talk">一つの会話でいい</a><a href="#viuk-light">VIUK-Lightとの関係</a></nav></details></aside><div class="docs-article">
-<section class="docs-page-content">
-<section><h2 id="what">Omoiとは</h2>
-<p>友達、恋人、家族と、普段はなかなか話さない価値観や社会問題について話すための質問カードです。</p>
-<ul>
-<li>診断や採点はありません。</li>
-<li>画面に問いを置き、その場にいる人と話します。</li>
-</ul>
-<p>名前の由来は、<a href="omoi-concept.html">Omoi（重い・想い・思い）</a>に書いています。</p>
-</section><section><h2 id="screen">画面で何をするか</h2>
-<p>話題カテゴリを選ぶと、画面に問いが表示されます。その問いについて、お互いに考えを話します。場面文や「会話のヒント」「問いの背景」は、用意されている問いで確認できます。</p>
-<ul>
-<li>答えを入力する欄はありません。</li>
-<li>アカウントはありません。</li>
-<li>回答の保存はありません。</li>
-<li>会話は、目の前の人とのあいだに残ります。</li>
-</ul>
-</section><section><h2 id="no-answer">正しい答えは出さない</h2>
-<p>質問に、一つの正解へ誘導する仕組みはありません。次のものはありません。</p>
-<ul>
-<li>採点</li>
-<li>正解</li>
-<li>勝敗</li>
-</ul>
-</section><section><h2 id="no-persuade">説得しない、勝たない</h2>
-<p>「この人は、こういうふうに考えているんだ」と、お互いの考えを知るためのものです。</p>
-<ul>
-<li>相手の意見を変えることが目的ではありません。</li>
-<li>議論で勝つことが目的ではありません。</li>
-</ul>
-</section><section><h2 id="questions-help">質問があると話せる</h2>
-<p>普通の会話の中で突然、「これについてどう思う？」と聞くのは難しいことがあります。</p>
-<ul>
-<li>質問があると、「次これだって」と切り出せます。</li>
-<li>「これどう思う？」と、話を始めやすくなります。</li>
-</ul>
-</section><section><h2 id="from-romance">恋愛の質問カードから始まった</h2>
-<p>恋愛や日常の話題なら、質問カードは少なくありません。Omoiも、その使い方から始まっています。</p>
-<ul>
-<li>二人で画面を見ながら、「これどう思う？」と聞く。やり方は、恋愛の質問カードと近いものです。</li>
-<li>違うのは、扱う話題です。価値観や社会問題など、普段は切り出しにくい話です。</li>
-</ul>
-</section><section><h2 id="hard-to-ask">身近な人とは、重い話をしない</h2>
-<p>友達と遊んでいるときに、突然「男女の問題についてどう思う？」と聞くことは、ほとんどありません。恋人や家族でも同じです。</p>
-<ul>
-<li>意見が分かれそうなテーマほど、「空気が悪くなりそう」「わざわざ今話すことではない」と思って、話さないままになることがあります。</li>
-<li>すごく身近な人なのに、その人が社会について何を考えているのかを、ほとんど知らないこともあります。</li>
-</ul>
-</section><section><h2 id="not-categories">人は属性では割り切れない</h2>
-<p>SNSでは、短い投稿や一つの属性だけで判断されやすいことがあります。同じ男性でも、同じ女性でも、同じ年代でも、考え方は一人ひとり違います。</p>
-<ul>
-<li>同じ結論でも、「なぜそう思うのか」まで聞けば、理由は全く違うかもしれません。</li>
-<li>Omoiは、その理由を話すための質問を置きます。</li>
-</ul>
-</section><section><h2 id="no-agreement">話しても分かり合えるとは限らない</h2>
-<ul>
-<li>同じ答えにたどり着く必要はありません。</li>
-<li>話したあとで、意見が違ったままでも構いません。</li>
-</ul>
-</section><section><h2 id="empathy">共感は賛成ではない</h2>
-<p>ここでの共感は、賛成ではありません。自分の考えを捨てることでもありません。</p>
-<ul>
-<li>相手に、その人なりの考えがあること。</li>
-<li>なぜそう思うのかを、少し知ることです。</li>
-</ul>
-</section><section><h2 id="from-conflict">対立を、共感に。</h2>
-<p>違う考えのまま、相手の思いを知ることです。</p>
-</section><section><h2 id="gap">恋愛向けは多い、社会問題向けは少ない</h2>
-<ul>
-<li>恋愛や日常の話題向けの質問カードは、すでに多くあります。</li>
-<li>社会問題や意見が分かれやすい価値観について、身近な人と話すものは多くありません。</li>
-</ul>
-</section><section><h2 id="depth">深さは選べる</h2>
-<p>話す内容は、その日の状態に合わせて4つの話題カテゴリから選べます。表示カテゴリとデータのLevelの関係は、<a href="omoi-levels.html">話題カテゴリとLevel</a>に書いています。</p>
-<h3>4つの話題カテゴリ</h3>
-<ul>
-<li>日常や自分のこと：友達・恋愛・普段の考え方について。</li>
-<li>意見が分かれる身近な話：学校・人間関係・日常の判断について。</li>
-<li>社会や価値観について：社会制度・人権・倫理などについて。</li>
-<li>人生に関わる難しい選択：自分が当事者だったらどう判断するか。</li>
-</ul>
-<h3>話す長さはその場で決める</h3>
-<p>問いを一つずつ読み進め、終えたいときに「ここで終える」を選べます。事前に問題数を選ぶ必要はありません。</p>
-<div class="docs-media-grid">
-<figure class="docs-screenshot"><img alt="Omoiで4つの話題カテゴリから選ぶ画面。" src="assets/omoi/omoi-categories.png"/><figcaption>今話したい内容から選ぶ</figcaption></figure>
-<figure class="docs-screenshot"><img alt="場面文と問い、ヒントや背景、次へ・戻る・終了の操作が表示されたOmoiの画面。" src="assets/omoi/omoi-question-20261017.png" width="904" height="1420"/><figcaption>問いを読む。話さずに進むこともできる</figcaption></figure>
-</div>
-</section><section><h2 id="skip">話したくなければ飛ばせる</h2>
-<p>話したくない質問は、「次の問いを見る」から答えずに進めます。</p>
-<ul>
-<li>すること
+<header class="docs-topbar"><a aria-label="VIUK-Light ホーム" class="docs-brand" href="index.html"><img alt="VIUK-Light公式ロゴ" class="brand-logo" height="638" src="assets/viuk-light-logo.png?v=20260825" width="712"/><span>VIUK-Light</span></a><a class="docs-title-link" href="omoi-docs.html">Omoi Documentation</a><nav aria-label="製品へのリンク" class="docs-top-actions"><a class="external" href="https://omoi.viuk-light.org/">Omoiを開く</a></nav>
+    </header>
+    <div class="docs-layout">
+      <aside aria-label="Omoiドキュメントナビゲーション" class="docs-sidebar">
+        <details class="docs-mobile-nav" data-doc-mobile-nav="" open="">
+          <summary>Omoiの目次</summary>
+          <div class="docs-sidebar-content"><a class="docs-back" href="omoi.html">Omoi<span>製品紹介へ</span></a><div class="docs-search"><label for="omoi-doc-filter">目次を検索</label><input data-doc-filter="" id="omoi-doc-filter" placeholder="キーワードを入力" type="search"/><p data-doc-search-status="" role="status">
+              </p>
+            </div>
+            <div class="docs-group" data-doc-group="">
+              <p class="docs-group-label">はじめに</p><a data-doc-link="" href="omoi-docs.html">概要</a><a data-doc-link="" href="omoi-concept.html">Omoi（重い・想い・思い）</a><a aria-current="page" data-doc-link="" href="omoi-details.html">Omoiについて</a><a data-doc-link="" href="omoi-getting-started.html">Omoiをはじめる</a></div>
+            <div class="docs-group" data-doc-group="">
+              <p class="docs-group-label">使い方</p><a data-doc-link="" href="omoi-levels.html">話題カテゴリとLevel</a><a data-doc-link="" href="omoi-question.html">質問画面</a></div>
+            <div class="docs-group" data-doc-group="">
+              <p class="docs-group-label">データと品質</p><a data-doc-link="" href="omoi-question-catalog.html">質問カタログ</a><a data-doc-link="" href="omoi-data.html">データ構造</a><a data-doc-link="" href="omoi-editorial.html">編集方針</a><a data-doc-link="" href="omoi-accessibility.html">アクセシビリティ</a><a data-doc-link="" href="omoi-validation.html">検証と公開</a><a data-doc-link="" href="omoi-technical.html">技術仕様</a><a data-doc-link="" href="omoi-safety.html">安全設計</a></div>
+            <div class="docs-group" data-doc-group="">
+              <p class="docs-group-label">参加する</p><a data-doc-link="" href="omoi-contributing.html">質問データに参加する</a></div>
+            <div class="docs-group" data-doc-group="">
+              <p class="docs-group-label">ヘルプ</p><a data-doc-link="" href="omoi-help.html">ヘルプ</a></div>
+          </div>
+        </details>
+      </aside>
+      <main class="docs-main" id="docs-content">
+        <div class="docs-page-heading">
+          <p class="docs-breadcrumb"><a href="omoi-docs.html">Omoi Documentation</a> / Omoiについて</p>
+          <header class="docs-hero">
+            <h1>Omoiについて</h1>
+            <p class="docs-lead">友達、恋人、家族と、普段は話しにくい価値観や社会問題について話す質問カードです。ここでは、作った背景と使い方の考え方を説明します。</p>
+          </header>
+        </div>
+        <aside class="page-toc">
+          <details open="">
+            <summary>このページ</summary>
+            <nav aria-label="ページ内の目次"><a href="#what">Omoiとは</a><a href="#screen">画面で何をするか</a><a href="#no-answer">正しい答えは出さない</a><a href="#no-persuade">説得しない、勝たない</a><a href="#questions-help">質問があると話せる</a><a href="#from-romance">恋愛の質問カードから始まった</a><a href="#hard-to-ask">身近な人とは、重い話をしない</a><a href="#not-categories">人は属性では割り切れない</a><a href="#no-agreement">話しても分かり合えるとは限らない</a><a href="#empathy">共感は賛成ではない</a><a href="#from-conflict">対立を、共感に。</a><a href="#gap">恋愛向けは多い、社会問題向けは少ない</a><a href="#depth">深さは選べる</a><a href="#skip">話したくなければ飛ばせる</a><a href="#must-open">開いてもらわなければ始まらない</a><a href="#one-talk">一つの会話でいい</a><a href="#viuk-light">VIUK-Lightとの関係</a></nav>
+          </details>
+        </aside>
+        <div class="docs-article">
+          <section class="docs-page-content">
+            <section>
+              <h2 id="what">Omoiとは</h2>
+              <p>友達、恋人、家族と、普段はなかなか話さない価値観や社会問題について話すための質問カードです。</p>
+              <ul>
+                <li>診断や採点はありません。</li>
+                <li>画面に問いを置き、その場にいる人と話します。</li>
+              </ul>
+              <p>名前の由来は、<a href="omoi-concept.html">Omoi（重い・想い・思い）</a>に書いています。</p>
+            </section>
+            <section>
+              <h2 id="screen">画面で何をするか</h2>
+              <p>話題カテゴリを選ぶと、画面に問いが表示されます。その問いについて、お互いに考えを話します。場面文や「会話のヒント」「問いの背景」は、用意されている問いで確認できます。</p>
+              <ul>
+                <li>答えを入力する欄はありません。</li>
+                <li>アカウントはありません。</li>
+                <li>回答の保存はありません。</li>
+                <li>会話は、目の前の人とのあいだに残ります。</li>
+              </ul>
+            </section>
+            <section>
+              <h2 id="no-answer">正しい答えは出さない</h2>
+              <p>質問に、一つの正解へ誘導する仕組みはありません。次のものはありません。</p>
+              <ul>
+                <li>採点</li>
+                <li>正解</li>
+                <li>勝敗</li>
+              </ul>
+            </section>
+            <section>
+              <h2 id="no-persuade">説得しない、勝たない</h2>
+              <p>「この人は、こういうふうに考えているんだ」と、お互いの考えを知るためのものです。</p>
+              <ul>
+                <li>相手の意見を変えることが目的ではありません。</li>
+                <li>議論で勝つことが目的ではありません。</li>
+              </ul>
+            </section>
+            <section>
+              <h2 id="questions-help">質問があると話せる</h2>
+              <p>普通の会話の中で突然、「これについてどう思う？」と聞くのは難しいことがあります。</p>
+              <ul>
+                <li>質問があると、「次これだって」と切り出せます。</li>
+                <li>「これどう思う？」と、話を始めやすくなります。</li>
+              </ul>
+            </section>
+            <section>
+              <h2 id="from-romance">恋愛の質問カードから始まった</h2>
+              <p>恋愛や日常の話題なら、質問カードは少なくありません。Omoiも、その使い方から始まっています。</p>
+              <ul>
+                <li>二人で画面を見ながら、「これどう思う？」と聞く。やり方は、恋愛の質問カードと近いものです。</li>
+                <li>違うのは、扱う話題です。価値観や社会問題など、普段は切り出しにくい話です。</li>
+              </ul>
+            </section>
+            <section>
+              <h2 id="hard-to-ask">身近な人とは、重い話をしない</h2>
+              <p>友達と遊んでいるときに、突然「男女の問題についてどう思う？」と聞くことは、ほとんどありません。恋人や家族でも同じです。</p>
+              <ul>
+                <li>意見が分かれそうなテーマほど、「空気が悪くなりそう」「わざわざ今話すことではない」と思って、話さないままになることがあります。</li>
+                <li>すごく身近な人なのに、その人が社会について何を考えているのかを、ほとんど知らないこともあります。</li>
+              </ul>
+            </section>
+            <section>
+              <h2 id="not-categories">人は属性では割り切れない</h2>
+              <p>SNSでは、短い投稿や一つの属性だけで判断されやすいことがあります。同じ男性でも、同じ女性でも、同じ年代でも、考え方は一人ひとり違います。</p>
+              <ul>
+                <li>同じ結論でも、「なぜそう思うのか」まで聞けば、理由は全く違うかもしれません。</li>
+                <li>Omoiは、その理由を話すための質問を置きます。</li>
+              </ul>
+            </section>
+            <section>
+              <h2 id="no-agreement">話しても分かり合えるとは限らない</h2>
+              <ul>
+                <li>同じ答えにたどり着く必要はありません。</li>
+                <li>話したあとで、意見が違ったままでも構いません。</li>
+              </ul>
+            </section>
+            <section>
+              <h2 id="empathy">共感は賛成ではない</h2>
+              <p>ここでの共感は、賛成ではありません。自分の考えを捨てることでもありません。</p>
+              <ul>
+                <li>相手に、その人なりの考えがあること。</li>
+                <li>なぜそう思うのかを、少し知ることです。</li>
+              </ul>
+            </section>
+            <section>
+              <h2 id="from-conflict">対立を、共感に。</h2>
+              <p>違う考えのまま、相手の思いを知ることです。</p>
+            </section>
+            <section>
+              <h2 id="gap">恋愛向けは多い、社会問題向けは少ない</h2>
+              <ul>
+                <li>恋愛や日常の話題向けの質問カードは、すでに多くあります。</li>
+                <li>社会問題や意見が分かれやすい価値観について、身近な人と話すものは多くありません。</li>
+              </ul>
+            </section>
+            <section>
+              <h2 id="depth">深さは選べる</h2>
+              <p>話す内容は、その日の状態に合わせて4つの話題カテゴリから選べます。表示カテゴリとデータのLevelの関係は、<a href="omoi-levels.html">話題カテゴリとLevel</a>に書いています。</p>
+              <h3>4つの話題カテゴリ</h3>
+              <ul>
+                <li>日常や自分のこと：友達・恋愛・普段の考え方について。</li>
+                <li>意見が分かれる身近な話：学校・人間関係・日常の判断について。</li>
+                <li>社会や価値観について：社会制度・人権・倫理などについて。</li>
+                <li>人生に関わる難しい選択：自分が当事者だったらどう判断するか。</li>
+              </ul>
+              <h3>話す長さはその場で決める</h3>
+              <p>問いを一つずつ読み進め、終えたいときに「ここで終える」を選べます。事前に問題数を選ぶ必要はありません。</p>
+              <div class="docs-media-grid">
+                <figure class="docs-screenshot"><img alt="Omoiで4つの話題カテゴリから選ぶ画面。" src="assets/omoi/omoi-categories.png"/><figcaption>今話したい内容から選ぶ</figcaption>
+                </figure>
+                <figure class="docs-screenshot"><img alt="場面文と問い、ヒントや背景、次へ・戻る・終了の操作が表示されたOmoiの画面。" src="assets/omoi/omoi-question-20261017.png" width="904" height="1420"/><figcaption>問いを読む。話さずに進むこともできる</figcaption>
+                </figure>
+              </div>
+            </section>
+            <section>
+              <h2 id="skip">話したくなければ飛ばせる</h2>
+              <p>話したくない質問は、「次の問いを見る」から答えずに進めます。</p>
+              <ul>
+                <li>すること
             <ul>
-<li>答えずに次の問いへ進めます。</li>
-<li>理由は入力しません。</li>
-<li>「カテゴリーを変える」から話題を選び直せます。</li>
-<li>「前の問い」で戻ったり、「ここで終える」で終了したりできます。</li>
-</ul>
-</li>
-<li>しないこと
+                    <li>答えずに次の問いへ進めます。</li>
+                    <li>理由は入力しません。</li>
+                    <li>「カテゴリーを変える」から話題を選び直せます。</li>
+                    <li>「前の問い」で戻ったり、「ここで終える」で終了したりできます。</li>
+                  </ul>
+                </li>
+                <li>しないこと
             <ul>
-<li>飛ばしたことを採点しません。</li>
-<li>あとで答える義務は残りません。</li>
-<li>セッション全体を失敗にしません。</li>
-</ul>
-</li>
-</ul>
-</section><section><h2 id="must-open">開いてもらわなければ始まらない</h2>
-<ul>
-<li>質問を用意することはできます。</li>
-<li>「この話をしてみよう」と思ってもらうところまでを、Omoiが作れるとは限りません。</li>
-<li>特に重い話は、「今日はわざわざ話したくない」と思う人もいるでしょう。</li>
-</ul>
-</section><section><h2 id="one-talk">一つの会話でいい</h2>
-<p>Omoiを公開すれば対話が一気に増える、とは考えていません。</p>
-<ul>
-<li>友達と少し深い話をするとき</li>
-<li>恋人の考え方をもっと知りたいとき</li>
-<li>家族と普段は話さないことを話してみようと思ったとき</li>
-</ul>
-<p>その瞬間に一つの質問があれば、一つの会話が始まることがあります。</p>
-</section><section><h2 id="viuk-light">VIUK-Lightとの関係</h2>
-<p>OmoiはVIUK-Lightのプロジェクトです。名前のLightと同じ向きから生まれています。</p>
-<ul>
-<li>Lightは、暗闇を照らす名前です。</li>
-<li>少しのことでも誰かの役に立つ、その積み重ねです。</li>
-<li>大きな社会問題を一度に解決することはできません。</li>
-</ul>
-<div class="link-list"><a href="omoi-getting-started.html">はじめるを見る →</a><a href="omoi-concept.html">名前の意味を見る →</a><a href="https://omoi.viuk-light.org/">Omoiを開く</a></div>
-</section></section>
-<nav aria-label="前後の資料" class="document-pagination"><a href="omoi-concept.html"><span>前の資料</span><strong>Omoi（重い・想い・思い）</strong></a><a href="omoi-getting-started.html"><span>次の資料</span><strong>Omoiをはじめる</strong></a></nav></div></main>
-</div>
-<footer class="docs-footer"><span>Omoi Documentation / VIUK-Light</span><nav aria-label="資料フッター"><a href="index.html">VIUK-Light</a><a href="privacy.html">プライバシー</a></nav></footer>
-</body>
+                    <li>飛ばしたことを採点しません。</li>
+                    <li>あとで答える義務は残りません。</li>
+                    <li>セッション全体を失敗にしません。</li>
+                  </ul>
+                </li>
+              </ul>
+            </section>
+            <section>
+              <h2 id="must-open">開いてもらわなければ始まらない</h2>
+              <ul>
+                <li>質問を用意することはできます。</li>
+                <li>「この話をしてみよう」と思ってもらうところまでを、Omoiが作れるとは限りません。</li>
+                <li>特に重い話は、「今日はわざわざ話したくない」と思う人もいるでしょう。</li>
+              </ul>
+            </section>
+            <section>
+              <h2 id="one-talk">一つの会話でいい</h2>
+              <p>Omoiを公開すれば対話が一気に増える、とは考えていません。</p>
+              <ul>
+                <li>友達と少し深い話をするとき</li>
+                <li>恋人の考え方をもっと知りたいとき</li>
+                <li>家族と普段は話さないことを話してみようと思ったとき</li>
+              </ul>
+              <p>その瞬間に一つの質問があれば、一つの会話が始まることがあります。</p>
+            </section>
+            <section>
+              <h2 id="viuk-light">VIUK-Lightとの関係</h2>
+              <p>OmoiはVIUK-Lightのプロジェクトです。名前のLightと同じ向きから生まれています。</p>
+              <ul>
+                <li>Lightは、暗闇を照らす名前です。</li>
+                <li>少しのことでも誰かの役に立つ、その積み重ねです。</li>
+                <li>大きな社会問題を一度に解決することはできません。</li>
+              </ul>
+              <div class="link-list"><a href="omoi-getting-started.html">はじめるを見る →</a><a href="omoi-concept.html">名前の意味を見る →</a><a href="https://omoi.viuk-light.org/">Omoiを開く</a></div>
+            </section>
+          </section>
+          <nav aria-label="前後の資料" class="document-pagination"><a href="omoi-concept.html"><span>前の資料</span><strong>Omoi（重い・想い・思い）</strong></a><a href="omoi-getting-started.html"><span>次の資料</span><strong>Omoiをはじめる</strong></a></nav>
+        </div>
+      </main>
+    </div>
+    <footer class="docs-footer"><span>Omoi Documentation / VIUK-Light</span><nav aria-label="資料フッター"><a href="index.html">VIUK-Light</a><a href="privacy.html">プライバシー</a></nav>
+    </footer>
+  </body>
 </html>

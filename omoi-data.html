@@ -1,27 +1,154 @@
 <!DOCTYPE html>
 
 <html lang="ja">
-<head>
-<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>データ構造 — Omoi Documentation</title>
 <meta content="Omoiの906件の質問データ、JSONスキーマ、カテゴリ、視点、content_warning、ライセンスを説明します。" name="description"/>
-<link href="https://viuk-light.org/omoi-data.html" rel="canonical"/><link href="assets/viuk-light-logo.png?v=20260825" rel="icon" type="image/png"/><link href="interior.css?v=20261015-ud-font" rel="stylesheet"/><script defer="" src="docs.js?v=20260913-layout-3"></script>
+    <link href="https://viuk-light.org/omoi-data.html" rel="canonical"/>
+    <link href="assets/viuk-light-logo.png?v=20260825" rel="icon" type="image/png"/>
+    <link href="interior.css?v=20261015-ud-font" rel="stylesheet"/><script defer="" src="docs.js?v=20260913-layout-3"></script>
 </head>
-<body class="docs-body" data-product="omoi">
+  <body class="docs-body" data-product="omoi">
 <a class="skip-link" href="#docs-content">本文へ移動</a>
-<header class="docs-topbar"><a aria-label="VIUK-Light ホーム" class="docs-brand" href="index.html"><img alt="VIUK-Light公式ロゴ" class="brand-logo" height="638" src="assets/viuk-light-logo.png?v=20260825" width="712"/><span>VIUK-Light</span></a><a class="docs-title-link" href="omoi-docs.html">Omoi Documentation</a><nav aria-label="製品へのリンク" class="docs-top-actions"><a class="external" href="https://omoi.viuk-light.org/">Omoiを開く</a></nav></header>
-<div class="docs-layout">
-<aside aria-label="Omoiドキュメントナビゲーション" class="docs-sidebar"><details class="docs-mobile-nav" data-doc-mobile-nav="" open=""><summary>Omoiの目次</summary><div class="docs-sidebar-content"><a class="docs-back" href="omoi.html">Omoi<span>製品紹介へ</span></a><div class="docs-search"><label for="omoi-data-filter">目次を検索</label><input data-doc-filter="" id="omoi-data-filter" placeholder="キーワードを入力" type="search"/><p data-doc-search-status="" role="status"></p></div><div class="docs-group" data-doc-group=""><p class="docs-group-label">はじめに</p><a data-doc-link="" href="omoi-docs.html">概要</a><a data-doc-link="" href="omoi-concept.html">Omoi（重い・想い・思い）</a><a data-doc-link="" href="omoi-details.html">Omoiについて</a><a data-doc-link="" href="omoi-getting-started.html">Omoiをはじめる</a></div><div class="docs-group" data-doc-group=""><p class="docs-group-label">使い方</p><a data-doc-link="" href="omoi-levels.html">話題カテゴリとLevel</a><a data-doc-link="" href="omoi-question.html">質問画面</a></div><div class="docs-group" data-doc-group=""><p class="docs-group-label">データと品質</p><a data-doc-link="" href="omoi-question-catalog.html">質問カタログ</a><a aria-current="page" data-doc-link="" href="omoi-data.html">データ構造</a><a data-doc-link="" href="omoi-editorial.html">編集方針</a><a data-doc-link="" href="omoi-accessibility.html">アクセシビリティ</a><a data-doc-link="" href="omoi-validation.html">検証と公開</a><a data-doc-link="" href="omoi-technical.html">技術仕様</a><a data-doc-link="" href="omoi-safety.html">安全設計</a></div><div class="docs-group" data-doc-group=""><p class="docs-group-label">参加する</p><a data-doc-link="" href="omoi-contributing.html">質問データに参加する</a></div><div class="docs-group" data-doc-group=""><p class="docs-group-label">ヘルプ</p><a data-doc-link="" href="omoi-help.html">ヘルプ</a></div></div></details></aside>
-<main class="docs-main" id="docs-content"><div class="docs-page-heading"><p class="docs-breadcrumb"><a href="omoi-docs.html">Omoi Documentation</a> / データ構造</p><header class="docs-hero"><h1>データ構造</h1><p class="docs-lead">906件の質問を管理するJSONの構造と、場面文・会話のヒント・背景・用語の扱いを説明します。</p></header></div><aside class="page-toc"><details open=""><summary>このページ</summary><nav aria-label="ページ内の目次"><a href="#section-1">現在のデータセット</a><a href="#section-2">共通フィールド</a><a href="#section-3">背景・場面・ヒントのフィールド</a><a href="#section-4">12の上位カテゴリ</a><a href="#section-5">Level 4の主視点</a><a href="#section-6">content_warning</a><a href="#section-7">正本とライセンス</a></nav></details></aside><div class="docs-article">
-<section class="docs-page-content">
-<section><h2 id="section-1">現在のデータセット</h2>
-<p>2026年10月16日に、公開元の <a class="external" href="https://github.com/VIUK-Light/Omoi/tree/fe24acc726bcb5e1f590851c07f85978da7430a1">main / fe24acc</a> と公開サイトを照合しました。以下の件数は、この版の質問JSONに基づきます。</p><table class="spec-table"><tbody><tr><th scope="row">Level 1</th><td>163件 — 日常や自分のこと</td></tr><tr><th scope="row">Level 2</th><td>80件 — 意見が分かれる身近な話</td></tr><tr><th scope="row">Level 3</th><td>301件 — 社会や価値観について</td></tr><tr><th scope="row">Level 4</th><td>362件 — 人生に関わる難しい選択</td></tr><tr><th scope="row">合計</th><td>906件</td></tr></tbody></table><p>Levelはデータ上の分類です。利用画面では4つの話題カテゴリから選びます。ここで扱う12の<code>category</code>は、検索や編集に使う上位テーマ分類で、画面の4カテゴリとは別です。</p>
-</section>
-<section><h2 id="section-2">共通フィールド</h2>
-<table class="spec-table"><tbody><tr><th scope="row">id</th><td>全Levelで重複しない固定ID</td></tr><tr><th scope="row">level</th><td>配置ファイルと一致する1〜4の整数</td></tr><tr><th scope="row">sensitivity</th><td>話す前に配慮が必要な度合い。難易度や年齢制限ではありません</td></tr><tr><th scope="row">category</th><td>12の上位テーマ分類</td></tr><tr><th scope="row">topic</th><td>具体的な論点。検索・編集・重複確認の軸</td></tr><tr><th scope="row">question</th><td>画面に表示する問い</td></tr></tbody></table>
-</section>
-<section><h2 id="section-3">背景・場面・ヒントのフィールド</h2>
-<table class="spec-table"><tbody><tr><th scope="row">perspective</th><td>Level 3・4で必須。affected / actor / decision_maker / observer</td></tr><tr><th scope="row">role</th><td>任意。parent、teacher、friendなど具体的な立場</td></tr><tr><th scope="row">detail.text</th><td>Level 3・4で必須。問いの背景、対立、条件、不確実性</td></tr><tr><th scope="row">detail.sources</th><td>任意。出典タイトルとHTTP(S) URL</td></tr><tr><th scope="row">scenario</th><td>任意。問いを考える場面や前提。質問文の前に表示</td></tr><tr><th scope="row">hints</th><td>任意。会話を深める問いかけの配列。「会話のヒント」に表示</td></tr><tr><th scope="row">terms</th><td>任意。termとdefinitionを持つ用語の配列。「問いの背景」に表示</td></tr><tr><th scope="row">content_warning</th><td>任意。高リスク内容を確認する編集用タグ</td></tr></tbody></table><p>この版では、Level 3・4の663件すべてに背景文とヒントがあります。場面文は446件、用語は423件に収録されています。Level 1・2にはこれらの補助情報はありません。補助情報がないカードでは、対応するボタンや場面文を表示しません。</p><pre class="code-block"><code>{
+<header class="docs-topbar"><a aria-label="VIUK-Light ホーム" class="docs-brand" href="index.html"><img alt="VIUK-Light公式ロゴ" class="brand-logo" height="638" src="assets/viuk-light-logo.png?v=20260825" width="712"/><span>VIUK-Light</span></a><a class="docs-title-link" href="omoi-docs.html">Omoi Documentation</a><nav aria-label="製品へのリンク" class="docs-top-actions"><a class="external" href="https://omoi.viuk-light.org/">Omoiを開く</a></nav>
+    </header>
+    <div class="docs-layout">
+      <aside aria-label="Omoiドキュメントナビゲーション" class="docs-sidebar">
+        <details class="docs-mobile-nav" data-doc-mobile-nav="" open="">
+          <summary>Omoiの目次</summary>
+          <div class="docs-sidebar-content"><a class="docs-back" href="omoi.html">Omoi<span>製品紹介へ</span></a><div class="docs-search"><label for="omoi-data-filter">目次を検索</label><input data-doc-filter="" id="omoi-data-filter" placeholder="キーワードを入力" type="search"/><p data-doc-search-status="" role="status">
+              </p>
+            </div>
+            <div class="docs-group" data-doc-group="">
+              <p class="docs-group-label">はじめに</p><a data-doc-link="" href="omoi-docs.html">概要</a><a data-doc-link="" href="omoi-concept.html">Omoi（重い・想い・思い）</a><a data-doc-link="" href="omoi-details.html">Omoiについて</a><a data-doc-link="" href="omoi-getting-started.html">Omoiをはじめる</a></div>
+            <div class="docs-group" data-doc-group="">
+              <p class="docs-group-label">使い方</p><a data-doc-link="" href="omoi-levels.html">話題カテゴリとLevel</a><a data-doc-link="" href="omoi-question.html">質問画面</a></div>
+            <div class="docs-group" data-doc-group="">
+              <p class="docs-group-label">データと品質</p><a data-doc-link="" href="omoi-question-catalog.html">質問カタログ</a><a aria-current="page" data-doc-link="" href="omoi-data.html">データ構造</a><a data-doc-link="" href="omoi-editorial.html">編集方針</a><a data-doc-link="" href="omoi-accessibility.html">アクセシビリティ</a><a data-doc-link="" href="omoi-validation.html">検証と公開</a><a data-doc-link="" href="omoi-technical.html">技術仕様</a><a data-doc-link="" href="omoi-safety.html">安全設計</a></div>
+            <div class="docs-group" data-doc-group="">
+              <p class="docs-group-label">参加する</p><a data-doc-link="" href="omoi-contributing.html">質問データに参加する</a></div>
+            <div class="docs-group" data-doc-group="">
+              <p class="docs-group-label">ヘルプ</p><a data-doc-link="" href="omoi-help.html">ヘルプ</a></div>
+          </div>
+        </details>
+      </aside>
+      <main class="docs-main" id="docs-content">
+        <div class="docs-page-heading">
+          <p class="docs-breadcrumb"><a href="omoi-docs.html">Omoi Documentation</a> / データ構造</p>
+          <header class="docs-hero">
+            <h1>データ構造</h1>
+            <p class="docs-lead">906件の質問を管理するJSONの構造と、場面文・会話のヒント・背景・用語の扱いを説明します。</p>
+          </header>
+        </div>
+        <aside class="page-toc">
+          <details open="">
+            <summary>このページ</summary>
+            <nav aria-label="ページ内の目次"><a href="#section-1">現在のデータセット</a><a href="#section-2">共通フィールド</a><a href="#section-3">背景・場面・ヒントのフィールド</a><a href="#section-4">12の上位カテゴリ</a><a href="#section-5">Level 4の主視点</a><a href="#section-6">content_warning</a><a href="#section-7">正本とライセンス</a></nav>
+          </details>
+        </aside>
+        <div class="docs-article">
+          <section class="docs-page-content">
+            <section>
+              <h2 id="section-1">現在のデータセット</h2>
+              <p>2026年10月16日に、公開元の <a class="external" href="https://github.com/VIUK-Light/Omoi/tree/fe24acc726bcb5e1f590851c07f85978da7430a1">main / fe24acc</a> と公開サイトを照合しました。以下の件数は、この版の質問JSONに基づきます。</p>
+              <table class="spec-table">
+                <tbody>
+                  <tr>
+                    <th scope="row">Level 1</th>
+                    <td>163件 — 日常や自分のこと</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Level 2</th>
+                    <td>80件 — 意見が分かれる身近な話</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Level 3</th>
+                    <td>301件 — 社会や価値観について</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Level 4</th>
+                    <td>362件 — 人生に関わる難しい選択</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">合計</th>
+                    <td>906件</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Levelはデータ上の分類です。利用画面では4つの話題カテゴリから選びます。ここで扱う12の<code>category</code>は、検索や編集に使う上位テーマ分類で、画面の4カテゴリとは別です。</p>
+            </section>
+            <section>
+              <h2 id="section-2">共通フィールド</h2>
+              <table class="spec-table">
+                <tbody>
+                  <tr>
+                    <th scope="row">id</th>
+                    <td>全Levelで重複しない固定ID</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">level</th>
+                    <td>配置ファイルと一致する1〜4の整数</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">sensitivity</th>
+                    <td>話す前に配慮が必要な度合い。難易度や年齢制限ではありません</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">category</th>
+                    <td>12の上位テーマ分類</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">topic</th>
+                    <td>具体的な論点。検索・編集・重複確認の軸</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">question</th>
+                    <td>画面に表示する問い</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+            <section>
+              <h2 id="section-3">背景・場面・ヒントのフィールド</h2>
+              <table class="spec-table">
+                <tbody>
+                  <tr>
+                    <th scope="row">perspective</th>
+                    <td>Level 3・4で必須。affected / actor / decision_maker / observer</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">role</th>
+                    <td>任意。parent、teacher、friendなど具体的な立場</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">detail.text</th>
+                    <td>Level 3・4で必須。問いの背景、対立、条件、不確実性</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">detail.sources</th>
+                    <td>任意。出典タイトルとHTTP(S) URL</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">scenario</th>
+                    <td>任意。問いを考える場面や前提。質問文の前に表示</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">hints</th>
+                    <td>任意。会話を深める問いかけの配列。「会話のヒント」に表示</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">terms</th>
+                    <td>任意。termとdefinitionを持つ用語の配列。「問いの背景」に表示</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">content_warning</th>
+                    <td>任意。高リスク内容を確認する編集用タグ</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>この版では、Level 3・4の663件すべてに背景文とヒントがあります。場面文は446件、用語は423件に収録されています。Level 1・2にはこれらの補助情報はありません。補助情報がないカードでは、対応するボタンや場面文を表示しません。</p><pre class="code-block"><code>{
   &quot;id&quot;: &quot;example-001&quot;,
   &quot;level&quot;: 4,
   &quot;sensitivity&quot;: 4,
@@ -45,21 +172,143 @@
   }
 }</code></pre>
 </section>
-<section><h2 id="section-4">12の上位カテゴリ</h2>
-<table class="spec-table"><tbody><tr><th scope="row"><code>self_and_values</code></th><td>55件</td></tr><tr><th scope="row"><code>relationships_and_communication</code></th><td>265件</td></tr><tr><th scope="row"><code>family_and_care</code></th><td>47件</td></tr><tr><th scope="row"><code>school_and_youth</code></th><td>142件</td></tr><tr><th scope="row"><code>work_and_economy</code></th><td>42件</td></tr><tr><th scope="row"><code>gender_sexuality_and_identity</code></th><td>100件</td></tr><tr><th scope="row"><code>health_and_disability</code></th><td>33件</td></tr><tr><th scope="row"><code>technology_media_and_privacy</code></th><td>59件</td></tr><tr><th scope="row"><code>justice_safety_and_crime</code></th><td>42件</td></tr><tr><th scope="row"><code>society_public_policy_and_environment</code></th><td>77件</td></tr><tr><th scope="row"><code>culture_religion_and_history</code></th><td>27件</td></tr><tr><th scope="row"><code>ethics_and_decision_making</code></th><td>17件</td></tr></tbody></table>
-</section>
-<section><h2 id="section-5">Level 4の主視点</h2>
-<table class="spec-table"><tbody><tr><th scope="row"><code>affected</code></th><td>169件 / 46.7%</td></tr><tr><th scope="row"><code>actor</code></th><td>90件 / 24.9%</td></tr><tr><th scope="row"><code>decision_maker</code></th><td>74件 / 20.4%</td></tr><tr><th scope="row"><code>observer</code></th><td>29件 / 8.0%</td></tr></tbody></table>
-</section>
-<section><h2 id="section-6">content_warning</h2>
-<p>高リスク内容を編集・検証時に確認するための管理値です。現在のアプリはこのタグをカードごとの警告として表示せず、重い話題の開始前の案内と、答えずに進む・途中で終える操作を用意しています。</p><table class="spec-table"><tbody><tr><th scope="row"><code>sexual_violence</code></th><td>31件</td></tr><tr><th scope="row"><code>pregnancy_and_reproduction</code></th><td>71件</td></tr><tr><th scope="row"><code>infidelity</code></th><td>27件</td></tr><tr><th scope="row"><code>family_conflict</code></th><td>48件</td></tr><tr><th scope="row"><code>abuse_and_coercion</code></th><td>21件</td></tr><tr><th scope="row"><code>self_harm</code></th><td>4件</td></tr><tr><th scope="row"><code>medical_and_end_of_life</code></th><td>18件</td></tr><tr><th scope="row"><code>crime_and_punishment</code></th><td>54件</td></tr><tr><th scope="row"><code>discrimination_and_hate</code></th><td>32件</td></tr><tr><th scope="row"><code>privacy_and_surveillance</code></th><td>20件</td></tr></tbody></table>
-</section>
-<section><h2 id="section-7">正本とライセンス</h2>
-<p>質問JSONと編集ルールはOmoiリポジトリを正本とし、公式カタログへ同じデータを同期します。ソースコードはMIT License、質問・解説などのコンテンツはCC BY-SA 4.0です。</p><div class="link-list"><a class="external" href="https://github.com/VIUK-Light/Omoi/blob/fe24acc726bcb5e1f590851c07f85978da7430a1/QUESTION_DATA_SCHEMA.md">この版のスキーマを読む</a><a href="omoi-question-catalog.html">906問を検索する</a><a href="omoi-validation.html">検証と同期の手順を見る</a></div>
-</section>
-</section>
-<nav aria-label="前後の資料" class="document-pagination"><a href="omoi-question-catalog.html"><span>前の資料</span><strong>質問カタログ</strong></a><a href="omoi-editorial.html"><span>次の資料</span><strong>編集方針</strong></a></nav></div></main>
-</div>
-<footer class="docs-footer"><span>Omoi Documentation / VIUK-Light</span><nav aria-label="資料フッター"><a href="index.html">VIUK-Light</a><a href="privacy.html">プライバシー</a></nav></footer>
-</body>
+            <section>
+              <h2 id="section-4">12の上位カテゴリ</h2>
+              <table class="spec-table">
+                <tbody>
+                  <tr>
+                    <th scope="row"><code>self_and_values</code></th>
+                    <td>55件</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>relationships_and_communication</code></th>
+                    <td>265件</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>family_and_care</code></th>
+                    <td>47件</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>school_and_youth</code></th>
+                    <td>142件</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>work_and_economy</code></th>
+                    <td>42件</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>gender_sexuality_and_identity</code></th>
+                    <td>100件</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>health_and_disability</code></th>
+                    <td>33件</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>technology_media_and_privacy</code></th>
+                    <td>59件</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>justice_safety_and_crime</code></th>
+                    <td>42件</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>society_public_policy_and_environment</code></th>
+                    <td>77件</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>culture_religion_and_history</code></th>
+                    <td>27件</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>ethics_and_decision_making</code></th>
+                    <td>17件</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+            <section>
+              <h2 id="section-5">Level 4の主視点</h2>
+              <table class="spec-table">
+                <tbody>
+                  <tr>
+                    <th scope="row"><code>affected</code></th>
+                    <td>169件 / 46.7%</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>actor</code></th>
+                    <td>90件 / 24.9%</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>decision_maker</code></th>
+                    <td>74件 / 20.4%</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>observer</code></th>
+                    <td>29件 / 8.0%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+            <section>
+              <h2 id="section-6">content_warning</h2>
+              <p>高リスク内容を編集・検証時に確認するための管理値です。現在のアプリはこのタグをカードごとの警告として表示せず、重い話題の開始前の案内と、答えずに進む・途中で終える操作を用意しています。</p>
+              <table class="spec-table">
+                <tbody>
+                  <tr>
+                    <th scope="row"><code>sexual_violence</code></th>
+                    <td>31件</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>pregnancy_and_reproduction</code></th>
+                    <td>71件</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>infidelity</code></th>
+                    <td>27件</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>family_conflict</code></th>
+                    <td>48件</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>abuse_and_coercion</code></th>
+                    <td>21件</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>self_harm</code></th>
+                    <td>4件</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>medical_and_end_of_life</code></th>
+                    <td>18件</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>crime_and_punishment</code></th>
+                    <td>54件</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>discrimination_and_hate</code></th>
+                    <td>32件</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>privacy_and_surveillance</code></th>
+                    <td>20件</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+            <section>
+              <h2 id="section-7">正本とライセンス</h2>
+              <p>質問JSONと編集ルールはOmoiリポジトリを正本とし、公式カタログへ同じデータを同期します。ソースコードはMIT License、質問・解説などのコンテンツはCC BY-SA 4.0です。</p>
+              <div class="link-list"><a class="external" href="https://github.com/VIUK-Light/Omoi/blob/fe24acc726bcb5e1f590851c07f85978da7430a1/QUESTION_DATA_SCHEMA.md">この版のスキーマを読む</a><a href="omoi-question-catalog.html">906問を検索する</a><a href="omoi-validation.html">検証と同期の手順を見る</a></div>
+            </section>
+          </section>
+          <nav aria-label="前後の資料" class="document-pagination"><a href="omoi-question-catalog.html"><span>前の資料</span><strong>質問カタログ</strong></a><a href="omoi-editorial.html"><span>次の資料</span><strong>編集方針</strong></a></nav>
+        </div>
+      </main>
+    </div>
+    <footer class="docs-footer"><span>Omoi Documentation / VIUK-Light</span><nav aria-label="資料フッター"><a href="index.html">VIUK-Light</a><a href="privacy.html">プライバシー</a></nav>
+    </footer>
+  </body>
 </html>

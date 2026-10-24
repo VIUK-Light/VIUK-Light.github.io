@@ -1,43 +1,127 @@
 <!DOCTYPE html>
 
 <html lang="ja">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Omoi for Seriesについて — Omoi for Series Documentation</title>
 <meta content="Omoi for Seriesの目的、設計、既存のOmoiとの違いについて説明します。" name="description"/>
-<link href="https://viuk-light.org/omoi-for-details.html" rel="canonical"/>
-<link href="assets/viuk-light-logo.png?v=20260825" rel="icon" type="image/png"/>
-<link href="interior.css?v=20261015-ud-font" rel="stylesheet"/>
+    <link href="https://viuk-light.org/omoi-for-details.html" rel="canonical"/>
+    <link href="assets/viuk-light-logo.png?v=20260825" rel="icon" type="image/png"/>
+    <link href="interior.css?v=20261015-ud-font" rel="stylesheet"/>
 <script defer="" src="docs.js?v=20260913-layout-3"></script>
 </head>
-<body class="docs-body" data-product="omoi-for">
+  <body class="docs-body" data-product="omoi-for">
 <a class="skip-link" href="#docs-content">本文へ移動</a>
-<header class="docs-topbar"><a aria-label="VIUK-Light ホーム" class="docs-brand" href="index.html"><img alt="VIUK-Light公式ロゴ" class="brand-logo" height="638" src="assets/viuk-light-logo.png?v=20260825" width="712"/><span>VIUK-Light</span></a><a class="docs-title-link" href="omoi-for-docs.html">Omoi for Series Documentation</a><nav aria-label="製品へのリンク" class="docs-top-actions"><a class="external" href="https://omoi-for.viuk-light.org/">Omoi forを開く</a></nav></header>
-<div class="docs-layout">
-<aside aria-label="Omoi for Seriesドキュメントナビゲーション" class="docs-sidebar"><details class="docs-mobile-nav" data-doc-mobile-nav="" open=""><summary>Omoi for Seriesの目次</summary><div class="docs-sidebar-content"><a class="docs-back" href="omoi-for.html">Omoi for Series<span>製品紹介へ</span></a><div class="docs-search"><label for="omoi-for-details-filter">目次を検索</label><input data-doc-filter="" id="omoi-for-details-filter" placeholder="キーワードを入力" type="search"/><p data-doc-search-status="" role="status"></p></div><div class="docs-group" data-doc-group=""><p class="docs-group-label">はじめに</p><a data-doc-link="" href="omoi-for-docs.html">概要</a><a aria-current="page" data-doc-link="" href="omoi-for-details.html">Omoi for Seriesについて</a><a data-doc-link="" href="omoi-for-getting-started.html">Omoi for Seriesをはじめる</a></div><div class="docs-group" data-doc-group=""><p class="docs-group-label">使い方</p><a data-doc-link="" href="omoi-for-series.html">5つのシリーズ</a><a data-doc-link="" href="omoi-for-levels.html">質問の深さと進め方</a><a data-doc-link="" href="omoi-for-question.html">質問画面</a><a data-doc-link="" href="omoi-for-safety.html">安全な使い方</a></div><div class="docs-group" data-doc-group=""><p class="docs-group-label">開発資料</p><a data-doc-link="" href="omoi-for-technical.html">技術仕様</a></div><div class="docs-group" data-doc-group=""><p class="docs-group-label">ヘルプ</p><a data-doc-link="" href="omoi-for-help.html">ヘルプ</a></div></div></details></aside>
-<main class="docs-main" id="docs-content"><div class="docs-page-heading"><p class="docs-breadcrumb"><a href="omoi-for-docs.html">Omoi for Series Documentation</a> / Omoi for Seriesについて</p><header class="docs-hero"><h1>Omoi for Seriesについて</h1><p class="docs-lead">話す相手や、ひとりで振り返る目的に合わせて問いを選ぶOmoi for Seriesの設計を説明します。</p></header></div><aside class="page-toc"><details open=""><summary>このページ</summary><nav aria-label="ページ内の目次"><a href="#section-1">シリーズの目的</a><a href="#section-2">Omoiとは別のプロダクト</a><a href="#section-3">設計の前提</a><a href="#section-4">できること・できないこと</a></nav></details></aside><div class="docs-article">
-<section class="docs-page-content">
-<section><h2 id="section-1">シリーズの目的</h2>
-<p>Omoi for Seriesは、恋人・家族・友だちとの会話や、自分自身の振り返りを質問カードから始めるWebシリーズです。普段は話さない気持ちや価値観に、一つの問いから触れることを目的にしています。</p>
-<p>気軽なLiteと、気持ちや価値観に触れるDeepから、今の状態に合う内容を選べます。質問数は事前に決めず、一枚だけで終えても、好きなだけ続けても大丈夫です。</p>
-</section>
-<section><h2 id="section-2">Omoiとは別のプロダクト</h2>
-<p>Omoi for Seriesは、既存のOmoiとは別のプロダクトです。実装、質問データ、内部のLevel定義を、このシリーズ専用のリポジトリで管理しています。</p>
-<table class="spec-table"><tbody><tr><th scope="row">入口</th><td>Couples / Family / Friends / Adults / Self-Careの5シリーズ</td></tr><tr><th scope="row">質問の設定</th><td>Lite / Deepで内容の踏み込み度、通常 / 深掘りで追加の問いの表示方法を選択</td></tr><tr><th scope="row">Level</th><td>内部の分類値。画面では選択・表示しません。既存OmoiのLevelとは別の定義です</td></tr><tr><th scope="row">正本</th><td><a href="https://github.com/VIUK-Light/Omoi-for-Series">Omoi-for-Seriesリポジトリ</a>のmainブランチ</td></tr><tr><th scope="row">既存Omoi</th><td><a href="omoi.html">Omoiの製品紹介を見る</a></td></tr></tbody></table>
-<p>シリーズを選ぶことは、相手の気持ちや関係を判定することではありません。会話や振り返りのきっかけとして使います。</p>
-</section>
-<section><h2 id="section-3">設計の前提</h2>
-<div class="rule-list"><div class="rule-item"><span class="number">01</span><div><h3>目的ごとに入口を分ける</h3><p>5シリーズをそれぞれのURLで直接開けます。Adultsは18歳以上向け、Self-Careはひとりで使う入口です。</p></div></div><div class="rule-item"><span class="number">02</span><div><h3>自分のペースで進める</h3><p>質問カードを一枚ずつ進め、「今日はここまで」でいつでも終えられます。終了するために決められた問数まで進む必要はありません。</p></div></div><div class="rule-item"><span class="number">03</span><div><h3>答えない選択を残す</h3><p>答えたくない問いには答えず、カードを進められます。深掘りスタイルでは、裏面でもう一度「次へ」を押すと次のカードになります。</p></div></div><div class="rule-item"><span class="number">04</span><div><h3>回答を入力せずに使う</h3><p>口頭で話したり、頭の中で考えたりして使います。アプリに回答を入力・送信・保存する機能はありません。</p></div></div></div>
-</section>
-<section><h2 id="section-4">できること・できないこと</h2>
-<p>できるのは、相手と話すきっかけや、ひとりで考えるための問いを選ぶことです。アプリが回答を採点したり、関係や心理状態を判定したりする機能はありません。Self-Careも医療的な診断・治療を行いません。</p>
-<div class="notice"><p>答えたくないときは、理由を求めずに飛ばす、終わる、時間を置くことを選べます。相手との会話では、お互いのペースと同意を尊重してください。</p></div>
-<div class="next-page"><a href="omoi-for-docs.html">← Documentation</a><a href="omoi-for-getting-started.html">はじめる →</a></div>
-</section>
-</section>
-<nav aria-label="前後の資料" class="document-pagination"><a href="omoi-for-docs.html"><span>前の資料</span><strong>概要</strong></a><a href="omoi-for-getting-started.html"><span>次の資料</span><strong>Omoi for Seriesをはじめる</strong></a></nav></div></main>
-</div>
-<footer class="docs-footer"><span>Omoi for Series Documentation / VIUK-Light</span><nav aria-label="資料フッター"><a href="index.html">VIUK-Light</a><a href="privacy.html">プライバシー</a></nav></footer>
-</body>
+<header class="docs-topbar"><a aria-label="VIUK-Light ホーム" class="docs-brand" href="index.html"><img alt="VIUK-Light公式ロゴ" class="brand-logo" height="638" src="assets/viuk-light-logo.png?v=20260825" width="712"/><span>VIUK-Light</span></a><a class="docs-title-link" href="omoi-for-docs.html">Omoi for Series Documentation</a><nav aria-label="製品へのリンク" class="docs-top-actions"><a class="external" href="https://omoi-for.viuk-light.org/">Omoi forを開く</a></nav>
+    </header>
+    <div class="docs-layout">
+      <aside aria-label="Omoi for Seriesドキュメントナビゲーション" class="docs-sidebar">
+        <details class="docs-mobile-nav" data-doc-mobile-nav="" open="">
+          <summary>Omoi for Seriesの目次</summary>
+          <div class="docs-sidebar-content"><a class="docs-back" href="omoi-for.html">Omoi for Series<span>製品紹介へ</span></a><div class="docs-search"><label for="omoi-for-details-filter">目次を検索</label><input data-doc-filter="" id="omoi-for-details-filter" placeholder="キーワードを入力" type="search"/><p data-doc-search-status="" role="status">
+              </p>
+            </div>
+            <div class="docs-group" data-doc-group="">
+              <p class="docs-group-label">はじめに</p><a data-doc-link="" href="omoi-for-docs.html">概要</a><a aria-current="page" data-doc-link="" href="omoi-for-details.html">Omoi for Seriesについて</a><a data-doc-link="" href="omoi-for-getting-started.html">Omoi for Seriesをはじめる</a></div>
+            <div class="docs-group" data-doc-group="">
+              <p class="docs-group-label">使い方</p><a data-doc-link="" href="omoi-for-series.html">5つのシリーズ</a><a data-doc-link="" href="omoi-for-levels.html">質問の深さと進め方</a><a data-doc-link="" href="omoi-for-question.html">質問画面</a><a data-doc-link="" href="omoi-for-safety.html">安全な使い方</a></div>
+            <div class="docs-group" data-doc-group="">
+              <p class="docs-group-label">開発資料</p><a data-doc-link="" href="omoi-for-technical.html">技術仕様</a></div>
+            <div class="docs-group" data-doc-group="">
+              <p class="docs-group-label">ヘルプ</p><a data-doc-link="" href="omoi-for-help.html">ヘルプ</a></div>
+          </div>
+        </details>
+      </aside>
+      <main class="docs-main" id="docs-content">
+        <div class="docs-page-heading">
+          <p class="docs-breadcrumb"><a href="omoi-for-docs.html">Omoi for Series Documentation</a> / Omoi for Seriesについて</p>
+          <header class="docs-hero">
+            <h1>Omoi for Seriesについて</h1>
+            <p class="docs-lead">話す相手や、ひとりで振り返る目的に合わせて問いを選ぶOmoi for Seriesの設計を説明します。</p>
+          </header>
+        </div>
+        <aside class="page-toc">
+          <details open="">
+            <summary>このページ</summary>
+            <nav aria-label="ページ内の目次"><a href="#section-1">シリーズの目的</a><a href="#section-2">Omoiとは別のプロダクト</a><a href="#section-3">設計の前提</a><a href="#section-4">できること・できないこと</a></nav>
+          </details>
+        </aside>
+        <div class="docs-article">
+          <section class="docs-page-content">
+            <section>
+              <h2 id="section-1">シリーズの目的</h2>
+              <p>Omoi for Seriesは、恋人・家族・友だちとの会話や、自分自身の振り返りを質問カードから始めるWebシリーズです。普段は話さない気持ちや価値観に、一つの問いから触れることを目的にしています。</p>
+              <p>気軽なLiteと、気持ちや価値観に触れるDeepから、今の状態に合う内容を選べます。質問数は事前に決めず、一枚だけで終えても、好きなだけ続けても大丈夫です。</p>
+            </section>
+            <section>
+              <h2 id="section-2">Omoiとは別のプロダクト</h2>
+              <p>Omoi for Seriesは、既存のOmoiとは別のプロダクトです。実装、質問データ、内部のLevel定義を、このシリーズ専用のリポジトリで管理しています。</p>
+              <table class="spec-table">
+                <tbody>
+                  <tr>
+                    <th scope="row">入口</th>
+                    <td>Couples / Family / Friends / Adults / Self-Careの5シリーズ</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">質問の設定</th>
+                    <td>Lite / Deepで内容の踏み込み度、通常 / 深掘りで追加の問いの表示方法を選択</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Level</th>
+                    <td>内部の分類値。画面では選択・表示しません。既存OmoiのLevelとは別の定義です</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">正本</th>
+                    <td><a href="https://github.com/VIUK-Light/Omoi-for-Series">Omoi-for-Seriesリポジトリ</a>のmainブランチ</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">既存Omoi</th>
+                    <td><a href="omoi.html">Omoiの製品紹介を見る</a></td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>シリーズを選ぶことは、相手の気持ちや関係を判定することではありません。会話や振り返りのきっかけとして使います。</p>
+            </section>
+            <section>
+              <h2 id="section-3">設計の前提</h2>
+              <div class="rule-list">
+                <div class="rule-item"><span class="number">01</span><div>
+                    <h3>目的ごとに入口を分ける</h3>
+                    <p>5シリーズをそれぞれのURLで直接開けます。Adultsは18歳以上向け、Self-Careはひとりで使う入口です。</p>
+                  </div>
+                </div>
+                <div class="rule-item"><span class="number">02</span><div>
+                    <h3>自分のペースで進める</h3>
+                    <p>質問カードを一枚ずつ進め、「今日はここまで」でいつでも終えられます。終了するために決められた問数まで進む必要はありません。</p>
+                  </div>
+                </div>
+                <div class="rule-item"><span class="number">03</span><div>
+                    <h3>答えない選択を残す</h3>
+                    <p>答えたくない問いには答えず、カードを進められます。深掘りスタイルでは、裏面でもう一度「次へ」を押すと次のカードになります。</p>
+                  </div>
+                </div>
+                <div class="rule-item"><span class="number">04</span><div>
+                    <h3>回答を入力せずに使う</h3>
+                    <p>口頭で話したり、頭の中で考えたりして使います。アプリに回答を入力・送信・保存する機能はありません。</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section>
+              <h2 id="section-4">できること・できないこと</h2>
+              <p>できるのは、相手と話すきっかけや、ひとりで考えるための問いを選ぶことです。アプリが回答を採点したり、関係や心理状態を判定したりする機能はありません。Self-Careも医療的な診断・治療を行いません。</p>
+              <div class="notice">
+                <p>答えたくないときは、理由を求めずに飛ばす、終わる、時間を置くことを選べます。相手との会話では、お互いのペースと同意を尊重してください。</p>
+              </div>
+              <div class="next-page"><a href="omoi-for-docs.html">← Documentation</a><a href="omoi-for-getting-started.html">はじめる →</a></div>
+            </section>
+          </section>
+          <nav aria-label="前後の資料" class="document-pagination"><a href="omoi-for-docs.html"><span>前の資料</span><strong>概要</strong></a><a href="omoi-for-getting-started.html"><span>次の資料</span><strong>Omoi for Seriesをはじめる</strong></a></nav>
+        </div>
+      </main>
+    </div>
+    <footer class="docs-footer"><span>Omoi for Series Documentation / VIUK-Light</span><nav aria-label="資料フッター"><a href="index.html">VIUK-Light</a><a href="privacy.html">プライバシー</a></nav>
+    </footer>
+  </body>
 </html>

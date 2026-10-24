@@ -1,44 +1,139 @@
 <!DOCTYPE html>
 
 <html lang="ja">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>質問画面 — Omoi for Series Documentation</title>
 <meta content="Omoi for Seriesの質問カードの表示、「次へ」によるカード反転と移動、「今日はここまで」による終了を説明します。" name="description"/>
-<link href="https://viuk-light.org/omoi-for-question.html" rel="canonical"/>
-<link href="assets/viuk-light-logo.png?v=20260825" rel="icon" type="image/png"/>
-<link href="interior.css?v=20261015-ud-font" rel="stylesheet"/>
+    <link href="https://viuk-light.org/omoi-for-question.html" rel="canonical"/>
+    <link href="assets/viuk-light-logo.png?v=20260825" rel="icon" type="image/png"/>
+    <link href="interior.css?v=20261015-ud-font" rel="stylesheet"/>
 <script defer="" src="docs.js?v=20260913-layout-3"></script>
 </head>
-<body class="docs-body" data-product="omoi-for">
+  <body class="docs-body" data-product="omoi-for">
 <a class="skip-link" href="#docs-content">本文へ移動</a>
-<header class="docs-topbar"><a aria-label="VIUK-Light ホーム" class="docs-brand" href="index.html"><img alt="VIUK-Light公式ロゴ" class="brand-logo" height="638" src="assets/viuk-light-logo.png?v=20260825" width="712"/><span>VIUK-Light</span></a><a class="docs-title-link" href="omoi-for-docs.html">Omoi for Series Documentation</a><nav aria-label="製品へのリンク" class="docs-top-actions"><a class="external" href="https://omoi-for.viuk-light.org/">Omoi forを開く</a></nav></header>
-<div class="docs-layout">
-<aside aria-label="Omoi for Seriesドキュメントナビゲーション" class="docs-sidebar"><details class="docs-mobile-nav" data-doc-mobile-nav="" open=""><summary>Omoi for Seriesの目次</summary><div class="docs-sidebar-content"><a class="docs-back" href="omoi-for.html">Omoi for Series<span>製品紹介へ</span></a><div class="docs-search"><label for="omoi-for-question-filter">目次を検索</label><input data-doc-filter="" id="omoi-for-question-filter" placeholder="キーワードを入力" type="search"/><p data-doc-search-status="" role="status"></p></div><div class="docs-group" data-doc-group=""><p class="docs-group-label">はじめに</p><a data-doc-link="" href="omoi-for-docs.html">概要</a><a data-doc-link="" href="omoi-for-details.html">Omoi for Seriesについて</a><a data-doc-link="" href="omoi-for-getting-started.html">Omoi for Seriesをはじめる</a></div><div class="docs-group" data-doc-group=""><p class="docs-group-label">使い方</p><a data-doc-link="" href="omoi-for-series.html">5つのシリーズ</a><a data-doc-link="" href="omoi-for-levels.html">質問の深さと進め方</a><a aria-current="page" data-doc-link="" href="omoi-for-question.html">質問画面</a><a data-doc-link="" href="omoi-for-safety.html">安全な使い方</a></div><div class="docs-group" data-doc-group=""><p class="docs-group-label">開発資料</p><a data-doc-link="" href="omoi-for-technical.html">技術仕様</a></div><div class="docs-group" data-doc-group=""><p class="docs-group-label">ヘルプ</p><a data-doc-link="" href="omoi-for-help.html">ヘルプ</a></div></div></details></aside>
-<main class="docs-main" id="docs-content"><div class="docs-page-heading"><p class="docs-breadcrumb"><a href="omoi-for-docs.html">Omoi for Series Documentation</a> / 質問画面</p><header class="docs-hero"><h1>質問画面</h1><p class="docs-lead">主質問と裏面の追加の問いを表示するカードを、「次へ」で進めます。「今日はここまで」でいつでも終了できます。</p></header></div><aside class="page-toc"><details open=""><summary>このページ</summary><nav aria-label="ページ内の目次"><a href="#section-1">画面に表示されるもの</a><a href="#section-2">カードを進める操作</a><a href="#section-3">答えたくない問いを飛ばす</a><a href="#section-4">セッションの終了</a></nav></details></aside><div class="docs-article">
-<section class="docs-page-content">
-<section><h2 id="section-1">画面に表示されるもの</h2>
-<div class="rule-list"><div class="rule-item"><span class="number">01</span><div><h3>シリーズ名</h3><p>選んだCouples、Family、Friends、Adults、Self-Careの名前が、ヘッダーとカードに表示されます。</p></div></div><div class="rule-item"><span class="number">02</span><div><h3>主質問</h3><p>選択したシリーズとLite / Deepの質問プールから、一枚ずつランダムに表示します。Levelの数字や名前は表示しません。</p></div></div><div class="rule-item"><span class="number">03</span><div><h3>進行状況</h3><p>「質問 1」のように、表示した主質問の通算番号を示します。事前に決めた総問数や、回答した数を表すものではありません。</p></div></div><div class="rule-item"><span class="number">04</span><div><h3>裏面の追加の問い</h3><p>深掘りスタイルではカードをめくって表示します。Couples / Family / Friendsは現在シリーズ共通の補助問い、Adults / Self-Careは各カードに対応する問いです。</p></div></div><div class="rule-item"><span class="number">05</span><div><h3>内容の話題</h3><p>内容タグが付いた質問では、カード上に「内容の話題」として補助情報を表示します。</p></div></div></div>
-</section>
-<section><h2 id="section-2">カードを進める操作</h2>
-<table class="spec-table"><tbody><tr><th scope="row">質問カードをはじめる</th><td>設定画面から開始します。AdultsのDeepは内容の案内へ進み、「続ける」で最初の主質問を表示します</td></tr><tr><th scope="row">次へ（通常）</th><td>次の主質問へ進みます</td></tr><tr><th scope="row">次へ（深掘り・表面）</th><td>同じカードの裏面を表示します</td></tr><tr><th scope="row">次へ（深掘り・裏面）</th><td>次のカードの主質問へ進みます</td></tr><tr><th scope="row">今日はここまで</th><td>質問画面の上部から、いつでも終了できます</td></tr><tr><th scope="row">もう一度</th><td>終了画面から、同じLite / Deepと会話スタイルで再び始めます。AdultsのDeepでは、毎回内容の案内を経由します</td></tr><tr><th scope="row">シリーズ一覧へ</th><td>終了画面から、シリーズの一覧に戻ります</td></tr></tbody></table>
-<p>AdultsのDeepの開始・再開前には「刺激的な内容があります。」と表示します。「続ける」で質問を開始し、「戻る」またはEscapeキーで設定画面へ戻れます。これは内容の案内で、年齢を入力する確認画面ではありません。</p>
-<p>カードの反転中は連打できないようになっています。裏面を読み終えたら、もう一度「次へ」を押してください。</p>
-</section>
-<section><h2 id="section-3">答えたくない問いを飛ばす</h2>
-<p>問いに答えずに次へ進んでも構いません。通常では「次へ」を一度、深掘りでは表面から裏面へ進んだ後、もう一度「次へ」を押すと次のカードになります。理由や回答を入力する必要はありません。</p>
-<p>会話を続けたくないときや、ひとりで考えるのを休みたいときは「今日はここまで」を使えます。</p>
-</section>
-<section><h2 id="section-4">セッションの終了</h2>
-<p>終了画面には表示した主質問の数が出ます。この数は回答数や達成度の評価ではありません。「もう一度」で続けるか、「シリーズ一覧へ」で別のシリーズを選べます。</p>
-<p>同じページ内では未使用の質問を優先して選びます。回答、設定、進行は保存されず、再読み込みで履歴がリセットされます。</p>
-<div class="link-list"><a href="omoi-for-levels.html">質問の深さと進め方を見る</a><a href="omoi-for-safety.html">安全な使い方を見る</a><a href="https://omoi-for.viuk-light.org/friends/">Friendsの質問カードを開く</a></div>
-<div class="next-page"><a href="omoi-for-levels.html">← 質問の深さと進め方</a><a href="omoi-for-safety.html">安全な使い方 →</a></div>
-</section>
-</section>
-<nav aria-label="前後の資料" class="document-pagination"><a href="omoi-for-levels.html"><span>前の資料</span><strong>質問の深さと進め方</strong></a><a href="omoi-for-safety.html"><span>次の資料</span><strong>安全な使い方</strong></a></nav></div></main>
-</div>
-<footer class="docs-footer"><span>Omoi for Series Documentation / VIUK-Light</span><nav aria-label="資料フッター"><a href="index.html">VIUK-Light</a><a href="privacy.html">プライバシー</a></nav></footer>
-</body>
+<header class="docs-topbar"><a aria-label="VIUK-Light ホーム" class="docs-brand" href="index.html"><img alt="VIUK-Light公式ロゴ" class="brand-logo" height="638" src="assets/viuk-light-logo.png?v=20260825" width="712"/><span>VIUK-Light</span></a><a class="docs-title-link" href="omoi-for-docs.html">Omoi for Series Documentation</a><nav aria-label="製品へのリンク" class="docs-top-actions"><a class="external" href="https://omoi-for.viuk-light.org/">Omoi forを開く</a></nav>
+    </header>
+    <div class="docs-layout">
+      <aside aria-label="Omoi for Seriesドキュメントナビゲーション" class="docs-sidebar">
+        <details class="docs-mobile-nav" data-doc-mobile-nav="" open="">
+          <summary>Omoi for Seriesの目次</summary>
+          <div class="docs-sidebar-content"><a class="docs-back" href="omoi-for.html">Omoi for Series<span>製品紹介へ</span></a><div class="docs-search"><label for="omoi-for-question-filter">目次を検索</label><input data-doc-filter="" id="omoi-for-question-filter" placeholder="キーワードを入力" type="search"/><p data-doc-search-status="" role="status">
+              </p>
+            </div>
+            <div class="docs-group" data-doc-group="">
+              <p class="docs-group-label">はじめに</p><a data-doc-link="" href="omoi-for-docs.html">概要</a><a data-doc-link="" href="omoi-for-details.html">Omoi for Seriesについて</a><a data-doc-link="" href="omoi-for-getting-started.html">Omoi for Seriesをはじめる</a></div>
+            <div class="docs-group" data-doc-group="">
+              <p class="docs-group-label">使い方</p><a data-doc-link="" href="omoi-for-series.html">5つのシリーズ</a><a data-doc-link="" href="omoi-for-levels.html">質問の深さと進め方</a><a aria-current="page" data-doc-link="" href="omoi-for-question.html">質問画面</a><a data-doc-link="" href="omoi-for-safety.html">安全な使い方</a></div>
+            <div class="docs-group" data-doc-group="">
+              <p class="docs-group-label">開発資料</p><a data-doc-link="" href="omoi-for-technical.html">技術仕様</a></div>
+            <div class="docs-group" data-doc-group="">
+              <p class="docs-group-label">ヘルプ</p><a data-doc-link="" href="omoi-for-help.html">ヘルプ</a></div>
+          </div>
+        </details>
+      </aside>
+      <main class="docs-main" id="docs-content">
+        <div class="docs-page-heading">
+          <p class="docs-breadcrumb"><a href="omoi-for-docs.html">Omoi for Series Documentation</a> / 質問画面</p>
+          <header class="docs-hero">
+            <h1>質問画面</h1>
+            <p class="docs-lead">主質問と裏面の追加の問いを表示するカードを、「次へ」で進めます。「今日はここまで」でいつでも終了できます。</p>
+          </header>
+        </div>
+        <aside class="page-toc">
+          <details open="">
+            <summary>このページ</summary>
+            <nav aria-label="ページ内の目次"><a href="#section-1">画面に表示されるもの</a><a href="#section-2">カードを進める操作</a><a href="#section-3">答えたくない問いを飛ばす</a><a href="#section-4">セッションの終了</a></nav>
+          </details>
+        </aside>
+        <div class="docs-article">
+          <section class="docs-page-content">
+            <section>
+              <h2 id="section-1">画面に表示されるもの</h2>
+              <div class="rule-list">
+                <div class="rule-item"><span class="number">01</span><div>
+                    <h3>シリーズ名</h3>
+                    <p>選んだCouples、Family、Friends、Adults、Self-Careの名前が、ヘッダーとカードに表示されます。</p>
+                  </div>
+                </div>
+                <div class="rule-item"><span class="number">02</span><div>
+                    <h3>主質問</h3>
+                    <p>選択したシリーズとLite / Deepの質問プールから、一枚ずつランダムに表示します。Levelの数字や名前は表示しません。</p>
+                  </div>
+                </div>
+                <div class="rule-item"><span class="number">03</span><div>
+                    <h3>進行状況</h3>
+                    <p>「質問 1」のように、表示した主質問の通算番号を示します。事前に決めた総問数や、回答した数を表すものではありません。</p>
+                  </div>
+                </div>
+                <div class="rule-item"><span class="number">04</span><div>
+                    <h3>裏面の追加の問い</h3>
+                    <p>深掘りスタイルではカードをめくって表示します。Couples / Family / Friendsは現在シリーズ共通の補助問い、Adults / Self-Careは各カードに対応する問いです。</p>
+                  </div>
+                </div>
+                <div class="rule-item"><span class="number">05</span><div>
+                    <h3>内容の話題</h3>
+                    <p>内容タグが付いた質問では、カード上に「内容の話題」として補助情報を表示します。</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section>
+              <h2 id="section-2">カードを進める操作</h2>
+              <table class="spec-table">
+                <tbody>
+                  <tr>
+                    <th scope="row">質問カードをはじめる</th>
+                    <td>設定画面から開始します。AdultsのDeepは内容の案内へ進み、「続ける」で最初の主質問を表示します</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">次へ（通常）</th>
+                    <td>次の主質問へ進みます</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">次へ（深掘り・表面）</th>
+                    <td>同じカードの裏面を表示します</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">次へ（深掘り・裏面）</th>
+                    <td>次のカードの主質問へ進みます</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">今日はここまで</th>
+                    <td>質問画面の上部から、いつでも終了できます</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">もう一度</th>
+                    <td>終了画面から、同じLite / Deepと会話スタイルで再び始めます。AdultsのDeepでは、毎回内容の案内を経由します</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">シリーズ一覧へ</th>
+                    <td>終了画面から、シリーズの一覧に戻ります</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>AdultsのDeepの開始・再開前には「刺激的な内容があります。」と表示します。「続ける」で質問を開始し、「戻る」またはEscapeキーで設定画面へ戻れます。これは内容の案内で、年齢を入力する確認画面ではありません。</p>
+              <p>カードの反転中は連打できないようになっています。裏面を読み終えたら、もう一度「次へ」を押してください。</p>
+            </section>
+            <section>
+              <h2 id="section-3">答えたくない問いを飛ばす</h2>
+              <p>問いに答えずに次へ進んでも構いません。通常では「次へ」を一度、深掘りでは表面から裏面へ進んだ後、もう一度「次へ」を押すと次のカードになります。理由や回答を入力する必要はありません。</p>
+              <p>会話を続けたくないときや、ひとりで考えるのを休みたいときは「今日はここまで」を使えます。</p>
+            </section>
+            <section>
+              <h2 id="section-4">セッションの終了</h2>
+              <p>終了画面には表示した主質問の数が出ます。この数は回答数や達成度の評価ではありません。「もう一度」で続けるか、「シリーズ一覧へ」で別のシリーズを選べます。</p>
+              <p>同じページ内では未使用の質問を優先して選びます。回答、設定、進行は保存されず、再読み込みで履歴がリセットされます。</p>
+              <div class="link-list"><a href="omoi-for-levels.html">質問の深さと進め方を見る</a><a href="omoi-for-safety.html">安全な使い方を見る</a><a href="https://omoi-for.viuk-light.org/friends/">Friendsの質問カードを開く</a></div>
+              <div class="next-page"><a href="omoi-for-levels.html">← 質問の深さと進め方</a><a href="omoi-for-safety.html">安全な使い方 →</a></div>
+            </section>
+          </section>
+          <nav aria-label="前後の資料" class="document-pagination"><a href="omoi-for-levels.html"><span>前の資料</span><strong>質問の深さと進め方</strong></a><a href="omoi-for-safety.html"><span>次の資料</span><strong>安全な使い方</strong></a></nav>
+        </div>
+      </main>
+    </div>
+    <footer class="docs-footer"><span>Omoi for Series Documentation / VIUK-Light</span><nav aria-label="資料フッター"><a href="index.html">VIUK-Light</a><a href="privacy.html">プライバシー</a></nav>
+    </footer>
+  </body>
 </html>
