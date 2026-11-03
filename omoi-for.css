@@ -21,6 +21,25 @@
 [data-series="adults"], [data-selected-series="adults"] { --for-color: #805e7e; --for-deep: #65435f; --for-tint: #f5f0f5; }
 [data-series="self-care"], [data-selected-series="self-care"] { --for-color: #e5755d; --for-deep: #aa4836; --for-tint: #fcf1ee; }
 .omoi-for-page .site-main { overflow: visible; }
+.omoi-for-page .for-hero {
+  --ink: #171715;
+  --muted: #171715;
+  --accent: #171715;
+  position: relative;
+  isolation: isolate;
+  background: #ef502b;
+  color: var(--ink);
+}
+.omoi-for-page .for-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: #ef502b;
+  box-shadow: 0 0 0 100vmax #ef502b;
+  clip-path: inset(0 -100vmax);
+  pointer-events: none;
+}
 .omoi-for-page .for-hero.project-hero--split {
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
   min-height: min(840px, calc(100svh - 150px));
@@ -45,6 +64,9 @@
 .omoi-for-page .button { border-radius: 8px; min-height: 62px; padding: 14px 28px; font-size: 17px; }
 .omoi-for-page .button.primary { background: var(--ink); color: #fff; border-color: var(--ink); }
 .omoi-for-page .button.secondary { background: #fff; color: var(--ink); border: 1px solid #8b99a4; }
+.omoi-for-page .for-hero .button.primary:hover { background: #fff; color: var(--ink); }
+.omoi-for-page .for-hero .button.secondary { background: transparent; border-color: #9e351b; }
+.omoi-for-page .for-hero .button.secondary:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
 .for-arrow { display: inline-block; margin-left: 14px; transition: transform .35s var(--motion-ease); }
 .button:hover .for-arrow, .text-link:hover .for-arrow { transform: translateX(4px); }
 .omoi-for-page .for-hero .project-hero-media { padding: 0; background: none; }
@@ -97,6 +119,7 @@
 }
 .for-deck-card.is-selected { --card-lift: -16px; }
 .for-deck-card:focus-visible { z-index: 20; outline: 3px solid var(--for-deep); outline-offset: 8px; }
+.omoi-for-page .for-hero .for-deck-card:focus-visible { outline-color: var(--ink); }
 .for-deck-caption { text-align: center; color: var(--muted); font-size: 11px; margin-top: 6px; }
 .omoi-for-page .project-subnav { justify-content: center; gap: 14px 36px; padding-block: 16px; }
 .omoi-for-page .project-subnav a[aria-current] {
