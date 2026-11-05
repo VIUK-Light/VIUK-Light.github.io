@@ -5,7 +5,7 @@ test('home links to the Omoi projects page', async ({ page }) => {
 
   await expect(page).toHaveTitle(/VIUK-Light/);
   await expect(page.getByRole('heading', { name: 'Omoiシリーズ' })).toBeVisible();
-  await page.getByRole('link', { name: '一覧を見る' }).click();
+  await page.getByRole('link', { name: 'プロジェクト一覧', exact: true }).click();
 
   await expect(page).toHaveURL(/\/projects\.html$/);
   await expect(page.getByRole('heading', { name: 'プロジェクト' })).toBeVisible();
