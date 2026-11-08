@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "default": "v2.01",
+  "versions": [
+    {
+      "id": "v2.01",
+      "label": "v2.01",
+      "tag": "v2.01",
+      "commit": "3eeff5a9618ba1503d2716c6fe89d47d30bd710d",
+      "release_date": "2026-11-08",
+      "release_url": "https://github.com/VIUK-Light/Omoi/releases/tag/v2.01",
+      "total": 906
+    },
+    {
+      "id": "v2.1",
+      "label": "v2.1",
+      "tag": "2.1",
+      "commit": "3eeff5a9618ba1503d2716c6fe89d47d30bd710d",
+      "release_date": "2026-11-05",
+      "release_url": "https://github.com/VIUK-Light/Omoi/releases/tag/2.1",
+      "total": 906,
+      "same_as": "v2.01"
+    },
+    {
+      "id": "v2.0.0",
+      "label": "v2.0.0",
+      "tag": "v2.0.0",
+      "commit": "fe24acc726bcb5e1f590851c07f85978da7430a1",
+      "release_date": "2026-10-17",
+      "release_url": "https://github.com/VIUK-Light/Omoi/releases/tag/v2.0.0",
+      "total": 906
+    },
+    {
+      "id": "v1.0.0",
+      "label": "v1.0.0",
+      "tag": "Omoi-v1.0.0",
+      "commit": "386c2e557ba17a135fdb91f6ababaed3dfa30414",
+      "release_date": "2026-09-10",
+      "release_url": "https://github.com/VIUK-Light/Omoi/releases/tag/Omoi-v1.0.0",
+      "total": 643
+    },
+    {
+      "id": "v0.1.0",
+      "label": "v0.1.0",
+      "tag": "Omoi-v0.1.0",
+      "commit": "ccf563947f05be0f33a74400eab0a4fa27e13347",
+      "release_date": "2026-08-23",
+      "release_url": "https://github.com/VIUK-Light/Omoi/releases/tag/Omoi-v0.1.0",
+      "total": 365
+    }
+  ]
+}

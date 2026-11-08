@@ -53,7 +53,7 @@
             </section>
             <section>
               <h2 id="section-2">今回のデータ検証結果</h2>
-              <p>2026年10月16日に、公開元の <a class="external" href="https://github.com/VIUK-Light/Omoi/tree/fe24acc726bcb5e1f590851c07f85978da7430a1">main / fe24acc</a> と公開サイトを照合しました。以下の件数は、この版の質問JSONに基づきます。</p>
+              <p>2026年11月8日に、公開元の <a class="external" href="https://github.com/VIUK-Light/Omoi/tree/3eeff5a9618ba1503d2716c6fe89d47d30bd710d">main / 3eeff5a（v2.1）</a> の検証スクリプトを実行しました。以下は、この版の質問JSONの結果です。</p>
               <table class="spec-table">
                 <tbody>
                   <tr>
@@ -97,12 +97,16 @@ node tools/verify-seo.mjs</code></pre><p>この公式サイトのリンク・ア
                 <li>「次の問いを見る」で進み、「前の問い」で同じ問いへ戻れることを確認します。話さず進む場合も回答入力は求めません。</li>
                 <li>ヒントと背景の開閉、用語と出典、Escape操作、長文のスクロールを確認します。</li>
                 <li>「ここで終える」の確認で「続ける」と「終了する」を試し、終了確定でホームへ戻ることを確認します。</li>
-                <li>質問カタログで検索・各フィルタ・追加表示を確認します。</li>
+                <li>質問カタログでバージョンの切り替え、検索・各フィルタ・追加表示を確認します。版を指定したURL、戻る・進む、読み込み失敗後の別の版への切り替えも確認します。</li>
               </ol>
             </section>
             <section>
               <h2 id="section-5">公式カタログへの同期</h2>
               <p>公開元mainの特定commitを記録し、Omoiの4つのJSONを<code>assets/omoi/data</code>へそのまま同期します。未公開のBetaやローカル編集を、公開中の製品仕様として扱わないようにします。</p>
+              <p>公式サイトのリポジトリで次を実行すると、公開元mainと公開タグのcommitを確定して質問JSONを取得します。版一覧を<code>versions.json</code>、各版の元データと件数・SHA-256を<code>versions/&lt;commit&gt;/</code>へ保存します。最新の4ファイルとカタログの参照情報・キャッシュ版も更新します。関連資料の集計と操作説明は別途確認します。</p>
+              <p>過去版に含まれるIDの重複やLevelの不一致は修正せず、当時の内容で閲覧できるように保ちます。最新データの検証と、過去版のファイルの一致確認は別に扱います。同じコミットを指すv2.01とv2.1も、それぞれの名前で選択できます。</p>
+<pre class="code-block"><code>python3 tools/sync-omoi-data.py
+python3 tools/sync-omoi-data.py --check</code></pre>
               <table class="spec-table">
                 <tbody>
                   <tr>
@@ -143,7 +147,7 @@ node tools/verify-seo.mjs</code></pre><p>この公式サイトのリンク・ア
             <section>
               <h2 id="section-7">検証に失敗した場合</h2>
               <p>原因をデータ、表示、操作、配信に分けて確認します。失敗を通すために質問を隠したり機能を削除したりせず、既存の警告や別作業の変更も記録して修正します。</p>
-              <div class="link-list"><a href="omoi-data.html">データ構造</a><a href="omoi-accessibility.html">アクセシビリティ</a><a class="external" href="https://github.com/VIUK-Light/Omoi/blob/fe24acc726bcb5e1f590851c07f85978da7430a1/tools/verify-question-dataset.mjs">この版の検証スクリプト</a></div>
+              <div class="link-list"><a href="omoi-data.html">データ構造</a><a href="omoi-accessibility.html">アクセシビリティ</a><a class="external" href="https://github.com/VIUK-Light/Omoi/blob/3eeff5a9618ba1503d2716c6fe89d47d30bd710d/tools/verify-question-dataset.mjs">この版の検証スクリプト</a><a href="assets/omoi/data/source.json">同期元と照合情報</a></div>
             </section>
           </section>
           <nav aria-label="前後の資料" class="document-pagination"><a href="omoi-accessibility.html"><span>前の資料</span><strong>アクセシビリティ</strong></a><a href="omoi-technical.html"><span>次の資料</span><strong>技術仕様</strong></a></nav>

@@ -16,6 +16,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+      - name: Check site and bundled question data
+        run: |
+          python3 tools/check-site.py
+          python3 tools/sync-omoi-data.py --check
       - uses: actions/setup-node@v6
         with:
           node-version: lts/*

@@ -39,7 +39,7 @@
           <p class="docs-breadcrumb"><a href="omoi-for-docs.html">資料一覧</a></p>
           <header class="docs-hero">
             <h1>質問の深さと進め方</h1>
-            <p class="docs-lead">Lite / Deepは質問内容、通常 / 深掘りは追加の問いの表示方法です。ふたつの設定を別々に選びます。</p>
+            <p class="docs-lead">Lite / Deepは質問内容、通常 / 深掘りは追加の問いの表示方法です。CouplesのDeepは、相談と追加質問を読む深掘りの形式です。</p>
           </header>
         </div>
         <aside class="page-toc">
@@ -56,11 +56,11 @@
                 <tbody>
                   <tr>
                     <th scope="row">Lite</th>
-                    <td>気軽に話したり振り返ったりできる、やさしい問い</td>
+                    <td>Couplesでは、日常から気持ち・将来まで二人自身のことを話す問い。他シリーズでは気軽に話したり振り返ったりする問い</td>
                   </tr>
                   <tr>
                     <th scope="row">Deep</th>
-                    <td>気持ちや関係、価値観に触れる問い</td>
+                    <td>Couplesでは、第三者の恋愛相談をきっかけに自分の考えを話す問い。他シリーズでは気持ちや関係、価値観に踏み込む問い</td>
                   </tr>
                 </tbody>
               </table>
@@ -80,11 +80,11 @@
                   </tr>
                 </tbody>
               </table>
-              <p>最初は深掘りが選ばれています。Liteでも深掘りを、Deepでも通常を選べます。表示する質問数に上限や事前の枚数選択はなく、「今日はここまで」でいつでも終えられます。</p>
+              <p>最初は深掘りが選ばれています。CouplesのDeepは深掘りに固定され、会話スタイルの選択欄を表示しません。「さらに話す」で裏面へ進み、「次の問いへ」で3〜4問の追加質問を順に読みます。ほかの設定では、Lite / Deepと通常 / 深掘りを別々に選べます。質問数の事前選択はなく、「今日はここまで」でいつでも終えられます。</p>
             </section>
             <section>
               <h2 id="section-3">公開データ件数</h2>
-              <p>2026年10月17日時点の主質問数です。裏面の問いは別に扱い、この件数には加えていません。</p>
+              <p>2026年11月8日確認。公開元mainの<a href="https://github.com/VIUK-Light/Omoi-for-Series/tree/3449535067632f20b312fa00fb9ba292c29e7f74">3449535</a>に含まれる主質問数です。CouplesのDeepは相談12件を数え、裏面の追加質問は含めていません。</p>
               <table class="spec-table">
                 <thead>
                   <tr>
@@ -97,9 +97,9 @@
                 <tbody>
                   <tr>
                     <th scope="row">Couples</th>
-                    <td>100問</td>
-                    <td>132問</td>
-                    <td>232問</td>
+                    <td>116問</td>
+                    <td>12件</td>
+                    <td>128問</td>
                   </tr>
                   <tr>
                     <th scope="row">Family</th>
@@ -116,8 +116,8 @@
                   <tr>
                     <th scope="row">Adults</th>
                     <td>37問</td>
-                    <td>57問</td>
-                    <td>94問</td>
+                    <td>66問</td>
+                    <td>103問</td>
                   </tr>
                   <tr>
                     <th scope="row">Self-Care</th>
@@ -127,9 +127,9 @@
                   </tr>
                   <tr>
                     <th scope="row">合計</th>
-                    <td>334問</td>
-                    <td>372問</td>
-                    <td>706問</td>
+                    <td>350問</td>
+                    <td>261問</td>
+                    <td>611問</td>
                   </tr>
                 </tbody>
               </table>
@@ -138,7 +138,7 @@
             <section>
               <h2 id="section-4">選び方と内部のLevel</h2>
               <p>迷ったらLiteから始め、追加の問いも見たいときは深掘りを選びます。設定を変えたい場合はシリーズ一覧から開き直せます。再読み込みすると進行と使用履歴はリセットされます。</p>
-              <p>Level 1〜4は質問データの内部分類で、画面では表示・選択しません。Couples / Family / FriendsはLevel 1〜2をLite、3〜4をDeepとして扱います。Adults / Self-CareはLiteとDeepそれぞれにLevel 1〜4を持ちます。このLevel定義は既存Omoiとは別です。</p>
+              <p>Level 1〜4は質問データの内部分類で、画面では表示・選択しません。<code>intensity</code>があればLite / Deepの判定に優先します。CouplesではLevel 3・4の直接質問16問もLiteに含まれます。Family / FriendsはLevel 1〜2がLite、3〜4がDeepです。Adults / Self-CareはLiteとDeepそれぞれにLevel 1〜4を持ちます。このLevel定義は既存Omoiとは別です。</p>
               <div class="link-list"><a href="omoi-for-question.html">質問画面の操作を見る</a><a href="omoi-for-safety.html">安全な使い方を見る</a><a href="https://omoi-for.viuk-light.org/">Omoi for Seriesを開く</a></div>
               <div class="next-page"><a href="omoi-for-series.html">← 5つのシリーズ</a><a href="omoi-for-question.html">質問画面 →</a></div>
             </section>

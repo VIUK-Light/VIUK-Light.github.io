@@ -138,7 +138,7 @@
                 </div>
                 <div class="rule-item"><span class="number">02</span><div>
                     <h3>Lite / Deepで絞る</h3>
-                    <p>質問の<code>intensity</code>を使います。既存3シリーズでは、Level 1〜2をLite、3〜4をDeepへ対応させます。画面にはLevelを表示しません。</p>
+                    <p>質問の<code>intensity</code>を優先し、指定がない場合はLevel 1〜2をLite、3〜4をDeepへ対応させます。Couplesでは元のLevelを維持した直接質問16問もLiteに含まれます。画面にはLevelを表示しません。</p>
                   </div>
                 </div>
                 <div class="rule-item"><span class="number">03</span><div>
@@ -148,7 +148,7 @@
                 </div>
                 <div class="rule-item"><span class="number">04</span><div>
                     <h3>会話スタイルで裏面を切り替える</h3>
-                    <p>通常は主質問だけ、深掘りは「次へ」で裏面の問いも表示します。スタイルはLite / Deepとは独立しています。AdultsのDeepでは、開始と「もう一度」の両方で<code>renderDeepWarning</code>を経由します。「続ける」で開始し、「戻る」またはEscapeキーで選択画面へ戻ります。</p>
+                    <p>通常は主質問だけ、深掘りは「次へ」で裏面の問いも表示します。CouplesのDeepは深掘りに固定し、<code>discussionQuestions</code>を順に表示します。「さらに話す」「次の問いへ」「前の問いへ」「出来事に戻る」「次の出来事へ」で進行します。AdultsのDeepでは、開始と「もう一度」の両方で<code>renderDeepWarning</code>を経由します。「続ける」で開始し、「戻る」またはEscapeキーで選択画面へ戻ります。</p>
                   </div>
                 </div>
                 <div class="rule-item"><span class="number">05</span><div>
@@ -160,7 +160,7 @@
             </section>
             <section>
               <h2 id="section-4">質問データと深掘りの公開条件</h2>
-              <p>2026年10月17日時点の公開主質問数と、実際に採用する裏面の問いです。</p>
+              <p>2026年11月8日確認。公開元mainの3449535に含まれる主質問数と、実際に採用する裏面の問いです。5シリーズの主質問は合計611問です。</p>
               <table class="spec-table">
                 <thead>
                   <tr>
@@ -172,8 +172,8 @@
                 <tbody>
                   <tr>
                     <th scope="row">Couples</th>
-                    <td>232問。Loves由来95問・編集137問</td>
-                    <td>個別232文は<code>pending</code>のため本番未採用。シリーズ共通の補助問いを表示</td>
+                    <td>128問。Loves由来42問・編集85問・提供原文1問。Lite116問・Deep12件</td>
+                    <td>Deepは相談ごとの3〜4問（計37問）を公開表示。Liteの個別深掘りは<code>pending</code>のため共通の補助問いを表示</td>
                   </tr>
                   <tr>
                     <th scope="row">Family</th>
@@ -187,7 +187,7 @@
                   </tr>
                   <tr>
                     <th scope="row">Adults</th>
-                    <td>94問。全質問<code>approved</code></td>
+                    <td>103問。Lite37問・Deep66問。全質問<code>approved</code></td>
                     <td>各質問の<code>followUp</code>を表示</td>
                   </tr>
                   <tr>
@@ -197,13 +197,13 @@
                   </tr>
                 </tbody>
               </table>
-              <p>Couples / Family / Friendsの個別深掘りは、データを読み込んでも、レビュー状態が<code>approved</code>になるまで本番では合成しません。現在の裏面には<code>question-engine.mjs</code>のシリーズ共通の問いを使います。開発用プレビューは本番と区別して制御します。</p>
+              <p>Couples Deepの追加質問は<code>discussionReviewStatus: "approved"</code>により公開します。通常の個別深掘りとは別に承認を管理します。Couples Lite / Family / Friendsは<code>reviewStatus: "pending"</code>のため、<code>question-engine.mjs</code>のシリーズ共通の補助問いを使います。開発用プレビューは本番と区別して制御します。</p>
               <p>Adults / Self-Careは、マニフェストと質問データの両方が<code>published</code>で、各質問が<code>approved</code>の状態です。<code>releaseApproval</code>には2026年10月16日の公開指示を記録しています。外部の専門審査を受けたという記録ではありません。</p>
             </section>
             <section>
               <h2 id="section-5">正本と公開状態</h2>
-              <p>実装と質問データの正本は、<a href="https://github.com/VIUK-Light/Omoi-for-Series">Omoi-for-Seriesリポジトリ</a>です。公開中の内容はmainブランチで確認できます。この資料は、2026年10月17日の公開コミット<a href="https://github.com/VIUK-Light/Omoi-for-Series/commit/c2fb80bb84cc2b1b01caf87aeb16802fe81af22b"><code>c2fb80b</code></a>に合わせています。同時点のBetaブランチとmainブランチは、ファイル内容が同じです。</p>
-              <p>Couplesの元データと公開デッキは件数が異なります。Loves由来の正本701問をもとに公開用に整理した222問に、新しいDeep10問を追加した232問を使っています。出典と再生成の情報は<code>tools/PROVENANCE.md</code>とREADMEで確認できます。</p>
+              <p>実装と質問データの正本は、<a href="https://github.com/VIUK-Light/Omoi-for-Series">Omoi-for-Seriesリポジトリ</a>です。この資料は2026年11月8日に、公開元mainのコミット<a href="https://github.com/VIUK-Light/Omoi-for-Series/commit/3449535067632f20b312fa00fb9ba292c29e7f74"><code>3449535</code></a>へ合わせました。未公開ブランチの内容は含めていません。</p>
+              <p>Couplesの元データと公開デッキは件数が異なります。Loves由来の正本701問を保管し、公開用デッキはLite116問と提供相談をもとにしたDeep12件に整理しています。出典・改稿履歴・再生成の情報は<code>tools/PROVENANCE.md</code>とREADMEで確認できます。</p>
               <div class="link-list"><a href="https://github.com/VIUK-Light/Omoi-for-Series/blob/main/README.md">READMEを読む</a><a href="https://github.com/VIUK-Light/Omoi-for-Series/blob/main/shared/series-manifest.json">公開マニフェストを見る</a><a href="https://github.com/VIUK-Light/Omoi-for-Series/blob/main/tools/series-contracts.mjs">現在の件数契約を見る</a><a href="https://github.com/VIUK-Light/Omoi-for-Series/blob/main/tools/PROVENANCE.md">Couplesの出典と再現性を見る</a></div>
               <div class="next-page"><a href="omoi-for-safety.html">← 安全な使い方</a><a href="omoi-for-help.html">ヘルプ →</a></div>
             </section>

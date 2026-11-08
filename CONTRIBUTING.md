@@ -26,6 +26,7 @@ Issueでは、会話内容、APIキー、アクセストークン、個人情報
 | 製品紹介・Homeの動き | `site-motion.css`、`site-motion.js`。`data-motion-page`のあるページへ適用 |
 | Documentationの検索・モバイルメニュー・補助表示 | `docs.js` |
 | Omoi Documentation | `omoi-*.html` |
+| Omoi質問カタログ | `tools/sync-omoi-data.py`で公開元mainと公開タグを同期。`assets/omoi/data/versions.json`で版を一覧化し、`versions/<commit>/`に各版のJSONと照合情報を保存 |
 | Omoi for series Documentation | `omoi-for-*.html` |
 | Kizuna Documentation | `kizuna-*.html` |
 
@@ -40,6 +41,7 @@ python3 -m http.server 8000
 `http://127.0.0.1:8000/` を開き、少なくともHome、Projects、変更したDocumentation、モバイル幅を確認してください。
 
 リンク・アンカー・見出し・製品別ナビゲーションは `python3 tools/check-site.py` で確認できます。
+質問カタログの全保存版と参照情報は `python3 tools/sync-omoi-data.py --check` で確認できます。過去版の本文・分類・重複は変更せず、元のJSONを保ちます。同期後は、資料の件数・補助情報の集計・操作説明・Newsも同じ公開版へ合わせてください。
 
 JavaScriptを変更した場合は、次も実行します。
 
