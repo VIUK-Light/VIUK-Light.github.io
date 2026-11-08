@@ -11,9 +11,13 @@ Current development focus: Omoi series.
 
 ## Current public projects
 
+- SafeSearch 4 — X-filtering system — Published. A local web-filtering extension for Microsoft Edge. https://viuk-light.org/x-filtering-system.html
 - Omoi — Active development. An open-source question-card project for discussing society, ethics, values, and life. https://viuk-light.org/omoi.html
 - Omoi for series — Active development. Question cards for Couples, Family, Friends, Adults (18+), and Self-Care. Choose Lite / Deep content and a standard / follow-up conversation mode. https://viuk-light.org/omoi-for.html
 - Kizuna — Maintenance. An open-source AI application for character conversations, relationships, and stories. New feature development is minimal; maintenance focuses mainly on serious bugs and security issues. https://viuk-light.org/kizuna.html
+
+Data checked on 2026-11-08: Omoi v2.01 and v2.1 share main commit 3eeff5a9618ba1503d2716c6fe89d47d30bd710d, 906 questions. The catalog supports v2.01, v2.1, v2.0.0 (906 records), v1.0.0 (643 records) and v0.1.0 (365 records, including historical duplicate IDs). Share a selected version with ?version=v2.01. Catalog: https://viuk-light.org/omoi-question-catalog.html
+Omoi for Series main commit 3449535067632f20b312fa00fb9ba292c29e7f74: 611 main questions (Couples 128, Family 166, Friends 150, Adults 103, Self-Care 64). Couples Lite has 116 personal questions; Couples Deep has 12 consultations with 3–4 discussion prompts each and uses a fixed follow-up mode.
 
 ## Official reference pages
 

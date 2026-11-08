@@ -5,10 +5,10 @@
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>質問カタログ — Omoi Documentation</title>
-<meta content="Omoiの全質問データを検索し、質問文、Level、カテゴリ、sensitivity、詳細文を確認できます。" name="description"/>
+<meta content="Omoiの質問データをバージョン別に検索できます。v2.1・v2.01・v2.0.0・v1.0.0・v0.1.0の質問文、Level、背景や参照元を確認できます。" name="description"/>
     <link href="https://viuk-light.org/omoi-question-catalog.html" rel="canonical"/>
     <link href="assets/viuk-light-logo.png?v=20260825" rel="icon" type="image/png"/>
-    <link href="interior.css?v=20261103-header-height-2" rel="stylesheet"/><script defer="" src="docs.js?v=20260913-layout-3"></script><script defer="" src="omoi-question-catalog.js?v=20261016-main-fe24acc"></script>
+    <link href="interior.css?v=20261108-catalog-versions-1" rel="stylesheet"/><script defer="" src="docs.js?v=20260913-layout-3"></script><script defer="" src="omoi-question-catalog.js?v=20261108-main-3eeff5a-catalog-v2"></script>
   <link rel="stylesheet" href="site-brand.css?v=20261103-header-height-2">
 </head>
   <body class="docs-body" data-product="omoi">
@@ -40,23 +40,30 @@
           <p class="docs-breadcrumb"><a href="omoi-docs.html">資料一覧</a></p>
           <header class="docs-hero">
             <h1>質問カタログ</h1>
-            <p class="docs-lead">公開元と同じ906問を、場面文・ヒント・背景・用語とともに確認できます。質問IDやキーワード、Level、分類、配慮度で絞り込めます。</p>
+            <p class="docs-lead">バージョンごとの質問データを、場面文・ヒント・背景・用語とともに確認できます。質問IDやキーワード、Level、分類、配慮度で絞り込めます。</p>
           </header>
         </div>
         <aside class="page-toc">
           <details open="">
             <summary>このページ</summary>
-            <nav aria-label="ページ内の目次"><a href="#section-1">全質問を検索</a><a href="#section-2">データ項目</a></nav>
+            <nav aria-label="ページ内の目次"><a href="#catalog-version-title">バージョンを選ぶ</a><a href="#section-1">全質問を検索</a><a href="#section-2">データ項目</a></nav>
           </details>
         </aside>
         <div class="docs-article">
           <section class="docs-page-content">
+            <section class="question-catalog-version" aria-labelledby="catalog-version-title">
+              <h2 id="catalog-version-title">バージョンを選ぶ</h2>
+              <label for="questionVersion">Omoiのバージョン</label>
+              <select id="questionVersion" disabled=""><option value="v2.01">v2.01（最新）</option></select>
+              <p>質問・分類・補助情報は、それぞれの公開タグの内容をそのまま収録しています。選んだバージョンはURLでも共有できます。</p>
+              <p class="question-catalog-status" id="questionVersionNote" role="status" hidden=""></p>
+            </section>
             <div class="notice">
-              <p>反映日：2026-10-16 / 参照元：VIUK-Light/Omoi / branch: main / commit: <a class="external" href="https://github.com/VIUK-Light/Omoi/tree/fe24acc726bcb5e1f590851c07f85978da7430a1">fe24acc</a> / 質問件数: 906件 / コンテンツライセンス：CC BY-SA 4.0</p>
+              <p id="questionVersionSource">反映日：2026-11-08 / 参照元：VIUK-Light/Omoi / branch: main / commit: <a class="external" href="https://github.com/VIUK-Light/Omoi/tree/3eeff5a9618ba1503d2716c6fe89d47d30bd710d">3eeff5a</a> / 質問件数: 906件 / コンテンツライセンス：CC BY-SA 4.0</p>
             </div>
             <section>
               <h2 id="section-1">全質問を検索</h2>
-              <div class="question-catalog-controls"><label>キーワード<input id="questionSearch" placeholder="ID・問い・場面・ヒント・背景・用語を検索" type="search"/></label><label>話題カテゴリ / Level<select id="questionLevelFilter"><option value="">すべて</option><option value="1">日常や自分のこと / Level 1</option><option value="2">意見が分かれる身近な話 / Level 2</option><option value="3">社会や価値観について / Level 3</option><option value="4">人生に関わる難しい選択 / Level 4</option></select></label><label>上位分類 / category<select id="questionCategoryFilter"><option value="">すべて</option></select></label><label>配慮度 / sensitivity<select id="questionSensitivityFilter"><option value="">すべて</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></label></div>
+              <div class="question-catalog-controls"><label>キーワード<input id="questionSearch" placeholder="ID・問い・場面・ヒント・背景・用語を検索" type="search"/></label><label>話題カテゴリ / Level<select id="questionLevelFilter"><option value="">すべて</option><option value="1">Level 1</option><option value="2">Level 2</option><option value="3">Level 3</option><option value="4">Level 4</option></select></label><label>上位分類 / category<select id="questionCategoryFilter"><option value="">すべて</option></select></label><label>配慮度 / sensitivity<select id="questionSensitivityFilter"><option value="">すべて</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></label></div>
               <p aria-live="polite" class="question-catalog-status" id="questionResultCount">質問データを読み込み中...</p>
               <div class="question-catalog" id="questionCatalogList">
               </div>
@@ -71,11 +78,11 @@
                   </tr>
                   <tr>
                     <th scope="row">level</th>
-                    <td>データ上の1〜4の分類。アプリでは4つの話題カテゴリとして選択</td>
+                    <td>各版のデータ上の1〜4の分類。利用画面の名称や選び方は版によって異なります</td>
                   </tr>
                   <tr>
                     <th scope="row">category</th>
-                    <td>12の上位テーマ分類</td>
+                    <td>各版のテーマ分類。過去版には現在の12分類と異なる値も含まれます</td>
                   </tr>
                   <tr>
                     <th scope="row">topic</th>
