@@ -46,6 +46,17 @@ python3 -m http.server 8000
 python3 tools/check-site.py
 ```
 
+## バージョン履歴
+
+製品資料に公開版の履歴を保存しています。新しい版は先頭に追記し、過去の記録を残します。
+
+- [Omoi](omoi-history.html)
+- [Omoi for Series](omoi-for-history.html)
+- [Kizuna](kizuna-history.html)
+- [SafeSearch 4](x-filtering-system-docs.html)
+
+日付と出典の記録方法は、[Contributing](CONTRIBUTING.md#バージョン履歴の更新)を参照してください。
+
 ## Contributing
 
 文章、リンク、表示、アクセシビリティ、ドキュメントの改善を歓迎します。詳細は [CONTRIBUTING.md](CONTRIBUTING.md) を参照してください。
