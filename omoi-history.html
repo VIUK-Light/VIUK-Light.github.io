@@ -26,7 +26,7 @@
             <div class="docs-group" data-doc-group="">
               <p class="docs-group-label">はじめに</p><a data-doc-link="" href="omoi-docs.html">概要</a><a data-doc-link="" href="omoi-concept.html">Omoi（重い・想い・思い）</a><a data-doc-link="" href="omoi-details.html">Omoiについて</a><a data-doc-link="" href="omoi-getting-started.html">Omoiをはじめる</a></div>
             <div class="docs-group" data-doc-group="">
-              <p class="docs-group-label">使い方</p><a data-doc-link="" href="omoi-levels.html">話題カテゴリとLevel</a><a data-doc-link="" href="omoi-question.html">質問画面</a></div>
+              <p class="docs-group-label">使い方</p><a data-doc-link="" href="omoi-levels.html">選び方とLevel</a><a data-doc-link="" href="omoi-question.html">質問画面</a></div>
             <div class="docs-group" data-doc-group="">
               <p class="docs-group-label">データと品質</p><a data-doc-link="" href="omoi-question-catalog.html">質問カタログ</a><a data-doc-link="" href="omoi-data.html">データ構造</a><a data-doc-link="" href="omoi-editorial.html">編集方針</a><a data-doc-link="" href="omoi-accessibility.html">アクセシビリティ</a><a data-doc-link="" href="omoi-validation.html">検証と公開</a><a data-doc-link="" href="omoi-technical.html">技術仕様</a><a data-doc-link="" href="omoi-safety.html">安全設計</a></div>
             <div class="docs-group" data-doc-group="">
@@ -51,18 +51,50 @@
         <aside class="page-toc">
           <details open="">
             <summary>このページ</summary>
-            <nav aria-label="ページ内の目次"><a href="#v2-0-0">v2.0.0</a><a href="#v1-0-0">Omoi-v1.0.0</a><a href="#v0-1-0">Omoi-v0.1.0</a><a href="#about-history">履歴について</a></nav>
+            <nav aria-label="ページ内の目次"><a href="#v3-0-0">v3.0.0</a><a href="#v2-0-0">v2.0.0</a><a href="#v1-0-0">Omoi-v1.0.0</a><a href="#v0-1-0">Omoi-v0.1.0</a><a href="#about-history">履歴について</a></nav>
           </details>
         </aside>
         <div class="docs-article">
           <article class="docs-page-content">
+            <section class="article-section" aria-labelledby="v3-0-0">
+              <h2 id="v3-0-0">v3.0.0</h2>
+              <p><time datetime="2026-12-03">2026年12月3日</time> · 公開リリース</p>
+              <p>Level 1を廃止し、Level 2・3・4の749問で構成する版です。開始方法を「学校・若者向け」「すべてから選ぶ」「自分で選ぶ」に変更し、話の深さ（低・中・高）と今月のピックアップ質問30問、約21のトピックラベルによる自分で選ぶを追加しました。</p>
+              <h3>質問データと会話の補助</h3>
+              <ul>
+                <li>質問を<strong>906問から749問へ再編</strong>しました。Level 1を廃止し、Level 2は80問、Level 3は301問、Level 4は368問です。</li>
+                <li><strong>Level 3・4の全669問に会話のヒント</strong>を用意しました。さらに<strong>663問に問いの背景</strong>、<strong>274問に用語</strong>、<strong>170問に要点</strong>、<strong>481問に場面文</strong>を収録しています。</li>
+                <li>Level 3・4では <code>perspective</code> を必須とし、<code>summary</code> を任意の要点として同じデータへ保存します。</li>
+              </ul>
+              <h3>始め方と進め方</h3>
+              <ul>
+                <li>選択画面を、4つの話題カテゴリから<strong>3つの開始方法</strong>へ変更しました。</li>
+                <li>「すべてから選ぶ」では、話の深さ（低・中・高）か、今月のピックアップ質問30問を選べます。ピックアップは Level 2・3・4 から10問ずつ、低→中→高の順に出題します。</li>
+                <li>「自分で選ぶ」では、約21のトピックラベルと個別の問いを組み合わせて全Level横断で出題できます。</li>
+                <li>中・高を選ぶと、話し始める前の案内を確認します。学校・若者向け / 自分で選ぶでは案内を挟まず、選んだ内容から始まります。</li>
+                <li>途中で終えた場合は、次に開いたとき、はじめの選び方の画面から続きを再開できます（この端末のみ）。</li>
+              </ul>
+              <h3>画面と表示</h3>
+              <ul>
+                <li>各ページ右上の「表示設定」パネルで、テーマ・背景・背景の濃さを選べます。文字サイズ、ふりがな、授業モードも利用できます。</li>
+                <li>共有ボタンから「リンクを共有」または「問いの画像を保存」を選べます。</li>
+                <li>質問データベースと A4 カード印刷モードを追加しました。</li>
+                <li>関係図は廃止し、通常画面に実験用の操作や質問IDは表示しません。</li>
+              </ul>
+              <h3>ライセンス</h3>
+              <ul>
+                <li>新規 v3 コード・変更差分・新規文書は Omoi v3 Perimeter Attribution License 1.0 に基づきます。</li>
+                <li>既存 v2 コードの継承部分は MIT License、質問・解説等は CC BY-SA 4.0 を維持します。</li>
+              </ul>
+              <div class="link-list"><a href="https://github.com/VIUK-Light/Omoi/releases/tag/v3.0.0">GitHubリリース</a><a href="https://github.com/VIUK-Light/Omoi/compare/fe24acc726bcb5e1f590851c07f85978da7430a1...4bef94f5e8474bb8d311408c4852f07b202d348d">v2からのコード・質問データの変更</a><a href="https://github.com/VIUK-Light/Omoi/commit/4bef94f5e8474bb8d311408c4852f07b202d348d">この版のコミット</a></div>
+            </section>
             <section class="article-section" aria-labelledby="v2-0-0">
               <h2 id="v2-0-0">v2.0.0</h2>
               <p><time datetime="2026-10-17">2026年10月17日</time> · 公開リリース</p>
               <p>質問データを拡充し、枚数を先に決める進め方から、話題を選んで自分たちのペースで話す進め方へ変更しました。場面説明・会話のヒント・用語解説も加えています。</p>
               <h3>質問データと会話の補助</h3>
               <ul>
-                <li>質問を<strong>643問から906問へ拡充し、263問を追加</strong>しました。Level 3は168問から301問、Level 4は232問から362問へ増えています。Level 1は163問、Level 2は80問です。</li>
+                <li>質問を<strong>643問から749問へ拡充し、263問を追加</strong>しました。Level 3は168問から301問、Level 4は232問から362問へ増えています。Level 1は163問、Level 2は80問です。</li>
                 <li>既存の質問も見直し、同じ質問IDの<strong>335問の質問文を更新</strong>しました。</li>
                 <li><strong>446問に場面説明</strong>を追加。「こんな場面を想像してください」として、問いの前に状況を表示します。</li>
                 <li><strong>Level 3・4の全663問に会話のヒント</strong>を追加しました。さらに<strong>423問に用語解説</strong>を用意し、話し始める手がかりや言葉の意味を確認できるようにしました。</li>
@@ -103,7 +135,7 @@
             <section class="article-section" aria-labelledby="about-history">
               <h2 id="about-history">履歴について</h2>
               <p>公開日はGitHubリリースの公開日時を日本時間で記載しています。各版の内容は当時のコード・質問データ・資料をもとにし、前の版からの変更を確認しています。</p>
-              <p>確認日：<time datetime="2026-11-03">2026年11月3日</time>。版番号のない日々の更新は、GitHubのコミット履歴で確認できます。</p>
+              <p>確認日：<time datetime="2026-12-03">2026年12月3日</time>。版番号のない日々の更新は、GitHubのコミット履歴で確認できます。</p>
               <div class="link-list"><a href="https://github.com/VIUK-Light/Omoi/releases">公開リリースの一覧</a><a href="https://github.com/VIUK-Light/Omoi/commits/main/">コミット履歴</a></div>
             </section>
           </article>

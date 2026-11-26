@@ -4,8 +4,8 @@
   <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>話題カテゴリとLevel — Omoi Documentation</title>
-<meta content="Omoiの4つの話題カテゴリ、内部Level、質問データの件数を説明します。" name="description"/>
+<title>選び方とLevel — Omoi Documentation</title>
+<meta content="Omoiの選び方、内部Level、質問データの件数を説明します。" name="description"/>
     <link href="https://viuk-light.org/omoi-levels.html" rel="canonical"/>
     <link href="assets/viuk-light-logo.png?v=20260825" rel="icon" type="image/png"/>
     <link href="interior.css?v=20261103-header-height-2" rel="stylesheet"/><script defer="" src="docs.js?v=20260913-layout-3"></script>
@@ -25,7 +25,7 @@
             <div class="docs-group" data-doc-group="">
               <p class="docs-group-label">はじめに</p><a data-doc-link="" href="omoi-docs.html">概要</a><a data-doc-link="" href="omoi-concept.html">Omoi（重い・想い・思い）</a><a data-doc-link="" href="omoi-details.html">Omoiについて</a><a data-doc-link="" href="omoi-getting-started.html">Omoiをはじめる</a></div>
             <div class="docs-group" data-doc-group="">
-              <p class="docs-group-label">使い方</p><a aria-current="page" data-doc-link="" href="omoi-levels.html">話題カテゴリとLevel</a><a data-doc-link="" href="omoi-question.html">質問画面</a></div>
+              <p class="docs-group-label">使い方</p><a aria-current="page" data-doc-link="" href="omoi-levels.html">選び方とLevel</a><a data-doc-link="" href="omoi-question.html">質問画面</a></div>
             <div class="docs-group" data-doc-group="">
               <p class="docs-group-label">データと品質</p><a data-doc-link="" href="omoi-question-catalog.html">質問カタログ</a><a data-doc-link="" href="omoi-data.html">データ構造</a><a data-doc-link="" href="omoi-editorial.html">編集方針</a><a data-doc-link="" href="omoi-accessibility.html">アクセシビリティ</a><a data-doc-link="" href="omoi-validation.html">検証と公開</a><a data-doc-link="" href="omoi-technical.html">技術仕様</a><a data-doc-link="" href="omoi-safety.html">安全設計</a></div>
             <div class="docs-group" data-doc-group="">
@@ -43,53 +43,71 @@
         <div class="docs-page-heading">
           <p class="docs-breadcrumb"><a href="omoi-docs.html">資料一覧</a></p>
           <header class="docs-hero">
-            <h1>話題カテゴリとLevel</h1>
-            <p class="docs-lead">画面で選ぶ4つの話題カテゴリと、質問データで使うLevelの関係を説明します。</p>
+            <h1>選び方とLevel</h1>
+            <p class="docs-lead">Omoi v3 の開始方法、話の深さ（低・中・高）、内部 Level、表示ラベルの関係を説明します。</p>
           </header>
         </div>
         <aside class="page-toc">
           <details open="">
             <summary>このページ</summary>
-            <nav aria-label="ページ内の目次"><a href="#section-1">4つの話題カテゴリ</a><a href="#section-2">内部Levelと続け方</a><a href="#section-3">JSONファイル別の件数</a><a href="#section-4">質問画面の例</a></nav>
+            <nav aria-label="ページ内の目次"><a href="#section-1">開始方法と深さ</a><a href="#section-2">内部Levelと続け方</a><a href="#section-3">表示ラベル</a><a href="#section-4">JSONファイル別の件数</a><a href="#section-5">質問画面の例</a></nav>
           </details>
         </aside>
         <div class="docs-article">
           <section class="docs-page-content">
             <section>
-              <h2 id="section-1">4つの話題カテゴリ</h2>
-              <figure class="docs-screenshot is-phone article-lead-media"><img alt="Omoiで4つの話題カテゴリから選ぶ画面。" src="assets/omoi/omoi-categories.png"/><figcaption>今話したいテーマから選ぶ</figcaption>
-              </figure>
+              <h2 id="section-1">開始方法と深さ</h2>
+              <p>Omoi v3 では、4つの話題カテゴリから選ぶ方式をやめ、次の3つの開始方法を用います。</p>
               <table class="spec-table">
                 <thead>
                   <tr>
-                    <th scope="col">画面で選ぶカテゴリ</th>
-                    <th scope="col">扱う内容</th>
-                    <th scope="col">内部Level</th>
+                    <th scope="col">開始方法</th>
+                    <th scope="col">内容</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <th scope="row">日常や自分のこと</th>
-                    <td>友達・恋愛・普段の考え方について</td>
-                    <td>1</td>
+                    <th scope="row">学校・若者向け</th>
+                    <td>学校や若者に関わる問いからそのまま始めます。</td>
                   </tr>
                   <tr>
-                    <th scope="row">意見が分かれる身近な話</th>
-                    <td>学校・人間関係・日常の判断について</td>
-                    <td>2</td>
+                    <th scope="row">すべてから選ぶ</th>
+                    <td>話の深さ（低・中・高）か、今月のピックアップ質問30問を選びます。</td>
                   </tr>
                   <tr>
-                    <th scope="row">社会や価値観について</th>
-                    <td>社会制度・人権・倫理などについて</td>
-                    <td>3</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">人生に関わる難しい選択</th>
-                    <td>自分が当事者だったらどう判断するか</td>
-                    <td>4</td>
+                    <th scope="row">自分で選ぶ</th>
+                    <td>細かいトピックラベルと個別の問いを組み合わせて選びます。</td>
                   </tr>
                 </tbody>
               </table>
+              <p>話の深さは、内部 Level に次のように対応します。</p>
+              <table class="spec-table">
+                <thead>
+                  <tr>
+                    <th scope="col">表示</th>
+                    <th scope="col">内部 Level</th>
+                    <th scope="col">内容</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">低</th>
+                    <td>Level 2</td>
+                    <td>少し意見が分かれる話について</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">中</th>
+                    <td>Level 3</td>
+                    <td>社会や倫理についての重い話</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">高</th>
+                    <td>Level 4</td>
+                    <td>自分に置き換えて考える、非常に重く深い話</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>「すべてから選ぶ」で中・高を選ぶと、話し始める前の案内を確認します。学校・若者向け / 自分で選ぶでは案内を挟まず、選んだ内容から始まります。</p>
             </section>
             <section>
               <h2 id="section-2">内部Levelと続け方</h2>
@@ -98,13 +116,14 @@
               <p>事前の問題数選択はありません。「次の問いを見る」で読み進め、「前の問い」で戻り、終えたいときに「ここで終える」を選びます。</p>
             </section>
             <section>
-              <h2 id="section-3">JSONファイル別の件数</h2>
+              <h2 id="section-3">表示ラベル</h2>
+              <p>自分で選ぶでは、約21のトピックラベルと個別の問いを選べます。ラベルは <code>データ/索引/labels.json</code> に表示名と並び順を定義し、各質問の <code>labels</code> には ID だけを保存します。</p>
+              <p>トピックラベル: 学校、いじめ、友人関係、家族、介護・福祉、恋愛・結婚、仕事、お金・経済、健康・医療、障害、ジェンダー、性、テクノロジー、プライバシー、メディア・情報、犯罪・司法、政治・制度、環境・災害、文化・宗教・歴史、倫理・判断、自分・価値観。加えて <code>student</code> ラベルを「学校・若者向け」の対象判定に使います。</p>
+            </section>
+            <section>
+              <h2 id="section-4">JSONファイル別の件数</h2>
               <table class="spec-table">
                 <tbody>
-                  <tr>
-                    <th scope="row">level1.json</th>
-                    <td>163件</td>
-                  </tr>
                   <tr>
                     <th scope="row">level2.json</th>
                     <td>80件</td>
@@ -115,18 +134,18 @@
                   </tr>
                   <tr>
                     <th scope="row">level4.json</th>
-                    <td>362件</td>
+                    <td>368件</td>
                   </tr>
                   <tr>
                     <th scope="row">合計</th>
-                    <td>906件</td>
+                    <td>749件</td>
                   </tr>
                 </tbody>
               </table>
-              <p>2026-10-16確認。公開版のOmoiリポジトリmainブランチ（commit: <code>fe24acc</code>）のデータです。反映元は<a href="omoi-question-catalog.html">質問カタログ</a>でも確認できます。</p>
+              <p>2026-12-03確認。公開版のOmoiリポジトリBetaブランチ（commit: <code>4bef94f</code>）のデータです。反映元は<a href="omoi-question-catalog.html">質問カタログ</a>でも確認できます。</p>
             </section>
             <section>
-              <h2 id="section-4">質問画面の例</h2>
+              <h2 id="section-5">質問画面の例</h2>
               <div class="docs-media-grid">
                 <figure class="docs-screenshot"><img alt="場面文と問い、ヒントや背景、次へ・戻る・終了の操作があるOmoiの質問画面。" src="assets/omoi/omoi-question-20261017.png" width="904" height="1420"/><figcaption>場面と問いを読む</figcaption>
                 </figure>

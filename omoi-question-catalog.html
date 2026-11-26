@@ -8,7 +8,7 @@
 <meta content="Omoiの全質問データを検索し、質問文、Level、カテゴリ、sensitivity、詳細文を確認できます。" name="description"/>
     <link href="https://viuk-light.org/omoi-question-catalog.html" rel="canonical"/>
     <link href="assets/viuk-light-logo.png?v=20260825" rel="icon" type="image/png"/>
-    <link href="interior.css?v=20261103-header-height-2" rel="stylesheet"/><script defer="" src="docs.js?v=20260913-layout-3"></script><script defer="" src="omoi-question-catalog.js?v=20261016-main-fe24acc"></script>
+    <link href="interior.css?v=20261103-header-height-2" rel="stylesheet"/><script defer="" src="docs.js?v=20260913-layout-3"></script><script defer="" src="omoi-question-catalog.js?v=20261203-beta-4bef94f"></script>
   <link rel="stylesheet" href="site-brand.css?v=20261103-header-height-2">
 </head>
   <body class="docs-body" data-product="omoi">
@@ -25,7 +25,7 @@
             <div class="docs-group" data-doc-group="">
               <p class="docs-group-label">はじめに</p><a data-doc-link="" href="omoi-docs.html">概要</a><a data-doc-link="" href="omoi-concept.html">Omoi（重い・想い・思い）</a><a data-doc-link="" href="omoi-details.html">Omoiについて</a><a data-doc-link="" href="omoi-getting-started.html">Omoiをはじめる</a></div>
             <div class="docs-group" data-doc-group="">
-              <p class="docs-group-label">使い方</p><a data-doc-link="" href="omoi-levels.html">話題カテゴリとLevel</a><a data-doc-link="" href="omoi-question.html">質問画面</a></div>
+              <p class="docs-group-label">使い方</p><a data-doc-link="" href="omoi-levels.html">選び方とLevel</a><a data-doc-link="" href="omoi-question.html">質問画面</a></div>
             <div class="docs-group" data-doc-group="">
               <p class="docs-group-label">データと品質</p><a aria-current="page" data-doc-link="" href="omoi-question-catalog.html">質問カタログ</a><a data-doc-link="" href="omoi-data.html">データ構造</a><a data-doc-link="" href="omoi-editorial.html">編集方針</a><a data-doc-link="" href="omoi-accessibility.html">アクセシビリティ</a><a data-doc-link="" href="omoi-validation.html">検証と公開</a><a data-doc-link="" href="omoi-technical.html">技術仕様</a><a data-doc-link="" href="omoi-safety.html">安全設計</a></div>
             <div class="docs-group" data-doc-group="">
@@ -44,7 +44,7 @@
           <p class="docs-breadcrumb"><a href="omoi-docs.html">資料一覧</a></p>
           <header class="docs-hero">
             <h1>質問カタログ</h1>
-            <p class="docs-lead">公開元と同じ906問を、場面文・ヒント・背景・用語とともに確認できます。質問IDやキーワード、Level、分類、配慮度で絞り込めます。</p>
+            <p class="docs-lead">公開元と同じ749問を、場面文・ヒント・背景・用語とともに確認できます。質問IDやキーワード、Level、分類、配慮度で絞り込めます。</p>
           </header>
         </div>
         <aside class="page-toc">
@@ -56,11 +56,11 @@
         <div class="docs-article">
           <section class="docs-page-content">
             <div class="notice">
-              <p>反映日：2026-10-16 / 参照元：VIUK-Light/Omoi / branch: main / commit: <a class="external" href="https://github.com/VIUK-Light/Omoi/tree/fe24acc726bcb5e1f590851c07f85978da7430a1">fe24acc</a> / 質問件数: 906件 / コンテンツライセンス：CC BY-SA 4.0</p>
+              <p>反映日：2026-12-03 / 参照元：VIUK-Light/Omoi / branch: Beta / commit: <a class="external" href="https://github.com/VIUK-Light/Omoi/tree/4bef94f5e8474bb8d311408c4852f07b202d348d">4bef94f</a> / 質問件数: 749件 / コンテンツライセンス：CC BY-SA 4.0</p>
             </div>
             <section>
               <h2 id="section-1">全質問を検索</h2>
-              <div class="question-catalog-controls"><label>キーワード<input id="questionSearch" placeholder="ID・問い・場面・ヒント・背景・用語を検索" type="search"/></label><label>話題カテゴリ / Level<select id="questionLevelFilter"><option value="">すべて</option><option value="1">日常や自分のこと / Level 1</option><option value="2">意見が分かれる身近な話 / Level 2</option><option value="3">社会や価値観について / Level 3</option><option value="4">人生に関わる難しい選択 / Level 4</option></select></label><label>上位分類 / category<select id="questionCategoryFilter"><option value="">すべて</option></select></label><label>配慮度 / sensitivity<select id="questionSensitivityFilter"><option value="">すべて</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></label></div>
+              <div class="question-catalog-controls"><label>キーワード<input id="questionSearch" placeholder="ID・問い・場面・ヒント・背景・用語を検索" type="search"/></label><label>話題カテゴリ / Level<select id="questionLevelFilter"><option value="">すべて</option><option value="2">日常・集団・境界線 / Level 2</option><option value="3">制度・社会・役割 / Level 3</option><option value="4">個人的利害・倫理 / Level 4</option></select></label><label>上位分類 / category<select id="questionCategoryFilter"><option value="">すべて</option></select></label><label>配慮度 / sensitivity<select id="questionSensitivityFilter"><option value="">すべて</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></label></div>
               <p aria-live="polite" class="question-catalog-status" id="questionResultCount">質問データを読み込み中...</p>
               <div class="question-catalog" id="questionCatalogList">
               </div>
@@ -75,7 +75,7 @@
                   </tr>
                   <tr>
                     <th scope="row">level</th>
-                    <td>データ上の1〜4の分類。アプリでは4つの話題カテゴリとして選択</td>
+                    <td>データ上の2〜4の分類。アプリでは低・中・高の深さとして選択</td>
                   </tr>
                   <tr>
                     <th scope="row">category</th>

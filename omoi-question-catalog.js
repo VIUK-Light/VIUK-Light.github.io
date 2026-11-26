@@ -1,5 +1,5 @@
-const DATA_VERSION = '20261016-main-fe24acc';
-const DATA_FILES = [1, 2, 3, 4].map((level) => `assets/omoi/data/level${level}.json?v=${DATA_VERSION}`);
+const DATA_VERSION = '20261203-beta-4bef94f';
+const DATA_FILES = [2, 3, 4].map((level) => `assets/omoi/data/level${level}.json?v=${DATA_VERSION}`);
 const PAGE_SIZE = 36;
 
 const state = {
