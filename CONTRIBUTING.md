@@ -27,9 +27,11 @@ Issueでは、会話内容、APIキー、アクセストークン、個人情報
 | 製品紹介・Homeの動き | `site-motion.css`、`site-motion.js`。`data-motion-page`のあるページへ適用 |
 | Documentationの検索・モバイルメニュー・補助表示 | `docs.js` |
 | Omoi Documentation | `omoi-*.html` |
-| Omoi質問カタログ | `tools/sync-omoi-data.py`で公開元mainと公開タグを同期。`assets/omoi/data/versions.json`で版を一覧化し、`versions/<commit>/`に各版のJSONと照合情報を保存 |
+| Omoi利用規約 | `omoi-terms.html`（Omoi本体の公開規約を全文転載） |
+| Omoi質問カタログ | `tools/sync-omoi-data.py`で公開元と公開タグを同期。`assets/omoi/data/versions.json`で版を一覧化し、`versions/<commit>/`に各版のJSONと照合情報を保存 |
 | Omoi for series Documentation | `omoi-for-*.html` |
 | Kizuna Documentation | `kizuna-*.html` |
+| 製品のバージョン履歴 | `omoi-history.html`、`omoi-for-history.html`、`kizuna-history.html`、`x-filtering-system-docs.html` |
 
 ## ローカル確認
 
@@ -57,12 +59,22 @@ node --check omoi-for.js
 ## 内容の扱い
 
 - Omoiの質問文・detail・質問データは、対応するOmoiリポジトリを正本として扱います。
+- Omoiの利用規約は、[Omoi本体の公開規約](https://omoi.viuk-light.org/terms.html)を正本として全文転載します。条文・末尾の記載・制定日・最終改定日を保ち、文面を変更せずに資料の表示と導線を整えます。更新時は原文と本文を照合し、転載元の固定コミットのリンクも更新します。
 - Omoi質問データの提案・編集・検証手順は、[`omoi-contributing.html`](omoi-contributing.html)にもまとめています。
 - Omoi for seriesの質問・実装・出典情報は、[Omoi-for-Seriesリポジトリ](https://github.com/VIUK-Light/Omoi-for-Series)を正本として扱います。
 - AdultsのDeepに含まれる質問本文・固有の追加質問・露骨な具体例・質問が読める画像は、公式サイトへ転載しません。質問JSONや非表示の埋め込みとして同梱することも避けます。Adults Deepについては、公式サイトでは18歳以上向けという概要、利用前の注意、利用先の案内までを扱います。Liteの実画面は、質問IDと現行のLite / Deep分類を照合したものを使います。
 - Kizunaの対応環境・依存関係・実装状態は、Kizunaリポジトリを正本として扱います。
 - Newsの日付は公開版への反映日を基本とし、Betaだけの実装日を製品のリリース日として扱いません。過去のお知らせは当時の更新記録です。各項目に案内先を設け、製品の更新には公開コミットなどの一次情報もリンクしてください。
 - 法律、医療、統計、対応環境など更新され得る情報は、公開前に一次情報または正本リポジトリで確認してください。
+
+## バージョン履歴の更新
+
+- 製品の公開版を更新したら、対応する履歴ページの先頭へ新しい版を追記し、ページ内の目次にも追加します。過去の版は削除・上書きせず、誤記を直す場合は出典を確認します。
+- 公開タグのある版はタグ名をそのまま記載し、ベータ版・プレリリースは明記します。タグのない過去版は、製品の版名として明示された名前を使い、対応する公開記録とコミットを添えます。Omoi forの `v1.00` はサイトの初回公開を表す版名として記録します。
+- GitHub Releaseのある版の公開日は `published_at` を日本時間に直して記載します。初回公開などの版は、GitHub Pagesの配信成功記録などで確認します。コミット日・タグ作成日・公式サイトの紹介ページ公開日と混同しません。
+- その版の主な内容を短くまとめ、公開リリースまたは配信記録と、対応するコミットへのリンクを添えます。機能は該当コミットのコード・データで確認し、READMEの記載と食い違う場合は実装を確認して説明します。ブランチではなく固定コミットのURLを使い、開発ブランチの機能や将来の計画は公開済み機能として記載しません。
+- 確認日と `sitemap.xml` の対象ページの `lastmod` を更新し、`python3 tools/check-site.py` とPC・モバイル幅で導線を確認します。
+- Adults Deepの本文・固有の追加質問・読める画像を履歴に転載しません。公開版の概要と利用上の案内までにとどめます。
 
 ## Pull Request
 

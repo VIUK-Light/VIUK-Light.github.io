@@ -1,4 +1,4 @@
-const DATA_VERSION = '20261108-main-3eeff5a-catalog-v2';
+const DATA_VERSION = '20261126-beta-4bef94f-catalog-v3';
 const PAGE_SIZE = 36;
 
 const state = {
@@ -230,10 +230,14 @@ function renderVersionSource(entry, metadata) {
   const release = document.createElement("a");
   release.href = entry.release_url || `https://github.com/VIUK-Light/Omoi/tree/${encodeURIComponent(entry.tag || entry.commit)}`;
   release.textContent = entry.release_date ? "リリースを見る" : entry.tag ? "公開タグを見る" : "公開元を見る";
+  const branch = entry.branch || (entry.tag ? null : "main");
   versionSource.replaceChildren(
     `表示中：${entry.label} / `,
     ...(entry.release_date ? [`公開日：${entry.release_date} / `] : []),
-    `反映日：${metadata.synced_at} / 参照元：VIUK-Light/Omoi / ${entry.tag ? `tag: ${entry.tag}` : "branch: main"} / commit: `,
+    `反映日：${metadata.synced_at} / 参照元：VIUK-Light/Omoi / `,
+    ...(entry.tag ? [`tag: ${entry.tag} / `] : []),
+    ...(branch ? [`branch: ${branch} / `] : []),
+    `commit: `,
     source,
     ` / 質問件数: ${metadata.total}件 / コンテンツライセンス：${metadata.license} / `,
     release
@@ -272,9 +276,11 @@ async function loadQuestions(entry) {
       const directory = `assets/omoi/data/versions/${entry.commit}`;
       const metadata = await fetchJSON(`${directory}/source.json?v=${entry.commit}`, { signal: controller.signal });
       if (metadata.commit !== entry.commit || metadata.total !== entry.total) throw new Error("Question version metadata does not match");
-      const responses = await Promise.all([1, 2, 3, 4].map(async (level) => {
-        const questions = await fetchJSON(`${directory}/level${level}.json?v=${entry.commit}`, { signal: controller.signal });
-        if (!Array.isArray(questions) || questions.length !== metadata.files[level - 1].count) throw new Error("Question file count does not match");
+      const responses = await Promise.all(metadata.files.map(async (file) => {
+        const level = Number(file.file.match(/^level([1-4])\.json$/)?.[1]);
+        if (!level) throw new Error(`Unexpected question file: ${file.file}`);
+        const questions = await fetchJSON(`${directory}/${file.file}?v=${entry.commit}`, { signal: controller.signal });
+        if (!Array.isArray(questions) || questions.length !== file.count) throw new Error("Question file count does not match");
         return questions.map((question) => ({ ...question, sourceFileLevel: level }));
       }));
       snapshot = { metadata, questions: responses.flat() };

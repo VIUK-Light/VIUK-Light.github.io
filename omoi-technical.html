@@ -25,11 +25,15 @@
             <div class="docs-group" data-doc-group="">
               <p class="docs-group-label">はじめに</p><a data-doc-link="" href="omoi-docs.html">概要</a><a data-doc-link="" href="omoi-concept.html">Omoi（重い・想い・思い）</a><a data-doc-link="" href="omoi-details.html">Omoiについて</a><a data-doc-link="" href="omoi-getting-started.html">Omoiをはじめる</a></div>
             <div class="docs-group" data-doc-group="">
-              <p class="docs-group-label">使い方</p><a data-doc-link="" href="omoi-levels.html">話題カテゴリとLevel</a><a data-doc-link="" href="omoi-question.html">質問画面</a></div>
+              <p class="docs-group-label">使い方</p><a data-doc-link="" href="omoi-levels.html">選び方とLevel</a><a data-doc-link="" href="omoi-question.html">質問画面</a></div>
             <div class="docs-group" data-doc-group="">
               <p class="docs-group-label">データと品質</p><a data-doc-link="" href="omoi-question-catalog.html">質問カタログ</a><a data-doc-link="" href="omoi-data.html">データ構造</a><a data-doc-link="" href="omoi-editorial.html">編集方針</a><a data-doc-link="" href="omoi-accessibility.html">アクセシビリティ</a><a data-doc-link="" href="omoi-validation.html">検証と公開</a><a aria-current="page" data-doc-link="" href="omoi-technical.html">技術仕様</a><a data-doc-link="" href="omoi-safety.html">安全設計</a></div>
             <div class="docs-group" data-doc-group="">
               <p class="docs-group-label">参加する</p><a data-doc-link="" href="omoi-contributing.html">質問データに参加する</a></div>
+            <div class="docs-group" data-doc-group="">
+              <p class="docs-group-label">更新記録</p><a data-doc-link="" href="omoi-history.html">バージョン履歴</a></div>
+            <div class="docs-group" data-doc-group="">
+              <p class="docs-group-label">利用にあたって</p><a data-doc-link="" href="omoi-terms.html">利用規約</a></div>
             <div class="docs-group" data-doc-group="">
               <p class="docs-group-label">ヘルプ</p><a data-doc-link="" href="omoi-help.html">ヘルプ</a></div>
           </div>
@@ -61,7 +65,7 @@
                   </tr>
                   <tr>
                     <th scope="row">質問データ</th>
-                    <td>level1.json / level2.json / level3.json / level4.json</td>
+                    <td>level2.json / level3.json / level4.json</td>
                   </tr>
                   <tr>
                     <th scope="row">バックエンド・ビルド</th>
@@ -69,7 +73,7 @@
                   </tr>
                   <tr>
                     <th scope="row">配信</th>
-                    <td>GitHub Pages。公開元はmainブランチ</td>
+                    <td>GitHub Pages。公開元はmainブランチ（v3.0.0は公開準備中のBeta <code>4bef94f</code> を固定）</td>
                   </tr>
                   <tr>
                     <th scope="row">利用</th>
@@ -108,32 +112,28 @@
             </section>
             <section>
               <h2 id="section-3">質問データ</h2>
-              <p>2026年11月8日確認。公開元の <a class="external" href="https://github.com/VIUK-Light/Omoi/tree/3eeff5a9618ba1503d2716c6fe89d47d30bd710d">main / 3eeff5a（v2.1）</a> の実装と質問JSONに基づきます。</p>
+              <p>2026年12月3日に、公開元の <a class="external" href="https://github.com/VIUK-Light/Omoi/tree/4bef94f5e8474bb8d311408c4852f07b202d348d">Beta / 4bef94f</a> と公開サイトを照合しました。以下の件数は、この版の質問JSONに基づきます。</p>
               <table class="spec-table">
                 <tbody>
-                  <tr>
-                    <th scope="row">Level 1</th>
-                    <td>163件 / sensitivity 1</td>
-                  </tr>
                   <tr>
                     <th scope="row">Level 2</th>
                     <td>80件 / sensitivity 1〜2</td>
                   </tr>
                   <tr>
                     <th scope="row">Level 3</th>
-                    <td>301件 / 全件に背景文とヒント</td>
+                    <td>301件 / 全件に会話のヒント、663件規模の背景・用語を含む</td>
                   </tr>
                   <tr>
                     <th scope="row">Level 4</th>
-                    <td>362件 / 全件に背景文とヒント</td>
+                    <td>368件 / 全件に会話のヒント、663件規模の背景・用語を含む</td>
                   </tr>
                   <tr>
                     <th scope="row">合計</th>
-                    <td>906件</td>
+                    <td>749件</td>
                   </tr>
                 </tbody>
               </table>
-              <p><code>scenario</code>、<code>hints</code>、<code>terms</code>は任意の補助情報です。Level 3・4では<code>perspective</code>と<code>detail.text</code>を持ちます。詳しい項目と集計は<a href="omoi-data.html">データ構造</a>を確認してください。</p>
+              <p><code>scenario</code>、<code>summary</code>、<code>hints</code>、<code>detail</code>、<code>terms</code>は任意の補助情報です。Level 3・4では<code>perspective</code>を持ちます。詳しい項目と集計は<a href="omoi-data.html">データ構造</a>を確認してください。</p>
             </section>
             <section>
               <h2 id="section-4">表示ロジック</h2>
@@ -172,7 +172,7 @@
             </section>
             <section>
               <h2 id="section-6">正本とライセンス</h2>
-              <p>公開中の動作はmainと公開サイトで確認します。READMEの説明と画面の操作名が異なる場合は、対応するHTML・JavaScriptも照合します。コードはMIT License、質問・解説のコンテンツデータはCC BY-SA 4.0です。</p>
+              <p>公開中の動作はmainと公開サイトで確認します。v3.0.0の準備中はBetaの固定コミットも照合します。READMEの説明と画面の操作名が異なる場合は、対応するHTML・JavaScriptも照合します。コードはMIT License、質問・解説のコンテンツデータはCC BY-SA 4.0です。</p>
               <div class="link-list"><a class="external" href="https://github.com/VIUK-Light/Omoi/blob/3eeff5a9618ba1503d2716c6fe89d47d30bd710d/select.html">カテゴリ選択のHTML</a><a class="external" href="https://github.com/VIUK-Light/Omoi/blob/3eeff5a9618ba1503d2716c6fe89d47d30bd710d/question.js">この版の質問表示ロジック</a><a href="omoi-validation.html">検証と公開</a></div>
             </section>
           </section>

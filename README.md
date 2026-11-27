@@ -47,21 +47,32 @@ python3 tools/check-site.py
 python3 tools/sync-omoi-data.py --check
 ```
 
+## バージョン履歴
+
+製品資料に公開版の履歴を保存しています。新しい版は先頭に追記し、過去の記録を残します。
+
+- [Omoi](omoi-history.html)
+- [Omoi for Series](omoi-for-history.html)
+- [Kizuna](kizuna-history.html)
+- [SafeSearch 4](x-filtering-system-docs.html)
+
+日付と出典の記録方法は、[Contributing](CONTRIBUTING.md#バージョン履歴の更新)を参照してください。
+
 ## 質問カタログの更新
 
-Omoiの質問JSONは、公開元mainと公開タグの特定コミットからそのまま同期します。カタログではv2.01・v2.1・v2.0.0・v1.0.0・v0.1.0を切り替えられます。
+Omoiの質問JSONは、公開元と公開タグの特定コミットからそのまま同期します。カタログではv3.0.0（749問・Level 2〜4）と、v2.01・v2.1・v2.0.0・v1.0.0・v0.1.0を切り替えられます。v3.0.0は2026年12月3日公開予定のBetaブランチ `4bef94f` を収録しています。
 
 ```sh
 python3 tools/sync-omoi-data.py
 ```
 
-各版の4ファイルを同じコミットから取得して検査した後、最新JSONと`assets/omoi/data/source.json`、版一覧の`versions.json`、`versions/<commit>/`の保存データ、カタログの参照情報とキャッシュ版を更新します。同じコミットを指すタグは、保存データを共有します。既存の保存データは上書きせず、タグの付け替えを検出した場合は更新を中止します。
+各版のJSONを同じコミットから取得して検査した後、最新JSONと`assets/omoi/data/source.json`、版一覧の`versions.json`、`versions/<commit>/`の保存データ、カタログの参照情報とキャッシュ版を更新します。同じコミットを指すタグは、保存データを共有します。既存の保存データは上書きせず、タグの付け替えを検出した場合は更新を中止します。
 
 `--check`ではネットワークを使わず、全保存版の件数・SHA-256・参照情報と、最新JSONのID・Levelを確認します。過去版に含まれる重複やLevelの不一致は修正せず、当時のデータのまま保存し、`legacy_warnings`に件数を記録します。集計や画面の操作説明、Newsは正本と照合して別途更新してください。
 
-`omoi-question-catalog.html?version=v2.01`のように選択した版を共有でき、再読み込みやブラウザーの戻る・進むでも版を復元します。v2.01とv2.1は現在同じコミットの906件です。
+`omoi-question-catalog.html?version=v3.0.0`のように選択した版を共有でき、再読み込みやブラウザーの戻る・進むでも版を復元します。v2.01とv2.1は現在同じコミットの906件です。
 
-2026-11-08の確認元はOmoiの[`3eeff5a`](https://github.com/VIUK-Light/Omoi/tree/3eeff5a9618ba1503d2716c6fe89d47d30bd710d)（906問）とOmoi for Seriesの[`3449535`](https://github.com/VIUK-Light/Omoi-for-Series/tree/3449535067632f20b312fa00fb9ba292c29e7f74)（611問）です。
+2026-11-26の確認元はOmoiのBeta [`4bef94f`](https://github.com/VIUK-Light/Omoi/tree/4bef94f5e8474bb8d311408c4852f07b202d348d)（749問）です。Omoi for Seriesは[`3449535`](https://github.com/VIUK-Light/Omoi-for-Series/tree/3449535067632f20b312fa00fb9ba292c29e7f74)（611問）です。
 
 ## Contributing
 

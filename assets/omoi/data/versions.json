@@ -1,7 +1,17 @@
 {
   "schema_version": 1,
-  "default": "v2.01",
+  "default": "v3.0.0",
   "versions": [
+    {
+      "id": "v3.0.0",
+      "label": "v3.0.0",
+      "tag": null,
+      "commit": "4bef94f5e8474bb8d311408c4852f07b202d348d",
+      "release_date": "2026-12-03",
+      "release_url": null,
+      "total": 749,
+      "branch": "Beta"
+    },
     {
       "id": "v2.01",
       "label": "v2.01",

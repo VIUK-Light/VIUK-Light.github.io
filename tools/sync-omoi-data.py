@@ -17,7 +17,7 @@ ARCHIVE = DATA / 'versions'
 REPOSITORY = 'VIUK-Light/Omoi'
 CATALOG = ROOT / 'omoi-question-catalog.html'
 SCRIPT = ROOT / 'omoi-question-catalog.js'
-NAMES = [f'level{level}.json' for level in range(1, 5)]
+LEVEL_NAMES = [f'level{level}.json' for level in range(1, 5)]
 
 
 def fetch(url):
@@ -42,7 +42,11 @@ def collection(resource):
 def describe(files, strict=True):
     seen = set()
     result = []
-    for level, (name, content) in enumerate(files.items(), 1):
+    for name, content in files.items():
+        match = re.fullmatch(r'level([1-4])\.json', name)
+        if not match:
+            raise ValueError(f'{name}: expected level1.json to level4.json')
+        level = int(match.group(1))
         questions = json.loads(content)
         if not isinstance(questions, list) or not questions:
             raise ValueError(f'{name}: expected a nonempty question array')
@@ -64,7 +68,8 @@ def describe(files, strict=True):
 def legacy_warnings(files):
     ids = []
     mismatches = 0
-    for level, content in enumerate(files.values(), 1):
+    for name, content in files.items():
+        level = int(re.fullmatch(r'level([1-4])\.json', name).group(1))
         for question in json.loads(content):
             ids.append(question['id'])
             mismatches += question['level'] != level
@@ -84,13 +89,15 @@ def validate_snapshot(metadata, files, strict=False):
 
 def read_snapshot(directory, strict=False):
     metadata = json.loads((directory / 'source.json').read_text())
-    files = {name: (directory / name).read_bytes() for name in NAMES}
+    names = [entry['file'] for entry in metadata['files']]
+    files = {name: (directory / name).read_bytes() for name in names}
     validate_snapshot(metadata, files, strict)
     return metadata, files
 
 
 def version(metadata):
-    return f"{metadata['synced_at'].replace('-', '')}-main-{metadata['commit'][:7]}-catalog-v2"
+    branch = metadata.get('branch', 'main').lower()
+    return f"{metadata['synced_at'].replace('-', '')}-{branch}-{metadata['commit'][:7]}-catalog-v3"
 
 
 def replace_once(pattern, replacement, text):
@@ -102,7 +109,7 @@ def replace_once(pattern, replacement, text):
 
 def check():
     metadata, files = read_snapshot(DATA, strict=True)
-    assert metadata['branch'] == 'main'
+    assert metadata['branch'] in ('main', 'Beta')
     index = json.loads((DATA / 'versions.json').read_text())
     assert index['schema_version'] == 1 and index['versions']
     entries = {entry['id']: entry for entry in index['versions']}
@@ -153,7 +160,7 @@ def sync():
             if root_metadata.get('commit') == commit:
                 metadata, files = read_snapshot(DATA, strict=True)
             else:
-                files = {name: fetch(f'https://raw.githubusercontent.com/{REPOSITORY}/{commit}/{name}') for name in NAMES}
+                files = {name: fetch(f'https://raw.githubusercontent.com/{REPOSITORY}/{commit}/{name}') for name in LEVEL_NAMES}
                 metadata = {'repository': REPOSITORY, 'commit': commit, 'synced_at': today,
                             'license': 'CC BY-SA 4.0', 'files': describe(files, strict=False)}
                 metadata['total'] = sum(file['count'] for file in metadata['files'])

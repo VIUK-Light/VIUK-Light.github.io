@@ -5,7 +5,7 @@
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>データ構造 — Omoi Documentation</title>
-<meta content="Omoiの906件の質問データ、JSONスキーマ、カテゴリ、視点、content_warning、ライセンスを説明します。" name="description"/>
+<meta content="Omoiの749件の質問データ、JSONスキーマ、カテゴリ、視点、content_warning、ライセンスを説明します。" name="description"/>
     <link href="https://viuk-light.org/omoi-data.html" rel="canonical"/>
     <link href="assets/viuk-light-logo.png?v=20260825" rel="icon" type="image/png"/>
     <link href="interior.css?v=20261103-header-height-2" rel="stylesheet"/><script defer="" src="docs.js?v=20260913-layout-3"></script>
@@ -25,11 +25,15 @@
             <div class="docs-group" data-doc-group="">
               <p class="docs-group-label">はじめに</p><a data-doc-link="" href="omoi-docs.html">概要</a><a data-doc-link="" href="omoi-concept.html">Omoi（重い・想い・思い）</a><a data-doc-link="" href="omoi-details.html">Omoiについて</a><a data-doc-link="" href="omoi-getting-started.html">Omoiをはじめる</a></div>
             <div class="docs-group" data-doc-group="">
-              <p class="docs-group-label">使い方</p><a data-doc-link="" href="omoi-levels.html">話題カテゴリとLevel</a><a data-doc-link="" href="omoi-question.html">質問画面</a></div>
+              <p class="docs-group-label">使い方</p><a data-doc-link="" href="omoi-levels.html">選び方とLevel</a><a data-doc-link="" href="omoi-question.html">質問画面</a></div>
             <div class="docs-group" data-doc-group="">
               <p class="docs-group-label">データと品質</p><a data-doc-link="" href="omoi-question-catalog.html">質問カタログ</a><a aria-current="page" data-doc-link="" href="omoi-data.html">データ構造</a><a data-doc-link="" href="omoi-editorial.html">編集方針</a><a data-doc-link="" href="omoi-accessibility.html">アクセシビリティ</a><a data-doc-link="" href="omoi-validation.html">検証と公開</a><a data-doc-link="" href="omoi-technical.html">技術仕様</a><a data-doc-link="" href="omoi-safety.html">安全設計</a></div>
             <div class="docs-group" data-doc-group="">
               <p class="docs-group-label">参加する</p><a data-doc-link="" href="omoi-contributing.html">質問データに参加する</a></div>
+            <div class="docs-group" data-doc-group="">
+              <p class="docs-group-label">更新記録</p><a data-doc-link="" href="omoi-history.html">バージョン履歴</a></div>
+            <div class="docs-group" data-doc-group="">
+              <p class="docs-group-label">利用にあたって</p><a data-doc-link="" href="omoi-terms.html">利用規約</a></div>
             <div class="docs-group" data-doc-group="">
               <p class="docs-group-label">ヘルプ</p><a data-doc-link="" href="omoi-help.html">ヘルプ</a></div>
           </div>
@@ -40,7 +44,7 @@
           <p class="docs-breadcrumb"><a href="omoi-docs.html">資料一覧</a></p>
           <header class="docs-hero">
             <h1>データ構造</h1>
-            <p class="docs-lead">906件の質問を管理するJSONの構造と、場面文・会話のヒント・背景・用語の扱いを説明します。</p>
+            <p class="docs-lead">749件の質問を管理するJSONの構造と、場面文・会話のヒント・背景・用語の扱いを説明します。</p>
           </header>
         </div>
         <aside class="page-toc">
@@ -53,32 +57,28 @@
           <section class="docs-page-content">
             <section>
               <h2 id="section-1">現在のデータセット</h2>
-              <p>2026年11月8日確認。公開元の <a class="external" href="https://github.com/VIUK-Light/Omoi/tree/3eeff5a9618ba1503d2716c6fe89d47d30bd710d">main / 3eeff5a（v2.1）</a> の質問JSONを同期しました。以下の件数は、この版のデータに基づきます。</p>
+              <p>2026年12月3日に、公開元の <a class="external" href="https://github.com/VIUK-Light/Omoi/tree/4bef94f5e8474bb8d311408c4852f07b202d348d">Beta / 4bef94f</a> と公開サイトを照合しました。以下の件数は、この版の質問JSONに基づきます。</p>
               <table class="spec-table">
                 <tbody>
                   <tr>
-                    <th scope="row">Level 1</th>
-                    <td>163件 — 日常や自分のこと</td>
-                  </tr>
-                  <tr>
                     <th scope="row">Level 2</th>
-                    <td>80件 — 意見が分かれる身近な話</td>
+                    <td>80件 — 日常・集団・境界線を通して、意見の違いを安全に扱う橋渡し</td>
                   </tr>
                   <tr>
                     <th scope="row">Level 3</th>
-                    <td>301件 — 社会や価値観について</td>
+                    <td>301件 — 制度・社会・役割の判断を考える問い</td>
                   </tr>
                   <tr>
                     <th scope="row">Level 4</th>
-                    <td>362件 — 人生に関わる難しい選択</td>
+                    <td>368件 — 個人的な利害または倫理的なトレードオフを自分に置き換える問い</td>
                   </tr>
                   <tr>
                     <th scope="row">合計</th>
-                    <td>906件</td>
+                    <td>749件</td>
                   </tr>
                 </tbody>
               </table>
-              <p>Levelはデータ上の分類です。利用画面では4つの話題カテゴリから選びます。ここで扱う12の<code>category</code>は、検索や編集に使う上位テーマ分類で、画面の4カテゴリとは別です。</p>
+              <p>Levelはデータ上の分類です。利用画面では、学校・若者向け / すべてから選ぶ / 自分で選ぶの開始方法と、話の深さ（低・中・高）を選びます。ここで扱う12の<code>category</code>は、検索や編集に使う上位テーマ分類です。</p>
             </section>
             <section>
               <h2 id="section-2">共通フィールド</h2>
@@ -149,7 +149,7 @@
                   </tr>
                 </tbody>
               </table>
-              <p>この版では、Level 3・4の663件すべてに背景文とヒントがあります。場面文は475件、用語は427件に収録されています。Level 1・2にはこれらの補助情報はありません。補助情報がないカードでは、対応するボタンや場面文を表示しません。</p><pre class="code-block"><code>{
+              <p>この版では、Level 3・4の669件すべてに会話のヒントがあります。問いの背景は663件、用語は274件、要点は170件、場面文は481件に収録されています。Level 2にはこれらの補助情報はありません。補助情報がないカードでは、対応するボタンや場面文を表示しません。</p><pre class="code-block"><code>{
   &quot;id&quot;: &quot;example-001&quot;,
   &quot;level&quot;: 4,
   &quot;sensitivity&quot;: 4,
@@ -302,7 +302,7 @@
             <section>
               <h2 id="section-7">正本とライセンス</h2>
               <p>質問JSONと編集ルールはOmoiリポジトリを正本とし、公式カタログへ同じデータを同期します。ソースコードはMIT License、質問・解説などのコンテンツはCC BY-SA 4.0です。</p>
-              <div class="link-list"><a class="external" href="https://github.com/VIUK-Light/Omoi/blob/3eeff5a9618ba1503d2716c6fe89d47d30bd710d/QUESTION_DATA_SCHEMA.md">この版のスキーマを読む</a><a href="omoi-question-catalog.html">906問を検索する</a><a href="assets/omoi/data/source.json">同期元とファイルの照合情報</a><a href="omoi-validation.html">検証と同期の手順を見る</a></div>
+              <div class="link-list"><a class="external" href="https://github.com/VIUK-Light/Omoi/blob/4bef94f5e8474bb8d311408c4852f07b202d348d/資料/QUESTION_DATA_SCHEMA.md">この版のスキーマを読む</a><a href="omoi-question-catalog.html">749問を検索する</a><a href="assets/omoi/data/source.json">同期元とファイルの照合情報</a><a href="omoi-validation.html">検証と同期の手順を見る</a></div>
             </section>
           </section>
           <nav aria-label="前後の資料" class="document-pagination"><a href="omoi-question-catalog.html"><span>前の資料</span><strong>質問カタログ</strong></a><a href="omoi-editorial.html"><span>次の資料</span><strong>編集方針</strong></a></nav>

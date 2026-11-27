@@ -5,10 +5,10 @@
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>質問カタログ — Omoi Documentation</title>
-<meta content="Omoiの質問データをバージョン別に検索できます。v2.1・v2.01・v2.0.0・v1.0.0・v0.1.0の質問文、Level、背景や参照元を確認できます。" name="description"/>
+<meta content="Omoiの質問データをバージョン別に検索できます。v3.0.0（749問・Level 2〜4）と、v2.01・v2.1・v2.0.0・v1.0.0・v0.1.0の質問文、Level、背景や参照元を確認できます。" name="description"/>
     <link href="https://viuk-light.org/omoi-question-catalog.html" rel="canonical"/>
     <link href="assets/viuk-light-logo.png?v=20260825" rel="icon" type="image/png"/>
-    <link href="interior.css?v=20261108-catalog-versions-1" rel="stylesheet"/><script defer="" src="docs.js?v=20260913-layout-3"></script><script defer="" src="omoi-question-catalog.js?v=20261108-main-3eeff5a-catalog-v2"></script>
+    <link href="interior.css?v=20261203-catalog-v3-1" rel="stylesheet"/><script defer="" src="docs.js?v=20260913-layout-3"></script><script defer="" src="omoi-question-catalog.js?v=20261126-beta-4bef94f-catalog-v3"></script>
   <link rel="stylesheet" href="site-brand.css?v=20261108-desktop-85-1">
 </head>
   <body class="docs-body" data-product="omoi">
@@ -25,11 +25,15 @@
             <div class="docs-group" data-doc-group="">
               <p class="docs-group-label">はじめに</p><a data-doc-link="" href="omoi-docs.html">概要</a><a data-doc-link="" href="omoi-concept.html">Omoi（重い・想い・思い）</a><a data-doc-link="" href="omoi-details.html">Omoiについて</a><a data-doc-link="" href="omoi-getting-started.html">Omoiをはじめる</a></div>
             <div class="docs-group" data-doc-group="">
-              <p class="docs-group-label">使い方</p><a data-doc-link="" href="omoi-levels.html">話題カテゴリとLevel</a><a data-doc-link="" href="omoi-question.html">質問画面</a></div>
+              <p class="docs-group-label">使い方</p><a data-doc-link="" href="omoi-levels.html">選び方とLevel</a><a data-doc-link="" href="omoi-question.html">質問画面</a></div>
             <div class="docs-group" data-doc-group="">
               <p class="docs-group-label">データと品質</p><a aria-current="page" data-doc-link="" href="omoi-question-catalog.html">質問カタログ</a><a data-doc-link="" href="omoi-data.html">データ構造</a><a data-doc-link="" href="omoi-editorial.html">編集方針</a><a data-doc-link="" href="omoi-accessibility.html">アクセシビリティ</a><a data-doc-link="" href="omoi-validation.html">検証と公開</a><a data-doc-link="" href="omoi-technical.html">技術仕様</a><a data-doc-link="" href="omoi-safety.html">安全設計</a></div>
             <div class="docs-group" data-doc-group="">
               <p class="docs-group-label">参加する</p><a data-doc-link="" href="omoi-contributing.html">質問データに参加する</a></div>
+            <div class="docs-group" data-doc-group="">
+              <p class="docs-group-label">更新記録</p><a data-doc-link="" href="omoi-history.html">バージョン履歴</a></div>
+            <div class="docs-group" data-doc-group="">
+              <p class="docs-group-label">利用にあたって</p><a data-doc-link="" href="omoi-terms.html">利用規約</a></div>
             <div class="docs-group" data-doc-group="">
               <p class="docs-group-label">ヘルプ</p><a data-doc-link="" href="omoi-help.html">ヘルプ</a></div>
           </div>
@@ -40,7 +44,7 @@
           <p class="docs-breadcrumb"><a href="omoi-docs.html">資料一覧</a></p>
           <header class="docs-hero">
             <h1>質問カタログ</h1>
-            <p class="docs-lead">バージョンごとの質問データを、場面文・ヒント・背景・用語とともに確認できます。質問IDやキーワード、Level、分類、配慮度で絞り込めます。</p>
+            <p class="docs-lead">公開元のv3.0.0（749問）と、過去の公開版を切り替えて確認できます。場面文・ヒント・背景・用語を収録し、質問IDやキーワード、Level、分類、配慮度で絞り込めます。</p>
           </header>
         </div>
         <aside class="page-toc">
@@ -54,16 +58,16 @@
             <section class="question-catalog-version" aria-labelledby="catalog-version-title">
               <h2 id="catalog-version-title">バージョンを選ぶ</h2>
               <label for="questionVersion">Omoiのバージョン</label>
-              <select id="questionVersion" disabled=""><option value="v2.01">v2.01（最新）</option></select>
-              <p>質問・分類・補助情報は、それぞれの公開タグの内容をそのまま収録しています。選んだバージョンはURLでも共有できます。</p>
+              <select id="questionVersion" disabled=""><option value="v3.0.0">v3.0.0（最新）</option></select>
+              <p>質問・分類・補助情報は、それぞれの公開版の内容をそのまま収録しています。v3.0.0は2026年12月3日公開予定のBetaブランチ <code>4bef94f</code> の内容です。選んだバージョンはURLでも共有できます。</p>
               <p class="question-catalog-status" id="questionVersionNote" role="status" hidden=""></p>
             </section>
             <div class="notice">
-              <p id="questionVersionSource">反映日：2026-11-08 / 参照元：VIUK-Light/Omoi / branch: main / commit: <a class="external" href="https://github.com/VIUK-Light/Omoi/tree/3eeff5a9618ba1503d2716c6fe89d47d30bd710d">3eeff5a</a> / 質問件数: 906件 / コンテンツライセンス：CC BY-SA 4.0</p>
+              <p id="questionVersionSource">反映日：2026-11-26 / 参照元：VIUK-Light/Omoi / branch: Beta / commit: <a class="external" href="https://github.com/VIUK-Light/Omoi/tree/4bef94f5e8474bb8d311408c4852f07b202d348d">4bef94f</a> / 公開日：2026-12-03 / 質問件数: 749件 / コンテンツライセンス：CC BY-SA 4.0</p>
             </div>
             <section>
               <h2 id="section-1">全質問を検索</h2>
-              <div class="question-catalog-controls"><label>キーワード<input id="questionSearch" placeholder="ID・問い・場面・ヒント・背景・用語を検索" type="search"/></label><label>話題カテゴリ / Level<select id="questionLevelFilter"><option value="">すべて</option><option value="1">Level 1</option><option value="2">Level 2</option><option value="3">Level 3</option><option value="4">Level 4</option></select></label><label>上位分類 / category<select id="questionCategoryFilter"><option value="">すべて</option></select></label><label>配慮度 / sensitivity<select id="questionSensitivityFilter"><option value="">すべて</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></label></div>
+              <div class="question-catalog-controls"><label>キーワード<input id="questionSearch" placeholder="ID・問い・場面・ヒント・背景・用語を検索" type="search"/></label><label>話題カテゴリ / Level<select id="questionLevelFilter"><option value="">すべて</option><option value="1">Level 1（v2以前）</option><option value="2">日常・集団・境界線 / Level 2</option><option value="3">制度・社会・役割 / Level 3</option><option value="4">個人的利害・倫理 / Level 4</option></select></label><label>上位分類 / category<select id="questionCategoryFilter"><option value="">すべて</option></select></label><label>配慮度 / sensitivity<select id="questionSensitivityFilter"><option value="">すべて</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></label></div>
               <p aria-live="polite" class="question-catalog-status" id="questionResultCount">質問データを読み込み中...</p>
               <div class="question-catalog" id="questionCatalogList">
               </div>
@@ -78,7 +82,7 @@
                   </tr>
                   <tr>
                     <th scope="row">level</th>
-                    <td>各版のデータ上の1〜4の分類。利用画面の名称や選び方は版によって異なります</td>
+                    <td>各版のデータ上の1〜4の分類（v3は2〜4）。利用画面の名称や選び方は版によって異なります</td>
                   </tr>
                   <tr>
                     <th scope="row">category</th>

@@ -21,11 +21,15 @@
             <div class="docs-group" data-doc-group="">
               <p class="docs-group-label">はじめに</p><a data-doc-link="" href="omoi-docs.html">概要</a><a data-doc-link="" href="omoi-concept.html">Omoi（重い・想い・思い）</a><a data-doc-link="" href="omoi-details.html">Omoiについて</a><a data-doc-link="" href="omoi-getting-started.html">Omoiをはじめる</a></div>
             <div class="docs-group" data-doc-group="">
-              <p class="docs-group-label">使い方</p><a data-doc-link="" href="omoi-levels.html">話題カテゴリとLevel</a><a data-doc-link="" href="omoi-question.html">質問画面</a></div>
+              <p class="docs-group-label">使い方</p><a data-doc-link="" href="omoi-levels.html">選び方とLevel</a><a data-doc-link="" href="omoi-question.html">質問画面</a></div>
             <div class="docs-group" data-doc-group="">
               <p class="docs-group-label">データと品質</p><a data-doc-link="" href="omoi-question-catalog.html">質問カタログ</a><a data-doc-link="" href="omoi-data.html">データ構造</a><a data-doc-link="" href="omoi-editorial.html">編集方針</a><a data-doc-link="" href="omoi-accessibility.html">アクセシビリティ</a><a aria-current="page" data-doc-link="" href="omoi-validation.html">検証と公開</a><a data-doc-link="" href="omoi-technical.html">技術仕様</a><a data-doc-link="" href="omoi-safety.html">安全設計</a></div>
             <div class="docs-group" data-doc-group="">
               <p class="docs-group-label">参加する</p><a data-doc-link="" href="omoi-contributing.html">質問データに参加する</a></div>
+            <div class="docs-group" data-doc-group="">
+              <p class="docs-group-label">更新記録</p><a data-doc-link="" href="omoi-history.html">バージョン履歴</a></div>
+            <div class="docs-group" data-doc-group="">
+              <p class="docs-group-label">利用にあたって</p><a data-doc-link="" href="omoi-terms.html">利用規約</a></div>
             <div class="docs-group" data-doc-group="">
               <p class="docs-group-label">ヘルプ</p><a data-doc-link="" href="omoi-help.html">ヘルプ</a></div>
           </div>
@@ -36,7 +40,7 @@
           <p class="docs-breadcrumb"><a href="omoi-docs.html">資料一覧</a></p>
           <header class="docs-hero">
             <h1>検証と公開</h1>
-            <p class="docs-lead">公開元mainの906問の検証結果と、カタログ同期・現行画面・公開反映を確認する手順を説明します。</p>
+            <p class="docs-lead">公開元Betaの749問の検証結果と、カタログ同期・現行画面・公開反映を確認する手順を説明します。</p>
           </header>
         </div>
         <aside class="page-toc">
@@ -49,16 +53,18 @@
           <section class="docs-page-content">
             <section>
               <h2 id="section-1">質問データの自動検証</h2>
-<pre class="code-block"><code>node tools/verify-question-dataset.mjs --enforce-quality-targets --summary</code></pre><p>Omoiリポジトリで実行します。4つのJSONを一つのデータセットとして読み、JSON構造、ID一意性、正規化した問いの完全重複、Levelと配置、必須metadata、12カテゴリ、視点、警告値、出典の形式を確認します。品質目標はLevel 2が80件以上、Level 4のaffected・actor・decision_makerがそれぞれ20%以上です。</p>
+<pre class="code-block"><code>node tools/verify-question-dataset.mjs --enforce-quality-targets --summary
+node tools/verify-pickup-questions.mjs
+node tools/verify-v3-review.mjs --summary</code></pre><p>Omoiリポジトリで実行します。Level 2〜4のJSONを一つのデータセットとして読み、JSON構造、ID一意性、正規化した問いの完全重複、Levelと配置、必須metadata、12カテゴリ、視点、警告値、出典の形式を確認します。品質目標はLevel 2が80件以上、Level 4のaffected・actor・decision_makerがそれぞれ20%以上です。</p>
             </section>
             <section>
               <h2 id="section-2">今回のデータ検証結果</h2>
-              <p>2026年11月8日に、公開元の <a class="external" href="https://github.com/VIUK-Light/Omoi/tree/3eeff5a9618ba1503d2716c6fe89d47d30bd710d">main / 3eeff5a（v2.1）</a> の検証スクリプトを実行しました。以下は、この版の質問JSONの結果です。</p>
+              <p>2026年12月3日に、公開元の <a class="external" href="https://github.com/VIUK-Light/Omoi/tree/4bef94f5e8474bb8d311408c4852f07b202d348d">Beta / 4bef94f</a> と公開サイトを照合しました。以下の件数は、この版の質問JSONに基づきます。</p>
               <table class="spec-table">
                 <tbody>
                   <tr>
                     <th scope="row">レコード</th>
-                    <td>906件（163 / 80 / 301 / 362）</td>
+                    <td>749件（80 / 301 / 368）</td>
                   </tr>
                   <tr>
                     <th scope="row">構造エラー</th>
@@ -66,11 +72,11 @@
                   </tr>
                   <tr>
                     <th scope="row">警告</th>
-                    <td>661件。すべてdetail_without_sources</td>
+                    <td>667件。すべてdetail_without_sources</td>
                   </tr>
                   <tr>
                     <th scope="row">背景文と出典</th>
-                    <td>背景文は663件、出典があるカードは2件</td>
+                    <td>背景文は669件、出典があるカードは2件</td>
                   </tr>
                   <tr>
                     <th scope="row">扱い</th>
@@ -102,8 +108,8 @@ node tools/verify-seo.mjs</code></pre><p>この公式サイトのリンク・ア
             </section>
             <section>
               <h2 id="section-5">公式カタログへの同期</h2>
-              <p>公開元mainの特定commitを記録し、Omoiの4つのJSONを<code>assets/omoi/data</code>へそのまま同期します。未公開のBetaやローカル編集を、公開中の製品仕様として扱わないようにします。</p>
-              <p>公式サイトのリポジトリで次を実行すると、公開元mainと公開タグのcommitを確定して質問JSONを取得します。版一覧を<code>versions.json</code>、各版の元データと件数・SHA-256を<code>versions/&lt;commit&gt;/</code>へ保存します。最新の4ファイルとカタログの参照情報・キャッシュ版も更新します。関連資料の集計と操作説明は別途確認します。</p>
+              <p>公開元の特定commit（v3.0.0はBeta <code>4bef94f</code>）を記録し、Omoiの質問JSONを<code>assets/omoi/data</code>へそのまま同期します。未公開の変更を公開済みとして扱わないよう、版ごとに固定コミットと照合情報を保存します。</p>
+              <p>公式サイトのリポジトリで次を実行すると、公開元mainと公開タグのcommitを確定して質問JSONを取得します。版一覧を<code>versions.json</code>、各版の元データと件数・SHA-256を<code>versions/&lt;commit&gt;/</code>へ保存します。最新版のJSONファイルとカタログの参照情報・キャッシュ版も更新します。関連資料の集計と操作説明は別途確認します。</p>
               <p>過去版に含まれるIDの重複やLevelの不一致は修正せず、当時の内容で閲覧できるように保ちます。最新データの検証と、過去版のファイルの一致確認は別に扱います。同じコミットを指すv2.01とv2.1も、それぞれの名前で選択できます。</p>
 <pre class="code-block"><code>python3 tools/sync-omoi-data.py
 python3 tools/sync-omoi-data.py --check</code></pre>

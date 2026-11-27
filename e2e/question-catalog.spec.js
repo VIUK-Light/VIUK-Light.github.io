@@ -8,7 +8,7 @@ test('the refreshed catalog supports search, filters, details and pagination', a
   await page.goto('/omoi-question-catalog.html');
 
   await expect(page).toHaveTitle('質問カタログ — Omoi Documentation');
-  await expect(page.locator('#questionResultCount')).toHaveText('906件中 36件を表示');
+  await expect(page.locator('#questionResultCount')).toHaveText('749件中 36件を表示');
   await expect(page.getByRole('link', { name: new RegExp(`^${source.commit.slice(0, 7)}`) })).toHaveAttribute(
     'href', `https://github.com/VIUK-Light/Omoi/tree/${source.commit}`
   );
@@ -16,9 +16,9 @@ test('the refreshed catalog supports search, filters, details and pagination', a
   await expect(page.locator('.question-entry')).toHaveCount(72);
 
   await page.getByLabel('話題カテゴリ / Level').selectOption('4');
-  await expect(page.locator('#questionResultCount')).toHaveText('362件中 36件を表示');
+  await expect(page.locator('#questionResultCount')).toHaveText('368件中 36件を表示');
   await page.getByLabel('上位分類 / category').selectOption('relationships_and_communication');
-  await expect(page.locator('#questionResultCount')).toHaveText('102件中 36件を表示');
+  await expect(page.locator('#questionResultCount')).toHaveText('105件中 36件を表示');
   await page.getByLabel('配慮度 / sensitivity').selectOption('4');
   await expect(page.locator('.question-entry')).not.toHaveCount(0);
   await expect(page.locator('.question-meta').first()).toContainText('sensitivity: 4');
@@ -61,7 +61,7 @@ test('all five public versions show their own records and provenance', async ({ 
   await page.goto('/omoi-question-catalog.html');
   const select = page.getByLabel('Omoiのバージョン', { exact: true });
   await expect(select).toBeEnabled();
-  await expect(select.locator('option')).toHaveCount(5);
+  await expect(select.locator('option')).toHaveCount(6);
   await expect(select).toHaveValue(versions.default);
 
   for (const entry of versions.versions) {
@@ -110,7 +110,7 @@ test('version links, reload and browser history restore the selected snapshot', 
 
   await page.goto('/omoi-question-catalog.html?version=not-a-version');
   await expect(select).toHaveValue(versions.default);
-  await expect(page.locator('#questionResultCount')).toHaveText('906件中 36件を表示');
+  await expect(page.locator('#questionResultCount')).toHaveText('749件中 36件を表示');
   await expect(page.locator('#questionVersionNote')).toContainText('指定されたバージョンが見つからない');
 });
 
@@ -131,7 +131,7 @@ test('switching away from a slow version cannot overwrite the selected version',
     finishRequest();
   });
   await page.goto('/omoi-question-catalog.html');
-  await expect(page.locator('#questionResultCount')).toHaveText('906件中 36件を表示');
+  await expect(page.locator('#questionResultCount')).toHaveText('749件中 36件を表示');
   const select = page.getByLabel('Omoiのバージョン', { exact: true });
   await select.selectOption('v1.0.0');
   await started;
