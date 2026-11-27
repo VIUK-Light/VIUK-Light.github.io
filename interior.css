@@ -1110,6 +1110,31 @@ section[id],h2[id],h3[id] {
   max-height:280px;
 }
 /* Question catalog retains all filtering and detail controls. */
+.question-catalog-version {
+  display:grid;
+  gap:8px;
+  margin-bottom:24px;
+}
+.question-catalog-version label {
+  font-size:14px;
+  font-weight:600;
+}
+.question-catalog-version select {
+  width:100%;
+  max-width:440px;
+  min-height:44px;
+  border:1px solid var(--line);
+  background:var(--bg);
+  color:var(--ink);
+  padding:8px;
+  font-size:16px;
+  border-radius:3px;
+}
+.question-catalog-version p {
+  margin:0;
+  font-size:14px;
+  color:var(--muted);
+}
 .question-catalog-controls {
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));

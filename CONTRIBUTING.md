@@ -21,12 +21,14 @@ Issueでは、会話内容、APIキー、アクセストークン、個人情報
 | Homeの表示 | `style.css` |
 | 組織・製品紹介・Documentationの表示 | `interior.css` |
 | 公式ナビゲーション | `site-nav.js`、`site-nav.css`（日本語メニューとモバイル表示） |
+| 共通ブランド・PC表示倍率 | `site-brand.css`。1024px以上は全体を85%表示し、スマートフォン・タブレットの倍率は変えません |
 | Omoi forの実画面 | `assets/omoi-for/screenshots/`（2026-10-17提供の12枚）、`omoi-for-screens.css`（画面内の表示範囲）。画像本体は加工せず、撮影時のサムネイルが入らない範囲をCSSで表示 |
 | Omoi forの紹介 | `omoi-for.html`、`omoi-for.css`、`omoi-for.js`。カードカバー・シリーズ選択・体験デモ |
 | 製品紹介・Homeの動き | `site-motion.css`、`site-motion.js`。`data-motion-page`のあるページへ適用 |
 | Documentationの検索・モバイルメニュー・補助表示 | `docs.js` |
 | Omoi Documentation | `omoi-*.html` |
 | Omoi利用規約 | `omoi-terms.html`（Omoi本体の公開規約を全文転載） |
+| Omoi質問カタログ | `tools/sync-omoi-data.py`で公開元と公開タグを同期。`assets/omoi/data/versions.json`で版を一覧化し、`versions/<commit>/`に各版のJSONと照合情報を保存 |
 | Omoi for series Documentation | `omoi-for-*.html` |
 | Kizuna Documentation | `kizuna-*.html` |
 | 製品のバージョン履歴 | `omoi-history.html`、`omoi-for-history.html`、`kizuna-history.html`、`x-filtering-system-docs.html` |
@@ -42,6 +44,7 @@ python3 -m http.server 8000
 `http://127.0.0.1:8000/` を開き、少なくともHome、Projects、変更したDocumentation、モバイル幅を確認してください。
 
 リンク・アンカー・見出し・製品別ナビゲーションは `python3 tools/check-site.py` で確認できます。
+質問カタログの全保存版と参照情報は `python3 tools/sync-omoi-data.py --check` で確認できます。過去版の本文・分類・重複は変更せず、元のJSONを保ちます。同期後は、資料の件数・補助情報の集計・操作説明・Newsも同じ公開版へ合わせてください。
 
 JavaScriptを変更した場合は、次も実行します。
 

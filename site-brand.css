@@ -36,3 +36,26 @@
     font-size: 17px;
   }
 }
+
+/* A single desktop presentation scale keeps type, imagery and spacing aligned. */
+@media (min-width: 1024px) {
+  html {
+    --site-desktop-scale: .85;
+    zoom: var(--site-desktop-scale);
+  }
+
+  /* Sticky reading navigation still fills the visible window after scaling. */
+  .docs-layout {
+    min-height: calc(100vh / var(--site-desktop-scale) - var(--site-header-height));
+  }
+
+  .docs-sidebar {
+    height: calc(100vh / var(--site-desktop-scale) - var(--site-header-height));
+  }
+}
+
+@media (min-width: 1200px) {
+  .page-toc {
+    max-height: calc(100vh / var(--site-desktop-scale) - var(--site-header-height) - 68px);
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "repository": "VIUK-Light/Omoi",
+  "branch": "main",
+  "commit": "3eeff5a9618ba1503d2716c6fe89d47d30bd710d",
+  "synced_at": "2026-11-08",
+  "license": "CC BY-SA 4.0",
+  "files": [
+    {
+      "file": "level1.json",
+      "count": 163,
+      "sha256": "fc956a98fc84c56d39e7be7307c9a5f13bbd5b2b5511b5d859a20d75f93b7e50"
+    },
+    {
+      "file": "level2.json",
+      "count": 80,
+      "sha256": "9fc253940fd939847f5e27a8ad72957e96ab21e7e36ecae4460d3ff27625379a"
+    },
+    {
+      "file": "level3.json",
+      "count": 301,
+      "sha256": "955184d687183832e850ed40195fc58e204372bcf872540553eaf81a2cd9c4bb"
+    },
+    {
+      "file": "level4.json",
+      "count": 362,
+      "sha256": "97043e64c7d7222040a85979963c6e0458275c19b1395fdbe21947ed546c6fc7"
+    }
+  ],
+  "total": 906
+}

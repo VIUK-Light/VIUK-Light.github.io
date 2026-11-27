@@ -7,7 +7,7 @@
     <link href="https://viuk-light.org/omoi-validation.html" rel="canonical"/>
     <link href="assets/viuk-light-logo.png?v=20260825" rel="icon" type="image/png"/>
     <link href="interior.css?v=20261103-header-height-2" rel="stylesheet"/><script defer="" src="docs.js?v=20260913-layout-3"></script>
-  <link rel="stylesheet" href="site-brand.css?v=20261103-header-height-2">
+  <link rel="stylesheet" href="site-brand.css?v=20261108-desktop-85-1">
 </head>
   <body class="docs-body" data-product="omoi"><a class="skip-link" href="#docs-content">本文へ移動</a><header class="docs-topbar"><a aria-label="VIUK-Light ホーム" class="docs-brand" href="index.html"><img alt="VIUK-Light公式ロゴ" class="brand-logo" height="638" src="assets/viuk-light-logo.png?v=20260825" width="712"/><span>VIUK-Light</span></a><a class="docs-title-link" href="omoi-docs.html"><span>Omoi</span><span class="docs-title-context">/ 資料</span></a><nav aria-label="製品へのリンク" class="docs-top-actions"><a class="external" href="https://omoi.viuk-light.org/">Omoiを開く</a></nav>
     </header>
@@ -55,7 +55,7 @@
               <h2 id="section-1">質問データの自動検証</h2>
 <pre class="code-block"><code>node tools/verify-question-dataset.mjs --enforce-quality-targets --summary
 node tools/verify-pickup-questions.mjs
-node tools/verify-v3-review.mjs --summary</code></pre><p>Omoiリポジトリで実行します。4つのJSONを一つのデータセットとして読み、JSON構造、ID一意性、正規化した問いの完全重複、Levelと配置、必須metadata、12カテゴリ、視点、警告値、出典の形式を確認します。品質目標はLevel 2が80件以上、Level 4のaffected・actor・decision_makerがそれぞれ20%以上です。</p>
+node tools/verify-v3-review.mjs --summary</code></pre><p>Omoiリポジトリで実行します。Level 2〜4のJSONを一つのデータセットとして読み、JSON構造、ID一意性、正規化した問いの完全重複、Levelと配置、必須metadata、12カテゴリ、視点、警告値、出典の形式を確認します。品質目標はLevel 2が80件以上、Level 4のaffected・actor・decision_makerがそれぞれ20%以上です。</p>
             </section>
             <section>
               <h2 id="section-2">今回のデータ検証結果</h2>
@@ -103,12 +103,16 @@ node tools/verify-seo.mjs</code></pre><p>この公式サイトのリンク・ア
                 <li>「次の問いを見る」で進み、「前の問い」で同じ問いへ戻れることを確認します。話さず進む場合も回答入力は求めません。</li>
                 <li>ヒントと背景の開閉、用語と出典、Escape操作、長文のスクロールを確認します。</li>
                 <li>「ここで終える」の確認で「続ける」と「終了する」を試し、終了確定でホームへ戻ることを確認します。</li>
-                <li>質問カタログで検索・各フィルタ・追加表示を確認します。</li>
+                <li>質問カタログでバージョンの切り替え、検索・各フィルタ・追加表示を確認します。版を指定したURL、戻る・進む、読み込み失敗後の別の版への切り替えも確認します。</li>
               </ol>
             </section>
             <section>
               <h2 id="section-5">公式カタログへの同期</h2>
-              <p>公開元mainの特定commitを記録し、Omoiの4つのJSONを<code>assets/omoi/data</code>へそのまま同期します。未公開のBetaやローカル編集を、公開中の製品仕様として扱わないようにします。</p>
+              <p>公開元の特定commit（v3.0.0はBeta <code>4bef94f</code>）を記録し、Omoiの質問JSONを<code>assets/omoi/data</code>へそのまま同期します。未公開の変更を公開済みとして扱わないよう、版ごとに固定コミットと照合情報を保存します。</p>
+              <p>公式サイトのリポジトリで次を実行すると、公開元mainと公開タグのcommitを確定して質問JSONを取得します。版一覧を<code>versions.json</code>、各版の元データと件数・SHA-256を<code>versions/&lt;commit&gt;/</code>へ保存します。最新版のJSONファイルとカタログの参照情報・キャッシュ版も更新します。関連資料の集計と操作説明は別途確認します。</p>
+              <p>過去版に含まれるIDの重複やLevelの不一致は修正せず、当時の内容で閲覧できるように保ちます。最新データの検証と、過去版のファイルの一致確認は別に扱います。同じコミットを指すv2.01とv2.1も、それぞれの名前で選択できます。</p>
+<pre class="code-block"><code>python3 tools/sync-omoi-data.py
+python3 tools/sync-omoi-data.py --check</code></pre>
               <table class="spec-table">
                 <tbody>
                   <tr>
@@ -149,7 +153,7 @@ node tools/verify-seo.mjs</code></pre><p>この公式サイトのリンク・ア
             <section>
               <h2 id="section-7">検証に失敗した場合</h2>
               <p>原因をデータ、表示、操作、配信に分けて確認します。失敗を通すために質問を隠したり機能を削除したりせず、既存の警告や別作業の変更も記録して修正します。</p>
-              <div class="link-list"><a href="omoi-data.html">データ構造</a><a href="omoi-accessibility.html">アクセシビリティ</a><a class="external" href="https://github.com/VIUK-Light/Omoi/blob/fe24acc726bcb5e1f590851c07f85978da7430a1/tools/verify-question-dataset.mjs">この版の検証スクリプト</a></div>
+              <div class="link-list"><a href="omoi-data.html">データ構造</a><a href="omoi-accessibility.html">アクセシビリティ</a><a class="external" href="https://github.com/VIUK-Light/Omoi/blob/3eeff5a9618ba1503d2716c6fe89d47d30bd710d/tools/verify-question-dataset.mjs">この版の検証スクリプト</a><a href="assets/omoi/data/source.json">同期元と照合情報</a></div>
             </section>
           </section>
           <nav aria-label="前後の資料" class="document-pagination"><a href="omoi-accessibility.html"><span>前の資料</span><strong>アクセシビリティ</strong></a><a href="omoi-technical.html"><span>次の資料</span><strong>技術仕様</strong></a></nav>
